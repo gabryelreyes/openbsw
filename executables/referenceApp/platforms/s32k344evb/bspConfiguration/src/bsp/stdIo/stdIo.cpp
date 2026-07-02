@@ -8,10 +8,24 @@
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
 
+#include "bsp/Uart.h"
+
 #include <cstdint>
 
-// TODO: route the console through the LPUART driver, as done on the S32K148EVB.
+extern "C" void putByteToStdout(uint8_t const byte)
+{
+    static bsp::Uart& uart = bsp::Uart::getInstance(bsp::Uart::Id::TERMINAL);
+    uart.write(etl::span<uint8_t const>(&byte, 1U));
+}
 
-extern "C" void putByteToStdout(uint8_t const byte) { (void)byte; }
-
-extern "C" int32_t getByteFromStdin() { return -1; }
+extern "C" int32_t getByteFromStdin()
+{
+    static bsp::Uart& uart = bsp::Uart::getInstance(bsp::Uart::Id::TERMINAL);
+    uint8_t dataByte       = 0;
+    etl::span<uint8_t> data(&dataByte, 1U);
+    if (uart.read(data) == 0U)
+    {
+        return -1;
+    }
+    return dataByte;
+}

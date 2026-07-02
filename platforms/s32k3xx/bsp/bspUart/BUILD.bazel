@@ -14,6 +14,7 @@ cc_library(
     name = "bsp_uart",
     srcs = ["src/bsp/Uart.cpp"],
     hdrs = ["include/bsp/Uart.h"],
+    implementation_deps = ["//platforms/s32k3xx/bsp/bspMcu:bsp_mcu"],
     strip_include_prefix = "include",
     target_compatible_with = ["//bazel/platform/constraints/soc:s32k344"],
     visibility = ["//visibility:public"],
