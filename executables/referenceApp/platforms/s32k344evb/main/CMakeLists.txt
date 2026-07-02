@@ -1,4 +1,4 @@
-add_library(startUpAsm OBJECT src/bsp/startUp.S)
+add_library(startUpAsm OBJECT src/bsp/bootHeader.S src/bsp/startUp.S)
 
 set_target_properties(startUpAsm PROPERTIES COMPILE_WARNING_AS_ERROR OFF)
 
@@ -13,7 +13,9 @@ target_include_directories(main PUBLIC include)
 target_link_libraries(
     main
     PRIVATE bsp
+            bspClock
             bspConfiguration
+            bspMcu
             lifecycle
             safeSupervisor
             startUp)

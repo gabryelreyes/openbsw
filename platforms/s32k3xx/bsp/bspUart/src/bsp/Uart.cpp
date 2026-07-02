@@ -10,25 +10,87 @@
 
 #include <bsp/Uart.h>
 
+#include "mcu/mcu.h"
+
 using bsp::Uart;
 
-Uart::Uart(Id id) { (void)id; }
+namespace
+{
+uint32_t const OVERSAMPLING_RATIO = 16U;
+
+LPUART_Type* instanceRegisters(Uart::Id const id)
+{
+    (void)id;
+    return UART_TERMINAL_INSTANCE; // only the terminal UART is configured
+}
+} // namespace
+
+Uart::Uart(Id id) : _id(id) {}
 
 size_t Uart::write(::etl::span<uint8_t const> const data)
 {
-    // TODO (Phase 2): transmit via LPUART. The placeholder discards the data.
+    if (!_initialized)
+    {
+        return 0U;
+    }
+    LPUART_Type* const lpuart = instanceRegisters(_id);
+    for (size_t i = 0U; i < data.size(); ++i)
+    {
+        while ((lpuart->STAT & LPUART_STAT_TDRE_MASK) == 0U) {}
+        lpuart->DATA = data[i];
+    }
     return data.size();
 }
 
 size_t Uart::read(::etl::span<uint8_t> data)
 {
-    (void)data;
-    return 0U;
+    if ((!_initialized) || (data.size() == 0U))
+    {
+        return 0U;
+    }
+    LPUART_Type* const lpuart = instanceRegisters(_id);
+    // Clear a pending overrun, it blocks further reception.
+    if ((lpuart->STAT & LPUART_STAT_OR_MASK) != 0U)
+    {
+        lpuart->STAT = LPUART_STAT_OR_MASK;
+    }
+    size_t bytesRead = 0U;
+    while ((bytesRead < data.size()) && ((lpuart->STAT & LPUART_STAT_RDRF_MASK) != 0U))
+    {
+        data[bytesRead] = static_cast<uint8_t>(lpuart->DATA);
+        ++bytesRead;
+    }
+    return bytesRead;
 }
 
-void Uart::init() { _initialized = true; }
+void Uart::init()
+{
+    if (_initialized)
+    {
+        return;
+    }
+    uartConfigureTerminalPins();
 
-void Uart::deinit() { _initialized = false; }
+    LPUART_Type* const lpuart = instanceRegisters(_id);
+    lpuart->GLOBAL            = LPUART_GLOBAL_RST_MASK;
+    lpuart->GLOBAL            = 0U;
+    lpuart->BAUD
+        = LPUART_BAUD_OSR(OVERSAMPLING_RATIO - 1U)
+          | LPUART_BAUD_SBR(UART_TERMINAL_CLOCK_HZ / (OVERSAMPLING_RATIO * UART_TERMINAL_BAUD));
+    lpuart->CTRL = LPUART_CTRL_TE_MASK | LPUART_CTRL_RE_MASK;
+
+    _initialized = true;
+}
+
+void Uart::deinit()
+{
+    if (_initialized)
+    {
+        LPUART_Type* const lpuart = instanceRegisters(_id);
+        lpuart->CTRL              = 0U;
+        _initialized              = false;
+    }
+}
 
 Uart& Uart::getInstance(Id id)
 {
@@ -39,4 +101,13 @@ Uart& Uart::getInstance(Id id)
 
 bool Uart::isInitialized() const { return _initialized; }
 
-bool Uart::waitForTxReady() { return true; }
+bool Uart::waitForTxReady()
+{
+    if (!_initialized)
+    {
+        return false;
+    }
+    LPUART_Type* const lpuart = instanceRegisters(_id);
+    while ((lpuart->STAT & LPUART_STAT_TC_MASK) == 0U) {}
+    return true;
+}

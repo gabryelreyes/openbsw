@@ -169,6 +169,15 @@ vendored headers with license notes.
 
 ### Phase 2 — Minimal bring-up: boot, ECC RAM, clock, UART console, FreeRTOS
 
+> **Status: implemented (2026-07), pending on-target verification.** The image
+> boots via a BAF IVT at the flash base, disables SWT0, runs FXOSC+PLL at
+> 160 MHz core (AIPS_PLAT 80 MHz), enables I/D caches, and serves the console
+> on LPUART6 (OpenSDA VCOM, 115200 Bd, polled). C40 flash wait states stay at
+> the conservative reset default (RWSC tuning deferred - requires RAM-executed
+> code). Fault vectors report via vIllegalISR; the register-dump hard fault
+> handler moves to the safety extension.
+
+
 **Goal:** the board boots from flash through BAF, runs FreeRTOS, and serves the
 interactive OpenBSW console over LPUART. This is deliberately the single
 highest-risk phase; everything after it is incremental.

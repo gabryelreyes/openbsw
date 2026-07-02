@@ -3,6 +3,9 @@
 /* Entry Point */
 ENTRY(Reset_Handler)
 
+/* Force inclusion of the boot header, which is never referenced by code */
+EXTERN(__bootHeader)
+
 /* Heap and Stack Configuration */
 HEAP_SIZE  = DEFINED(__heap_size__)  ? __heap_size__  : 0x00000200;
 STACK_SIZE = DEFINED(__stack_size__) ? __stack_size__ : 0x00000400;
@@ -13,9 +16,9 @@ STACK_SIZE = DEFINED(__stack_size__) ? __stack_size__ : 0x00000400;
  * and are not accessible by the application core. The ITCM (64 KB at
  * 0x00000000) is not used yet.
  *
- * TODO (Phase 2, doc/dev/s32k344_integration_plan.md): place an IVT for the
- * BAF at the program flash base so the application boots from a power cycle;
- * until then the image is started via debugger. */
+ * The BAF expects the boot header (IVT) at the program flash base. The
+ * application vector table follows at the next 1 KB aligned address, as
+ * required by VTOR for its 229 entries. */
 PFLASH_START = 0x00400000;
 PFLASH_END   = 0x007F3FFF;
 DTCM_START   = 0x20000000;
@@ -27,8 +30,9 @@ SRAM_END     = 0x2044FFFF;
 MEMORY
 {
   /* Program Flash Memory */
-  Isr         (RX) : ORIGIN = PFLASH_START,          LENGTH = 0x00000400
-  Application (RX) : ORIGIN = PFLASH_START + 0x400,  LENGTH = PFLASH_END + 1 - PFLASH_START - 0x400
+  BootHeader  (RX) : ORIGIN = PFLASH_START,          LENGTH = 0x00000400
+  Isr         (RX) : ORIGIN = PFLASH_START + 0x400,  LENGTH = 0x00000400
+  Application (RX) : ORIGIN = PFLASH_START + 0x800,  LENGTH = PFLASH_END + 1 - PFLASH_START - 0x800
 
   /* Tightly Coupled Data Memory - main stack */
   Dtcm        (RW) : ORIGIN = DTCM_START,            LENGTH = DTCM_END + 1 - DTCM_START
@@ -47,6 +51,13 @@ __ECC_RAM_END    = SRAM_END + 1;
 /* Output Sections */
 SECTIONS
 {
+  /* Boot header (IVT) read by the Boot Assist Firmware */
+  .bootHeader :
+  {
+    . = ALIGN(4);
+    KEEP(*(.bootHeader))
+  } > BootHeader
+
   /* Interrupt Vector Table */
   .interrupts :
   {

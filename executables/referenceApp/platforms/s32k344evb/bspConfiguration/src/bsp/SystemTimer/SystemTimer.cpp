@@ -10,8 +10,7 @@
 
 /**
  * System timer based on the Cortex-M7 DWT cycle counter, running on the
- * default FIRC core clock. TODO (Phase 2, doc/dev/s32k344_integration_plan.md):
- * adapt the frequencies once the clock tree is configured to 160 MHz.
+ * 160 MHz core clock configured by bspClock.
  * \file
  * \ingroup bspConfig
  */
@@ -22,7 +21,7 @@
 
 namespace
 {
-uint32_t const DWT_FREQ_MHZ_RUN = 48U; // FIRC core clock after reset
+uint32_t const DWT_FREQ_MHZ_RUN = 160U; // PLL core clock (see bspClock)
 uint32_t const TICK_FREQ_MHZ    = 16U; // Common divider of all DWT frequencies
 
 struct
@@ -39,7 +38,7 @@ uint32_t volatile& DWT_CYCCNT = *reinterpret_cast<uint32_t volatile*>(0xE0001004
 uint32_t volatile& DWT_LAR    = *reinterpret_cast<uint32_t volatile*>(0xE0001FB0U);
 uint32_t volatile& DEMCR      = *reinterpret_cast<uint32_t volatile*>(0xE000EDFCU);
 
-// Must be called more than once per DWT period (~89 sec for 48 MHz frequency). Called implicitly
+// Must be called more than once per DWT period (~26 sec for 160 MHz frequency). Called implicitly
 // through all getSomething() functions
 uint64_t updateTicks()
 {

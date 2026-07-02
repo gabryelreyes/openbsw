@@ -10,6 +10,9 @@
 
 #include "lifecycle/StaticBsp.h"
 
+#include "clock/clockConfig.h"
+#include "mcu/mcu.h"
+
 #include <lifecycle/LifecycleManager.h>
 #include <safeSupervisor/SafeSupervisor.h>
 
@@ -18,12 +21,26 @@ extern void app_main();
 extern "C"
 {
 /**
- * Called from the startup code before the C/C++ runtime is initialized.
- * TODO (Phase 2, doc/dev/s32k344_integration_plan.md): disable the SWT0
- * watchdog, configure the clock tree (MC_ME/MC_CGM/PLL, 160 MHz) and enable
- * the instruction and data caches.
+ * Called from the startup code before the C/C++ runtime is initialized:
+ * no globals may be touched here.
  */
-void boardInit() {}
+void boardInit()
+{
+    /* Disable the SWT0 watchdog, which is enabled out of reset when booting
+     * through the debugger. A safety watchdog concept follows with the
+     * safety extension (see doc/dev/s32k344_integration_plan.md). */
+    if ((IP_SWT_0->CR & SWT_CR_SLK_MASK) != 0U)
+    {
+        IP_SWT_0->SR = 0xC520U;
+        IP_SWT_0->SR = 0xD928U;
+    }
+    IP_SWT_0->CR = IP_SWT_0->CR & ~SWT_CR_WEN_MASK;
+
+    configurePll();
+
+    SCB_EnableICache();
+    SCB_EnableDCache();
+}
 
 /**
  * Callout from the FreeRTOS port when the scheduler starts to set up

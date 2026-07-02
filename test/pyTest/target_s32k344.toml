@@ -1,0 +1,38 @@
+# *******************************************************************************
+# Copyright (c) 2026 Accenture
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0
+#
+# SPDX-License-Identifier: Apache-2.0
+# *******************************************************************************
+
+# S32K3X4EVB-T172 (S32K344). Flash/reset expects a PE Micro GDB server on
+# localhost:7224, e.g.:
+#   pegdbserver_console -device=NXP_S32K3xx_S32K344 -startserver -serverport=7224
+
+[socketcan]
+channel = "can0"
+
+[serial]
+port = "/dev/ttyACM0"
+baudrate = 115200
+write_byte_delay = 0.01
+send_command_expected = "Console command succeeded"
+send_command_timeout = 0.1
+send_command_max_retries = 2
+
+[freertos.per_run_process]
+command_line = "arm-none-eabi-gdb -batch -x flash.gdb ../../build/s32k344-freertos-gcc/executables/referenceApp/application/RelWithDebInfo/app.referenceApp.elf > /dev/null 2>&1"
+wait_for_exit = true
+
+[freertos.target_process]
+command_line = "arm-none-eabi-gdb -batch -x reset.gdb ../../build/s32k344-freertos-gcc/executables/referenceApp/application/RelWithDebInfo/app.referenceApp.elf > /dev/null 2>&1"
+wait_for_exit = true
+skip_first = true
+
+[boot]
+started_str = "INFO: Run level 1"
+complete_str = "DEBUG: Run level 9 done"
+max_time = 1.5

@@ -27,9 +27,9 @@ extern "C"
 {
 #endif
 
-// Default FIRC core clock after reset. TODO (Phase 2): 160 MHz via PLL.
-#define configCPU_CLOCK_HZ (48000000UL)
-#define configBUS_CLOCK_HZ 24000000UL
+// 160 MHz PLL core clock, configured by bspClock.
+#define configCPU_CLOCK_HZ (160000000UL)
+#define configBUS_CLOCK_HZ 80000000UL
 
 #undef configMINIMAL_STACK_SIZE
 #define configMINIMAL_STACK_SIZE  ((unsigned short)512)

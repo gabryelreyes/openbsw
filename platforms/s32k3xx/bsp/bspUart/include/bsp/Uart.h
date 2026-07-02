@@ -15,10 +15,9 @@
 namespace bsp
 {
 /**
- * Placeholder UART for the S32K3xx platform which discards all output and
- * never receives data.
- * TODO (Phase 2, doc/dev/s32k344_integration_plan.md): implement the driver
- * on the LPUART peripheral.
+ * Polling UART driver on the S32K3xx LPUART peripheral. The mapping of the
+ * terminal UART to an LPUART instance and its pins is provided by the board
+ * configuration (bsp/uart/UartConfig.h).
  */
 class Uart
 {
@@ -26,21 +25,21 @@ public:
     enum class Id : size_t;
 
     /**
-     * Sends out a number of bytes.
+     * Sends out a number of bytes, blocking until all bytes are written.
      * \param data - span of data to be sent
      * \return the number of bytes written
      */
     size_t write(::etl::span<uint8_t const> const data);
 
     /**
-     * Reads a number of bytes.
+     * Reads the bytes currently available in the receiver, non blocking.
      * \param data - span of data to be read
      * \return the number of bytes read
      */
     size_t read(::etl::span<uint8_t> data);
 
     /**
-     * Configures and starts the UART.
+     * Configures the pins and starts the UART.
      * This method must be called before using the read/write methods.
      */
     void init();
@@ -56,8 +55,8 @@ public:
     bool isInitialized() const;
 
     /**
-     * Waits until the UART is ready to transmit data.
-     * \return true if ready within timeout, false otherwise
+     * Waits until the transmitter is idle.
+     * \return true if ready, false if the UART is not initialized
      */
     bool waitForTxReady();
 
@@ -70,6 +69,7 @@ public:
     Uart(Id id);
 
 private:
+    Id _id;
     bool _initialized = false;
 };
 
