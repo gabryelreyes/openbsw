@@ -183,6 +183,27 @@
             }
         },
         {
+            "name": "s32k344-freertos-gcc",
+            "generator": "Ninja Multi-Config",
+            "displayName": "S32K344 FreeRTOS configuration (GCC)",
+            "description": "Configure for S32K344 platform using ARM GCC toolchain",
+            "inherits": "_config-base",
+            "toolchainFile": "${sourceDir}/cmake/toolchains/ArmNoneEabi-gcc.cmake",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "BUILD_EXECUTABLE": "referenceApp",
+                "BUILD_TARGET_PLATFORM": "S32K344EVB",
+                "BUILD_TARGET_RTOS": "FREERTOS",
+                "OPENBSW_ARM_CPU": "cortex-m7",
+                "OPENBSW_ARM_FPU": "fpv5-d16",
+                "CMAKE_ASM_FLAGS_RELWITHDEBINFO": "-g3",
+                "CMAKE_CONFIGURATION_TYPES": "RelWithDebInfo;Debug;Release",
+                "CMAKE_C_FLAGS_RELWITHDEBINFO": "-g3 -O2 -DNDEBUG",
+                "CMAKE_CXX_FLAGS_RELWITHDEBINFO": "-g3 -O2 -DNDEBUG",
+                "CMAKE_DEFAULT_BUILD_TYPE": "RelWithDebInfo"
+            }
+        },
+        {
             "name": "s32k148-freertos-clang",
             "generator": "Ninja Multi-Config",
             "displayName": "S32K148 FreeRTOS configuration (Clang)",
@@ -303,6 +324,12 @@
             "displayName": "S32K148 ThreadX build (GCC)",
             "description": "Build reference application for S32K148 platform with Clang (Release by default; for Debug use --config Debug)",
             "configurePreset": "s32k148-threadx-gcc"
+        },
+        {
+            "name": "s32k344-freertos-gcc",
+            "displayName": "S32K344 FreeRTOS build (GCC)",
+            "description": "Build reference application for S32K344 platform with GCC (RelWithDebInfo by default; for Debug use --config Debug)",
+            "configurePreset": "s32k344-freertos-gcc"
         },
         {
             "name": "s32k148-freertos-clang",

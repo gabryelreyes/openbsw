@@ -1,0 +1,182 @@
+/* Linker file for GNU C Compiler - S32K344 */
+
+/* Entry Point */
+ENTRY(Reset_Handler)
+
+/* Heap and Stack Configuration */
+HEAP_SIZE  = DEFINED(__heap_size__)  ? __heap_size__  : 0x00000200;
+STACK_SIZE = DEFINED(__stack_size__) ? __stack_size__ : 0x00000400;
+
+/* Memory Boundaries of S32K344
+ *
+ * The last 48 KB of the 4 MB program flash are reserved by the secure BAF
+ * and are not accessible by the application core. The ITCM (64 KB at
+ * 0x00000000) is not used yet.
+ *
+ * TODO (Phase 2, doc/dev/s32k344_integration_plan.md): place an IVT for the
+ * BAF at the program flash base so the application boots from a power cycle;
+ * until then the image is started via debugger. */
+PFLASH_START = 0x00400000;
+PFLASH_END   = 0x007F3FFF;
+DTCM_START   = 0x20000000;
+DTCM_END     = 0x2001FFFF;
+SRAM_START   = 0x20400000;
+SRAM_END     = 0x2044FFFF;
+
+/* Memory Regions */
+MEMORY
+{
+  /* Program Flash Memory */
+  Isr         (RX) : ORIGIN = PFLASH_START,          LENGTH = 0x00000400
+  Application (RX) : ORIGIN = PFLASH_START + 0x400,  LENGTH = PFLASH_END + 1 - PFLASH_START - 0x400
+
+  /* Tightly Coupled Data Memory - main stack */
+  Dtcm        (RW) : ORIGIN = DTCM_START,            LENGTH = DTCM_END + 1 - DTCM_START
+
+  /* System SRAM - data, BSS and heap */
+  MainRAM     (RW) : ORIGIN = SRAM_START,            LENGTH = SRAM_END + 1 - SRAM_START
+}
+
+/* ECC RAM initialization ranges used by the startup code. The whole SRAM and
+ * DTCM must be written with aligned 64-bit accesses before the first read. */
+__ECC_DTCM_START = DTCM_START;
+__ECC_DTCM_END   = DTCM_END + 1;
+__ECC_RAM_START  = SRAM_START;
+__ECC_RAM_END    = SRAM_END + 1;
+
+/* Output Sections */
+SECTIONS
+{
+  /* Interrupt Vector Table */
+  .interrupts :
+  {
+    __VECTOR_TABLE = .;
+    . = ALIGN(4);
+    KEEP(*(.isr_vector))
+  } > Isr
+
+  /* Program Code and Read-Only Data */
+  .text :
+  {
+    . = ALIGN(4);
+    *(.text)
+    *(.text*)
+    *(.rodata)
+    *(.rodata*)
+    *(.glue_7)
+    *(.glue_7t)
+    *(.eh_frame)
+    KEEP (*(.init))
+    KEEP (*(.fini))
+    . = ALIGN(4);
+  } > Application = 0xffffffff
+
+  /* ARM Exception Tables */
+  .ARM.extab :
+  {
+    *(.ARM.extab* .gnu.linkonce.armextab.*)
+  } > Application = 0xffffffff
+
+  .ARM :
+  {
+    __exidx_start = .;
+    *(.ARM.exidx*)
+    __exidx_end = .;
+  } > Application = 0xffffffff
+
+  /* Pre-initialization Array */
+  .preinit_array :
+  {
+    PROVIDE_HIDDEN (__preinit_array_start = .);
+    KEEP (*(.preinit_array*))
+    PROVIDE_HIDDEN (__preinit_array_end = .);
+  } > Application = 0xffffffff
+
+  /* Initialization Array */
+  .init_array :
+  {
+    PROVIDE_HIDDEN (__init_array_start = .);
+    KEEP (*(SORT(.init_array.*)))
+    KEEP (*(.init_array*))
+    PROVIDE_HIDDEN (__init_array_end = .);
+  } > Application = 0xffffffff
+
+  /* Finalization Array */
+  .fini_array :
+  {
+    PROVIDE_HIDDEN (__fini_array_start = .);
+    KEEP (*(SORT(.fini_array.*)))
+    KEEP (*(.fini_array*))
+    PROVIDE_HIDDEN (__fini_array_end = .);
+    . = ALIGN(4);
+  } > Application = 0xffffffff
+
+  /* End of Code Section */
+  __etext = .;
+  __DATA_ROM = .;
+
+  /* Initialized Data Section (SRAM) */
+  .data : AT(__DATA_ROM)
+  {
+    . = ALIGN(4);
+    __DATA_RAM = .;
+    __data_start__ = .;
+    *(.data)
+    *(.data*)
+    KEEP(*(.jcr*))
+    . = ALIGN(4);
+    __data_end__ = .;
+  } > MainRAM
+
+  ___data_size = __data_end__ - __data_start__;
+  __USED_FLASH_END = __DATA_ROM + ___data_size;
+
+  /* Uninitialized Data Section - BSS (SRAM) */
+  .bss :
+  {
+    . = ALIGN(4);
+    __START_BSS = .;
+    __bss_start__ = .;
+    *(.bss)
+    *(.bss*)
+    *(COMMON)
+    . = ALIGN(4);
+    __bss_end__ = .;
+    __END_BSS = .;
+  } > MainRAM
+
+  /* Heap Section (SRAM) */
+  .heap :
+  {
+    . = ALIGN(8);
+    __end__ = .;
+    _end = .;
+    PROVIDE(end = .);
+    __HeapBase = .;
+    . += HEAP_SIZE;
+    __HeapLimit = .;
+  } > MainRAM
+
+  __DATA_RAM_END = .;
+
+  /* Stack Section (DTCM) */
+  .stack :
+  {
+    . = ALIGN(8);
+    . += STACK_SIZE;
+    __StackTop = .;
+  } > Dtcm
+
+  /* Stack Limit and Pointer */
+  __StackLimit = __StackTop - STACK_SIZE;
+  PROVIDE(__stack = __StackTop);
+
+  /* ARM Attributes */
+  .ARM.attributes 0 : { *(.ARM.attributes) }
+}
+
+/* Informational Symbols for Flash Memory Usage */
+__FLASH_START         = PFLASH_START;
+__FLASH_END           = PFLASH_END;
+__USED_FLASH_SIZE     = __USED_FLASH_END - __FLASH_START;
+__FREE_FLASH_SIZE     = __FLASH_END - __USED_FLASH_END;
