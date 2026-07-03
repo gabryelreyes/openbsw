@@ -206,6 +206,10 @@ if (BUILD_EXECUTABLE STREQUAL "unitTest")
 
         add_subdirectory(platforms/stm32/unitTest EXCLUDE_FROM_ALL)
 
+    elseif (OPENBSW_PLATFORM STREQUAL "s32k3xx")
+
+        add_subdirectory(platforms/s32k3xx/unitTest EXCLUDE_FROM_ALL)
+
     else ()
         message(
             FATAL_ERROR

@@ -278,6 +278,14 @@ board's CAN interface.
 
 ### Phase 4 — Consolidation: tests, CI, documentation
 
+> **Status: implemented (2026-07).** tests-s32k3xx presets and the root
+> CMakeLists branch are wired (platform unit tests to be populated as pure
+> logic accumulates), s32k344-freertos-gcc is in the CI build matrix, and the
+> Sphinx docs include the s32k3xx module pages and the S32K3X4EVB-T172 board
+> page. clang-tidy stays posix+s32k1xx for now (matching the stm32
+> precedent). Full on-hardware pytest evidence pending.
+
+
 **Goal:** the S32K344 is a first-class platform: unit-tested, CI-gated, and
 documented.
 
