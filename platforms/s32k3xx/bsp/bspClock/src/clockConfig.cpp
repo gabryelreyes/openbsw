@@ -18,10 +18,11 @@ uint32_t const MC_ME_KEY          = 0x5AF0U;
 uint32_t const MC_ME_INVERTED_KEY = 0xA50FU;
 
 // MC_ME PRTN1 COFB block assignments (see S32K3xx Reference Manual, MC_ME)
-uint32_t const PRTN1_COFB0_REQ24_MSCM    = (1U << 24);
-uint32_t const PRTN1_COFB1_REQ53_FXOSC   = (1U << 21);
-uint32_t const PRTN1_COFB1_REQ56_PLL     = (1U << 24);
-uint32_t const PRTN1_COFB2_REQ80_LPUART6 = (1U << 16);
+uint32_t const PRTN1_COFB0_REQ24_MSCM     = (1U << 24);
+uint32_t const PRTN1_COFB1_REQ53_FXOSC    = (1U << 21);
+uint32_t const PRTN1_COFB1_REQ56_PLL      = (1U << 24);
+uint32_t const PRTN1_COFB2_REQ65_FLEXCAN0 = (1U << 1);
+uint32_t const PRTN1_COFB2_REQ80_LPUART6  = (1U << 16);
 
 // PLL configuration: FXOSC 16 MHz / RDIV 4 * MFI 240 = 960 MHz VCO,
 // / ODIV2 2 = 480 MHz PLL_CLK, / PHI divider 3 = 160 MHz PLL_PHI0.
@@ -34,6 +35,10 @@ uint32_t const PLL_PHI1_DIV = 3U;
 // FXOSC settings for the 16 MHz crystal on the S32K3X4EVB
 uint32_t const FXOSC_EOCV   = 157U;
 uint32_t const FXOSC_GM_SEL = 12U; // 0.7016x
+
+// MC_CGM MUX_3 (CAN0..2 protocol engine clock): AIPS_PLAT_CLK (see the
+// S32K3xx Reference Manual, MC_CGM clock muxes)
+uint32_t const MUX_3_SELCTL_AIPS_PLAT_CLK = 22U;
 
 uint32_t const TIMEOUT = 100000U;
 
@@ -86,6 +91,37 @@ void mux0Transition()
         }
     }
 }
+
+/**
+ * Triggers a MUX_3 divider update and clock switch and waits for completion.
+ * Unlike MUX_0, MUX_3 has no divider trigger register: divider writes update
+ * immediately and only have to be waited for.
+ */
+void mux3Transition()
+{
+    for (uint32_t timeout = TIMEOUT; timeout > 0U; --timeout)
+    {
+        if ((IP_MC_CGM->MUX_3_DIV_UPD_STAT & MC_CGM_MUX_3_DIV_UPD_STAT_DIV_STAT_MASK) == 0U)
+        {
+            break;
+        }
+    }
+    for (uint32_t timeout = TIMEOUT; timeout > 0U; --timeout)
+    {
+        if ((IP_MC_CGM->MUX_3_CSS & MC_CGM_MUX_3_CSS_SWIP_MASK) == 0U)
+        {
+            break;
+        }
+    }
+    IP_MC_CGM->MUX_3_CSC = IP_MC_CGM->MUX_3_CSC | MC_CGM_MUX_3_CSC_CLK_SW_MASK;
+    for (uint32_t timeout = TIMEOUT; timeout > 0U; --timeout)
+    {
+        if ((IP_MC_CGM->MUX_3_CSS & MC_CGM_MUX_3_CSS_CLK_SW_MASK) != 0U)
+        {
+            break;
+        }
+    }
+}
 } // namespace
 
 extern "C" void configurePll(void)
@@ -94,8 +130,9 @@ extern "C" void configurePll(void)
     IP_MC_ME->PRTN1_COFB0_CLKEN = IP_MC_ME->PRTN1_COFB0_CLKEN | PRTN1_COFB0_REQ24_MSCM;
     IP_MC_ME->PRTN1_COFB1_CLKEN
         = IP_MC_ME->PRTN1_COFB1_CLKEN | PRTN1_COFB1_REQ53_FXOSC | PRTN1_COFB1_REQ56_PLL;
-    // Peripheral clocks used by the BSP: LPUART6 (terminal).
-    IP_MC_ME->PRTN1_COFB2_CLKEN = IP_MC_ME->PRTN1_COFB2_CLKEN | PRTN1_COFB2_REQ80_LPUART6;
+    // Peripheral clocks used by the BSP: LPUART6 (terminal), FLEXCAN0.
+    IP_MC_ME->PRTN1_COFB2_CLKEN
+        = IP_MC_ME->PRTN1_COFB2_CLKEN | PRTN1_COFB2_REQ65_FLEXCAN0 | PRTN1_COFB2_REQ80_LPUART6;
     mcMeCommitPartition1(IP_MC_ME->PRTN1_COFB1_STAT, PRTN1_COFB1_REQ53_FXOSC);
 
     // Run MUX_0 from FIRC with safe dividers while the PLL is (re)configured.
@@ -160,4 +197,10 @@ extern "C" void configurePll(void)
     IP_MC_CGM->MUX_0_CSC
         = MC_CGM_MUX_0_CSC_SELCTL(8U) | MC_CGM_MUX_0_CSC_CLK_SW_MASK; // PLL_PHI0
     mux0Transition();
+
+    // CAN protocol engine clock (MUX_3): AIPS_PLAT_CLK / 2 = 40 MHz.
+    IP_MC_CGM->MUX_3_DC_0 = MC_CGM_MUX_3_DC_0_DE_MASK | MC_CGM_MUX_3_DC_0_DIV(1U);
+    IP_MC_CGM->MUX_3_CSC  = MC_CGM_MUX_3_CSC_SELCTL(MUX_3_SELCTL_AIPS_PLAT_CLK)
+                           | MC_CGM_MUX_3_CSC_CLK_SW_MASK;
+    mux3Transition();
 }

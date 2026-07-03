@@ -9,7 +9,7 @@
 /* Vector table: 16 system exceptions + 213 external interrupts (see
  * NUMBER_OF_INT_VECTORS in S32K344_COMMON.h).
  * TODO (Phase 2, doc/dev/s32k344_integration_plan.md): name the peripheral
- * interrupt handlers as they get implemented (CAN, LPUART, ...), and route
+ * interrupt handlers as they get implemented (LPUART, ...), and route
  * the fault exceptions to the hardFaultHandler module. */
     .section .isr_vector, "a"
     .align 2
@@ -33,7 +33,14 @@ __isr_vector:
     .long   SysTick_Handler                                 /* SysTick Handler */
 
                                                             /* External Interrupts */
-    .rept   213
+    .rept   109                                             /* IRQ 0..108 */
+    .long   DefaultISR
+    .endr
+    .long   CAN0_Bus_Off_Error_IRQHandler                   /* IRQ 109: FlexCAN0 bus off / errors */
+    .long   CAN0_ORed_0_31_MB_IRQHandler                    /* IRQ 110: FlexCAN0 message buffers 0-31 */
+    .long   CAN0_ORed_32_63_MB_IRQHandler                   /* IRQ 111: FlexCAN0 message buffers 32-63 */
+    .long   CAN0_ORed_64_95_MB_IRQHandler                   /* IRQ 112: FlexCAN0 message buffers 64-95 */
+    .rept   100                                             /* IRQ 113..212 */
     .long   DefaultISR
     .endr
 

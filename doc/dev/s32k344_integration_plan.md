@@ -235,6 +235,15 @@ highest-risk phase; everything after it is incremental.
 
 ### Phase 3 — CAN and UDS
 
+> **Status: implemented (2026-07), pending on-target verification.** FlexCAN0
+> at 500 kbit/s (40 MHz PE clock via MC_CGM MUX_3), docan/UDS enabled. Board
+> pins PTA6/PTA7 with the TJA1153 EN/STB GPIOs driven to normal mode; note a
+> factory-fresh TJA1153 may need a one-time bus configuration before traffic
+> flows. S32K344 specifics: FlexCAN message buffer RAM is ECC protected and is
+> zeroed in freeze mode at init; RX and TX message buffers share one interrupt
+> line, the transmit ISR is gated on a pending TX flag.
+
+
 **Goal:** `PLATFORM_SUPPORT_CAN`, `PLATFORM_SUPPORT_TRANSPORT`, and
 `PLATFORM_SUPPORT_UDS` are ON; the docan/UDS stack is operational on the
 board's CAN interface.

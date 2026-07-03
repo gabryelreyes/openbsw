@@ -13,6 +13,15 @@
 #include "clock/clockConfig.h"
 #include "mcu/mcu.h"
 
+#ifdef PLATFORM_SUPPORT_CAN
+#include "systems/CanSystem.h"
+
+#include <etl/alignment.h>
+
+#include "async/Config.h"
+#include "interrupt_manager.h"
+#endif
+
 #include <lifecycle/LifecycleManager.h>
 #include <safeSupervisor/SafeSupervisor.h>
 
@@ -44,10 +53,21 @@ void boardInit()
 
 /**
  * Callout from the FreeRTOS port when the scheduler starts to set up
- * application interrupts. Nothing to set up yet - CAN interrupts are
- * configured here from Phase 3 on.
+ * application interrupts.
  */
-void setupApplicationsIsr(void) {}
+void setupApplicationsIsr(void)
+{
+#ifdef PLATFORM_SUPPORT_CAN
+    /* FlexCAN0 message buffers 0-31 (RX and TX share this line on the
+     * S32K344). The bus off line (FlexCAN0_0_IRQn) stays disabled, bus off
+     * is polled; message buffers 32-95 are not used. */
+    SYS_SetPriority(FlexCAN0_1_IRQn, 8);
+
+    SYS_EnableIRQ(FlexCAN0_1_IRQn);
+
+    ENABLE_INTERRUPTS();
+#endif
+}
 } // extern "C"
 
 namespace platform
@@ -56,16 +76,33 @@ StaticBsp staticBsp;
 
 StaticBsp& getStaticBsp() { return staticBsp; }
 
+#ifdef PLATFORM_SUPPORT_CAN
+::etl::typed_storage<::systems::CanSystem> canSystem;
+#endif // PLATFORM_SUPPORT_CAN
+
 /**
  * Callout from main application to give platform the chance to add a
  * ::lifecycle::ILifecycleComponent to the \p lifecycleManager at a given \p level.
  */
 void platformLifecycleAdd(::lifecycle::LifecycleManager& lifecycleManager, uint8_t const level)
 {
+    if (level == 2U)
+    {
+#ifdef PLATFORM_SUPPORT_CAN
+        lifecycleManager.addComponent("can", canSystem.create(TASK_CAN, staticBsp), level);
+#endif // PLATFORM_SUPPORT_CAN
+    }
     (void)lifecycleManager;
     (void)level;
 }
 } // namespace platform
+
+#ifdef PLATFORM_SUPPORT_CAN
+namespace systems
+{
+::can::ICanSystem& getCanSystem() { return *::platform::canSystem; }
+} // namespace systems
+#endif // PLATFORM_SUPPORT_CAN
 
 int main()
 {

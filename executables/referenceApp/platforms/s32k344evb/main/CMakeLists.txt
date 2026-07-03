@@ -2,11 +2,12 @@ add_library(startUpAsm OBJECT src/bsp/bootHeader.S src/bsp/startUp.S)
 
 set_target_properties(startUpAsm PROPERTIES COMPILE_WARNING_AS_ERROR OFF)
 
-add_library(startUp "$<TARGET_OBJECTS:startUpAsm>")
+add_library(startUp "$<TARGET_OBJECTS:startUpAsm>" src/os/isr/isr_can.cpp)
 
 set_target_properties(startUp PROPERTIES LINKER_LANGUAGE CXX)
 
-add_library(main src/lifecycle/StaticBsp.cpp src/main.cpp)
+add_library(main src/lifecycle/StaticBsp.cpp src/systems/CanSystem.cpp
+                 src/main.cpp)
 
 target_include_directories(main PUBLIC include)
 
@@ -16,6 +17,9 @@ target_link_libraries(
             bspClock
             bspConfiguration
             bspMcu
+            canflex2Transceiver
+            configuration
+            etl
             lifecycle
             safeSupervisor
             startUp)
