@@ -14,8 +14,10 @@
 
 #include <etl/array.h>
 #include <etl/delegate.h>
+#include <etl/error_handler.h>
 #include <etl/signal.h>
 #include <etl/span.h>
+#include <shed/ops.h>
 
 namespace ip
 {
@@ -155,32 +157,18 @@ inline bool updateConfig(NetworkInterfaceConfig& config, NetworkInterfaceConfig 
  * need to get notified about changes of assigned network addresses. This can be done by
  * registering as a listener to config changes.
  */
-struct NetworkInterfaceConfigRegistry
+class NetworkInterfaceConfigRegistry
 {
-    NetworkInterfaceConfigRegistry(
-        ::etl::span<uint8_t const> busIds, ::etl::span<NetworkInterfaceConfig const> configs)
-    : busIds(busIds), configs(configs)
-    {}
+public:
+    virtual NetworkInterfaceConfig getConfig(uint8_t busId) const = 0;
+    virtual bool connect(ConfigChangedSlotType const& slot)       = 0;
+    virtual void disconnect(ConfigChangedSlotType const& slot)    = 0;
 
-    virtual ~NetworkInterfaceConfigRegistry() = default;
-
-    ::etl::span<uint8_t const> busIds;
-    ::etl::span<NetworkInterfaceConfig const> configs;
-
-    virtual NetworkInterfaceConfig getConfig(uint8_t const busId) const
-    {
-        for (size_t i = 0; i < busIds.size(); ++i)
-        {
-            if (busIds[i] == busId)
-            {
-                return configs[i];
-            }
-        }
-        return {};
-    }
-
-    virtual bool connect(ConfigChangedSlotType const& slot)    = 0;
-    virtual void disconnect(ConfigChangedSlotType const& slot) = 0;
+protected:
+    NetworkInterfaceConfigRegistry()                                                 = default;
+    ~NetworkInterfaceConfigRegistry()                                                = default;
+    NetworkInterfaceConfigRegistry(NetworkInterfaceConfigRegistry const&)            = default;
+    NetworkInterfaceConfigRegistry& operator=(NetworkInterfaceConfigRegistry const&) = default;
 };
 
 namespace declare
@@ -189,18 +177,40 @@ namespace declare
  * Concrete NetworkInterfaceConfigRegistry that owns an etl::signal sized for a given
  * number of listener slots.
  */
-template<size_t SlotCapacity>
-struct NetworkInterfaceConfigRegistry : public ::ip::NetworkInterfaceConfigRegistry
+template<size_t SlotCapacity, typename Table, typename BusIdColumn = uint8_t>
+class NetworkInterfaceConfigRegistry : public ::ip::NetworkInterfaceConfigRegistry
 {
+public:
     using ConfigChangedSignal
         = ::etl::signal<void(uint8_t, NetworkInterfaceConfig const&), SlotCapacity>;
 
-    NetworkInterfaceConfigRegistry(
-        ::etl::span<uint8_t const> busIds, ::etl::span<NetworkInterfaceConfig const> configs)
-    : ::ip::NetworkInterfaceConfigRegistry(busIds, configs)
-    {}
+    NetworkInterfaceConfigRegistry() = default;
+
+    explicit NetworkInterfaceConfigRegistry(Table& table) : _table(&table) {}
+
+    NetworkInterfaceConfigRegistry(NetworkInterfaceConfigRegistry const&)            = default;
+    NetworkInterfaceConfigRegistry& operator=(NetworkInterfaceConfigRegistry const&) = default;
+
+    Table* _table = nullptr;
 
     ConfigChangedSignal configChangedSignal;
+
+    NetworkInterfaceConfig getConfig(uint8_t const busId) const override
+    {
+        ETL_ASSERT(
+            _table != nullptr, ETL_ERROR_GENERIC("NetworkInterfaceConfigRegistry not initialised"));
+
+        auto const busIds  = ::shed::get<BusIdColumn>(*_table).data();
+        auto const configs = ::shed::get<NetworkInterfaceConfig>(*_table).data();
+        for (size_t i = 0; i < busIds.size(); ++i)
+        {
+            if (static_cast<uint8_t>(busIds[i]) == busId)
+            {
+                return configs[i];
+            }
+        }
+        return {};
+    }
 
     bool connect(ConfigChangedSlotType const& slot) override
     {

@@ -10,7 +10,6 @@
 
 #include "middleware/core/IClusterConnectionConfigurationBase.h"
 
-#include "middleware/concurrency/LockStrategies.h"
 #include "middleware/core/DatabaseManipulator.h"
 #include "middleware/core/ITimeoutHandler.h"
 #include "middleware/core/Message.h"
@@ -28,7 +27,7 @@ void ITimeoutConfiguration::registerTimeoutTransceiver(
     ITimeoutHandler& transceiver, ::etl::ivector<ITimeoutHandler*>& timeoutTransceivers)
 {
     auto const* it
-        = etl::find(timeoutTransceivers.cbegin(), timeoutTransceivers.cend(), &transceiver);
+        = ::etl::find(timeoutTransceivers.cbegin(), timeoutTransceivers.cend(), &transceiver);
     if (it == timeoutTransceivers.cend())
     {
         if (!timeoutTransceivers.full())
@@ -41,10 +40,10 @@ void ITimeoutConfiguration::registerTimeoutTransceiver(
 void ITimeoutConfiguration::unregisterTimeoutTransceiver(
     ITimeoutHandler& transceiver, ::etl::ivector<ITimeoutHandler*>& timeoutTransceivers)
 {
-    auto* it = etl::find(timeoutTransceivers.begin(), timeoutTransceivers.end(), &transceiver);
+    auto* it = ::etl::find(timeoutTransceivers.begin(), timeoutTransceivers.end(), &transceiver);
     if (it != timeoutTransceivers.end())
     {
-        etl::swap(*it, timeoutTransceivers.back());
+        *it = timeoutTransceivers.back();
         timeoutTransceivers.pop_back();
     }
 }
@@ -70,7 +69,7 @@ IClusterConnectionConfigurationBase::dispatchMessageToProxy(
     {
         auto const range = meta::DbManipulator::getTransceiversByServiceIdAndServiceInstanceId(
             proxiesStart, proxiesEnd, msg.getHeader().serviceId, msg.getHeader().serviceInstanceId);
-        for (auto const* it = range.first; it != range.second; it = etl::next(it))
+        for (auto const* it = range.first; it != range.second; it = ::etl::next(it))
         {
             static_cast<void>((*it)->onNewMessageReceived(msg));
         }

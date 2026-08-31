@@ -163,6 +163,7 @@ if (BUILD_EXECUTABLE STREQUAL "unitTest")
         add_subdirectory(libs/bsw/asyncFreeRtos/test)
         add_subdirectory(libs/bsw/asyncImpl/examples)
         add_subdirectory(libs/bsw/asyncImpl/test)
+        add_subdirectory(libs/bsw/blob/test)
         add_subdirectory(libs/bsw/bsp/test)
         add_subdirectory(libs/bsw/cpp2can/test)
         add_subdirectory(libs/bsw/cpp2ethernet/test)
@@ -176,8 +177,11 @@ if (BUILD_EXECUTABLE STREQUAL "unitTest")
         add_subdirectory(libs/bsw/lwipSocket/test)
         add_subdirectory(libs/bsw/middleware/test)
         add_subdirectory(libs/bsw/platform/test)
+        add_subdirectory(libs/bsw/routing/test)
         add_subdirectory(libs/bsw/runtime/test)
+        add_subdirectory(libs/bsw/shed/test)
         add_subdirectory(libs/bsw/storage/test)
+        add_subdirectory(libs/bsw/time/test)
         add_subdirectory(libs/bsw/timer/test)
         add_subdirectory(libs/bsw/transport/test)
         add_subdirectory(libs/bsw/transportRouterSimple/test)
@@ -192,6 +196,15 @@ if (BUILD_EXECUTABLE STREQUAL "unitTest")
         add_subdirectory(platforms/posix/bsp/bspEepromDriver/test)
         add_subdirectory(platforms/posix/bsp/socketCanTransceiver/test)
 
+    elseif (OPENBSW_PLATFORM STREQUAL "stm32")
+
+        add_subdirectory(platforms/stm32/unitTest EXCLUDE_FROM_ALL)
+
+        add_subdirectory(platforms/stm32/bsp/bspCan/test)
+        add_subdirectory(platforms/stm32/bsp/bxCanTransceiver/test)
+        add_subdirectory(platforms/stm32/bsp/fdCanTransceiver/test)
+        add_subdirectory(platforms/stm32/safety/safeBspMcuWatchdog/test)
+
     elseif (OPENBSW_PLATFORM STREQUAL "s32k1xx")
 
         add_subdirectory(platforms/s32k1xx/unitTest EXCLUDE_FROM_ALL)
@@ -201,10 +214,6 @@ if (BUILD_EXECUTABLE STREQUAL "unitTest")
         add_subdirectory(platforms/s32k1xx/bsp/bspIo/test)
         add_subdirectory(platforms/s32k1xx/bsp/canflex2Transceiver/test)
         add_subdirectory(platforms/s32k1xx/bsp/bspUart/test)
-
-    elseif (OPENBSW_PLATFORM STREQUAL "stm32")
-
-        add_subdirectory(platforms/stm32/unitTest EXCLUDE_FROM_ALL)
 
     else ()
         message(
@@ -216,4 +225,8 @@ elseif (BUILD_EXECUTABLE STREQUAL "referenceApp")
     target_include_directories(etl BEFORE
                                INTERFACE executables/referenceApp/etl_profile)
     add_subdirectory(executables/referenceApp)
+elseif (BUILD_EXECUTABLE STREQUAL "middlewareSimulation")
+    target_include_directories(etl BEFORE
+                               INTERFACE libs/bsw/middleware/simulation/include)
+    add_subdirectory(libs/bsw/middleware/simulation)
 endif ()

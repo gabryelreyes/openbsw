@@ -1,15 +1,15 @@
-2a1cde73274df5eb9f663c89c6e99a60ed95af20
+597abea03d1c07463ea4d87b975a3e61cec91117
 
 RIM Info file. You're welcome to read but don't write it.
 Instead, use RIM commands to do the things you want to do.
 BEWARE: Any manual modification will invalidate the file!
 
 remote_url     : https://github.com/ETLCPP/etl.git
-revision_sha1  : 912e22f238b707edc4d47d830f61f922cea79d70
-target_revision: 20.47.1
-ignores        : BUILD.bazel
-checksum       : 63cd7d58048e3958637b86cc2a0b501643643132
+revision_sha1  : 7f290365a9f1b72bf89b4b77ec7dbe39b228bd8e
+target_revision: 20.48.1
+ignores        : 
+checksum       : 1e53399882e1bba9167f2b2c4311c473df997d8d
 subdir         : 
 
-committer_date : 2026-04-05 14:32:40 +0100
+committer_date : 2026-07-11 13:23:31 +0100
 
