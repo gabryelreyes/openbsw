@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../../../../../../../../../static/css/style.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Symbol - puncover</title>
+    
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="page-header">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="../../../../../../../../../../../index.html">
+                    Puncover
+                  </a>
+                </div>
+              </div>
+            </nav>
+          
+        </div>
+        <div id="inner_content">
+        
+    
+    <ol class="breadcrumb folders">
+        
+        <li><a href="../../../../../../../../../../../home.html">home</a></li>
+        
+        <li><a href="../../../../../../../../../../runner.html">runner</a></li>
+        
+        <li><a href="../../../../../../../../../work.html">work</a></li>
+        
+        <li><a href="../../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../libs.html">libs</a></li>
+        
+        <li><a href="../../../../../bsw.html">bsw</a></li>
+        
+        <li><a href="../../../../cpp2ethernet.html">cpp2ethernet</a></li>
+        
+        <li><a href="../../../include.html">include</a></li>
+        
+        <li ><a href="../../ip.html">ip</a>
+            </li>
+
+        
+        <li class="active"><a href="../NetworkInterfaceConfig.h.html">NetworkInterfaceConfig.h</a>:220
+            </li>
+        
+    </ol>
+
+
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>Function</th>
+                <td colspan="5">
+                    <span class="icon-function">ip::declare::NetworkInterfaceConfigRegistry&lt;2u, shed::table&lt;systems::NetifsSchema&gt;, ethernet::NetifBusId&gt;::disconnect(etl::delegate&lt;void (unsigned char, ip::NetworkInterfaceConfig const&amp;)&gt; const&amp;)</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th rowspan="2"></th>
+                <th>Address</th>
+                <th>Remarks</th>
+                <th>Stack</th>
+                <th>Code</th>
+                <th>Static</th>
+            </tr>
+            <tr>
+                <td>0x0000a5e0</td>
+                <td>
+    
+    
+</td>
+                <td>16 (static)</td>
+                <td>100</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>No Callers</th>
+                <td colspan="5">
+                
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    No Callees
+                    
+                </th>
+                <td colspan="5">
+                
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <pre><a href="./e7eedb363d3e5c861aa4771a103315f6.html">ip::declare::NetworkInterfaceConfigRegistry&lt;2u, shed::table&lt;systems::NetifsSchema&gt;, ethernet::NetifBusId&gt;::connect(etl::delegate&lt;void (unsigned char, ip::NetworkInterfaceConfig const&amp;)&gt; const&amp;) (96)</a></pre>
+    
+
+    <pre>
+
+    ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::disconnect(etl::delegate<void (unsigned char, ip::NetworkInterfaceConfig const&)> const&):
+
+        a5e0:	b570      	push	{r4, r5, r6, lr}
+
+    _ZN3etl6signalIFvhRKN2ip22NetworkInterfaceConfigEELj2ENS_8delegateIS5_EEE3endEv():
+
+        a5e2:	6984      	ldr	r4, [r0, #24]
+
+    _ZN3etl6signalIFvhRKN2ip22NetworkInterfaceConfigEELj2ENS_8delegateIS5_EEE5beginEv():
+
+        a5e4:	f100 0308 	add.w	r3, r0, #8
+
+    _ZN3etl4findIPNS_8delegateIFvhRKN2ip22NetworkInterfaceConfigEEEES7_EET_S9_S9_RKT0_():
+
+        a5e8:	429c      	cmp	r4, r3
+
+        a5ea:	d024      	beq.n	a636 <<a href="./47dd0341bb24d80b432e79a134f4513e.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::disconnect(etl::delegate<void (unsigned char, ip::NetworkInterfaceConfig const&)> const&)</a>+0x56>
+
+    _ZNK3etl8delegateIFvhRKN2ip22NetworkInterfaceConfigEEE18invocation_elementeqERKS7_():
+
+        a5ec:	684d      	ldr	r5, [r1, #4]
+
+        a5ee:	4e14      	ldr	r6, [pc, #80]	@ (a640 <<a href="./47dd0341bb24d80b432e79a134f4513e.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::disconnect(etl::delegate<void (unsigned char, ip::NetworkInterfaceConfig const&)> const&)</a>+0x60>)
+
+        a5f0:	4686      	mov	lr, r0
+
+        a5f2:	e002      	b.n	a5fa <<a href="./47dd0341bb24d80b432e79a134f4513e.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::disconnect(etl::delegate<void (unsigned char, ip::NetworkInterfaceConfig const&)> const&)</a>+0x1a>
+
+    _ZN3etl4findIPNS_8delegateIFvhRKN2ip22NetworkInterfaceConfigEEEES7_EET_S9_S9_RKT0_():
+
+        a5f4:	3308      	adds	r3, #8
+
+        a5f6:	429c      	cmp	r4, r3
+
+        a5f8:	d01d      	beq.n	a636 <<a href="./47dd0341bb24d80b432e79a134f4513e.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::disconnect(etl::delegate<void (unsigned char, ip::NetworkInterfaceConfig const&)> const&)</a>+0x56>
+
+    _ZNK3etl8delegateIFvhRKN2ip22NetworkInterfaceConfigEEE18invocation_elementeqERKS7_():
+
+        a5fa:	685a      	ldr	r2, [r3, #4]
+
+        a5fc:	4295      	cmp	r5, r2
+
+        a5fe:	d1f9      	bne.n	a5f4 <<a href="./47dd0341bb24d80b432e79a134f4513e.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::disconnect(etl::delegate<void (unsigned char, ip::NetworkInterfaceConfig const&)> const&)</a>+0x14>
+
+        a600:	42b5      	cmp	r5, r6
+
+        a602:	6818      	ldr	r0, [r3, #0]
+
+        a604:	680a      	ldr	r2, [r1, #0]
+
+        a606:	d017      	beq.n	a638 <<a href="./47dd0341bb24d80b432e79a134f4513e.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::disconnect(etl::delegate<void (unsigned char, ip::NetworkInterfaceConfig const&)> const&)</a>+0x58>
+
+        a608:	4290      	cmp	r0, r2
+
+        a60a:	d1f3      	bne.n	a5f4 <<a href="./47dd0341bb24d80b432e79a134f4513e.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::disconnect(etl::delegate<void (unsigned char, ip::NetworkInterfaceConfig const&)> const&)</a>+0x14>
+
+    _ZN3etl6signalIFvhRKN2ip22NetworkInterfaceConfigEELj2ENS_8delegateIS5_EEE10disconnectERKS7_():
+
+        a60c:	429c      	cmp	r4, r3
+
+        a60e:	d012      	beq.n	a636 <<a href="./47dd0341bb24d80b432e79a134f4513e.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::disconnect(etl::delegate<void (unsigned char, ip::NetworkInterfaceConfig const&)> const&)</a>+0x56>
+
+    _ZN3etl14advance_helperIPNS_8delegateIFvhRKN2ip22NetworkInterfaceConfigEEEEiEEvRT_T0_NS_26random_access_iterator_tagE():
+
+        a610:	f103 0208 	add.w	r2, r3, #8
+
+    _ZN3etl4copyIPNS_8delegateIFvhRKN2ip22NetworkInterfaceConfigEEEES8_EET0_T_SA_S9_():
+
+        a614:	4294      	cmp	r4, r2
+
+        a616:	bf18      	it	ne
+
+        a618:	3310      	addne	r3, #16
+
+        a61a:	d009      	beq.n	a630 <<a href="./47dd0341bb24d80b432e79a134f4513e.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::disconnect(etl::delegate<void (unsigned char, ip::NetworkInterfaceConfig const&)> const&)</a>+0x50>
+
+        a61c:	e913 0003 	ldmdb	r3, {r0, r1}
+
+        a620:	f1a3 0c10 	sub.w	ip, r3, #16
+
+        a624:	42a3      	cmp	r3, r4
+
+        a626:	e88c 0003 	stmia.w	ip, {r0, r1}
+
+        a62a:	f103 0308 	add.w	r3, r3, #8
+
+        a62e:	d1f5      	bne.n	a61c <<a href="./47dd0341bb24d80b432e79a134f4513e.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::disconnect(etl::delegate<void (unsigned char, ip::NetworkInterfaceConfig const&)> const&)</a>+0x3c>
+
+    _ZN3etl14advance_helperIPNS_8delegateIFvhRKN2ip22NetworkInterfaceConfigEEEEiEEvRT_T0_NS_26random_access_iterator_tagE():
+
+        a630:	3c08      	subs	r4, #8
+
+    _ZN3etl6signalIFvhRKN2ip22NetworkInterfaceConfigEELj2ENS_8delegateIS5_EEE10disconnectERKS7_():
+
+        a632:	f8ce 4018 	str.w	r4, [lr, #24]
+
+    ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::disconnect(etl::delegate<void (unsigned char, ip::NetworkInterfaceConfig const&)> const&):
+
+        a636:	bd70      	pop	{r4, r5, r6, pc}
+
+    _ZNK3etl8delegateIFvhRKN2ip22NetworkInterfaceConfigEEE18invocation_elementeqERKS7_():
+
+        a638:	4282      	cmp	r2, r0
+
+        a63a:	d1db      	bne.n	a5f4 <<a href="./47dd0341bb24d80b432e79a134f4513e.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::disconnect(etl::delegate<void (unsigned char, ip::NetworkInterfaceConfig const&)> const&)</a>+0x14>
+
+        a63c:	e7e6      	b.n	a60c <<a href="./47dd0341bb24d80b432e79a134f4513e.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::disconnect(etl::delegate<void (unsigned char, ip::NetworkInterfaceConfig const&)> const&)</a>+0x2c>
+
+        a63e:	bf00      	nop
+
+        a640:	0000a4ed 	.word	0x0000a4ed
+
+    </pre>
+
+    
+    <pre><a href="../../../../lwipSocket/include/lwipSocket/netif/LwipNetworkInterface.h/73016854a2f71b5dbf987f4ea868692e.html">shed::move_op lwipnetif::checkNetif&lt;(ethernet::LinkStatus)0, ip::declare::NetworkInterfaceConfigRegistry&lt;2u, shed::table&lt;systems::NetifsSchema&gt;, ethernet::NetifBusId&gt;, ethernet::NetifBusId&gt;(ip::declare::NetworkInterfaceConfigRegistry&lt;2u, shed::table&lt;systems::NetifsSchema&gt;, ethernet::NetifBusId&gt;&amp;, ethernet::LinkStatus const&amp;, netif&amp;, ethernet::NetifBusId const&amp;, ip::NetworkInterfaceConfig&amp;) (76)</a></pre>
+    
+
+    
+
+
+        </div>
+    <div id="page-footer">
+        <hr>
+        
+            brought to you with 💖
+            by <a href="https://twitter.com/hbehrens">Heiko Behrens</a>
+            <span class="secondary">– MIT license, copyright © 2014-2026</span>
+        
+    </div>
+    </div>
+</body>
+</html>

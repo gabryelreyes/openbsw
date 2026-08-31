@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../../../../../../../../../static/css/style.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Symbol - puncover</title>
+    
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="page-header">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="../../../../../../../../../../../index.html">
+                    Puncover
+                  </a>
+                </div>
+              </div>
+            </nav>
+          
+        </div>
+        <div id="inner_content">
+        
+    
+    <ol class="breadcrumb folders">
+        
+        <li><a href="../../../../../../../../../../../home.html">home</a></li>
+        
+        <li><a href="../../../../../../../../../../runner.html">runner</a></li>
+        
+        <li><a href="../../../../../../../../../work.html">work</a></li>
+        
+        <li><a href="../../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../libs.html">libs</a></li>
+        
+        <li><a href="../../../../../bsw.html">bsw</a></li>
+        
+        <li><a href="../../../../routing.html">routing</a></li>
+        
+        <li><a href="../../../src.html">src</a></li>
+        
+        <li ><a href="../../routing.html">routing</a>
+            </li>
+
+        
+        <li class="active"><a href="../RxAdapter.cpp.html">RxAdapter.cpp</a>:48
+            </li>
+        
+    </ol>
+
+
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>Function</th>
+                <td colspan="5">
+                    <span class="icon-function">routing::RxAdapter::lookup(etl::span&lt;unsigned char const, 4294967295u&gt;) const</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th rowspan="2"></th>
+                <th>Address</th>
+                <th>Remarks</th>
+                <th>Stack</th>
+                <th>Code</th>
+                <th>Static</th>
+            </tr>
+            <tr>
+                <td>0x0002de8c</td>
+                <td>
+    
+    
+</td>
+                <td>48 (static)</td>
+                <td>252</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>No Callers</th>
+                <td colspan="5">
+                
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Callees (1,
+                            <span title="sum of used bytes by all callees">
+                            Σ=28
+                            </span>
+                        )
+                    
+                </th>
+                <td colspan="5">
+                
+                    <a href="../../../../../../../../../../../unknown/unknown/72d4bd12d6ca07360602e0d6cbc8dc4b.html">memcpy (28)</a>
+                    
+                
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <pre><a href="../../../include/routing/RxAdapter.h/8dac04dda398bdbe3622a3d30a10f424.html">routing::RxAdapter::~RxAdapter() (16)</a></pre>
+    
+
+    <pre>
+
+    routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const():
+
+       2de8c:	e92d 43f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, lr}
+
+       2de90:	460c      	mov	r4, r1
+
+    _ZNK3etl4spanIKhLj4294967295EE4sizeEv():
+
+       2de92:	6809      	ldr	r1, [r1, #0]
+
+       2de94:	6863      	ldr	r3, [r4, #4]
+
+       2de96:	1a5b      	subs	r3, r3, r1
+
+    routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const():
+
+       2de98:	2b07      	cmp	r3, #7
+
+       2de9a:	b085      	sub	sp, #20
+
+       2de9c:	4607      	mov	r7, r0
+
+       2de9e:	d808      	bhi.n	2deb2 <<a href="./40f4cad4a00ac0b94f1b4f42be274bac.html">routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const</a>+0x26>
+
+    _ZN7routing14ClampedCounterImEppEv():
+
+       2dea0:	6e03      	ldr	r3, [r0, #96]	@ 0x60
+
+       2dea2:	1c58      	adds	r0, r3, #1
+
+       2dea4:	d001      	beq.n	2deaa <<a href="./40f4cad4a00ac0b94f1b4f42be274bac.html">routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const</a>+0x1e>
+
+       2dea6:	3301      	adds	r3, #1
+
+       2dea8:	663b      	str	r3, [r7, #96]	@ 0x60
+
+    routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const():
+
+       2deaa:	2001      	movs	r0, #1
+
+       2deac:	b005      	add	sp, #20
+
+       2deae:	e8bd 83f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+
+    _ZN3etl22private_unaligned_type22unaligned_type_storageILj4EEC4Ev():
+
+       2deb2:	2200      	movs	r2, #0
+
+    _ZN3etl4spanIKhLj4294967295EE7advanceEj():
+
+       2deb4:	1d0b      	adds	r3, r1, #4
+
+    _ZN3etl22private_unaligned_type22unaligned_type_storageILj4EEC4Ev():
+
+       2deb6:	9201      	str	r2, [sp, #4]
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj4ELi4321ELb1EE19copy_store_to_storeEPKhiPh():
+
+       2deb8:	2204      	movs	r2, #4
+
+    _ZN3etl4spanIKhLj4294967295EE7advanceEj():
+
+       2deba:	6023      	str	r3, [r4, #0]
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj4ELi4321ELb1EE19copy_store_to_storeEPKhiPh():
+
+       2debc:	eb0d 0002 	add.w	r0, sp, r2
+
+       2dec0:	f7d2 fb9b 	bl	5fa <<a href="../../../../../../../../../../../unknown/unknown/72d4bd12d6ca07360602e0d6cbc8dc4b.html">memcpy</a>>
+
+    _ZNK3etl4spanIKhLj4294967295EE4sizeEv():
+
+       2dec4:	e9d4 1300 	ldrd	r1, r3, [r4]
+
+       2dec8:	1a5b      	subs	r3, r3, r1
+
+    _ZN3etl4spanIKhLj4294967295EE4takeIKNS_14unaligned_typeImLi4321EEEEERT_v():
+
+       2deca:	2b03      	cmp	r3, #3
+
+       2decc:	d93e      	bls.n	2df4c <<a href="./40f4cad4a00ac0b94f1b4f42be274bac.html">routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const</a>+0xc0>
+
+       2dece:	ae03      	add	r6, sp, #12
+
+    _ZN3etl4spanIKhLj4294967295EE7advanceEj():
+
+       2ded0:	2b04      	cmp	r3, #4
+
+       2ded2:	bf94      	ite	ls
+
+       2ded4:	18ca      	addls	r2, r1, r3
+
+       2ded6:	1d0a      	addhi	r2, r1, #4
+
+       2ded8:	6022      	str	r2, [r4, #0]
+
+    _ZN3etl22private_unaligned_type22unaligned_type_storageILj4EEC4Ev():
+
+       2deda:	2500      	movs	r5, #0
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj4ELi4321ELb1EE19copy_store_to_storeEPKhiPh():
+
+       2dedc:	2204      	movs	r2, #4
+
+       2dede:	a802      	add	r0, sp, #8
+
+    _ZN3etl22private_unaligned_type22unaligned_type_storageILj4EEC4Ev():
+
+       2dee0:	9502      	str	r5, [sp, #8]
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj4ELi4321ELb1EE19copy_store_to_storeEPKhiPh():
+
+       2dee2:	f7d2 fb8a 	bl	5fa <<a href="../../../../../../../../../../../unknown/unknown/72d4bd12d6ca07360602e0d6cbc8dc4b.html">memcpy</a>>
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj4ELi4321ELb1EE19copy_store_to_valueImEEvPKhRT_():
+
+       2dee6:	a902      	add	r1, sp, #8
+
+       2dee8:	2204      	movs	r2, #4
+
+       2deea:	4630      	mov	r0, r6
+
+    _ZNK3etl14unaligned_typeImLi4321EEcvmEv():
+
+       2deec:	9503      	str	r5, [sp, #12]
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj4ELi4321ELb1EE19copy_store_to_valueImEEvPKhRT_():
+
+       2deee:	f7d2 fb84 	bl	5fa <<a href="../../../../../../../../../../../unknown/unknown/72d4bd12d6ca07360602e0d6cbc8dc4b.html">memcpy</a>>
+
+    _ZNK3etl4spanIKhLj4294967295EE4sizeEv():
+
+       2def2:	e9d4 1200 	ldrd	r1, r2, [r4]
+
+       2def6:	9b03      	ldr	r3, [sp, #12]
+
+       2def8:	1a52      	subs	r2, r2, r1
+
+       2defa:	ba1b      	rev	r3, r3
+
+    routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const():
+
+       2defc:	429a      	cmp	r2, r3
+
+       2defe:	d32e      	bcc.n	2df5e <<a href="./40f4cad4a00ac0b94f1b4f42be274bac.html">routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const</a>+0xd2>
+
+    _ZNK3etl4spanIKNS_14unaligned_typeImLi4321EEELj4294967295EE5beginEv():
+
+       2df00:	697c      	ldr	r4, [r7, #20]
+
+    _ZNK3etl4spanIKNS_14unaligned_typeImLi4321EEELj4294967295EE3endEv():
+
+       2df02:	f8d7 9018 	ldr.w	r9, [r7, #24]
+
+    _ZN3etl4findIPKNS_14unaligned_typeImLi4321EEES2_EET_S5_S5_RKT0_():
+
+       2df06:	454c      	cmp	r4, r9
+
+       2df08:	d103      	bne.n	2df12 <<a href="./40f4cad4a00ac0b94f1b4f42be274bac.html">routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const</a>+0x86>
+
+       2df0a:	e033      	b.n	2df74 <<a href="./40f4cad4a00ac0b94f1b4f42be274bac.html">routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const</a>+0xe8>
+
+       2df0c:	3404      	adds	r4, #4
+
+       2df0e:	45a1      	cmp	r9, r4
+
+       2df10:	d011      	beq.n	2df36 <<a href="./40f4cad4a00ac0b94f1b4f42be274bac.html">routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const</a>+0xaa>
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj4ELi4321ELb1EE19copy_store_to_valueImEEvPKhRT_():
+
+       2df12:	2204      	movs	r2, #4
+
+       2df14:	4621      	mov	r1, r4
+
+       2df16:	4630      	mov	r0, r6
+
+    _ZNK3etl14unaligned_typeImLi4321EEcvmEv():
+
+       2df18:	9503      	str	r5, [sp, #12]
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj4ELi4321ELb1EE19copy_store_to_valueImEEvPKhRT_():
+
+       2df1a:	f7d2 fb6e 	bl	5fa <<a href="../../../../../../../../../../../unknown/unknown/72d4bd12d6ca07360602e0d6cbc8dc4b.html">memcpy</a>>
+
+       2df1e:	2204      	movs	r2, #4
+
+       2df20:	eb0d 0102 	add.w	r1, sp, r2
+
+       2df24:	4630      	mov	r0, r6
+
+       2df26:	f8dd 800c 	ldr.w	r8, [sp, #12]
+
+    _ZNK3etl14unaligned_typeImLi4321EEcvmEv():
+
+       2df2a:	9503      	str	r5, [sp, #12]
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj4ELi4321ELb1EE19copy_store_to_valueImEEvPKhRT_():
+
+       2df2c:	f7d2 fb65 	bl	5fa <<a href="../../../../../../../../../../../unknown/unknown/72d4bd12d6ca07360602e0d6cbc8dc4b.html">memcpy</a>>
+
+       2df30:	9b03      	ldr	r3, [sp, #12]
+
+    _ZN3etl4findIPKNS_14unaligned_typeImLi4321EEES2_EET_S5_S5_RKT0_():
+
+       2df32:	4598      	cmp	r8, r3
+
+       2df34:	d1ea      	bne.n	2df0c <<a href="./40f4cad4a00ac0b94f1b4f42be274bac.html">routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const</a>+0x80>
+
+    routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const():
+
+       2df36:	69bb      	ldr	r3, [r7, #24]
+
+       2df38:	42a3      	cmp	r3, r4
+
+       2df3a:	d01b      	beq.n	2df74 <<a href="./40f4cad4a00ac0b94f1b4f42be274bac.html">routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const</a>+0xe8>
+
+    _ZN3etl15distance_helperIPKNS_14unaligned_typeImLi4321EEEEENS_15iterator_traitsIT_vE15difference_typeES6_S6_NS_26random_access_iterator_tagE():
+
+       2df3c:	697b      	ldr	r3, [r7, #20]
+
+       2df3e:	1ae4      	subs	r4, r4, r3
+
+    routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const():
+
+       2df40:	2000      	movs	r0, #0
+
+    _ZN3etl15distance_helperIPKNS_14unaligned_typeImLi4321EEEEENS_15iterator_traitsIT_vE15difference_typeES6_S6_NS_26random_access_iterator_tagE():
+
+       2df42:	10a4      	asrs	r4, r4, #2
+
+    routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const():
+
+       2df44:	64bc      	str	r4, [r7, #72]	@ 0x48
+
+       2df46:	b005      	add	sp, #20
+
+       2df48:	e8bd 83f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+
+    _ZN3etl4spanIKhLj4294967295EE4takeIKNS_14unaligned_typeImLi4321EEEEERT_v():
+
+       2df4c:	4b0d      	ldr	r3, [pc, #52]	@ (2df84 <<a href="./40f4cad4a00ac0b94f1b4f42be274bac.html">routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const</a>+0xf8>)
+
+       2df4e:	ae03      	add	r6, sp, #12
+
+       2df50:	681b      	ldr	r3, [r3, #0]
+
+       2df52:	4630      	mov	r0, r6
+
+       2df54:	4798      	blx	r3
+
+    _ZNK3etl4spanIKhLj4294967295EE4sizeEv():
+
+       2df56:	e9d4 1300 	ldrd	r1, r3, [r4]
+
+       2df5a:	1a5b      	subs	r3, r3, r1
+
+    _ZN3etl4spanIKhLj4294967295EE4takeIKNS_14unaligned_typeImLi4321EEEEERT_v():
+
+       2df5c:	e7b8      	b.n	2ded0 <<a href="./40f4cad4a00ac0b94f1b4f42be274bac.html">routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const</a>+0x44>
+
+    _ZN7routing14ClampedCounterImEppEv():
+
+       2df5e:	6ebb      	ldr	r3, [r7, #104]	@ 0x68
+
+       2df60:	1c59      	adds	r1, r3, #1
+
+       2df62:	bf18      	it	ne
+
+       2df64:	3301      	addne	r3, #1
+
+    routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const():
+
+       2df66:	f04f 0003 	mov.w	r0, #3
+
+    _ZN7routing14ClampedCounterImEppEv():
+
+       2df6a:	bf18      	it	ne
+
+       2df6c:	66bb      	strne	r3, [r7, #104]	@ 0x68
+
+    routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const():
+
+       2df6e:	b005      	add	sp, #20
+
+       2df70:	e8bd 83f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+
+    _ZN7routing14ClampedCounterImEppEv():
+
+       2df74:	6e7b      	ldr	r3, [r7, #100]	@ 0x64
+
+       2df76:	1c5a      	adds	r2, r3, #1
+
+       2df78:	d001      	beq.n	2df7e <<a href="./40f4cad4a00ac0b94f1b4f42be274bac.html">routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const</a>+0xf2>
+
+       2df7a:	3301      	adds	r3, #1
+
+       2df7c:	667b      	str	r3, [r7, #100]	@ 0x64
+
+    routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const():
+
+       2df7e:	2002      	movs	r0, #2
+
+       2df80:	e794      	b.n	2deac <<a href="./40f4cad4a00ac0b94f1b4f42be274bac.html">routing::RxAdapter::lookup(etl::span<unsigned char const, 4294967295u>) const</a>+0x20>
+
+       2df82:	bf00      	nop
+
+       2df84:	20000000 	.word	0x20000000
+
+    </pre>
+
+    
+    <pre><a href="./491e7fc7bb75a8ace6c8162b091b4b71.html">routing::RxAdapter::RxAdapter(io::IReader&amp;, etl::span&lt;unsigned char, 4294967295u&gt;, routing::RxAdapterTable const&amp;, routing::ErrorHandler) (120)</a></pre>
+    
+
+    
+
+
+        </div>
+    <div id="page-footer">
+        <hr>
+        
+            brought to you with 💖
+            by <a href="https://twitter.com/hbehrens">Heiko Behrens</a>
+            <span class="secondary">– MIT license, copyright © 2014-2026</span>
+        
+    </div>
+    </div>
+</body>
+</html>

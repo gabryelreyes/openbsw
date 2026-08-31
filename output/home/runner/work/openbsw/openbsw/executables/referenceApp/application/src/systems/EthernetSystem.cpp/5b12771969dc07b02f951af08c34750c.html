@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../../../../../../../../../static/css/style.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Symbol - puncover</title>
+    
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="page-header">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="../../../../../../../../../../../index.html">
+                    Puncover
+                  </a>
+                </div>
+              </div>
+            </nav>
+          
+        </div>
+        <div id="inner_content">
+        
+    
+    <ol class="breadcrumb folders">
+        
+        <li><a href="../../../../../../../../../../../home.html">home</a></li>
+        
+        <li><a href="../../../../../../../../../../runner.html">runner</a></li>
+        
+        <li><a href="../../../../../../../../../work.html">work</a></li>
+        
+        <li><a href="../../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../executables.html">executables</a></li>
+        
+        <li><a href="../../../../../referenceApp.html">referenceApp</a></li>
+        
+        <li><a href="../../../../application.html">application</a></li>
+        
+        <li><a href="../../../src.html">src</a></li>
+        
+        <li ><a href="../../systems.html">systems</a>
+            </li>
+
+        
+        <li class="active"><a href="../EthernetSystem.cpp.html">EthernetSystem.cpp</a>:189
+            </li>
+        
+    </ol>
+
+
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>Function</th>
+                <td colspan="5">
+                    <span class="icon-function">systems::EthernetSystem::run()</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th rowspan="2"></th>
+                <th>Address</th>
+                <th>Remarks</th>
+                <th>Stack</th>
+                <th>Code</th>
+                <th>Static</th>
+            </tr>
+            <tr>
+                <td>0x0000a98c</td>
+                <td>
+    
+    
+</td>
+                <td>64 (static)</td>
+                <td>388</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>No Callers</th>
+                <td colspan="5">
+                
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Callees (5,
+                            <span title="sum of used bytes by all callees">
+                            Σ=408
+                            </span>
+                        )
+                    
+                </th>
+                <td colspan="5">
+                
+                    <a href="./97c27496c84bc6c335c7fc2b0dd64e27.html">initNetif(ethernet::NetifState&amp;, netif&amp;) (60)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../../../libs/bsw/shed/src/multi_list.cpp/8e013c438811f9fbc5087ea0b49f7b5a.html">shed::internal::multi_list::move_node(unsigned int, unsigned int) (152)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../../../libs/bsw/lwipSocket/src/lwipSocket/netif/LwipNetworkInterface.cpp/292d45e6555bbf8b230114a0425ee63e.html">lwipnetif::startNetif(ethernet::NetifState&amp;, netif&amp;, ip::Ip4Config const&amp;) (52)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../../../libs/bsw/asyncFreeRtos/src/async/Async.cpp/f6cc267a73772db399b5446eaec541ae.html">async::scheduleAtFixedRate(unsigned char, async::IRunnable&amp;, async::TimeoutType&amp;, unsigned long, async::TimeUnit::Type) (128)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../../../libs/bsw/lifecycle/src/lifecycle/LifecycleComponent.cpp/2a6c4a8fcaef587365a0a8447e58c4f0.html">lifecycle::LifecycleComponent::transitionDone() (16)</a>
+                    
+                
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <pre><a href="./4277c0ded502c95f32b81e1ab92d793b.html">systems::EthernetSystem::shutdown() (336)</a></pre>
+    
+
+    <pre>
+
+    systems::EthernetSystem::run():
+
+        a98c:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+
+    _ZN4shed8internal13SelectColumnsINS_7move_opEJRN8ethernet10NetifStateER5netifEE4moveINS_5tableIN7systems12NetifsSchemaEEEPFS2_S5_S7_EEEvRT_RT0_jj():
+
+        a990:	6986      	ldr	r6, [r0, #24]
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN8ethernet10NetifStateER5netifEE4moveINS_5tableIN7systems12NetifsSchemaEEEPFS4_S7_S9_EEEvRT_RT0_jjEUljE_EEjjjOSI_():
+
+        a992:	8832      	ldrh	r2, [r6, #0]
+
+        a994:	ea4f 0942 	mov.w	r9, r2, lsl #1
+
+        a998:	f109 0906 	add.w	r9, r9, #6
+
+    systems::EthernetSystem::run():
+
+        a99c:	b087      	sub	sp, #28
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN8ethernet10NetifStateER5netifEE4moveINS_5tableIN7systems12NetifsSchemaEEEPFS4_S7_S9_EEEvRT_RT0_jjEUljE_EEjjjOSI_():
+
+        a99e:	f836 7009 	ldrh.w	r7, [r6, r9]
+
+        a9a2:	42ba      	cmp	r2, r7
+
+    systems::EthernetSystem::run():
+
+        a9a4:	4604      	mov	r4, r0
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN8ethernet10NetifStateER5netifEE4moveINS_5tableIN7systems12NetifsSchemaEEEPFS4_S7_S9_EEEvRT_RT0_jjEUljE_EEjjjOSI_():
+
+        a9a6:	f102 0502 	add.w	r5, r2, #2
+
+        a9aa:	44b1      	add	r9, r6
+
+        a9ac:	d943      	bls.n	aa36 <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0xaa>
+
+        a9ae:	f8df 815c 	ldr.w	r8, [pc, #348]	@ ab0c <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0x180>
+
+    _ZNK3etl4spanI5netifLj4294967295EEixEj():
+
+        a9b2:	f04f 0a54 	mov.w	sl, #84	@ 0x54
+
+        a9b6:	e029      	b.n	aa0c <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0x80>
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10NetifStateEEENS0_IT_Lj4294967295EEEv():
+
+        a9b8:	a805      	add	r0, sp, #20
+
+        a9ba:	f8d8 3000 	ldr.w	r3, [r8]
+
+        a9be:	4798      	blx	r3
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        a9c0:	6e21      	ldr	r1, [r4, #96]	@ 0x60
+
+        a9c2:	0788      	lsls	r0, r1, #30
+
+    _ZNK3etl4spanIN8ethernet10NetifStateELj4294967295EEixEj():
+
+        a9c4:	ea4f 0b87 	mov.w	fp, r7, lsl #2
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        a9c8:	d128      	bne.n	aa1c <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0x90>
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10NetifStateEEENS0_IT_Lj4294967295EEEv():
+
+        a9ca:	6d23      	ldr	r3, [r4, #80]	@ 0x50
+
+        a9cc:	079a      	lsls	r2, r3, #30
+
+        a9ce:	d02d      	beq.n	aa2c <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0xa0>
+
+        a9d0:	f8d8 3000 	ldr.w	r3, [r8]
+
+        a9d4:	a805      	add	r0, sp, #20
+
+        a9d6:	4798      	blx	r3
+
+        a9d8:	6d23      	ldr	r3, [r4, #80]	@ 0x50
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        a9da:	6e21      	ldr	r1, [r4, #96]	@ 0x60
+
+        a9dc:	0788      	lsls	r0, r1, #30
+
+    _ZNK3etl4spanIN8ethernet10NetifStateELj4294967295EEixEj():
+
+        a9de:	449b      	add	fp, r3
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        a9e0:	d004      	beq.n	a9ec <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0x60>
+
+        a9e2:	f8d8 3000 	ldr.w	r3, [r8]
+
+        a9e6:	a805      	add	r0, sp, #20
+
+        a9e8:	4798      	blx	r3
+
+        a9ea:	6e21      	ldr	r1, [r4, #96]	@ 0x60
+
+    _ZN4shed8internal20call_system_func_retINS_7move_opEPFS2_RN8ethernet10NetifStateER5netifENS_5tableIN7systems12NetifsSchemaEEEjJS5_S7_EEES2_RT0_RT1_T2_():
+
+        a9ec:	fb0a 1107 	mla	r1, sl, r7, r1
+
+        a9f0:	4658      	mov	r0, fp
+
+        a9f2:	f7ff fd81 	bl	a4f8 <<a href="./97c27496c84bc6c335c7fc2b0dd64e27.html">initNetif(ethernet::NetifState&, netif&)</a>>
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN8ethernet10NetifStateER5netifEE4moveINS_5tableIN7systems12NetifsSchemaEEEPFS4_S7_S9_EEEvRT_RT0_jjEUljE_EEjjjOSI_():
+
+        a9f6:	462a      	mov	r2, r5
+
+        a9f8:	4639      	mov	r1, r7
+
+        a9fa:	4630      	mov	r0, r6
+
+        a9fc:	f029 fda2 	bl	34544 <<a href="../../../../../../libs/bsw/shed/src/multi_list.cpp/8e013c438811f9fbc5087ea0b49f7b5a.html">shed::internal::multi_list::move_node(unsigned int, unsigned int)</a>>
+
+        aa00:	f8b9 7000 	ldrh.w	r7, [r9]
+
+        aa04:	8833      	ldrh	r3, [r6, #0]
+
+        aa06:	42bb      	cmp	r3, r7
+
+        aa08:	4605      	mov	r5, r0
+
+        aa0a:	d911      	bls.n	aa30 <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0xa4>
+
+    _ZN3etl10is_alignedILj4EEEbPKv():
+
+        aa0c:	6d23      	ldr	r3, [r4, #80]	@ 0x50
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10NetifStateEEENS0_IT_Lj4294967295EEEv():
+
+        aa0e:	079a      	lsls	r2, r3, #30
+
+        aa10:	d1d2      	bne.n	a9b8 <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0x2c>
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        aa12:	6e21      	ldr	r1, [r4, #96]	@ 0x60
+
+        aa14:	078a      	lsls	r2, r1, #30
+
+    _ZNK3etl4spanIN8ethernet10NetifStateELj4294967295EEixEj():
+
+        aa16:	ea4f 0b87 	mov.w	fp, r7, lsl #2
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        aa1a:	d007      	beq.n	aa2c <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0xa0>
+
+        aa1c:	f8d8 3000 	ldr.w	r3, [r8]
+
+        aa20:	a805      	add	r0, sp, #20
+
+        aa22:	4798      	blx	r3
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10NetifStateEEENS0_IT_Lj4294967295EEEv():
+
+        aa24:	6d23      	ldr	r3, [r4, #80]	@ 0x50
+
+        aa26:	079a      	lsls	r2, r3, #30
+
+        aa28:	d0d7      	beq.n	a9da <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0x4e>
+
+        aa2a:	e7d1      	b.n	a9d0 <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0x44>
+
+    _ZNK3etl4spanIN8ethernet10NetifStateELj4294967295EEixEj():
+
+        aa2c:	449b      	add	fp, r3
+
+    _ZN3etl10is_alignedILj4EEEbPKv():
+
+        aa2e:	e7dd      	b.n	a9ec <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0x60>
+
+    _ZN4shed8internal13SelectColumnsINS_7move_opEJRN8ethernet10NetifStateER5netifRKN2ip9Ip4ConfigEEE4moveINS_5tableIN7systems12NetifsSchemaEEEPFS2_S5_S7_SB_EEEvRT_RT0_jj():
+
+        aa30:	69a6      	ldr	r6, [r4, #24]
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN8ethernet10NetifStateER5netifRKN2ip9Ip4ConfigEEE4moveINS_5tableIN7systems12NetifsSchemaEEEPFS4_S7_S9_SD_EEEvRT_RT0_jjEUljE_EEjjjOSM_():
+
+        aa32:	8832      	ldrh	r2, [r6, #0]
+
+        aa34:	1c95      	adds	r5, r2, #2
+
+        aa36:	1cd3      	adds	r3, r2, #3
+
+        aa38:	f8df 80d0 	ldr.w	r8, [pc, #208]	@ ab0c <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0x180>
+
+        aa3c:	9303      	str	r3, [sp, #12]
+
+    _ZNK3etl4spanI5netifLj4294967295EEixEj():
+
+        aa3e:	f04f 0b54 	mov.w	fp, #84	@ 0x54
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN8ethernet10NetifStateER5netifRKN2ip9Ip4ConfigEEE4moveINS_5tableIN7systems12NetifsSchemaEEEPFS4_S7_S9_SD_EEEvRT_RT0_jjEUljE_EEjjjOSM_():
+
+        aa42:	e02d      	b.n	aaa0 <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0x114>
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10NetifStateEEENS0_IT_Lj4294967295EEEv():
+
+        aa44:	a805      	add	r0, sp, #20
+
+        aa46:	f8d8 3000 	ldr.w	r3, [r8]
+
+        aa4a:	4798      	blx	r3
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        aa4c:	6e21      	ldr	r1, [r4, #96]	@ 0x60
+
+        aa4e:	0788      	lsls	r0, r1, #30
+
+    _ZNK3etl4spanIN8ethernet10NetifStateELj4294967295EEixEj():
+
+        aa50:	ea4f 0a87 	mov.w	sl, r7, lsl #2
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        aa54:	d133      	bne.n	aabe <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0x132>
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10NetifStateEEENS0_IT_Lj4294967295EEEv():
+
+        aa56:	6d23      	ldr	r3, [r4, #80]	@ 0x50
+
+        aa58:	0798      	lsls	r0, r3, #30
+
+        aa5a:	d038      	beq.n	aace <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0x142>
+
+        aa5c:	f8d8 3000 	ldr.w	r3, [r8]
+
+        aa60:	a805      	add	r0, sp, #20
+
+        aa62:	4798      	blx	r3
+
+        aa64:	6d23      	ldr	r3, [r4, #80]	@ 0x50
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        aa66:	6e21      	ldr	r1, [r4, #96]	@ 0x60
+
+    _ZNK3etl4spanIN8ethernet10NetifStateELj4294967295EEixEj():
+
+        aa68:	449a      	add	sl, r3
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        aa6a:	078b      	lsls	r3, r1, #30
+
+        aa6c:	d004      	beq.n	aa78 <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0xec>
+
+        aa6e:	f8d8 2000 	ldr.w	r2, [r8]
+
+        aa72:	a805      	add	r0, sp, #20
+
+        aa74:	4790      	blx	r2
+
+        aa76:	6e21      	ldr	r1, [r4, #96]	@ 0x60
+
+    _ZNK3etl4spanIN2ip9Ip4ConfigELj4294967295EEixEj():
+
+        aa78:	6ba2      	ldr	r2, [r4, #56]	@ 0x38
+
+    _ZN4shed8internal20call_system_func_retINS_7move_opEPFS2_RN8ethernet10NetifStateER5netifRKN2ip9Ip4ConfigEENS_5tableIN7systems12NetifsSchemaEEEjJS5_S7_SB_EEES2_RT0_RT1_T2_():
+
+        aa7a:	4650      	mov	r0, sl
+
+        aa7c:	443a      	add	r2, r7
+
+        aa7e:	fb0b 1107 	mla	r1, fp, r7, r1
+
+        aa82:	f013 fa77 	bl	1df74 <<a href="../../../../../../libs/bsw/lwipSocket/src/lwipSocket/netif/LwipNetworkInterface.cpp/292d45e6555bbf8b230114a0425ee63e.html">lwipnetif::startNetif(ethernet::NetifState&, netif&, ip::Ip4Config const&)</a>>
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN8ethernet10NetifStateER5netifRKN2ip9Ip4ConfigEEE4moveINS_5tableIN7systems12NetifsSchemaEEEPFS4_S7_S9_SD_EEEvRT_RT0_jjEUljE_EEjjjOSM_():
+
+        aa86:	1e42      	subs	r2, r0, #1
+
+        aa88:	b2d2      	uxtb	r2, r2
+
+        aa8a:	2a01      	cmp	r2, #1
+
+    _ZN4shed8internal20call_system_func_retINS_7move_opEPFS2_RN8ethernet10NetifStateER5netifRKN2ip9Ip4ConfigEENS_5tableIN7systems12NetifsSchemaEEEjJS5_S7_SB_EEES2_RT0_RT1_T2_():
+
+        aa8c:	4682      	mov	sl, r0
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN8ethernet10NetifStateER5netifRKN2ip9Ip4ConfigEEE4moveINS_5tableIN7systems12NetifsSchemaEEEPFS4_S7_S9_SD_EEEvRT_RT0_jjEUljE_EEjjjOSM_():
+
+        aa8e:	d920      	bls.n	aad2 <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0x146>
+
+        aa90:	f1aa 0302 	sub.w	r3, sl, #2
+
+        aa94:	b2db      	uxtb	r3, r3
+
+        aa96:	2b01      	cmp	r3, #1
+
+        aa98:	f8b9 5000 	ldrh.w	r5, [r9]
+
+        aa9c:	d924      	bls.n	aae8 <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0x15c>
+
+        aa9e:	8832      	ldrh	r2, [r6, #0]
+
+        aaa0:	006b      	lsls	r3, r5, #1
+
+        aaa2:	3304      	adds	r3, #4
+
+        aaa4:	eb06 0903 	add.w	r9, r6, r3
+
+        aaa8:	5af7      	ldrh	r7, [r6, r3]
+
+        aaaa:	4297      	cmp	r7, r2
+
+        aaac:	d21c      	bcs.n	aae8 <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0x15c>
+
+    _ZN3etl10is_alignedILj4EEEbPKv():
+
+        aaae:	6d23      	ldr	r3, [r4, #80]	@ 0x50
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10NetifStateEEENS0_IT_Lj4294967295EEEv():
+
+        aab0:	079a      	lsls	r2, r3, #30
+
+        aab2:	d1c7      	bne.n	aa44 <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0xb8>
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        aab4:	6e21      	ldr	r1, [r4, #96]	@ 0x60
+
+        aab6:	0788      	lsls	r0, r1, #30
+
+    _ZNK3etl4spanIN8ethernet10NetifStateELj4294967295EEixEj():
+
+        aab8:	ea4f 0a87 	mov.w	sl, r7, lsl #2
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        aabc:	d007      	beq.n	aace <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0x142>
+
+        aabe:	f8d8 3000 	ldr.w	r3, [r8]
+
+        aac2:	a805      	add	r0, sp, #20
+
+        aac4:	4798      	blx	r3
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10NetifStateEEENS0_IT_Lj4294967295EEEv():
+
+        aac6:	6d23      	ldr	r3, [r4, #80]	@ 0x50
+
+        aac8:	079a      	lsls	r2, r3, #30
+
+        aaca:	d0cc      	beq.n	aa66 <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0xda>
+
+        aacc:	e7c6      	b.n	aa5c <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0xd0>
+
+    _ZNK3etl4spanIN8ethernet10NetifStateELj4294967295EEixEj():
+
+        aace:	449a      	add	sl, r3
+
+    _ZN3etl10is_alignedILj4EEEbPKv():
+
+        aad0:	e7d2      	b.n	aa78 <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0xec>
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN8ethernet10NetifStateER5netifRKN2ip9Ip4ConfigEEE4moveINS_5tableIN7systems12NetifsSchemaEEEPFS4_S7_S9_SD_EEEvRT_RT0_jjEUljE_EEjjjOSM_():
+
+        aad2:	9a03      	ldr	r2, [sp, #12]
+
+        aad4:	4639      	mov	r1, r7
+
+        aad6:	4630      	mov	r0, r6
+
+        aad8:	f029 fd34 	bl	34544 <<a href="../../../../../../libs/bsw/shed/src/multi_list.cpp/8e013c438811f9fbc5087ea0b49f7b5a.html">shed::internal::multi_list::move_node(unsigned int, unsigned int)</a>>
+
+        aadc:	f1aa 0302 	sub.w	r3, sl, #2
+
+        aae0:	b2db      	uxtb	r3, r3
+
+        aae2:	2b01      	cmp	r3, #1
+
+        aae4:	9003      	str	r0, [sp, #12]
+
+        aae6:	d8da      	bhi.n	aa9e <<a href="./5b12771969dc07b02f951af08c34750c.html">systems::EthernetSystem::run()</a>+0x112>
+
+    systems::EthernetSystem::run():
+
+        aae8:	f44f 737a 	mov.w	r3, #1000	@ 0x3e8
+
+        aaec:	f894 0088 	ldrb.w	r0, [r4, #136]	@ 0x88
+
+        aaf0:	9300      	str	r3, [sp, #0]
+
+        aaf2:	f104 028c 	add.w	r2, r4, #140	@ 0x8c
+
+        aaf6:	2301      	movs	r3, #1
+
+        aaf8:	f104 010c 	add.w	r1, r4, #12
+
+        aafc:	f00c fae8 	bl	170d0 <<a href="../../../../../../libs/bsw/asyncFreeRtos/src/async/Async.cpp/f6cc267a73772db399b5446eaec541ae.html">async::scheduleAtFixedRate(unsigned char, async::IRunnable&, async::TimeoutType&, unsigned long, async::TimeUnit::Type)</a>>
+
+        ab00:	4620      	mov	r0, r4
+
+        ab02:	b007      	add	sp, #28
+
+        ab04:	e8bd 4ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+
+        ab08:	f007 bef8 	b.w	128fc <<a href="../../../../../../libs/bsw/lifecycle/src/lifecycle/LifecycleComponent.cpp/2a6c4a8fcaef587365a0a8447e58c4f0.html">lifecycle::LifecycleComponent::transitionDone()</a>>
+
+        ab0c:	20000000 	.word	0x20000000
+
+    </pre>
+
+    
+    <pre><a href="./b45d36a43415bb7cf434c8eb000a3c7a.html">vlanForNetif (136)</a></pre>
+    
+
+    
+        <h1>Stack Worst-Case Scenarios</h1>
+        
+        <table class="table table-bordered table-hover table-condensed">
+        <thead>
+            <tr>
+                <th rowspan="2">#</th>
+                <th colspan="2" style="text-align: center">Stack</th>
+                <th colspan="2" style="text-align: center">Code</th>
+                <th rowspan="2" width="100%">Name</th>
+            </tr>
+            <tr>
+                <th class="col_size">&sum; = 336</th>
+                <th class="col_size"></th>
+                <th class="col_size">&sum;= 1,536</th>
+                <th class="col_size"></th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <th>1</th>
+                <td class="col_size">
+                    
+                    336
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                48 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    1,536
+                    
+                    
+                </td>
+                <td class="col_size">68</td>
+                <td><a href="../../../../../../libs/bsw/util/src/util/logger/Logger.cpp/d658d7c78dcca1ca01e61ef198b3eeaa.html" class="icon-function">util::logger::Logger::doLog(unsigned char, util::logger::Level, char const*, std::__va_list)</a></td>
+            </tr>
+        
+            <tr>
+                <th>2</th>
+                <td class="col_size">
+                    
+                    288
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                24 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    1,468
+                    
+                    
+                </td>
+                <td class="col_size">100</td>
+                <td><a href="../../logger/logger.cpp/98866fb3d81ee8db78cbfd1e2dfd931d.html" class="icon-function">log_lwipInfo</a></td>
+            </tr>
+        
+            <tr>
+                <th>3</th>
+                <td class="col_size">
+                    
+                    264
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                16 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    1,368
+                    
+                    
+                </td>
+                <td class="col_size">60</td>
+                <td><a href="../../../../../../libs/3rdparty/lwip/src/core/memp.c/39d50c52143357af896630c36b8c515f.html" class="icon-function">memp_free</a></td>
+            </tr>
+        
+            <tr>
+                <th>4</th>
+                <td class="col_size">
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    1,308
+                    
+                    
+                </td>
+                <td class="col_size">112</td>
+                <td><a href="../../../../../../libs/3rdparty/lwip/src/core/pbuf.c/9b6fd2596874539050b4147be9634d35.html" class="icon-function">pbuf_free</a></td>
+            </tr>
+        
+            <tr>
+                <th>5</th>
+                <td class="col_size">
+                    
+                    248
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                32 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    1,196
+                    
+                    
+                </td>
+                <td class="col_size">264</td>
+                <td><a href="../../../../../../libs/3rdparty/lwip/src/core/pbuf.c/00f9d6c635a80626d607c18477d3504a.html" class="icon-function">pbuf_alloc</a></td>
+            </tr>
+        
+            <tr>
+                <th>6</th>
+                <td class="col_size">
+                    
+                    216
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                56 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    932
+                    
+                    
+                </td>
+                <td class="col_size">356</td>
+                <td><a href="../../../../../../libs/3rdparty/lwip/src/core/udp.c/98b639583090b8420a937b79d3bd3d07.html" class="icon-function">udp_sendto_if_src</a></td>
+            </tr>
+        
+            <tr>
+                <th>7</th>
+                <td class="col_size">
+                    
+                    160
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                56 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    576
+                    
+                    
+                </td>
+                <td class="col_size">336</td>
+                <td><a href="../../../../../../libs/3rdparty/lwip/src/core/ipv4/dhcp.c/8f67080f65f67dc415c23e160e5b6e3d.html" class="icon-function">dhcp_discover</a></td>
+            </tr>
+        
+            <tr>
+                <th>8</th>
+                <td class="col_size">
+                    
+                    104
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                24 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    240
+                    
+                    
+                </td>
+                <td class="col_size">188</td>
+                <td><a href="../../../../../../libs/3rdparty/lwip/src/core/ipv4/dhcp.c/7d1c7091a5300ee38546c4eec2908e12.html" class="icon-function">dhcp_start</a></td>
+            </tr>
+        
+            <tr>
+                <th>9</th>
+                <td class="col_size">
+                    
+                    80
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                16 
+            
+                </td>
+                <td class="col_size">
+                    
+                </td>
+                <td class="col_size">52</td>
+                <td><a href="../../../../../../libs/bsw/lwipSocket/src/lwipSocket/netif/LwipNetworkInterface.cpp/292d45e6555bbf8b230114a0425ee63e.html" class="icon-function">lwipnetif::startNetif(ethernet::NetifState&amp;, netif&amp;, ip::Ip4Config const&amp;)</a></td>
+            </tr>
+        
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <th></th>
+                <th class="col_size">64
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </tfoot>
+        
+    </table>
+        
+        
+            <p>No callers for this function.</p>
+        
+    
+
+
+        </div>
+    <div id="page-footer">
+        <hr>
+        
+            brought to you with 💖
+            by <a href="https://twitter.com/hbehrens">Heiko Behrens</a>
+            <span class="secondary">– MIT license, copyright © 2014-2026</span>
+        
+    </div>
+    </div>
+</body>
+</html>

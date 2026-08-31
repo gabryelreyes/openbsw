@@ -1,0 +1,3016 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../../../../../../../../../static/css/style.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Symbol - puncover</title>
+    
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="page-header">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="../../../../../../../../../../../index.html">
+                    Puncover
+                  </a>
+                </div>
+              </div>
+            </nav>
+          
+        </div>
+        <div id="inner_content">
+        
+    
+    <ol class="breadcrumb folders">
+        
+        <li><a href="../../../../../../../../../../../home.html">home</a></li>
+        
+        <li><a href="../../../../../../../../../../runner.html">runner</a></li>
+        
+        <li><a href="../../../../../../../../../work.html">work</a></li>
+        
+        <li><a href="../../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../libs.html">libs</a></li>
+        
+        <li><a href="../../../../../3rdparty.html">3rdparty</a></li>
+        
+        <li><a href="../../../../lwip.html">lwip</a></li>
+        
+        <li><a href="../../../src.html">src</a></li>
+        
+        <li ><a href="../../core.html">core</a>
+            </li>
+
+        
+        <li class="active"><a href="../tcp_in.c.html">tcp_in.c</a>:118
+            </li>
+        
+    </ol>
+
+
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>Function</th>
+                <td colspan="5">
+                    <span class="icon-function">tcp_input</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th rowspan="2"></th>
+                <th>Address</th>
+                <th>Remarks</th>
+                <th>Stack</th>
+                <th>Code</th>
+                <th>Static</th>
+            </tr>
+            <tr>
+                <td>0x00021f34</td>
+                <td>
+    <span class="label label-success">x-module</span>
+    
+</td>
+                <td>64 (static)</td>
+                <td>3,108</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>Callers (1)</th>
+                <td colspan="5">
+                
+                    <a href="../ipv4/ip4.c/17641b681261fdfd4309a84b5ab2c56e.html">ip4_input (788)</a>
+                    
+                
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Callees (29,
+                            <span title="sum of used bytes by all callees">
+                            Σ=4696
+                            </span>
+                        )
+                    
+                </th>
+                <td colspan="5">
+                
+                    <a href="../pbuf.c/9b6fd2596874539050b4147be9634d35.html">pbuf_free (8)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../ipv4/ip4_addr.c/212eebf156fd7f3954882e0492a918a0.html">ip4_addr_isbroadcast_u32 (56)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../inet_chksum.c/3fc28f5e6e6ee9cb8891e0991b814809.html">ip_chksum_pseudo (4)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../def.c/e92a30e58780c58f695060997f7dd81e.html">lwip_htons (8)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../pbuf.c/1808d8951a9868c0f66c16892ba536a6.html">pbuf_remove_header (64)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../def.c/428f8c9ba30daa1894672e7ab0a12b38.html">lwip_htonl (4)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../tcp.c/6c8144278d6f4c79cf68f34748b260eb.html">tcp_process_refused_data (120)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../tcp.c/b9fce7e0b1692c774e7c7904cc0c9f1e.html">tcp_pcb_remove (92)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../tcp.c/7f5a14060aede418028515e48be324a2.html">tcp_free (8)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../tcp_out.c/65142df0c7be77da97e3dbbc90844f1a.html">tcp_output (1040)</a>
+                    
+                        ,
+                    
+                
+                    <a href="./008dec15201bb896c24983d1c97f4e77.html">tcp_parseopt (360)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../tcp_out.c/c3d773abf80c1ff57472b146c03fcfb5.html">tcp_rexmit (148)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../tcp.c/2b2cbbd7123c3c49fc928162267dac1e.html">tcp_alloc (380)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../tcp.c/1dddb40c5196bb58f53efa30f8cf9b60.html">tcp_next_iss (24)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../timeouts.c/4e2533dcb9c4baaa4bf5f653137665f9.html">tcp_timer_needed (64)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../ipv4/ip4.c/a30d884704b67281b26f54b966ad46b4.html">ip4_route_src (28)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../tcp.c/86d3e6817d3af70ff6d5f20c8645e5bf.html">tcp_eff_send_mss_netif (24)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../tcp_out.c/17fdd3d9f35bc5b270c1efaddda7087e.html">tcp_enqueue_flags (160)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../tcp_out.c/c17a7caeb46299058be3cd36c6a6c8ec.html">tcp_rst_netif (116)</a>
+                    
+                        ,
+                    
+                
+                    <a href="./049323b07e9efeb20db6a5024e2e34bb.html">tcp_input_delayed_close (64)</a>
+                    
+                        ,
+                    
+                
+                    <a href="./bdbc7697dbea1dd6a66ef321eb568efb.html">tcp_receive (1176)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../tcp_out.c/db95af2d3d482544ee3bc6a86d75c692.html">tcp_rst (80)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../tcp_out.c/7f1200659b4f8f83836845ef9ebf2148.html">tcp_rexmit_rto (36)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../tcp.c/8de29f88da2c51de13ad06bac7197b94.html">tcp_pcb_purge (116)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../tcp_out.c/750286e53faf5e6c6518b73dc75330b6.html">tcp_send_empty_ack (100)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../tcp.c/0a70017075075e60b9a8a7d61e99b56f.html">tcp_abort (8)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../tcp.c/be56872802859367658ea7d31b3a3db4.html">tcp_recv_null (72)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../tcp.c/65bf4b4d1cd8c2ab7ef11aba4b48c88a.html">tcp_abandon (308)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../tcp.c/42878e43aa02eb2d29bf782c03eb4a4b.html">tcp_seg_free (28)</a>
+                    
+                
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <pre><a href="./008dec15201bb896c24983d1c97f4e77.html">tcp_parseopt (360)</a></pre>
+    
+
+    <pre>
+
+    tcp_input():
+
+       21f34:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+
+       21f38:	4c72      	ldr	r4, [pc, #456]	@ (22104 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x1d0>)
+
+       21f3a:	6842      	ldr	r2, [r0, #4]
+
+       21f3c:	f8d4 312c 	ldr.w	r3, [r4, #300]	@ 0x12c
+
+       21f40:	f8df a1e8 	ldr.w	sl, [pc, #488]	@ 2212c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x1f8>
+
+       21f44:	3301      	adds	r3, #1
+
+       21f46:	b087      	sub	sp, #28
+
+       21f48:	f8c4 312c 	str.w	r3, [r4, #300]	@ 0x12c
+
+       21f4c:	8943      	ldrh	r3, [r0, #10]
+
+       21f4e:	f8ca 2000 	str.w	r2, [sl]
+
+       21f52:	2b13      	cmp	r3, #19
+
+       21f54:	4680      	mov	r8, r0
+
+       21f56:	d80f      	bhi.n	21f78 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x44>
+
+       21f58:	f8d4 313c 	ldr.w	r3, [r4, #316]	@ 0x13c
+
+       21f5c:	3301      	adds	r3, #1
+
+       21f5e:	f8c4 313c 	str.w	r3, [r4, #316]	@ 0x13c
+
+       21f62:	f8d4 3134 	ldr.w	r3, [r4, #308]	@ 0x134
+
+       21f66:	3301      	adds	r3, #1
+
+       21f68:	4640      	mov	r0, r8
+
+       21f6a:	f8c4 3134 	str.w	r3, [r4, #308]	@ 0x134
+
+       21f6e:	b007      	add	sp, #28
+
+       21f70:	e8bd 4ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+
+       21f74:	f7fe ba2c 	b.w	203d0 <<a href="../pbuf.c/9b6fd2596874539050b4147be9634d35.html">pbuf_free</a>>
+
+       21f78:	4d63      	ldr	r5, [pc, #396]	@ (22108 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x1d4>)
+
+       21f7a:	6829      	ldr	r1, [r5, #0]
+
+       21f7c:	6968      	ldr	r0, [r5, #20]
+
+       21f7e:	f005 fb4b 	bl	27618 <<a href="../ipv4/ip4_addr.c/212eebf156fd7f3954882e0492a918a0.html">ip4_addr_isbroadcast_u32</a>>
+
+       21f82:	b9b8      	cbnz	r0, 21fb4 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x80>
+
+       21f84:	696b      	ldr	r3, [r5, #20]
+
+       21f86:	f003 03f0 	and.w	r3, r3, #240	@ 0xf0
+
+       21f8a:	2be0      	cmp	r3, #224	@ 0xe0
+
+       21f8c:	d012      	beq.n	21fb4 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x80>
+
+       21f8e:	f105 0314 	add.w	r3, r5, #20
+
+       21f92:	9300      	str	r3, [sp, #0]
+
+       21f94:	f8b8 2008 	ldrh.w	r2, [r8, #8]
+
+       21f98:	f105 0310 	add.w	r3, r5, #16
+
+       21f9c:	2106      	movs	r1, #6
+
+       21f9e:	4640      	mov	r0, r8
+
+       21fa0:	f005 fcc0 	bl	27924 <<a href="../inet_chksum.c/3fc28f5e6e6ee9cb8891e0991b814809.html">ip_chksum_pseudo</a>>
+
+       21fa4:	4606      	mov	r6, r0
+
+       21fa6:	b158      	cbz	r0, 21fc0 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x8c>
+
+       21fa8:	f8d4 3138 	ldr.w	r3, [r4, #312]	@ 0x138
+
+       21fac:	3301      	adds	r3, #1
+
+       21fae:	f8c4 3138 	str.w	r3, [r4, #312]	@ 0x138
+
+       21fb2:	e7d6      	b.n	21f62 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x2e>
+
+       21fb4:	f8d4 3148 	ldr.w	r3, [r4, #328]	@ 0x148
+
+       21fb8:	3301      	adds	r3, #1
+
+       21fba:	f8c4 3148 	str.w	r3, [r4, #328]	@ 0x148
+
+       21fbe:	e7d0      	b.n	21f62 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x2e>
+
+       21fc0:	f8da 3000 	ldr.w	r3, [sl]
+
+       21fc4:	7b1a      	ldrb	r2, [r3, #12]
+
+       21fc6:	7b58      	ldrb	r0, [r3, #13]
+
+       21fc8:	ea42 2000 	orr.w	r0, r2, r0, lsl #8
+
+       21fcc:	f005 fbf8 	bl	277c0 <<a href="../def.c/e92a30e58780c58f695060997f7dd81e.html">lwip_htons</a>>
+
+       21fd0:	0a81      	lsrs	r1, r0, #10
+
+       21fd2:	f001 01fc 	and.w	r1, r1, #252	@ 0xfc
+
+       21fd6:	2913      	cmp	r1, #19
+
+       21fd8:	d9be      	bls.n	21f58 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x24>
+
+       21fda:	f8b8 3008 	ldrh.w	r3, [r8, #8]
+
+       21fde:	428b      	cmp	r3, r1
+
+       21fe0:	d3ba      	bcc.n	21f58 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x24>
+
+       21fe2:	4a4a      	ldr	r2, [pc, #296]	@ (2210c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x1d8>)
+
+       21fe4:	4f4a      	ldr	r7, [pc, #296]	@ (22110 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x1dc>)
+
+       21fe6:	f1a1 0314 	sub.w	r3, r1, #20
+
+       21fea:	b29b      	uxth	r3, r3
+
+       21fec:	8013      	strh	r3, [r2, #0]
+
+       21fee:	f8b8 200a 	ldrh.w	r2, [r8, #10]
+
+       21ff2:	603e      	str	r6, [r7, #0]
+
+       21ff4:	428a      	cmp	r2, r1
+
+       21ff6:	f0c0 8186 	bcc.w	22306 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x3d2>
+
+       21ffa:	4a46      	ldr	r2, [pc, #280]	@ (22114 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x1e0>)
+
+       21ffc:	4640      	mov	r0, r8
+
+       21ffe:	8013      	strh	r3, [r2, #0]
+
+       22000:	f7fe f990 	bl	20324 <<a href="../pbuf.c/1808d8951a9868c0f66c16892ba536a6.html">pbuf_remove_header</a>>
+
+       22004:	f8da 6000 	ldr.w	r6, [sl]
+
+       22008:	7833      	ldrb	r3, [r6, #0]
+
+       2200a:	7870      	ldrb	r0, [r6, #1]
+
+       2200c:	ea43 2000 	orr.w	r0, r3, r0, lsl #8
+
+       22010:	f005 fbd6 	bl	277c0 <<a href="../def.c/e92a30e58780c58f695060997f7dd81e.html">lwip_htons</a>>
+
+       22014:	7030      	strb	r0, [r6, #0]
+
+       22016:	f3c0 200f 	ubfx	r0, r0, #8, #16
+
+       2201a:	7070      	strb	r0, [r6, #1]
+
+       2201c:	f8da 6000 	ldr.w	r6, [sl]
+
+       22020:	78b3      	ldrb	r3, [r6, #2]
+
+       22022:	78f0      	ldrb	r0, [r6, #3]
+
+       22024:	ea43 2000 	orr.w	r0, r3, r0, lsl #8
+
+       22028:	f005 fbca 	bl	277c0 <<a href="../def.c/e92a30e58780c58f695060997f7dd81e.html">lwip_htons</a>>
+
+       2202c:	f8da 7000 	ldr.w	r7, [sl]
+
+       22030:	70b0      	strb	r0, [r6, #2]
+
+       22032:	f3c0 200f 	ubfx	r0, r0, #8, #16
+
+       22036:	70f0      	strb	r0, [r6, #3]
+
+       22038:	797a      	ldrb	r2, [r7, #5]
+
+       2203a:	793b      	ldrb	r3, [r7, #4]
+
+       2203c:	79f8      	ldrb	r0, [r7, #7]
+
+       2203e:	ea43 2302 	orr.w	r3, r3, r2, lsl #8
+
+       22042:	79ba      	ldrb	r2, [r7, #6]
+
+       22044:	ea43 4302 	orr.w	r3, r3, r2, lsl #16
+
+       22048:	ea43 6000 	orr.w	r0, r3, r0, lsl #24
+
+       2204c:	f005 fbbc 	bl	277c8 <<a href="../def.c/428f8c9ba30daa1894672e7ab0a12b38.html">lwip_htonl</a>>
+
+       22050:	4b31      	ldr	r3, [pc, #196]	@ (22118 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x1e4>)
+
+       22052:	f8da 6000 	ldr.w	r6, [sl]
+
+       22056:	6018      	str	r0, [r3, #0]
+
+       22058:	f3c0 2307 	ubfx	r3, r0, #8, #8
+
+       2205c:	7138      	strb	r0, [r7, #4]
+
+       2205e:	717b      	strb	r3, [r7, #5]
+
+       22060:	f3c0 4307 	ubfx	r3, r0, #16, #8
+
+       22064:	0e00      	lsrs	r0, r0, #24
+
+       22066:	71bb      	strb	r3, [r7, #6]
+
+       22068:	71f8      	strb	r0, [r7, #7]
+
+       2206a:	7a72      	ldrb	r2, [r6, #9]
+
+       2206c:	7a33      	ldrb	r3, [r6, #8]
+
+       2206e:	7af0      	ldrb	r0, [r6, #11]
+
+       22070:	ea43 2302 	orr.w	r3, r3, r2, lsl #8
+
+       22074:	7ab2      	ldrb	r2, [r6, #10]
+
+       22076:	ea43 4302 	orr.w	r3, r3, r2, lsl #16
+
+       2207a:	ea43 6000 	orr.w	r0, r3, r0, lsl #24
+
+       2207e:	f005 fba3 	bl	277c8 <<a href="../def.c/428f8c9ba30daa1894672e7ab0a12b38.html">lwip_htonl</a>>
+
+       22082:	4b26      	ldr	r3, [pc, #152]	@ (2211c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x1e8>)
+
+       22084:	f8da 7000 	ldr.w	r7, [sl]
+
+       22088:	6018      	str	r0, [r3, #0]
+
+       2208a:	f3c0 2307 	ubfx	r3, r0, #8, #8
+
+       2208e:	7230      	strb	r0, [r6, #8]
+
+       22090:	7273      	strb	r3, [r6, #9]
+
+       22092:	f3c0 4307 	ubfx	r3, r0, #16, #8
+
+       22096:	0e00      	lsrs	r0, r0, #24
+
+       22098:	72b3      	strb	r3, [r6, #10]
+
+       2209a:	72f0      	strb	r0, [r6, #11]
+
+       2209c:	7bbb      	ldrb	r3, [r7, #14]
+
+       2209e:	7bf8      	ldrb	r0, [r7, #15]
+
+       220a0:	ea43 2000 	orr.w	r0, r3, r0, lsl #8
+
+       220a4:	f005 fb8c 	bl	277c0 <<a href="../def.c/e92a30e58780c58f695060997f7dd81e.html">lwip_htons</a>>
+
+       220a8:	f8da 3000 	ldr.w	r3, [sl]
+
+       220ac:	73b8      	strb	r0, [r7, #14]
+
+       220ae:	f3c0 200f 	ubfx	r0, r0, #8, #16
+
+       220b2:	73f8      	strb	r0, [r7, #15]
+
+       220b4:	7b1a      	ldrb	r2, [r3, #12]
+
+       220b6:	7b58      	ldrb	r0, [r3, #13]
+
+       220b8:	ea42 2000 	orr.w	r0, r2, r0, lsl #8
+
+       220bc:	f005 fb80 	bl	277c0 <<a href="../def.c/e92a30e58780c58f695060997f7dd81e.html">lwip_htons</a>>
+
+       220c0:	4b17      	ldr	r3, [pc, #92]	@ (22120 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x1ec>)
+
+       220c2:	f8b8 7008 	ldrh.w	r7, [r8, #8]
+
+       220c6:	f000 013f 	and.w	r1, r0, #63	@ 0x3f
+
+       220ca:	7019      	strb	r1, [r3, #0]
+
+       220cc:	0783      	lsls	r3, r0, #30
+
+       220ce:	fa5f fe80 	uxtb.w	lr, r0
+
+       220d2:	f000 813e 	beq.w	22352 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x41e>
+
+       220d6:	1c7b      	adds	r3, r7, #1
+
+       220d8:	4a12      	ldr	r2, [pc, #72]	@ (22124 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x1f0>)
+
+       220da:	9204      	str	r2, [sp, #16]
+
+       220dc:	b29b      	uxth	r3, r3
+
+       220de:	429f      	cmp	r7, r3
+
+       220e0:	8013      	strh	r3, [r2, #0]
+
+       220e2:	f63f af39 	bhi.w	21f58 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x24>
+
+       220e6:	4a10      	ldr	r2, [pc, #64]	@ (22128 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x1f4>)
+
+       220e8:	f8da 3000 	ldr.w	r3, [sl]
+
+       220ec:	6810      	ldr	r0, [r2, #0]
+
+       220ee:	2800      	cmp	r0, #0
+
+       220f0:	f000 80c4 	beq.w	2227c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x348>
+
+       220f4:	686e      	ldr	r6, [r5, #4]
+
+       220f6:	f8d5 c010 	ldr.w	ip, [r5, #16]
+
+       220fa:	9105      	str	r1, [sp, #20]
+
+       220fc:	4681      	mov	r9, r0
+
+       220fe:	2200      	movs	r2, #0
+
+       22100:	46bb      	mov	fp, r7
+
+       22102:	e01c      	b.n	2213e <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x20a>
+
+       22104:	1ffe461c 	.word	0x1ffe461c
+
+       22108:	1ffe112c 	.word	0x1ffe112c
+
+       2210c:	1ffe47ea 	.word	0x1ffe47ea
+
+       22110:	1ffe47e4 	.word	0x1ffe47e4
+
+       22114:	1ffe47e8 	.word	0x1ffe47e8
+
+       22118:	1ffe47dc 	.word	0x1ffe47dc
+
+       2211c:	1ffe47d8 	.word	0x1ffe47d8
+
+       22120:	1ffe47d1 	.word	0x1ffe47d1
+
+       22124:	1ffe47d2 	.word	0x1ffe47d2
+
+       22128:	1ffe47b8 	.word	0x1ffe47b8
+
+       2212c:	1ffe47ec 	.word	0x1ffe47ec
+
+       22130:	f8d9 100c 	ldr.w	r1, [r9, #12]
+
+       22134:	464a      	mov	r2, r9
+
+       22136:	2900      	cmp	r1, #0
+
+       22138:	f000 80a0 	beq.w	2227c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x348>
+
+       2213c:	4689      	mov	r9, r1
+
+       2213e:	f899 7008 	ldrb.w	r7, [r9, #8]
+
+       22142:	b12f      	cbz	r7, 22150 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x21c>
+
+       22144:	f896 1048 	ldrb.w	r1, [r6, #72]	@ 0x48
+
+       22148:	3101      	adds	r1, #1
+
+       2214a:	b2c9      	uxtb	r1, r1
+
+       2214c:	428f      	cmp	r7, r1
+
+       2214e:	d1ef      	bne.n	22130 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x1fc>
+
+       22150:	785f      	ldrb	r7, [r3, #1]
+
+       22152:	7819      	ldrb	r1, [r3, #0]
+
+       22154:	ea41 2107 	orr.w	r1, r1, r7, lsl #8
+
+       22158:	f8b9 7018 	ldrh.w	r7, [r9, #24]
+
+       2215c:	428f      	cmp	r7, r1
+
+       2215e:	d1e7      	bne.n	22130 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x1fc>
+
+       22160:	78df      	ldrb	r7, [r3, #3]
+
+       22162:	7899      	ldrb	r1, [r3, #2]
+
+       22164:	ea41 2107 	orr.w	r1, r1, r7, lsl #8
+
+       22168:	f8b9 7016 	ldrh.w	r7, [r9, #22]
+
+       2216c:	428f      	cmp	r7, r1
+
+       2216e:	d1df      	bne.n	22130 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x1fc>
+
+       22170:	f8d9 1004 	ldr.w	r1, [r9, #4]
+
+       22174:	4561      	cmp	r1, ip
+
+       22176:	d1db      	bne.n	22130 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x1fc>
+
+       22178:	f8d9 7000 	ldr.w	r7, [r9]
+
+       2217c:	6969      	ldr	r1, [r5, #20]
+
+       2217e:	428f      	cmp	r7, r1
+
+       22180:	d1d6      	bne.n	22130 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x1fc>
+
+       22182:	9905      	ldr	r1, [sp, #20]
+
+       22184:	465f      	mov	r7, fp
+
+       22186:	2a00      	cmp	r2, #0
+
+       22188:	f000 8416 	beq.w	229b8 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xa84>
+
+       2218c:	4da6      	ldr	r5, [pc, #664]	@ (22428 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x4f4>)
+
+       2218e:	f8c5 9000 	str.w	r9, [r5]
+
+       22192:	f8d9 500c 	ldr.w	r5, [r9, #12]
+
+       22196:	60d5      	str	r5, [r2, #12]
+
+       22198:	f8c9 000c 	str.w	r0, [r9, #12]
+
+       2219c:	f8df b2b8 	ldr.w	fp, [pc, #696]	@ 22458 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x524>
+
+       221a0:	4da2      	ldr	r5, [pc, #648]	@ (2242c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x4f8>)
+
+       221a2:	4ea3      	ldr	r6, [pc, #652]	@ (22430 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x4fc>)
+
+       221a4:	f8ab 7008 	strh.w	r7, [fp, #8]
+
+       221a8:	4fa2      	ldr	r7, [pc, #648]	@ (22434 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x500>)
+
+       221aa:	f8cb 3010 	str.w	r3, [fp, #16]
+
+       221ae:	f01e 0f08 	tst.w	lr, #8
+
+       221b2:	f04f 0300 	mov.w	r3, #0
+
+       221b6:	f8cb 8004 	str.w	r8, [fp, #4]
+
+       221ba:	f8cb 3000 	str.w	r3, [fp]
+
+       221be:	602b      	str	r3, [r5, #0]
+
+       221c0:	7033      	strb	r3, [r6, #0]
+
+       221c2:	803b      	strh	r3, [r7, #0]
+
+       221c4:	d005      	beq.n	221d2 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x29e>
+
+       221c6:	f898 300d 	ldrb.w	r3, [r8, #13]
+
+       221ca:	f043 0301 	orr.w	r3, r3, #1
+
+       221ce:	f888 300d 	strb.w	r3, [r8, #13]
+
+       221d2:	f8d9 3074 	ldr.w	r3, [r9, #116]	@ 0x74
+
+       221d6:	b17b      	cbz	r3, 221f8 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x2c4>
+
+       221d8:	4648      	mov	r0, r9
+
+       221da:	f7ff f8ab 	bl	21334 <<a href="../tcp.c/6c8144278d6f4c79cf68f34748b260eb.html">tcp_process_refused_data</a>>
+
+       221de:	300d      	adds	r0, #13
+
+       221e0:	f000 81e8 	beq.w	225b4 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x680>
+
+       221e4:	f8d9 3074 	ldr.w	r3, [r9, #116]	@ 0x74
+
+       221e8:	b123      	cbz	r3, 221f4 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x2c0>
+
+       221ea:	9b04      	ldr	r3, [sp, #16]
+
+       221ec:	881b      	ldrh	r3, [r3, #0]
+
+       221ee:	2b00      	cmp	r3, #0
+
+       221f0:	f040 81e0 	bne.w	225b4 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x680>
+
+    tcp_process():
+
+       221f4:	4b90      	ldr	r3, [pc, #576]	@ (22438 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x504>)
+
+       221f6:	7819      	ldrb	r1, [r3, #0]
+
+    tcp_input():
+
+       221f8:	f8df 8260 	ldr.w	r8, [pc, #608]	@ 2245c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x528>
+
+    tcp_process():
+
+       221fc:	0748      	lsls	r0, r1, #29
+
+    tcp_input():
+
+       221fe:	f8c8 9000 	str.w	r9, [r8]
+
+    tcp_process():
+
+       22202:	f140 80dd 	bpl.w	223c0 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x48c>
+
+       22206:	f899 3014 	ldrb.w	r3, [r9, #20]
+
+       2220a:	2b02      	cmp	r3, #2
+
+       2220c:	f000 835e 	beq.w	228cc <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x998>
+
+       22210:	4b8a      	ldr	r3, [pc, #552]	@ (2243c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x508>)
+
+       22212:	681a      	ldr	r2, [r3, #0]
+
+       22214:	f8d9 3024 	ldr.w	r3, [r9, #36]	@ 0x24
+
+       22218:	4293      	cmp	r3, r2
+
+       2221a:	f000 835e 	beq.w	228da <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x9a6>
+
+       2221e:	1ad1      	subs	r1, r2, r3
+
+       22220:	2900      	cmp	r1, #0
+
+       22222:	db0a      	blt.n	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       22224:	1a9b      	subs	r3, r3, r2
+
+       22226:	f8b9 2028 	ldrh.w	r2, [r9, #40]	@ 0x28
+
+       2222a:	42d3      	cmn	r3, r2
+
+       2222c:	d405      	bmi.n	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       2222e:	f8b9 301a 	ldrh.w	r3, [r9, #26]
+
+       22232:	f043 0302 	orr.w	r3, r3, #2
+
+       22236:	f8a9 301a 	strh.w	r3, [r9, #26]
+
+    tcp_input():
+
+       2223a:	7833      	ldrb	r3, [r6, #0]
+
+       2223c:	071a      	lsls	r2, r3, #28
+
+       2223e:	f140 81c6 	bpl.w	225ce <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x69a>
+
+       22242:	f8d9 308c 	ldr.w	r3, [r9, #140]	@ 0x8c
+
+       22246:	b123      	cbz	r3, 22252 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x31e>
+
+       22248:	f8d9 0010 	ldr.w	r0, [r9, #16]
+
+       2224c:	f06f 010d 	mvn.w	r1, #13
+
+       22250:	4798      	blx	r3
+
+       22252:	4875      	ldr	r0, [pc, #468]	@ (22428 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x4f4>)
+
+       22254:	4649      	mov	r1, r9
+
+       22256:	f7fe ff39 	bl	210cc <<a href="../tcp.c/b9fce7e0b1692c774e7c7904cc0c9f1e.html">tcp_pcb_remove</a>>
+
+       2225a:	4648      	mov	r0, r9
+
+       2225c:	f7fe faf2 	bl	20844 <<a href="../tcp.c/7f5a14060aede418028515e48be324a2.html">tcp_free</a>>
+
+       22260:	f8db 0004 	ldr.w	r0, [fp, #4]
+
+       22264:	2400      	movs	r4, #0
+
+       22266:	f8c8 4000 	str.w	r4, [r8]
+
+       2226a:	602c      	str	r4, [r5, #0]
+
+       2226c:	b118      	cbz	r0, 22276 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x342>
+
+       2226e:	f7fe f8af 	bl	203d0 <<a href="../pbuf.c/9b6fd2596874539050b4147be9634d35.html">pbuf_free</a>>
+
+       22272:	f8cb 4004 	str.w	r4, [fp, #4]
+
+       22276:	b007      	add	sp, #28
+
+       22278:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+
+       2227c:	4a70      	ldr	r2, [pc, #448]	@ (22440 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x50c>)
+
+       2227e:	6810      	ldr	r0, [r2, #0]
+
+       22280:	2800      	cmp	r0, #0
+
+       22282:	d06a      	beq.n	2235a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x426>
+
+       22284:	686f      	ldr	r7, [r5, #4]
+
+       22286:	e002      	b.n	2228e <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x35a>
+
+       22288:	68c0      	ldr	r0, [r0, #12]
+
+       2228a:	2800      	cmp	r0, #0
+
+       2228c:	d065      	beq.n	2235a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x426>
+
+       2228e:	7a01      	ldrb	r1, [r0, #8]
+
+       22290:	b129      	cbz	r1, 2229e <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x36a>
+
+       22292:	f897 2048 	ldrb.w	r2, [r7, #72]	@ 0x48
+
+       22296:	3201      	adds	r2, #1
+
+       22298:	b2d2      	uxtb	r2, r2
+
+       2229a:	4291      	cmp	r1, r2
+
+       2229c:	d1f4      	bne.n	22288 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x354>
+
+       2229e:	781a      	ldrb	r2, [r3, #0]
+
+       222a0:	7859      	ldrb	r1, [r3, #1]
+
+       222a2:	8b06      	ldrh	r6, [r0, #24]
+
+       222a4:	ea42 2201 	orr.w	r2, r2, r1, lsl #8
+
+       222a8:	4296      	cmp	r6, r2
+
+       222aa:	d1ed      	bne.n	22288 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x354>
+
+       222ac:	789a      	ldrb	r2, [r3, #2]
+
+       222ae:	78d9      	ldrb	r1, [r3, #3]
+
+       222b0:	f8b0 c016 	ldrh.w	ip, [r0, #22]
+
+       222b4:	ea42 2201 	orr.w	r2, r2, r1, lsl #8
+
+       222b8:	4594      	cmp	ip, r2
+
+       222ba:	d1e5      	bne.n	22288 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x354>
+
+       222bc:	6841      	ldr	r1, [r0, #4]
+
+       222be:	692a      	ldr	r2, [r5, #16]
+
+       222c0:	4291      	cmp	r1, r2
+
+       222c2:	d1e1      	bne.n	22288 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x354>
+
+       222c4:	6801      	ldr	r1, [r0, #0]
+
+       222c6:	696a      	ldr	r2, [r5, #20]
+
+       222c8:	4291      	cmp	r1, r2
+
+       222ca:	d1dd      	bne.n	22288 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x354>
+
+    tcp_timewait_input():
+
+       222cc:	f01e 0f04 	tst.w	lr, #4
+
+       222d0:	d117      	bne.n	22302 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x3ce>
+
+    tcp_listen_input():
+
+       222d2:	9b04      	ldr	r3, [sp, #16]
+
+    tcp_timewait_input():
+
+       222d4:	f01e 0f02 	tst.w	lr, #2
+
+    tcp_listen_input():
+
+       222d8:	8819      	ldrh	r1, [r3, #0]
+
+    tcp_timewait_input():
+
+       222da:	f000 837b 	beq.w	229d4 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xaa0>
+
+       222de:	4b57      	ldr	r3, [pc, #348]	@ (2243c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x508>)
+
+       222e0:	681a      	ldr	r2, [r3, #0]
+
+       222e2:	6a43      	ldr	r3, [r0, #36]	@ 0x24
+
+       222e4:	1ad4      	subs	r4, r2, r3
+
+       222e6:	2c00      	cmp	r4, #0
+
+       222e8:	db04      	blt.n	222f4 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x3c0>
+
+       222ea:	8d04      	ldrh	r4, [r0, #40]	@ 0x28
+
+       222ec:	1a9b      	subs	r3, r3, r2
+
+       222ee:	42e3      	cmn	r3, r4
+
+       222f0:	f140 83a4 	bpl.w	22a3c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xb08>
+
+       222f4:	b129      	cbz	r1, 22302 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x3ce>
+
+       222f6:	8b43      	ldrh	r3, [r0, #26]
+
+       222f8:	f043 0302 	orr.w	r3, r3, #2
+
+       222fc:	8343      	strh	r3, [r0, #26]
+
+       222fe:	f001 fae3 	bl	238c8 <<a href="../tcp_out.c/65142df0c7be77da97e3dbbc90844f1a.html">tcp_output</a>>
+
+    tcp_input():
+
+       22302:	4640      	mov	r0, r8
+
+       22304:	e633      	b.n	21f6e <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x3a>
+
+       22306:	2114      	movs	r1, #20
+
+       22308:	4640      	mov	r0, r8
+
+       2230a:	f7fe f80b 	bl	20324 <<a href="../pbuf.c/1808d8951a9868c0f66c16892ba536a6.html">pbuf_remove_header</a>>
+
+       2230e:	4b4d      	ldr	r3, [pc, #308]	@ (22444 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x510>)
+
+       22310:	f8b8 600a 	ldrh.w	r6, [r8, #10]
+
+       22314:	801e      	strh	r6, [r3, #0]
+
+       22316:	4b4c      	ldr	r3, [pc, #304]	@ (22448 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x514>)
+
+       22318:	4631      	mov	r1, r6
+
+       2231a:	4640      	mov	r0, r8
+
+       2231c:	f8b3 9000 	ldrh.w	r9, [r3]
+
+       22320:	f7fe f800 	bl	20324 <<a href="../pbuf.c/1808d8951a9868c0f66c16892ba536a6.html">pbuf_remove_header</a>>
+
+       22324:	f8d8 0000 	ldr.w	r0, [r8]
+
+       22328:	eba9 0b06 	sub.w	fp, r9, r6
+
+       2232c:	8943      	ldrh	r3, [r0, #10]
+
+       2232e:	fa1f fb8b 	uxth.w	fp, fp
+
+       22332:	455b      	cmp	r3, fp
+
+       22334:	f4ff ae10 	bcc.w	21f58 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x24>
+
+       22338:	6843      	ldr	r3, [r0, #4]
+
+       2233a:	603b      	str	r3, [r7, #0]
+
+       2233c:	4659      	mov	r1, fp
+
+       2233e:	f7fd fff1 	bl	20324 <<a href="../pbuf.c/1808d8951a9868c0f66c16892ba536a6.html">pbuf_remove_header</a>>
+
+       22342:	f8b8 3008 	ldrh.w	r3, [r8, #8]
+
+       22346:	4433      	add	r3, r6
+
+       22348:	eba3 0309 	sub.w	r3, r3, r9
+
+       2234c:	f8a8 3008 	strh.w	r3, [r8, #8]
+
+       22350:	e658      	b.n	22004 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xd0>
+
+       22352:	4b3e      	ldr	r3, [pc, #248]	@ (2244c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x518>)
+
+       22354:	9304      	str	r3, [sp, #16]
+
+       22356:	801f      	strh	r7, [r3, #0]
+
+       22358:	e6c5      	b.n	220e6 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x1b2>
+
+       2235a:	4a3d      	ldr	r2, [pc, #244]	@ (22450 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x51c>)
+
+       2235c:	f8d2 9000 	ldr.w	r9, [r2]
+
+       22360:	f1b9 0f00 	cmp.w	r9, #0
+
+       22364:	f000 80f8 	beq.w	22558 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x624>
+
+       22368:	2700      	movs	r7, #0
+
+       2236a:	6868      	ldr	r0, [r5, #4]
+
+       2236c:	f8d5 b014 	ldr.w	fp, [r5, #20]
+
+       22370:	f8cd e014 	str.w	lr, [sp, #20]
+
+       22374:	464a      	mov	r2, r9
+
+       22376:	46bc      	mov	ip, r7
+
+       22378:	463e      	mov	r6, r7
+
+       2237a:	e004      	b.n	22386 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x452>
+
+       2237c:	68d1      	ldr	r1, [r2, #12]
+
+       2237e:	4616      	mov	r6, r2
+
+       22380:	2900      	cmp	r1, #0
+
+       22382:	d06d      	beq.n	22460 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x52c>
+
+       22384:	460a      	mov	r2, r1
+
+       22386:	f892 e008 	ldrb.w	lr, [r2, #8]
+
+       2238a:	f1be 0f00 	cmp.w	lr, #0
+
+       2238e:	d005      	beq.n	2239c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x468>
+
+       22390:	f890 1048 	ldrb.w	r1, [r0, #72]	@ 0x48
+
+       22394:	3101      	adds	r1, #1
+
+       22396:	b2c9      	uxtb	r1, r1
+
+       22398:	458e      	cmp	lr, r1
+
+       2239a:	d1ef      	bne.n	2237c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x448>
+
+       2239c:	f893 e003 	ldrb.w	lr, [r3, #3]
+
+       223a0:	7899      	ldrb	r1, [r3, #2]
+
+       223a2:	ea41 210e 	orr.w	r1, r1, lr, lsl #8
+
+       223a6:	f8b2 e016 	ldrh.w	lr, [r2, #22]
+
+       223aa:	458e      	cmp	lr, r1
+
+       223ac:	d1e6      	bne.n	2237c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x448>
+
+       223ae:	6811      	ldr	r1, [r2, #0]
+
+       223b0:	4559      	cmp	r1, fp
+
+       223b2:	f000 82a7 	beq.w	22904 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x9d0>
+
+       223b6:	2900      	cmp	r1, #0
+
+       223b8:	bf04      	itt	eq
+
+       223ba:	46b4      	moveq	ip, r6
+
+       223bc:	4617      	moveq	r7, r2
+
+       223be:	e7dd      	b.n	2237c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x448>
+
+    tcp_process():
+
+       223c0:	f011 0402 	ands.w	r4, r1, #2
+
+       223c4:	f8b9 301a 	ldrh.w	r3, [r9, #26]
+
+       223c8:	d005      	beq.n	223d6 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x4a2>
+
+       223ca:	f899 2014 	ldrb.w	r2, [r9, #20]
+
+       223ce:	3a02      	subs	r2, #2
+
+       223d0:	2a01      	cmp	r2, #1
+
+       223d2:	f63f af2e 	bhi.w	22232 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x2fe>
+
+       223d6:	06da      	lsls	r2, r3, #27
+
+       223d8:	d403      	bmi.n	223e2 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x4ae>
+
+       223da:	4b1e      	ldr	r3, [pc, #120]	@ (22454 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x520>)
+
+       223dc:	681b      	ldr	r3, [r3, #0]
+
+       223de:	f8c9 3020 	str.w	r3, [r9, #32]
+
+    tcp_parseopt():
+
+       223e2:	4b19      	ldr	r3, [pc, #100]	@ (22448 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x514>)
+
+       223e4:	881b      	ldrh	r3, [r3, #0]
+
+    tcp_process():
+
+       223e6:	2200      	movs	r2, #0
+
+       223e8:	f8a9 2096 	strh.w	r2, [r9, #150]	@ 0x96
+
+    tcp_parseopt():
+
+       223ec:	b123      	cbz	r3, 223f8 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x4c4>
+
+       223ee:	4648      	mov	r0, r9
+
+       223f0:	9105      	str	r1, [sp, #20]
+
+       223f2:	f7ff fceb 	bl	21dcc <<a href="./008dec15201bb896c24983d1c97f4e77.html">tcp_parseopt</a>.part.0>
+
+       223f6:	9905      	ldr	r1, [sp, #20]
+
+    tcp_process():
+
+       223f8:	f899 3014 	ldrb.w	r3, [r9, #20]
+
+       223fc:	2c00      	cmp	r4, #0
+
+       223fe:	f000 812c 	beq.w	2265a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x726>
+
+       22402:	1e9a      	subs	r2, r3, #2
+
+       22404:	2a01      	cmp	r2, #1
+
+       22406:	f63f af18 	bhi.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       2240a:	2b03      	cmp	r3, #3
+
+       2240c:	f040 8144 	bne.w	22698 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x764>
+
+       22410:	4b0a      	ldr	r3, [pc, #40]	@ (2243c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x508>)
+
+       22412:	681a      	ldr	r2, [r3, #0]
+
+       22414:	f8d9 3024 	ldr.w	r3, [r9, #36]	@ 0x24
+
+       22418:	3b01      	subs	r3, #1
+
+       2241a:	4293      	cmp	r3, r2
+
+       2241c:	f47f af0d 	bne.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       22420:	4648      	mov	r0, r9
+
+       22422:	f001 f949 	bl	236b8 <<a href="../tcp_out.c/c3d773abf80c1ff57472b146c03fcfb5.html">tcp_rexmit</a>>
+
+    tcp_input():
+
+       22426:	e708      	b.n	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       22428:	1ffe47b8 	.word	0x1ffe47b8
+
+       2242c:	1ffe47cc 	.word	0x1ffe47cc
+
+       22430:	1ffe47d0 	.word	0x1ffe47d0
+
+       22434:	1ffe47d4 	.word	0x1ffe47d4
+
+       22438:	1ffe47d1 	.word	0x1ffe47d1
+
+       2243c:	1ffe47dc 	.word	0x1ffe47dc
+
+       22440:	1ffe47b4 	.word	0x1ffe47b4
+
+       22444:	1ffe47e8 	.word	0x1ffe47e8
+
+       22448:	1ffe47ea 	.word	0x1ffe47ea
+
+       2244c:	1ffe47d2 	.word	0x1ffe47d2
+
+       22450:	1ffe47bc 	.word	0x1ffe47bc
+
+       22454:	1ffe47c4 	.word	0x1ffe47c4
+
+       22458:	1ffe47f0 	.word	0x1ffe47f0
+
+       2245c:	1ffe47c8 	.word	0x1ffe47c8
+
+       22460:	f8dd e014 	ldr.w	lr, [sp, #20]
+
+       22464:	2f00      	cmp	r7, #0
+
+       22466:	d077      	beq.n	22558 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x624>
+
+       22468:	f1bc 0f00 	cmp.w	ip, #0
+
+       2246c:	f000 8244 	beq.w	228f8 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x9c4>
+
+       22470:	4aad      	ldr	r2, [pc, #692]	@ (22728 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x7f4>)
+
+       22472:	6017      	str	r7, [r2, #0]
+
+       22474:	68fa      	ldr	r2, [r7, #12]
+
+       22476:	f8cc 200c 	str.w	r2, [ip, #12]
+
+       2247a:	f8c7 900c 	str.w	r9, [r7, #12]
+
+    tcp_listen_input():
+
+       2247e:	f01e 0f04 	tst.w	lr, #4
+
+       22482:	f47f af3e 	bne.w	22302 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x3ce>
+
+       22486:	f01e 0f10 	tst.w	lr, #16
+
+       2248a:	f040 8240 	bne.w	2290e <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x9da>
+
+       2248e:	f01e 0f02 	tst.w	lr, #2
+
+       22492:	f43f af36 	beq.w	22302 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x3ce>
+
+       22496:	7d78      	ldrb	r0, [r7, #21]
+
+       22498:	f7ff f8a6 	bl	215e8 <<a href="../tcp.c/2b2cbbd7123c3c49fc928162267dac1e.html">tcp_alloc</a>>
+
+       2249c:	4606      	mov	r6, r0
+
+       2249e:	2800      	cmp	r0, #0
+
+       224a0:	f000 8274 	beq.w	2298c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xa58>
+
+       224a4:	4604      	mov	r4, r0
+
+       224a6:	696a      	ldr	r2, [r5, #20]
+
+       224a8:	692b      	ldr	r3, [r5, #16]
+
+       224aa:	4da0      	ldr	r5, [pc, #640]	@ (2272c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x7f8>)
+
+       224ac:	f844 2b04 	str.w	r2, [r4], #4
+
+       224b0:	f8da 1000 	ldr.w	r1, [sl]
+
+       224b4:	6043      	str	r3, [r0, #4]
+
+       224b6:	682b      	ldr	r3, [r5, #0]
+
+       224b8:	780a      	ldrb	r2, [r1, #0]
+
+       224ba:	7849      	ldrb	r1, [r1, #1]
+
+       224bc:	3301      	adds	r3, #1
+
+       224be:	ea42 2201 	orr.w	r2, r2, r1, lsl #8
+
+       224c2:	8af9      	ldrh	r1, [r7, #22]
+
+       224c4:	6243      	str	r3, [r0, #36]	@ 0x24
+
+       224c6:	62c3      	str	r3, [r0, #44]	@ 0x2c
+
+       224c8:	2303      	movs	r3, #3
+
+       224ca:	82c1      	strh	r1, [r0, #22]
+
+       224cc:	8302      	strh	r2, [r0, #24]
+
+       224ce:	7503      	strb	r3, [r0, #20]
+
+       224d0:	f7ff f94c 	bl	2176c <<a href="../tcp.c/1dddb40c5196bb58f53efa30f8cf9b60.html">tcp_next_iss</a>>
+
+       224d4:	682a      	ldr	r2, [r5, #0]
+
+       224d6:	693b      	ldr	r3, [r7, #16]
+
+       224d8:	65b0      	str	r0, [r6, #88]	@ 0x58
+
+       224da:	3a01      	subs	r2, #1
+
+       224dc:	6572      	str	r2, [r6, #84]	@ 0x54
+
+       224de:	6530      	str	r0, [r6, #80]	@ 0x50
+
+       224e0:	6470      	str	r0, [r6, #68]	@ 0x44
+
+       224e2:	65f0      	str	r0, [r6, #92]	@ 0x5c
+
+       224e4:	6133      	str	r3, [r6, #16]
+
+       224e6:	67b7      	str	r7, [r6, #120]	@ 0x78
+
+       224e8:	7a7b      	ldrb	r3, [r7, #9]
+
+       224ea:	4a91      	ldr	r2, [pc, #580]	@ (22730 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x7fc>)
+
+       224ec:	f003 030c 	and.w	r3, r3, #12
+
+       224f0:	7273      	strb	r3, [r6, #9]
+
+       224f2:	7a3b      	ldrb	r3, [r7, #8]
+
+       224f4:	7233      	strb	r3, [r6, #8]
+
+       224f6:	6813      	ldr	r3, [r2, #0]
+
+       224f8:	60f3      	str	r3, [r6, #12]
+
+       224fa:	6016      	str	r6, [r2, #0]
+
+       224fc:	f001 fd10 	bl	23f20 <<a href="../timeouts.c/4e2533dcb9c4baaa4bf5f653137665f9.html">tcp_timer_needed</a>>
+
+    tcp_parseopt():
+
+       22500:	4b8c      	ldr	r3, [pc, #560]	@ (22734 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x800>)
+
+    tcp_listen_input():
+
+       22502:	4a8d      	ldr	r2, [pc, #564]	@ (22738 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x804>)
+
+    tcp_parseopt():
+
+       22504:	881b      	ldrh	r3, [r3, #0]
+
+    tcp_listen_input():
+
+       22506:	2101      	movs	r1, #1
+
+       22508:	7011      	strb	r1, [r2, #0]
+
+    tcp_parseopt():
+
+       2250a:	b113      	cbz	r3, 22512 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x5de>
+
+       2250c:	4630      	mov	r0, r6
+
+       2250e:	f7ff fc5d 	bl	21dcc <<a href="./008dec15201bb896c24983d1c97f4e77.html">tcp_parseopt</a>.part.0>
+
+    tcp_listen_input():
+
+       22512:	f8da 2000 	ldr.w	r2, [sl]
+
+       22516:	8e75      	ldrh	r5, [r6, #50]	@ 0x32
+
+       22518:	7b93      	ldrb	r3, [r2, #14]
+
+       2251a:	7bd2      	ldrb	r2, [r2, #15]
+
+       2251c:	ea43 2302 	orr.w	r3, r3, r2, lsl #8
+
+       22520:	2200      	movs	r2, #0
+
+       22522:	f363 020f 	bfi	r2, r3, #0, #16
+
+       22526:	f363 421f 	bfi	r2, r3, #16, #16
+
+       2252a:	6632      	str	r2, [r6, #96]	@ 0x60
+
+       2252c:	4621      	mov	r1, r4
+
+       2252e:	4630      	mov	r0, r6
+
+       22530:	f004 fde4 	bl	270fc <<a href="../ipv4/ip4.c/a30d884704b67281b26f54b966ad46b4.html">ip4_route_src</a>>
+
+       22534:	4622      	mov	r2, r4
+
+       22536:	4601      	mov	r1, r0
+
+       22538:	4628      	mov	r0, r5
+
+       2253a:	f7ff f923 	bl	21784 <<a href="../tcp.c/86d3e6817d3af70ff6d5f20c8645e5bf.html">tcp_eff_send_mss_netif</a>>
+
+       2253e:	2112      	movs	r1, #18
+
+       22540:	8670      	strh	r0, [r6, #50]	@ 0x32
+
+       22542:	4630      	mov	r0, r6
+
+       22544:	f000 fff0 	bl	23528 <<a href="../tcp_out.c/17fdd3d9f35bc5b270c1efaddda7087e.html">tcp_enqueue_flags</a>>
+
+       22548:	2800      	cmp	r0, #0
+
+       2254a:	f040 823c 	bne.w	229c6 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xa92>
+
+       2254e:	4630      	mov	r0, r6
+
+       22550:	f001 f9ba 	bl	238c8 <<a href="../tcp_out.c/65142df0c7be77da97e3dbbc90844f1a.html">tcp_output</a>>
+
+    tcp_input():
+
+       22554:	4640      	mov	r0, r8
+
+       22556:	e50a      	b.n	21f6e <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x3a>
+
+       22558:	7b1a      	ldrb	r2, [r3, #12]
+
+       2255a:	7b58      	ldrb	r0, [r3, #13]
+
+       2255c:	ea42 2000 	orr.w	r0, r2, r0, lsl #8
+
+       22560:	f005 f92e 	bl	277c0 <<a href="../def.c/e92a30e58780c58f695060997f7dd81e.html">lwip_htons</a>>
+
+       22564:	0746      	lsls	r6, r0, #29
+
+       22566:	f53f aecc 	bmi.w	22302 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x3ce>
+
+       2256a:	9a04      	ldr	r2, [sp, #16]
+
+       2256c:	f8da 3000 	ldr.w	r3, [sl]
+
+       22570:	8811      	ldrh	r1, [r2, #0]
+
+       22572:	4a6e      	ldr	r2, [pc, #440]	@ (2272c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x7f8>)
+
+       22574:	785e      	ldrb	r6, [r3, #1]
+
+       22576:	6812      	ldr	r2, [r2, #0]
+
+       22578:	6868      	ldr	r0, [r5, #4]
+
+       2257a:	781d      	ldrb	r5, [r3, #0]
+
+       2257c:	440a      	add	r2, r1
+
+       2257e:	496f      	ldr	r1, [pc, #444]	@ (2273c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x808>)
+
+       22580:	ea45 2506 	orr.w	r5, r5, r6, lsl #8
+
+       22584:	6809      	ldr	r1, [r1, #0]
+
+       22586:	9502      	str	r5, [sp, #8]
+
+       22588:	f8d4 5148 	ldr.w	r5, [r4, #328]	@ 0x148
+
+       2258c:	3501      	adds	r5, #1
+
+       2258e:	f8c4 5148 	str.w	r5, [r4, #328]	@ 0x148
+
+       22592:	f8d4 5134 	ldr.w	r5, [r4, #308]	@ 0x134
+
+       22596:	3501      	adds	r5, #1
+
+       22598:	f8c4 5134 	str.w	r5, [r4, #308]	@ 0x134
+
+       2259c:	789c      	ldrb	r4, [r3, #2]
+
+       2259e:	78db      	ldrb	r3, [r3, #3]
+
+       225a0:	4d67      	ldr	r5, [pc, #412]	@ (22740 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x80c>)
+
+       225a2:	9500      	str	r5, [sp, #0]
+
+       225a4:	ea44 2303 	orr.w	r3, r4, r3, lsl #8
+
+       225a8:	9301      	str	r3, [sp, #4]
+
+       225aa:	1d2b      	adds	r3, r5, #4
+
+       225ac:	f001 f920 	bl	237f0 <<a href="../tcp_out.c/c17a7caeb46299058be3cd36c6a6c8ec.html">tcp_rst_netif</a>>
+
+       225b0:	4640      	mov	r0, r8
+
+       225b2:	e4dc      	b.n	21f6e <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x3a>
+
+       225b4:	f8b9 302a 	ldrh.w	r3, [r9, #42]	@ 0x2a
+
+       225b8:	2b00      	cmp	r3, #0
+
+       225ba:	f000 8199 	beq.w	228f0 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x9bc>
+
+       225be:	f8d4 3134 	ldr.w	r3, [r4, #308]	@ 0x134
+
+       225c2:	f8df 8184 	ldr.w	r8, [pc, #388]	@ 22748 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x814>
+
+       225c6:	3301      	adds	r3, #1
+
+       225c8:	f8c4 3134 	str.w	r3, [r4, #308]	@ 0x134
+
+       225cc:	e648      	b.n	22260 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x32c>
+
+       225ce:	883a      	ldrh	r2, [r7, #0]
+
+       225d0:	b15a      	cbz	r2, 225ea <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x6b6>
+
+       225d2:	f8d9 307c 	ldr.w	r3, [r9, #124]	@ 0x7c
+
+       225d6:	b133      	cbz	r3, 225e6 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x6b2>
+
+       225d8:	f8d9 0010 	ldr.w	r0, [r9, #16]
+
+       225dc:	4649      	mov	r1, r9
+
+       225de:	4798      	blx	r3
+
+       225e0:	300d      	adds	r0, #13
+
+       225e2:	f43f ae3d 	beq.w	22260 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x32c>
+
+       225e6:	2300      	movs	r3, #0
+
+       225e8:	803b      	strh	r3, [r7, #0]
+
+       225ea:	4648      	mov	r0, r9
+
+       225ec:	f7ff f934 	bl	21858 <<a href="./049323b07e9efeb20db6a5024e2e34bb.html">tcp_input_delayed_close</a>>
+
+       225f0:	2800      	cmp	r0, #0
+
+       225f2:	f47f ae35 	bne.w	22260 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x32c>
+
+       225f6:	682a      	ldr	r2, [r5, #0]
+
+       225f8:	b1b2      	cbz	r2, 22628 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x6f4>
+
+       225fa:	f8b9 301a 	ldrh.w	r3, [r9, #26]
+
+       225fe:	f013 0310 	ands.w	r3, r3, #16
+
+       22602:	f040 8191 	bne.w	22928 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x9f4>
+
+       22606:	f8d9 4080 	ldr.w	r4, [r9, #128]	@ 0x80
+
+       2260a:	2c00      	cmp	r4, #0
+
+       2260c:	f000 81cf 	beq.w	229ae <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xa7a>
+
+       22610:	f8d9 0010 	ldr.w	r0, [r9, #16]
+
+       22614:	4649      	mov	r1, r9
+
+       22616:	47a0      	blx	r4
+
+       22618:	f110 0f0d 	cmn.w	r0, #13
+
+       2261c:	f43f ae20 	beq.w	22260 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x32c>
+
+       22620:	b110      	cbz	r0, 22628 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x6f4>
+
+       22622:	682b      	ldr	r3, [r5, #0]
+
+       22624:	f8c9 3074 	str.w	r3, [r9, #116]	@ 0x74
+
+       22628:	7833      	ldrb	r3, [r6, #0]
+
+       2262a:	069b      	lsls	r3, r3, #26
+
+       2262c:	d508      	bpl.n	22640 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x70c>
+
+       2262e:	f8d9 3074 	ldr.w	r3, [r9, #116]	@ 0x74
+
+       22632:	2b00      	cmp	r3, #0
+
+       22634:	f000 817f 	beq.w	22936 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xa02>
+
+       22638:	7b5a      	ldrb	r2, [r3, #13]
+
+       2263a:	f042 0220 	orr.w	r2, r2, #32
+
+       2263e:	735a      	strb	r2, [r3, #13]
+
+       22640:	2300      	movs	r3, #0
+
+       22642:	4648      	mov	r0, r9
+
+       22644:	f8c8 3000 	str.w	r3, [r8]
+
+       22648:	f7ff f906 	bl	21858 <<a href="./049323b07e9efeb20db6a5024e2e34bb.html">tcp_input_delayed_close</a>>
+
+       2264c:	2800      	cmp	r0, #0
+
+       2264e:	f47f ae07 	bne.w	22260 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x32c>
+
+       22652:	4648      	mov	r0, r9
+
+       22654:	f001 f938 	bl	238c8 <<a href="../tcp_out.c/65142df0c7be77da97e3dbbc90844f1a.html">tcp_output</a>>
+
+       22658:	e602      	b.n	22260 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x32c>
+
+    tcp_process():
+
+       2265a:	3b02      	subs	r3, #2
+
+       2265c:	2b07      	cmp	r3, #7
+
+       2265e:	f63f adec 	bhi.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       22662:	e8df f013 	tbh	[pc, r3, lsl #1]
+
+       22666:	0019      	.short	0x0019
+
+       22668:	000800d0 	.word	0x000800d0
+
+       2266c:	009800b4 	.word	0x009800b4
+
+       22670:	00730008 	.word	0x00730008
+
+       22674:	0047      	.short	0x0047
+
+       22676:	4648      	mov	r0, r9
+
+       22678:	f7ff f95c 	bl	21934 <<a href="./bdbc7697dbea1dd6a66ef321eb568efb.html">tcp_receive</a>>
+
+       2267c:	7833      	ldrb	r3, [r6, #0]
+
+       2267e:	0699      	lsls	r1, r3, #26
+
+       22680:	f57f addb 	bpl.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       22684:	f8b9 301a 	ldrh.w	r3, [r9, #26]
+
+       22688:	f043 0302 	orr.w	r3, r3, #2
+
+       2268c:	f8a9 301a 	strh.w	r3, [r9, #26]
+
+       22690:	2307      	movs	r3, #7
+
+       22692:	f889 3014 	strb.w	r3, [r9, #20]
+
+    tcp_input():
+
+       22696:	e5d0      	b.n	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+    tcp_process():
+
+       22698:	06cb      	lsls	r3, r1, #27
+
+       2269a:	f57f adce 	bpl.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       2269e:	4b27      	ldr	r3, [pc, #156]	@ (2273c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x808>)
+
+       226a0:	6819      	ldr	r1, [r3, #0]
+
+       226a2:	4b22      	ldr	r3, [pc, #136]	@ (2272c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x7f8>)
+
+       226a4:	681a      	ldr	r2, [r3, #0]
+
+       226a6:	f8da 3000 	ldr.w	r3, [sl]
+
+       226aa:	b12c      	cbz	r4, 226b8 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x784>
+
+       226ac:	f8d9 0044 	ldr.w	r0, [r9, #68]	@ 0x44
+
+       226b0:	3001      	adds	r0, #1
+
+       226b2:	4288      	cmp	r0, r1
+
+       226b4:	f000 81d4 	beq.w	22a60 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xb2c>
+
+       226b8:	9804      	ldr	r0, [sp, #16]
+
+       226ba:	785c      	ldrb	r4, [r3, #1]
+
+       226bc:	8800      	ldrh	r0, [r0, #0]
+
+       226be:	4402      	add	r2, r0
+
+       226c0:	7818      	ldrb	r0, [r3, #0]
+
+       226c2:	ea40 2004 	orr.w	r0, r0, r4, lsl #8
+
+       226c6:	9002      	str	r0, [sp, #8]
+
+       226c8:	7898      	ldrb	r0, [r3, #2]
+
+       226ca:	78db      	ldrb	r3, [r3, #3]
+
+       226cc:	4c1c      	ldr	r4, [pc, #112]	@ (22740 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x80c>)
+
+       226ce:	9400      	str	r4, [sp, #0]
+
+       226d0:	ea40 2303 	orr.w	r3, r0, r3, lsl #8
+
+       226d4:	9301      	str	r3, [sp, #4]
+
+       226d6:	4648      	mov	r0, r9
+
+       226d8:	1d23      	adds	r3, r4, #4
+
+       226da:	f001 f861 	bl	237a0 <<a href="../tcp_out.c/db95af2d3d482544ee3bc6a86d75c692.html">tcp_rst</a>>
+
+       226de:	f899 3042 	ldrb.w	r3, [r9, #66]	@ 0x42
+
+       226e2:	2b00      	cmp	r3, #0
+
+       226e4:	f47f ada9 	bne.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       226e8:	f8a9 3030 	strh.w	r3, [r9, #48]	@ 0x30
+
+       226ec:	4648      	mov	r0, r9
+
+       226ee:	f001 fafd 	bl	23cec <<a href="../tcp_out.c/7f1200659b4f8f83836845ef9ebf2148.html">tcp_rexmit_rto</a>>
+
+    tcp_input():
+
+       226f2:	e5a2      	b.n	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+    tcp_process():
+
+       226f4:	4648      	mov	r0, r9
+
+       226f6:	f7ff f91d 	bl	21934 <<a href="./bdbc7697dbea1dd6a66ef321eb568efb.html">tcp_receive</a>>
+
+       226fa:	4b12      	ldr	r3, [pc, #72]	@ (22744 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x810>)
+
+       226fc:	781b      	ldrb	r3, [r3, #0]
+
+       226fe:	06d9      	lsls	r1, r3, #27
+
+       22700:	f57f ad9b 	bpl.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       22704:	4b0d      	ldr	r3, [pc, #52]	@ (2273c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x808>)
+
+       22706:	f8d9 2050 	ldr.w	r2, [r9, #80]	@ 0x50
+
+       2270a:	681b      	ldr	r3, [r3, #0]
+
+       2270c:	429a      	cmp	r2, r3
+
+       2270e:	f47f ad94 	bne.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       22712:	f8d9 306c 	ldr.w	r3, [r9, #108]	@ 0x6c
+
+       22716:	2b00      	cmp	r3, #0
+
+       22718:	f47f ad8f 	bne.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       2271c:	7833      	ldrb	r3, [r6, #0]
+
+       2271e:	f043 0310 	orr.w	r3, r3, #16
+
+       22722:	7033      	strb	r3, [r6, #0]
+
+    tcp_input():
+
+       22724:	e589      	b.n	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       22726:	bf00      	nop
+
+       22728:	1ffe47bc 	.word	0x1ffe47bc
+
+       2272c:	1ffe47dc 	.word	0x1ffe47dc
+
+       22730:	1ffe47b8 	.word	0x1ffe47b8
+
+       22734:	1ffe47ea 	.word	0x1ffe47ea
+
+       22738:	1ffe47b2 	.word	0x1ffe47b2
+
+       2273c:	1ffe47d8 	.word	0x1ffe47d8
+
+       22740:	1ffe113c 	.word	0x1ffe113c
+
+       22744:	1ffe47d1 	.word	0x1ffe47d1
+
+       22748:	1ffe47c8 	.word	0x1ffe47c8
+
+    tcp_process():
+
+       2274c:	4648      	mov	r0, r9
+
+       2274e:	f7ff f8f1 	bl	21934 <<a href="./bdbc7697dbea1dd6a66ef321eb568efb.html">tcp_receive</a>>
+
+       22752:	4bb2      	ldr	r3, [pc, #712]	@ (22a1c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xae8>)
+
+       22754:	781b      	ldrb	r3, [r3, #0]
+
+       22756:	06d8      	lsls	r0, r3, #27
+
+       22758:	f57f ad6f 	bpl.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       2275c:	4bb0      	ldr	r3, [pc, #704]	@ (22a20 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xaec>)
+
+       2275e:	f8d9 2050 	ldr.w	r2, [r9, #80]	@ 0x50
+
+       22762:	681b      	ldr	r3, [r3, #0]
+
+       22764:	429a      	cmp	r2, r3
+
+       22766:	f47f ad68 	bne.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       2276a:	f8d9 306c 	ldr.w	r3, [r9, #108]	@ 0x6c
+
+       2276e:	2b00      	cmp	r3, #0
+
+       22770:	f47f ad63 	bne.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       22774:	4648      	mov	r0, r9
+
+       22776:	f7fe fab7 	bl	20ce8 <<a href="../tcp.c/8de29f88da2c51de13ad06bac7197b94.html">tcp_pcb_purge</a>>
+
+       2277a:	4baa      	ldr	r3, [pc, #680]	@ (22a24 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xaf0>)
+
+       2277c:	681b      	ldr	r3, [r3, #0]
+
+       2277e:	454b      	cmp	r3, r9
+
+       22780:	f000 8091 	beq.w	228a6 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x972>
+
+       22784:	2b00      	cmp	r3, #0
+
+       22786:	f000 8092 	beq.w	228ae <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x97a>
+
+       2278a:	68da      	ldr	r2, [r3, #12]
+
+       2278c:	454a      	cmp	r2, r9
+
+       2278e:	f000 8129 	beq.w	229e4 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xab0>
+
+       22792:	4613      	mov	r3, r2
+
+       22794:	e7f6      	b.n	22784 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x850>
+
+       22796:	4648      	mov	r0, r9
+
+       22798:	f7ff f8cc 	bl	21934 <<a href="./bdbc7697dbea1dd6a66ef321eb568efb.html">tcp_receive</a>>
+
+       2279c:	7833      	ldrb	r3, [r6, #0]
+
+       2279e:	069c      	lsls	r4, r3, #26
+
+       227a0:	f57f ad4b 	bpl.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       227a4:	f8b9 301a 	ldrh.w	r3, [r9, #26]
+
+       227a8:	f043 0302 	orr.w	r3, r3, #2
+
+       227ac:	f8a9 301a 	strh.w	r3, [r9, #26]
+
+       227b0:	4648      	mov	r0, r9
+
+       227b2:	f7fe fa99 	bl	20ce8 <<a href="../tcp.c/8de29f88da2c51de13ad06bac7197b94.html">tcp_pcb_purge</a>>
+
+       227b6:	4b9b      	ldr	r3, [pc, #620]	@ (22a24 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xaf0>)
+
+       227b8:	681b      	ldr	r3, [r3, #0]
+
+       227ba:	454b      	cmp	r3, r9
+
+       227bc:	d073      	beq.n	228a6 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x972>
+
+       227be:	2b00      	cmp	r3, #0
+
+       227c0:	d075      	beq.n	228ae <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x97a>
+
+       227c2:	68da      	ldr	r2, [r3, #12]
+
+       227c4:	454a      	cmp	r2, r9
+
+       227c6:	f000 810d 	beq.w	229e4 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xab0>
+
+       227ca:	4613      	mov	r3, r2
+
+       227cc:	e7f7      	b.n	227be <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x88a>
+
+       227ce:	4648      	mov	r0, r9
+
+       227d0:	f7ff f8b0 	bl	21934 <<a href="./bdbc7697dbea1dd6a66ef321eb568efb.html">tcp_receive</a>>
+
+       227d4:	4b91      	ldr	r3, [pc, #580]	@ (22a1c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xae8>)
+
+       227d6:	7832      	ldrb	r2, [r6, #0]
+
+       227d8:	781b      	ldrb	r3, [r3, #0]
+
+       227da:	0692      	lsls	r2, r2, #26
+
+       227dc:	f003 0310 	and.w	r3, r3, #16
+
+       227e0:	f140 80c1 	bpl.w	22966 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xa32>
+
+       227e4:	f8b9 201a 	ldrh.w	r2, [r9, #26]
+
+       227e8:	f042 0202 	orr.w	r2, r2, #2
+
+       227ec:	b12b      	cbz	r3, 227fa <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x8c6>
+
+       227ee:	4b8c      	ldr	r3, [pc, #560]	@ (22a20 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xaec>)
+
+       227f0:	f8d9 1050 	ldr.w	r1, [r9, #80]	@ 0x50
+
+       227f4:	681b      	ldr	r3, [r3, #0]
+
+       227f6:	4299      	cmp	r1, r3
+
+       227f8:	d047      	beq.n	2288a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x956>
+
+       227fa:	2308      	movs	r3, #8
+
+       227fc:	f8a9 201a 	strh.w	r2, [r9, #26]
+
+       22800:	f889 3014 	strb.w	r3, [r9, #20]
+
+    tcp_input():
+
+       22804:	e519      	b.n	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+    tcp_process():
+
+       22806:	06cc      	lsls	r4, r1, #27
+
+       22808:	f57f ad17 	bpl.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       2280c:	4b84      	ldr	r3, [pc, #528]	@ (22a20 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xaec>)
+
+       2280e:	6819      	ldr	r1, [r3, #0]
+
+       22810:	f8d9 3044 	ldr.w	r3, [r9, #68]	@ 0x44
+
+       22814:	43db      	mvns	r3, r3
+
+       22816:	42cb      	cmn	r3, r1
+
+       22818:	f100 80e8 	bmi.w	229ec <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xab8>
+
+       2281c:	f8d9 3050 	ldr.w	r3, [r9, #80]	@ 0x50
+
+       22820:	1a5b      	subs	r3, r3, r1
+
+       22822:	2b00      	cmp	r3, #0
+
+       22824:	f2c0 80e2 	blt.w	229ec <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xab8>
+
+       22828:	f8d9 3078 	ldr.w	r3, [r9, #120]	@ 0x78
+
+       2282c:	2204      	movs	r2, #4
+
+       2282e:	f889 2014 	strb.w	r2, [r9, #20]
+
+       22832:	2b00      	cmp	r3, #0
+
+       22834:	d07b      	beq.n	2292e <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x9fa>
+
+       22836:	699b      	ldr	r3, [r3, #24]
+
+       22838:	2b00      	cmp	r3, #0
+
+       2283a:	d078      	beq.n	2292e <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x9fa>
+
+       2283c:	f8d9 0010 	ldr.w	r0, [r9, #16]
+
+       22840:	2200      	movs	r2, #0
+
+       22842:	4649      	mov	r1, r9
+
+       22844:	4798      	blx	r3
+
+       22846:	4603      	mov	r3, r0
+
+       22848:	2800      	cmp	r0, #0
+
+       2284a:	f040 8105 	bne.w	22a58 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xb24>
+
+       2284e:	4648      	mov	r0, r9
+
+       22850:	f7ff f870 	bl	21934 <<a href="./bdbc7697dbea1dd6a66ef321eb568efb.html">tcp_receive</a>>
+
+       22854:	883b      	ldrh	r3, [r7, #0]
+
+       22856:	b10b      	cbz	r3, 2285c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x928>
+
+       22858:	3b01      	subs	r3, #1
+
+       2285a:	803b      	strh	r3, [r7, #0]
+
+       2285c:	f8b9 1032 	ldrh.w	r1, [r9, #50]	@ 0x32
+
+       22860:	f241 131c 	movw	r3, #4380	@ 0x111c
+
+       22864:	004a      	lsls	r2, r1, #1
+
+       22866:	429a      	cmp	r2, r3
+
+       22868:	4614      	mov	r4, r2
+
+       2286a:	bf38      	it	cc
+
+       2286c:	461c      	movcc	r4, r3
+
+       2286e:	ebb4 0f81 	cmp.w	r4, r1, lsl #2
+
+       22872:	ea4f 0081 	mov.w	r0, r1, lsl #2
+
+       22876:	f240 8157 	bls.w	22b28 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xbf4>
+
+       2287a:	b283      	uxth	r3, r0
+
+       2287c:	f8a9 3048 	strh.w	r3, [r9, #72]	@ 0x48
+
+       22880:	7833      	ldrb	r3, [r6, #0]
+
+       22882:	0698      	lsls	r0, r3, #26
+
+       22884:	f57f acd9 	bpl.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       22888:	e6fc      	b.n	22684 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x750>
+
+       2288a:	f8d9 306c 	ldr.w	r3, [r9, #108]	@ 0x6c
+
+       2288e:	2b00      	cmp	r3, #0
+
+       22890:	d1b3      	bne.n	227fa <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x8c6>
+
+       22892:	f8a9 201a 	strh.w	r2, [r9, #26]
+
+       22896:	4648      	mov	r0, r9
+
+       22898:	f7fe fa26 	bl	20ce8 <<a href="../tcp.c/8de29f88da2c51de13ad06bac7197b94.html">tcp_pcb_purge</a>>
+
+       2289c:	4b61      	ldr	r3, [pc, #388]	@ (22a24 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xaf0>)
+
+       2289e:	681b      	ldr	r3, [r3, #0]
+
+       228a0:	454b      	cmp	r3, r9
+
+       228a2:	f040 8138 	bne.w	22b16 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xbe2>
+
+       228a6:	4a5f      	ldr	r2, [pc, #380]	@ (22a24 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xaf0>)
+
+       228a8:	f8d9 300c 	ldr.w	r3, [r9, #12]
+
+       228ac:	6013      	str	r3, [r2, #0]
+
+       228ae:	4b5e      	ldr	r3, [pc, #376]	@ (22a28 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xaf4>)
+
+       228b0:	4a5e      	ldr	r2, [pc, #376]	@ (22a2c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xaf8>)
+
+       228b2:	6819      	ldr	r1, [r3, #0]
+
+       228b4:	f8c3 9000 	str.w	r9, [r3]
+
+       228b8:	230a      	movs	r3, #10
+
+       228ba:	f889 3014 	strb.w	r3, [r9, #20]
+
+       228be:	f8c9 100c 	str.w	r1, [r9, #12]
+
+       228c2:	2301      	movs	r3, #1
+
+       228c4:	7013      	strb	r3, [r2, #0]
+
+       228c6:	f001 fb2b 	bl	23f20 <<a href="../timeouts.c/4e2533dcb9c4baaa4bf5f653137665f9.html">tcp_timer_needed</a>>
+
+    tcp_input():
+
+       228ca:	e4b6      	b.n	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+    tcp_process():
+
+       228cc:	4b54      	ldr	r3, [pc, #336]	@ (22a20 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xaec>)
+
+       228ce:	f8d9 2050 	ldr.w	r2, [r9, #80]	@ 0x50
+
+       228d2:	681b      	ldr	r3, [r3, #0]
+
+       228d4:	429a      	cmp	r2, r3
+
+       228d6:	f47f acb0 	bne.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       228da:	7833      	ldrb	r3, [r6, #0]
+
+       228dc:	f043 0308 	orr.w	r3, r3, #8
+
+       228e0:	7033      	strb	r3, [r6, #0]
+
+       228e2:	f8b9 301a 	ldrh.w	r3, [r9, #26]
+
+       228e6:	f023 0301 	bic.w	r3, r3, #1
+
+       228ea:	f8a9 301a 	strh.w	r3, [r9, #26]
+
+    tcp_input():
+
+       228ee:	e4a4      	b.n	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       228f0:	4648      	mov	r0, r9
+
+       228f2:	f000 ffb7 	bl	23864 <<a href="../tcp_out.c/750286e53faf5e6c6518b73dc75330b6.html">tcp_send_empty_ack</a>>
+
+       228f6:	e662      	b.n	225be <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x68a>
+
+       228f8:	f8d4 2154 	ldr.w	r2, [r4, #340]	@ 0x154
+
+       228fc:	3201      	adds	r2, #1
+
+       228fe:	f8c4 2154 	str.w	r2, [r4, #340]	@ 0x154
+
+       22902:	e5bc      	b.n	2247e <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x54a>
+
+       22904:	f8dd e014 	ldr.w	lr, [sp, #20]
+
+       22908:	4617      	mov	r7, r2
+
+       2290a:	46b4      	mov	ip, r6
+
+       2290c:	e5ac      	b.n	22468 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x534>
+
+    tcp_listen_input():
+
+       2290e:	9a04      	ldr	r2, [sp, #16]
+
+       22910:	781c      	ldrb	r4, [r3, #0]
+
+       22912:	8811      	ldrh	r1, [r2, #0]
+
+       22914:	4a46      	ldr	r2, [pc, #280]	@ (22a30 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xafc>)
+
+       22916:	785d      	ldrb	r5, [r3, #1]
+
+       22918:	6812      	ldr	r2, [r2, #0]
+
+       2291a:	440a      	add	r2, r1
+
+       2291c:	4940      	ldr	r1, [pc, #256]	@ (22a20 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xaec>)
+
+       2291e:	ea44 2405 	orr.w	r4, r4, r5, lsl #8
+
+       22922:	6809      	ldr	r1, [r1, #0]
+
+       22924:	9402      	str	r4, [sp, #8]
+
+       22926:	e639      	b.n	2259c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x668>
+
+    tcp_input():
+
+       22928:	4610      	mov	r0, r2
+
+       2292a:	f7fd fd51 	bl	203d0 <<a href="../pbuf.c/9b6fd2596874539050b4147be9634d35.html">pbuf_free</a>>
+
+       2292e:	4648      	mov	r0, r9
+
+       22930:	f7fe fe2a 	bl	21588 <<a href="../tcp.c/0a70017075075e60b9a8a7d61e99b56f.html">tcp_abort</a>>
+
+       22934:	e494      	b.n	22260 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x32c>
+
+       22936:	f8b9 3028 	ldrh.w	r3, [r9, #40]	@ 0x28
+
+       2293a:	f8d9 4080 	ldr.w	r4, [r9, #128]	@ 0x80
+
+       2293e:	f640 3268 	movw	r2, #2920	@ 0xb68
+
+       22942:	4293      	cmp	r3, r2
+
+       22944:	bf1c      	itt	ne
+
+       22946:	3301      	addne	r3, #1
+
+       22948:	f8a9 3028 	strhne.w	r3, [r9, #40]	@ 0x28
+
+       2294c:	2c00      	cmp	r4, #0
+
+       2294e:	f43f ae77 	beq.w	22640 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x70c>
+
+       22952:	2300      	movs	r3, #0
+
+       22954:	f8d9 0010 	ldr.w	r0, [r9, #16]
+
+       22958:	461a      	mov	r2, r3
+
+       2295a:	4649      	mov	r1, r9
+
+       2295c:	47a0      	blx	r4
+
+       2295e:	300d      	adds	r0, #13
+
+       22960:	f47f ae6e 	bne.w	22640 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x70c>
+
+       22964:	e47c      	b.n	22260 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x32c>
+
+    tcp_process():
+
+       22966:	2b00      	cmp	r3, #0
+
+       22968:	f43f ac67 	beq.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       2296c:	4b2c      	ldr	r3, [pc, #176]	@ (22a20 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xaec>)
+
+       2296e:	f8d9 2050 	ldr.w	r2, [r9, #80]	@ 0x50
+
+       22972:	681b      	ldr	r3, [r3, #0]
+
+       22974:	429a      	cmp	r2, r3
+
+       22976:	f47f ac60 	bne.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       2297a:	f8d9 306c 	ldr.w	r3, [r9, #108]	@ 0x6c
+
+       2297e:	2b00      	cmp	r3, #0
+
+       22980:	f47f ac5b 	bne.w	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       22984:	2306      	movs	r3, #6
+
+       22986:	f889 3014 	strb.w	r3, [r9, #20]
+
+    tcp_input():
+
+       2298a:	e456      	b.n	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+    tcp_listen_input():
+
+       2298c:	f8d4 3140 	ldr.w	r3, [r4, #320]	@ 0x140
+
+       22990:	3301      	adds	r3, #1
+
+       22992:	f8c4 3140 	str.w	r3, [r4, #320]	@ 0x140
+
+       22996:	69bb      	ldr	r3, [r7, #24]
+
+       22998:	2b00      	cmp	r3, #0
+
+       2299a:	f43f acb2 	beq.w	22302 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x3ce>
+
+       2299e:	6938      	ldr	r0, [r7, #16]
+
+       229a0:	f04f 32ff 	mov.w	r2, #4294967295	@ 0xffffffff
+
+       229a4:	4631      	mov	r1, r6
+
+       229a6:	4798      	blx	r3
+
+    tcp_input():
+
+       229a8:	4640      	mov	r0, r8
+
+       229aa:	f7ff bae0 	b.w	21f6e <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x3a>
+
+       229ae:	4623      	mov	r3, r4
+
+       229b0:	4649      	mov	r1, r9
+
+       229b2:	f7fe fc9b 	bl	212ec <<a href="../tcp.c/be56872802859367658ea7d31b3a3db4.html">tcp_recv_null</a>>
+
+       229b6:	e62f      	b.n	22618 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x6e4>
+
+       229b8:	f8d4 2154 	ldr.w	r2, [r4, #340]	@ 0x154
+
+       229bc:	3201      	adds	r2, #1
+
+       229be:	f8c4 2154 	str.w	r2, [r4, #340]	@ 0x154
+
+       229c2:	f7ff bbeb 	b.w	2219c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x268>
+
+    tcp_listen_input():
+
+       229c6:	4630      	mov	r0, r6
+
+       229c8:	2100      	movs	r1, #0
+
+       229ca:	f7fe fd43 	bl	21454 <<a href="../tcp.c/65bf4b4d1cd8c2ab7ef11aba4b48c88a.html">tcp_abandon</a>>
+
+    tcp_input():
+
+       229ce:	4640      	mov	r0, r8
+
+       229d0:	f7ff bacd 	b.w	21f6e <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x3a>
+
+    tcp_timewait_input():
+
+       229d4:	f01e 0f01 	tst.w	lr, #1
+
+       229d8:	f43f ac8c 	beq.w	222f4 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x3c0>
+
+       229dc:	4b15      	ldr	r3, [pc, #84]	@ (22a34 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xb00>)
+
+       229de:	681b      	ldr	r3, [r3, #0]
+
+       229e0:	6203      	str	r3, [r0, #32]
+
+       229e2:	e487      	b.n	222f4 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x3c0>
+
+    tcp_process():
+
+       229e4:	f8d9 200c 	ldr.w	r2, [r9, #12]
+
+       229e8:	60da      	str	r2, [r3, #12]
+
+       229ea:	e760      	b.n	228ae <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x97a>
+
+       229ec:	9a04      	ldr	r2, [sp, #16]
+
+       229ee:	f8da 3000 	ldr.w	r3, [sl]
+
+       229f2:	8810      	ldrh	r0, [r2, #0]
+
+       229f4:	4a0e      	ldr	r2, [pc, #56]	@ (22a30 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xafc>)
+
+       229f6:	785c      	ldrb	r4, [r3, #1]
+
+       229f8:	6812      	ldr	r2, [r2, #0]
+
+       229fa:	4402      	add	r2, r0
+
+       229fc:	7818      	ldrb	r0, [r3, #0]
+
+       229fe:	ea40 2004 	orr.w	r0, r0, r4, lsl #8
+
+       22a02:	9002      	str	r0, [sp, #8]
+
+       22a04:	7898      	ldrb	r0, [r3, #2]
+
+       22a06:	78db      	ldrb	r3, [r3, #3]
+
+       22a08:	4c0b      	ldr	r4, [pc, #44]	@ (22a38 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xb04>)
+
+       22a0a:	9400      	str	r4, [sp, #0]
+
+       22a0c:	ea40 2303 	orr.w	r3, r0, r3, lsl #8
+
+       22a10:	9301      	str	r3, [sp, #4]
+
+       22a12:	4648      	mov	r0, r9
+
+       22a14:	1d23      	adds	r3, r4, #4
+
+       22a16:	f000 fec3 	bl	237a0 <<a href="../tcp_out.c/db95af2d3d482544ee3bc6a86d75c692.html">tcp_rst</a>>
+
+    tcp_input():
+
+       22a1a:	e40e      	b.n	2223a <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x306>
+
+       22a1c:	1ffe47d1 	.word	0x1ffe47d1
+
+       22a20:	1ffe47d8 	.word	0x1ffe47d8
+
+       22a24:	1ffe47b8 	.word	0x1ffe47b8
+
+       22a28:	1ffe47b4 	.word	0x1ffe47b4
+
+       22a2c:	1ffe47b2 	.word	0x1ffe47b2
+
+       22a30:	1ffe47dc 	.word	0x1ffe47dc
+
+       22a34:	1ffe47c4 	.word	0x1ffe47c4
+
+       22a38:	1ffe113c 	.word	0x1ffe113c
+
+    tcp_timewait_input():
+
+       22a3c:	4b43      	ldr	r3, [pc, #268]	@ (22b4c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xc18>)
+
+       22a3e:	9300      	str	r3, [sp, #0]
+
+       22a40:	4b43      	ldr	r3, [pc, #268]	@ (22b50 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xc1c>)
+
+       22a42:	9602      	str	r6, [sp, #8]
+
+       22a44:	f8cd c004 	str.w	ip, [sp, #4]
+
+       22a48:	440a      	add	r2, r1
+
+       22a4a:	6819      	ldr	r1, [r3, #0]
+
+       22a4c:	4b41      	ldr	r3, [pc, #260]	@ (22b54 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xc20>)
+
+       22a4e:	f000 fea7 	bl	237a0 <<a href="../tcp_out.c/db95af2d3d482544ee3bc6a86d75c692.html">tcp_rst</a>>
+
+    tcp_input():
+
+       22a52:	4640      	mov	r0, r8
+
+       22a54:	f7ff ba8b 	b.w	21f6e <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x3a>
+
+    tcp_process():
+
+       22a58:	330d      	adds	r3, #13
+
+       22a5a:	f43f ac01 	beq.w	22260 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x32c>
+
+       22a5e:	e766      	b.n	2292e <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x9fa>
+
+       22a60:	1c51      	adds	r1, r2, #1
+
+       22a62:	f8c9 0044 	str.w	r0, [r9, #68]	@ 0x44
+
+       22a66:	f8c9 1024 	str.w	r1, [r9, #36]	@ 0x24
+
+       22a6a:	f8c9 102c 	str.w	r1, [r9, #44]	@ 0x2c
+
+       22a6e:	7b99      	ldrb	r1, [r3, #14]
+
+       22a70:	7bdb      	ldrb	r3, [r3, #15]
+
+       22a72:	f8b9 a032 	ldrh.w	sl, [r9, #50]	@ 0x32
+
+       22a76:	3a01      	subs	r2, #1
+
+       22a78:	ea41 2303 	orr.w	r3, r1, r3, lsl #8
+
+       22a7c:	f8c9 2054 	str.w	r2, [r9, #84]	@ 0x54
+
+       22a80:	2200      	movs	r2, #0
+
+       22a82:	f363 020f 	bfi	r2, r3, #0, #16
+
+       22a86:	f363 421f 	bfi	r2, r3, #16, #16
+
+       22a8a:	2304      	movs	r3, #4
+
+       22a8c:	eb09 0403 	add.w	r4, r9, r3
+
+       22a90:	f889 3014 	strb.w	r3, [r9, #20]
+
+       22a94:	4621      	mov	r1, r4
+
+       22a96:	f8c9 2060 	str.w	r2, [r9, #96]	@ 0x60
+
+       22a9a:	4648      	mov	r0, r9
+
+       22a9c:	f004 fb2e 	bl	270fc <<a href="../ipv4/ip4.c/a30d884704b67281b26f54b966ad46b4.html">ip4_route_src</a>>
+
+       22aa0:	4622      	mov	r2, r4
+
+       22aa2:	4601      	mov	r1, r0
+
+       22aa4:	4650      	mov	r0, sl
+
+       22aa6:	f7fe fe6d 	bl	21784 <<a href="../tcp.c/86d3e6817d3af70ff6d5f20c8645e5bf.html">tcp_eff_send_mss_netif</a>>
+
+       22aaa:	f241 131c 	movw	r3, #4380	@ 0x111c
+
+       22aae:	0041      	lsls	r1, r0, #1
+
+       22ab0:	4299      	cmp	r1, r3
+
+       22ab2:	4602      	mov	r2, r0
+
+       22ab4:	460c      	mov	r4, r1
+
+       22ab6:	bf38      	it	cc
+
+       22ab8:	461c      	movcc	r4, r3
+
+       22aba:	ebb4 0f82 	cmp.w	r4, r2, lsl #2
+
+       22abe:	f8a9 0032 	strh.w	r0, [r9, #50]	@ 0x32
+
+       22ac2:	ea4f 0080 	mov.w	r0, r0, lsl #2
+
+       22ac6:	d93c      	bls.n	22b42 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xc0e>
+
+       22ac8:	b283      	uxth	r3, r0
+
+       22aca:	f8a9 3048 	strh.w	r3, [r9, #72]	@ 0x48
+
+       22ace:	f8b9 3066 	ldrh.w	r3, [r9, #102]	@ 0x66
+
+       22ad2:	f8d9 0070 	ldr.w	r0, [r9, #112]	@ 0x70
+
+       22ad6:	3b01      	subs	r3, #1
+
+       22ad8:	f8a9 3066 	strh.w	r3, [r9, #102]	@ 0x66
+
+       22adc:	b358      	cbz	r0, 22b36 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xc02>
+
+       22ade:	6803      	ldr	r3, [r0, #0]
+
+       22ae0:	f8c9 3070 	str.w	r3, [r9, #112]	@ 0x70
+
+       22ae4:	f7fe f8d2 	bl	20c8c <<a href="../tcp.c/42878e43aa02eb2d29bf782c03eb4a4b.html">tcp_seg_free</a>>
+
+       22ae8:	f8d9 3070 	ldr.w	r3, [r9, #112]	@ 0x70
+
+       22aec:	b303      	cbz	r3, 22b30 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xbfc>
+
+       22aee:	2300      	movs	r3, #0
+
+       22af0:	f889 3042 	strb.w	r3, [r9, #66]	@ 0x42
+
+       22af4:	f8a9 3030 	strh.w	r3, [r9, #48]	@ 0x30
+
+       22af8:	f8d9 3084 	ldr.w	r3, [r9, #132]	@ 0x84
+
+       22afc:	2b00      	cmp	r3, #0
+
+       22afe:	f43f ab96 	beq.w	2222e <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x2fa>
+
+       22b02:	f8d9 0010 	ldr.w	r0, [r9, #16]
+
+       22b06:	2200      	movs	r2, #0
+
+       22b08:	4649      	mov	r1, r9
+
+       22b0a:	4798      	blx	r3
+
+       22b0c:	300d      	adds	r0, #13
+
+       22b0e:	f47f ab8e 	bne.w	2222e <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x2fa>
+
+       22b12:	f7ff bba5 	b.w	22260 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x32c>
+
+       22b16:	2b00      	cmp	r3, #0
+
+       22b18:	f43f aec9 	beq.w	228ae <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x97a>
+
+       22b1c:	68da      	ldr	r2, [r3, #12]
+
+       22b1e:	454a      	cmp	r2, r9
+
+       22b20:	f43f af60 	beq.w	229e4 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xab0>
+
+       22b24:	4613      	mov	r3, r2
+
+       22b26:	e7f6      	b.n	22b16 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xbe2>
+
+       22b28:	429a      	cmp	r2, r3
+
+       22b2a:	bf88      	it	hi
+
+       22b2c:	b293      	uxthhi	r3, r2
+
+       22b2e:	e6a5      	b.n	2287c <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0x948>
+
+       22b30:	f04f 33ff 	mov.w	r3, #4294967295	@ 0xffffffff
+
+       22b34:	e7de      	b.n	22af4 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xbc0>
+
+       22b36:	f8d9 006c 	ldr.w	r0, [r9, #108]	@ 0x6c
+
+       22b3a:	6803      	ldr	r3, [r0, #0]
+
+       22b3c:	f8c9 306c 	str.w	r3, [r9, #108]	@ 0x6c
+
+       22b40:	e7d0      	b.n	22ae4 <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xbb0>
+
+       22b42:	4299      	cmp	r1, r3
+
+       22b44:	bf88      	it	hi
+
+       22b46:	b28b      	uxthhi	r3, r1
+
+       22b48:	e7bf      	b.n	22aca <<a href="./e3c17e1b95f3b9b4519367e33fff205b.html">tcp_input</a>+0xb96>
+
+       22b4a:	bf00      	nop
+
+       22b4c:	1ffe113c 	.word	0x1ffe113c
+
+       22b50:	1ffe47d8 	.word	0x1ffe47d8
+
+       22b54:	1ffe1140 	.word	0x1ffe1140
+
+    </pre>
+
+    
+    <pre><a href="./50b425e348440850d23e696f4c5c730a.html">tcp_trigger_input_pcb_close (16)</a></pre>
+    
+
+    
+        <h1>Stack Worst-Case Scenarios</h1>
+        
+        <table class="table table-bordered table-hover table-condensed">
+        <thead>
+            <tr>
+                <th rowspan="2">#</th>
+                <th colspan="2" style="text-align: center">Stack</th>
+                <th colspan="2" style="text-align: center">Code</th>
+                <th rowspan="2" width="100%">Name</th>
+            </tr>
+            <tr>
+                <th class="col_size">&sum; = 468</th>
+                <th class="col_size"></th>
+                <th class="col_size">&sum;= 2,768</th>
+                <th class="col_size"></th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <th>1</th>
+                <td class="col_size">
+                    
+                    468
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                48 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    2,768
+                    
+                    
+                </td>
+                <td class="col_size">68</td>
+                <td><a href="../../../../../bsw/util/src/util/logger/Logger.cpp/d658d7c78dcca1ca01e61ef198b3eeaa.html" class="icon-function">util::logger::Logger::doLog(unsigned char, util::logger::Level, char const*, std::__va_list)</a></td>
+            </tr>
+        
+            <tr>
+                <th>2</th>
+                <td class="col_size">
+                    
+                    420
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                24 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    2,700
+                    
+                    
+                </td>
+                <td class="col_size">100</td>
+                <td><a href="../../../../../../executables/referenceApp/application/src/logger/logger.cpp/98866fb3d81ee8db78cbfd1e2dfd931d.html" class="icon-function">log_lwipInfo</a></td>
+            </tr>
+        
+            <tr>
+                <th>3</th>
+                <td class="col_size">
+                    
+                    396
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                16 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    2,600
+                    
+                    
+                </td>
+                <td class="col_size">60</td>
+                <td><a href="../memp.c/39d50c52143357af896630c36b8c515f.html" class="icon-function">memp_free</a></td>
+            </tr>
+        
+            <tr>
+                <th>4</th>
+                <td class="col_size">
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    2,540
+                    
+                    
+                </td>
+                <td class="col_size">112</td>
+                <td><a href="../pbuf.c/9b6fd2596874539050b4147be9634d35.html" class="icon-function">pbuf_free</a></td>
+            </tr>
+        
+            <tr>
+                <th>5</th>
+                <td class="col_size">
+                    
+                    380
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                32 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    2,428
+                    
+                    
+                </td>
+                <td class="col_size">264</td>
+                <td><a href="../pbuf.c/00f9d6c635a80626d607c18477d3504a.html" class="icon-function">pbuf_alloc</a></td>
+            </tr>
+        
+            <tr>
+                <th>6</th>
+                <td class="col_size">
+                    
+                    348
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                32 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    2,164
+                    
+                    
+                </td>
+                <td class="col_size">172</td>
+                <td><a href="../tcp_out.c/4c45a821c89299dd22544f20511fc68d.html" class="icon-function">tcp_output_alloc_header_common</a></td>
+            </tr>
+        
+            <tr>
+                <th>7</th>
+                <td class="col_size">
+                    
+                    316
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                24 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    1,992
+                    
+                    
+                </td>
+                <td class="col_size">100</td>
+                <td><a href="../tcp_out.c/750286e53faf5e6c6518b73dc75330b6.html" class="icon-function">tcp_send_empty_ack</a></td>
+            </tr>
+        
+            <tr>
+                <th>8</th>
+                <td class="col_size">
+                    
+                    292
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                64 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    1,892
+                    
+                    
+                </td>
+                <td class="col_size">1,040</td>
+                <td><a href="../tcp_out.c/65142df0c7be77da97e3dbbc90844f1a.html" class="icon-function">tcp_output</a></td>
+            </tr>
+        
+            <tr>
+                <th>9</th>
+                <td class="col_size">
+                    
+                    228
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                8 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    852
+                    
+                    
+                </td>
+                <td class="col_size">92</td>
+                <td><a href="../tcp.c/b9fce7e0b1692c774e7c7904cc0c9f1e.html" class="icon-function">tcp_pcb_remove</a></td>
+            </tr>
+        
+            <tr>
+                <th>10</th>
+                <td class="col_size">
+                    
+                    220
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                64 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    760
+                    
+                    
+                </td>
+                <td class="col_size">308</td>
+                <td><a href="../tcp.c/65bf4b4d1cd8c2ab7ef11aba4b48c88a.html" class="icon-function">tcp_abandon</a></td>
+            </tr>
+        
+            <tr>
+                <th>11</th>
+                <td class="col_size">
+                    
+                    156
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                4 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    452
+                    
+                    
+                </td>
+                <td class="col_size">72</td>
+                <td><a href="../tcp.c/eeb201b5241a05aa29f7ac5d9e619cc3.html" class="icon-function">tcp_kill_state</a></td>
+            </tr>
+        
+            <tr>
+                <th>12</th>
+                <td class="col_size">
+                    
+                    152
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                24 
+            
+                </td>
+                <td class="col_size">
+                    
+                </td>
+                <td class="col_size">380</td>
+                <td><a href="../tcp.c/2b2cbbd7123c3c49fc928162267dac1e.html" class="icon-function">tcp_alloc</a></td>
+            </tr>
+        
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <th></th>
+                <th class="col_size">128
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </tfoot>
+        
+    </table>
+        
+        
+        <table class="table table-bordered table-hover table-condensed">
+        <thead>
+            <tr>
+                <th rowspan="2">#</th>
+                <th colspan="2" style="text-align: center">Stack</th>
+                <th colspan="2" style="text-align: center">Code</th>
+                <th rowspan="2" width="100%">Name</th>
+            </tr>
+            <tr>
+                <th class="col_size">&sum; = 128</th>
+                <th class="col_size"></th>
+                <th class="col_size">&sum;= 4,120</th>
+                <th class="col_size"></th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <th>1</th>
+                <td class="col_size">
+                    
+                    128
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                64 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    4,120
+                    
+                    
+                </td>
+                <td class="col_size">3,108</td>
+                <td><a href="./e3c17e1b95f3b9b4519367e33fff205b.html" class="icon-function">tcp_input</a></td>
+            </tr>
+        
+            <tr>
+                <th>2</th>
+                <td class="col_size">
+                    
+                    64
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                40 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    1,012
+                    
+                    
+                </td>
+                <td class="col_size">788</td>
+                <td><a href="../ipv4/ip4.c/17641b681261fdfd4309a84b5ab2c56e.html" class="icon-function">ip4_input</a></td>
+            </tr>
+        
+            <tr>
+                <th>3</th>
+                <td class="col_size">
+                </td>
+                <td class="col_size">
+            
+                24 
+            
+                </td>
+                <td class="col_size">
+                    
+                </td>
+                <td class="col_size">224</td>
+                <td><a href="../../netif/ethernet.c/e2fa4588adea7f5422e68cfb57168248.html" class="icon-function">ethernet_input</a></td>
+            </tr>
+        
+        </tbody>
+        
+    </table>
+        
+    
+
+
+        </div>
+    <div id="page-footer">
+        <hr>
+        
+            brought to you with 💖
+            by <a href="https://twitter.com/hbehrens">Heiko Behrens</a>
+            <span class="secondary">– MIT license, copyright © 2014-2026</span>
+        
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../../../../../../../../../static/css/style.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Symbol - puncover</title>
+    
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="page-header">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="../../../../../../../../../../../index.html">
+                    Puncover
+                  </a>
+                </div>
+              </div>
+            </nav>
+          
+        </div>
+        <div id="inner_content">
+        
+    
+    <ol class="breadcrumb folders">
+        
+        <li><a href="../../../../../../../../../../../home.html">home</a></li>
+        
+        <li><a href="../../../../../../../../../../runner.html">runner</a></li>
+        
+        <li><a href="../../../../../../../../../work.html">work</a></li>
+        
+        <li><a href="../../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../libs.html">libs</a></li>
+        
+        <li><a href="../../../../../3rdparty.html">3rdparty</a></li>
+        
+        <li><a href="../../../../etl.html">etl</a></li>
+        
+        <li><a href="../../../include.html">include</a></li>
+        
+        <li ><a href="../../etl.html">etl</a>
+            </li>
+
+        
+        <li class="active"><a href="../format.h.html">format.h</a>:1562
+            </li>
+        
+    </ol>
+
+
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>Function</th>
+                <td colspan="5">
+                    <span class="icon-function">void etl::private_format::format_floating_default&lt;etl::private_format::counter_iterator, float&gt;(etl::private_format::counter_iterator&amp;, float, etl::private_format::format_spec_t const&amp;)</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th rowspan="2"></th>
+                <th>Address</th>
+                <th>Remarks</th>
+                <th>Stack</th>
+                <th>Code</th>
+                <th>Static</th>
+            </tr>
+            <tr>
+                <td>0x0000794c</td>
+                <td>
+    
+    <span class="label label-warning">calls float</span>
+</td>
+                <td></td>
+                <td>444</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>Callers (1)</th>
+                <td colspan="5">
+                
+                    <a href="./62bfa8d42cf1b021a20792bfceae7afe.html">void etl::private_format::format_floating&lt;etl::private_format::counter_iterator, float&gt;(etl::private_format::counter_iterator&amp;, float, etl::private_format::format_spec_t const&amp;) (328)</a>
+                    
+                
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Callees (6,
+                            <span title="sum of used bytes by all callees">
+                            Σ=1336
+                            </span>
+                        )
+                    
+                </th>
+                <td colspan="5">
+                
+                    <a href="../../../../../../../../../../../unknown/unknown/54e48ee700c8b12025dd52d6a9d6e3c2.html">modff (108)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../../../../../../../../unknown/unknown/bd19547b602dd13481be74c905a74397.html">roundf (76)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../../../../../../../../unknown/unknown/278d3a41443c31410f4e18a5275e788d.html">__aeabi_f2ulz (64)</a>
+                    
+                        ,
+                    
+                
+                    <a href="./d166f8fec4edbeef3cbafcc83846b119.html">void etl::private_format::format_plain_num&lt;etl::private_format::counter_iterator, unsigned long long, 10ull, false&gt;(etl::private_format::counter_iterator&amp;, unsigned long long, etl::private_format::format_spec_t const&amp;, unsigned int) (308)</a>
+                    
+                        ,
+                    
+                
+                    <a href="./28398e5d3d5e7b7b8f89f26bdc6ce805.html">void etl::private_format::format_plain_num&lt;etl::private_format::counter_iterator, unsigned long long, 10ull, true&gt;(etl::private_format::counter_iterator&amp;, unsigned long long, etl::private_format::format_spec_t const&amp;, unsigned int) (380)</a>
+                    
+                        ,
+                    
+                
+                    <a href="./b89a7042a7545abe33791189b29a6463.html">void etl::private_format::format_floating_e&lt;etl::private_format::counter_iterator, float&gt;(etl::private_format::counter_iterator&amp;, float, etl::private_format::format_spec_t const&amp;) (400)</a>
+                    
+                
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <pre><a href="./ca41303805d58e0a6e71beb028619faa.html">void etl::private_format::format_floating_default&lt;etl::private_format::counter_iterator, double&gt;(etl::private_format::counter_iterator&amp;, double, etl::private_format::format_spec_t const&amp;) (508)</a></pre>
+    
+
+    <pre>
+
+    void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&):
+
+        794c:	e92d 43f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, lr}
+
+        7950:	ed9f 7a67 	vldr	s14, [pc, #412]	@ 7af0 <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x1a4>
+
+        7954:	eef0 7ac0 	vabs.f32	s15, s0
+
+        7958:	eef4 7ac7 	vcmpe.f32	s15, s14
+
+        795c:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+
+        7960:	b093      	sub	sp, #76	@ 0x4c
+
+        7962:	4605      	mov	r5, r0
+
+        7964:	460c      	mov	r4, r1
+
+        7966:	da7b      	bge.n	7a60 <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x114>
+
+        7968:	eef5 7ac0 	vcmpe.f32	s15, #0.0
+
+        796c:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+
+        7970:	dd06      	ble.n	7980 <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x34>
+
+        7972:	ed9f 7a60 	vldr	s14, [pc, #384]	@ 7af4 <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x1a8>
+
+        7976:	eef4 7ac7 	vcmpe.f32	s15, s14
+
+        797a:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+
+        797e:	d46f      	bmi.n	7a60 <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x114>
+
+    _ZSt7signbitf():
+
+        7980:	ee10 8a10 	vmov	r8, s0
+
+    _ZSt4modffPf():
+
+        7984:	a806      	add	r0, sp, #24
+
+    _ZSt7signbitf():
+
+        7986:	f008 4800 	and.w	r8, r8, #2147483648	@ 0x80000000
+
+    _ZSt4modffPf():
+
+        798a:	f02d fb41 	bl	35010 <<a href="../../../../../../../../../../../unknown/unknown/54e48ee700c8b12025dd52d6a9d6e3c2.html">modff</a>>
+
+    void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&):
+
+        798e:	f8dd 9018 	ldr.w	r9, [sp, #24]
+
+        7992:	eddf 7a59 	vldr	s15, [pc, #356]	@ 7af8 <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x1ac>
+
+        7996:	f1b8 0f00 	cmp.w	r8, #0
+
+        799a:	d03e      	beq.n	7a1a <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0xce>
+
+    _ZSt5roundf():
+
+        799c:	ee20 0a67 	vnmul.f32	s0, s0, s15
+
+    void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&):
+
+        79a0:	f089 4900 	eor.w	r9, r9, #2147483648	@ 0x80000000
+
+        79a4:	f8cd 9018 	str.w	r9, [sp, #24]
+
+    _ZSt5roundf():
+
+        79a8:	f02d fcb4 	bl	35314 <<a href="../../../../../../../../../../../unknown/unknown/bd19547b602dd13481be74c905a74397.html">roundf</a>>
+
+        79ac:	ee10 0a10 	vmov	r0, s0
+
+    void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&):
+
+        79b0:	f02f fcdc 	bl	3736c <<a href="../../../../../../../../../../../unknown/unknown/278d3a41443c31410f4e18a5275e788d.html">__aeabi_f2ulz</a>>
+
+        79b4:	4606      	mov	r6, r0
+
+        79b6:	4648      	mov	r0, r9
+
+        79b8:	460f      	mov	r7, r1
+
+        79ba:	f02f fcd7 	bl	3736c <<a href="../../../../../../../../../../../unknown/unknown/278d3a41443c31410f4e18a5275e788d.html">__aeabi_f2ulz</a>>
+
+        79be:	4602      	mov	r2, r0
+
+        79c0:	484e      	ldr	r0, [pc, #312]	@ (7afc <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x1b0>)
+
+        79c2:	f04f 0c00 	mov.w	ip, #0
+
+        79c6:	4567      	cmp	r7, ip
+
+        79c8:	bf08      	it	eq
+
+        79ca:	4286      	cmpeq	r6, r0
+
+        79cc:	460b      	mov	r3, r1
+
+        79ce:	f000 8083 	beq.w	7ad8 <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x18c>
+
+    _ZN3etl14private_format16counter_iteratorppEv():
+
+        79d2:	6829      	ldr	r1, [r5, #0]
+
+        79d4:	3101      	adds	r1, #1
+
+        79d6:	6029      	str	r1, [r5, #0]
+
+    void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&):
+
+        79d8:	2100      	movs	r1, #0
+
+        79da:	9400      	str	r4, [sp, #0]
+
+        79dc:	9101      	str	r1, [sp, #4]
+
+        79de:	4628      	mov	r0, r5
+
+        79e0:	f7fd fdfa 	bl	55d8 <<a href="./d166f8fec4edbeef3cbafcc83846b119.html">void etl::private_format::format_plain_num<etl::private_format::counter_iterator, unsigned long long, 10ull, false>(etl::private_format::counter_iterator&, unsigned long long, etl::private_format::format_spec_t const&, unsigned int)</a>>
+
+    _ZN3etl11char_traitsIcE6lengthEPKc():
+
+        79e4:	4b46      	ldr	r3, [pc, #280]	@ (7b00 <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x1b4>)
+
+        79e6:	469c      	mov	ip, r3
+
+        79e8:	f81c 2b01 	ldrb.w	r2, [ip], #1
+
+        79ec:	2a00      	cmp	r2, #0
+
+        79ee:	d1fb      	bne.n	79e8 <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x9c>
+
+        79f0:	ebac 0203 	sub.w	r2, ip, r3
+
+    _ZN3etl14private_format15format_sequenceINS0_16counter_iteratorEEEvRT_NS_17basic_string_viewIcNS_11char_traitsIcEEEE():
+
+        79f4:	2a01      	cmp	r2, #1
+
+    _ZN3etl17basic_string_viewIcNS_11char_traitsIcEEEC4EPKc():
+
+        79f6:	f10c 3cff 	add.w	ip, ip, #4294967295	@ 0xffffffff
+
+    _ZN3etl14private_format15format_sequenceINS0_16counter_iteratorEEEvRT_NS_17basic_string_viewIcNS_11char_traitsIcEEEE():
+
+        79fa:	d003      	beq.n	7a04 <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0xb8>
+
+        79fc:	682a      	ldr	r2, [r5, #0]
+
+        79fe:	1ad2      	subs	r2, r2, r3
+
+        7a00:	4462      	add	r2, ip
+
+        7a02:	602a      	str	r2, [r5, #0]
+
+    void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&):
+
+        7a04:	2306      	movs	r3, #6
+
+        7a06:	9301      	str	r3, [sp, #4]
+
+        7a08:	9400      	str	r4, [sp, #0]
+
+        7a0a:	4632      	mov	r2, r6
+
+        7a0c:	463b      	mov	r3, r7
+
+        7a0e:	4628      	mov	r0, r5
+
+        7a10:	f7ff fcdc 	bl	73cc <<a href="./28398e5d3d5e7b7b8f89f26bdc6ce805.html">void etl::private_format::format_plain_num<etl::private_format::counter_iterator, unsigned long long, 10ull, true>(etl::private_format::counter_iterator&, unsigned long long, etl::private_format::format_spec_t const&, unsigned int)</a>>
+
+        7a14:	b013      	add	sp, #76	@ 0x4c
+
+        7a16:	e8bd 83f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+
+    _ZSt5roundf():
+
+        7a1a:	ee20 0a27 	vmul.f32	s0, s0, s15
+
+        7a1e:	f02d fc79 	bl	35314 <<a href="../../../../../../../../../../../unknown/unknown/bd19547b602dd13481be74c905a74397.html">roundf</a>>
+
+        7a22:	ee10 0a10 	vmov	r0, s0
+
+    void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&):
+
+        7a26:	f02f fca1 	bl	3736c <<a href="../../../../../../../../../../../unknown/unknown/278d3a41443c31410f4e18a5275e788d.html">__aeabi_f2ulz</a>>
+
+        7a2a:	4606      	mov	r6, r0
+
+        7a2c:	4648      	mov	r0, r9
+
+        7a2e:	460f      	mov	r7, r1
+
+        7a30:	f02f fc9c 	bl	3736c <<a href="../../../../../../../../../../../unknown/unknown/278d3a41443c31410f4e18a5275e788d.html">__aeabi_f2ulz</a>>
+
+        7a34:	4602      	mov	r2, r0
+
+        7a36:	4831      	ldr	r0, [pc, #196]	@ (7afc <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x1b0>)
+
+        7a38:	4547      	cmp	r7, r8
+
+        7a3a:	bf08      	it	eq
+
+        7a3c:	4286      	cmpeq	r6, r0
+
+        7a3e:	460b      	mov	r3, r1
+
+        7a40:	d050      	beq.n	7ae4 <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x198>
+
+        7a42:	6921      	ldr	r1, [r4, #16]
+
+    _ZN3etl14private_format11format_signINS0_16counter_iteratorEiEEvRT_T0_RKNS0_13format_spec_tE():
+
+        7a44:	2900      	cmp	r1, #0
+
+        7a46:	d0c7      	beq.n	79d8 <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x8c>
+
+        7a48:	3901      	subs	r1, #1
+
+        7a4a:	2901      	cmp	r1, #1
+
+        7a4c:	d9c1      	bls.n	79d2 <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x86>
+
+        7a4e:	492d      	ldr	r1, [pc, #180]	@ (7b04 <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x1b8>)
+
+        7a50:	9303      	str	r3, [sp, #12]
+
+        7a52:	6809      	ldr	r1, [r1, #0]
+
+        7a54:	9202      	str	r2, [sp, #8]
+
+        7a56:	a805      	add	r0, sp, #20
+
+        7a58:	4788      	blx	r1
+
+        7a5a:	9a02      	ldr	r2, [sp, #8]
+
+        7a5c:	9b03      	ldr	r3, [sp, #12]
+
+        7a5e:	e7bb      	b.n	79d8 <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x8c>
+
+    _ZN3etl16private_optional13optional_implIjLb1EEC4ERKS2_():
+
+        7a60:	7922      	ldrb	r2, [r4, #4]
+
+    _ZN3etl16private_optional13optional_implIjLb1EE12storage_typeC4Ev():
+
+        7a62:	2300      	movs	r3, #0
+
+        7a64:	9306      	str	r3, [sp, #24]
+
+        7a66:	f88d 301c 	strb.w	r3, [sp, #28]
+
+    _ZN3etl16private_optional13optional_implIjLb1EEC4ERKS2_():
+
+        7a6a:	b122      	cbz	r2, 7a76 <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x12a>
+
+    _ZN3etl16private_optional13optional_implIjLb1EE12storage_type9constructERKj():
+
+        7a6c:	6822      	ldr	r2, [r4, #0]
+
+        7a6e:	9206      	str	r2, [sp, #24]
+
+        7a70:	2301      	movs	r3, #1
+
+        7a72:	f88d 301c 	strb.w	r3, [sp, #28]
+
+    _ZN3etl14private_format13format_spec_tC4ERKS1_():
+
+        7a76:	68a1      	ldr	r1, [r4, #8]
+
+        7a78:	9108      	str	r1, [sp, #32]
+
+        7a7a:	7b21      	ldrb	r1, [r4, #12]
+
+        7a7c:	f88d 1024 	strb.w	r1, [sp, #36]	@ 0x24
+
+    _ZN3etl16private_optional13optional_implIjLb1EEC4ERKS2_():
+
+        7a80:	7f22      	ldrb	r2, [r4, #28]
+
+    _ZN3etl14private_format13format_spec_tC4ERKS1_():
+
+        7a82:	6921      	ldr	r1, [r4, #16]
+
+        7a84:	910a      	str	r1, [sp, #40]	@ 0x28
+
+    _ZN3etl16private_optional13optional_implIjLb1EE12storage_typeC4Ev():
+
+        7a86:	2300      	movs	r3, #0
+
+    _ZN3etl14private_format13format_spec_tC4ERKS1_():
+
+        7a88:	8aa1      	ldrh	r1, [r4, #20]
+
+        7a8a:	f8ad 102c 	strh.w	r1, [sp, #44]	@ 0x2c
+
+    _ZN3etl16private_optional13optional_implIjLb1EEC4ERKS2_():
+
+        7a8e:	e9cd 330c 	strd	r3, r3, [sp, #48]	@ 0x30
+
+        7a92:	b122      	cbz	r2, 7a9e <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x152>
+
+    _ZN3etl16private_optional13optional_implIjLb1EE12storage_type9constructERKj():
+
+        7a94:	69a2      	ldr	r2, [r4, #24]
+
+        7a96:	920c      	str	r2, [sp, #48]	@ 0x30
+
+        7a98:	2301      	movs	r3, #1
+
+        7a9a:	f88d 3034 	strb.w	r3, [sp, #52]	@ 0x34
+
+    _ZN3etl16private_optional13optional_implIjLb1EEC4ERKS2_():
+
+        7a9e:	f894 2028 	ldrb.w	r2, [r4, #40]	@ 0x28
+
+    _ZN3etl14private_format13format_spec_tC4ERKS1_():
+
+        7aa2:	f894 1020 	ldrb.w	r1, [r4, #32]
+
+        7aa6:	f88d 1038 	strb.w	r1, [sp, #56]	@ 0x38
+
+    _ZN3etl16private_optional13optional_implIjLb1EE12storage_typeC4Ev():
+
+        7aaa:	2300      	movs	r3, #0
+
+        7aac:	930f      	str	r3, [sp, #60]	@ 0x3c
+
+    _ZN3etl16private_optional13optional_implIjLb1EEC4ERKS2_():
+
+        7aae:	9310      	str	r3, [sp, #64]	@ 0x40
+
+        7ab0:	b122      	cbz	r2, 7abc <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x170>
+
+    _ZN3etl16private_optional13optional_implIjLb1EE12storage_type9constructERKj():
+
+        7ab2:	6a62      	ldr	r2, [r4, #36]	@ 0x24
+
+        7ab4:	920f      	str	r2, [sp, #60]	@ 0x3c
+
+        7ab6:	2301      	movs	r3, #1
+
+        7ab8:	f88d 3040 	strb.w	r3, [sp, #64]	@ 0x40
+
+    _ZN3etl14private_format13format_spec_tC4ERKS1_():
+
+        7abc:	8da2      	ldrh	r2, [r4, #44]	@ 0x2c
+
+        7abe:	f8ad 2044 	strh.w	r2, [sp, #68]	@ 0x44
+
+    _ZN3etl16private_optional13optional_implIcLb1EE12storage_typeC4Ev():
+
+        7ac2:	f240 1365 	movw	r3, #357	@ 0x165
+
+    void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&):
+
+        7ac6:	a906      	add	r1, sp, #24
+
+        7ac8:	4628      	mov	r0, r5
+
+    _ZN3etl16private_optional13optional_implIcLb1EE12storage_typeC4Ev():
+
+        7aca:	f8ad 3046 	strh.w	r3, [sp, #70]	@ 0x46
+
+    void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&):
+
+        7ace:	f7fd ff95 	bl	59fc <<a href="./b89a7042a7545abe33791189b29a6463.html">void etl::private_format::format_floating_e<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>>
+
+        7ad2:	b013      	add	sp, #76	@ 0x4c
+
+        7ad4:	e8bd 83f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+
+        7ad8:	3201      	adds	r2, #1
+
+        7ada:	4666      	mov	r6, ip
+
+        7adc:	f141 0300 	adc.w	r3, r1, #0
+
+        7ae0:	4667      	mov	r7, ip
+
+        7ae2:	e776      	b.n	79d2 <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0x86>
+
+        7ae4:	3201      	adds	r2, #1
+
+        7ae6:	4646      	mov	r6, r8
+
+        7ae8:	f141 0300 	adc.w	r3, r1, #0
+
+        7aec:	4647      	mov	r7, r8
+
+        7aee:	e7a8      	b.n	7a42 <<a href="./84e2202c3aa2b4f944ec64e807c3ece2.html">void etl::private_format::format_floating_default<etl::private_format::counter_iterator, float>(etl::private_format::counter_iterator&, float, etl::private_format::format_spec_t const&)</a>+0xf6>
+
+        7af0:	5d5e0b6b 	.word	0x5d5e0b6b
+
+        7af4:	358637bd 	.word	0x358637bd
+
+        7af8:	49742400 	.word	0x49742400
+
+        7afc:	000f4240 	.word	0x000f4240
+
+        7b00:	0003b6c0 	.word	0x0003b6c0
+
+        7b04:	20000000 	.word	0x20000000
+
+    </pre>
+
+    
+    <pre><a href="./4455ceba1fa05dffab5859533e3de695.html">void etl::private_format::format_plain_num&lt;etl::private_format::counter_iterator, unsigned long long, 16ull, true&gt;(etl::private_format::counter_iterator&amp;, unsigned long long, etl::private_format::format_spec_t const&amp;, unsigned int) (312)</a></pre>
+    
+
+    
+
+
+        </div>
+    <div id="page-footer">
+        <hr>
+        
+            brought to you with 💖
+            by <a href="https://twitter.com/hbehrens">Heiko Behrens</a>
+            <span class="secondary">– MIT license, copyright © 2014-2026</span>
+        
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../../../../../../../../../static/css/style.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Symbol - puncover</title>
+    
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="page-header">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="../../../../../../../../../../../index.html">
+                    Puncover
+                  </a>
+                </div>
+              </div>
+            </nav>
+          
+        </div>
+        <div id="inner_content">
+        
+    
+    <ol class="breadcrumb folders">
+        
+        <li><a href="../../../../../../../../../../../home.html">home</a></li>
+        
+        <li><a href="../../../../../../../../../../runner.html">runner</a></li>
+        
+        <li><a href="../../../../../../../../../work.html">work</a></li>
+        
+        <li><a href="../../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../libs.html">libs</a></li>
+        
+        <li><a href="../../../../../bsw.html">bsw</a></li>
+        
+        <li><a href="../../../../routing.html">routing</a></li>
+        
+        <li><a href="../../../src.html">src</a></li>
+        
+        <li ><a href="../../routing.html">routing</a>
+            </li>
+
+        
+        <li class="active"><a href="../LegacyTxAdapter.cpp.html">LegacyTxAdapter.cpp</a>:47
+            </li>
+        
+    </ol>
+
+
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>Function</th>
+                <td colspan="5">
+                    <span class="icon-function">routing::LegacyTxAdapter::allocate(unsigned int)</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th rowspan="2"></th>
+                <th>Address</th>
+                <th>Remarks</th>
+                <th>Stack</th>
+                <th>Code</th>
+                <th>Static</th>
+            </tr>
+            <tr>
+                <td>0x0002d25c</td>
+                <td>
+    
+    
+</td>
+                <td>48 (static)</td>
+                <td>296</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>No Callers</th>
+                <td colspan="5">
+                
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    No Callees
+                    
+                </th>
+                <td colspan="5">
+                
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <pre><a href="./b4204259213542e011ccd953324be9bb.html">routing::LegacyTxAdapter::flush() (100)</a></pre>
+    
+
+    <pre>
+
+    routing::LegacyTxAdapter::allocate(unsigned int):
+
+       2d25c:	e92d 43f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, lr}
+
+       2d260:	460c      	mov	r4, r1
+
+       2d262:	4615      	mov	r5, r2
+
+       2d264:	6863      	ldr	r3, [r4, #4]
+
+       2d266:	4f45      	ldr	r7, [pc, #276]	@ (2d37c <<a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int)</a>+0x120>)
+
+       2d268:	681a      	ldr	r2, [r3, #0]
+
+       2d26a:	6892      	ldr	r2, [r2, #8]
+
+    _ZN3etl4spanIhLj4294967295EEaSERKS1_():
+
+       2d26c:	2100      	movs	r1, #0
+
+       2d26e:	42ba      	cmp	r2, r7
+
+    routing::LegacyTxAdapter::allocate(unsigned int):
+
+       2d270:	b085      	sub	sp, #20
+
+       2d272:	4606      	mov	r6, r0
+
+    _ZN3etl4spanIhLj4294967295EEaSERKS1_():
+
+       2d274:	62e1      	str	r1, [r4, #44]	@ 0x2c
+
+       2d276:	6321      	str	r1, [r4, #48]	@ 0x30
+
+       2d278:	d159      	bne.n	2d32e <<a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int)</a>+0xd2>
+
+    routing::LegacyTxAdapter::maxSize() const():
+
+       2d27a:	6858      	ldr	r0, [r3, #4]
+
+       2d27c:	6803      	ldr	r3, [r0, #0]
+
+       2d27e:	689b      	ldr	r3, [r3, #8]
+
+       2d280:	42bb      	cmp	r3, r7
+
+       2d282:	d127      	bne.n	2d2d4 <<a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int)</a>+0x78>
+
+       2d284:	6840      	ldr	r0, [r0, #4]
+
+       2d286:	6803      	ldr	r3, [r0, #0]
+
+       2d288:	689b      	ldr	r3, [r3, #8]
+
+       2d28a:	42bb      	cmp	r3, r7
+
+       2d28c:	d122      	bne.n	2d2d4 <<a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int)</a>+0x78>
+
+       2d28e:	6840      	ldr	r0, [r0, #4]
+
+       2d290:	6803      	ldr	r3, [r0, #0]
+
+       2d292:	689b      	ldr	r3, [r3, #8]
+
+       2d294:	42bb      	cmp	r3, r7
+
+       2d296:	d11d      	bne.n	2d2d4 <<a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int)</a>+0x78>
+
+       2d298:	6840      	ldr	r0, [r0, #4]
+
+       2d29a:	6803      	ldr	r3, [r0, #0]
+
+       2d29c:	689b      	ldr	r3, [r3, #8]
+
+       2d29e:	4798      	blx	r3
+
+    routing::LegacyTxAdapter::allocate(unsigned int):
+
+       2d2a0:	42a8      	cmp	r0, r5
+
+       2d2a2:	d21a      	bcs.n	2d2da <<a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int)</a>+0x7e>
+
+    _ZN7routing14ClampedCounterImEppEv():
+
+       2d2a4:	6be3      	ldr	r3, [r4, #60]	@ 0x3c
+
+       2d2a6:	1c58      	adds	r0, r3, #1
+
+       2d2a8:	d001      	beq.n	2d2ae <<a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int)</a>+0x52>
+
+       2d2aa:	3301      	adds	r3, #1
+
+       2d2ac:	63e3      	str	r3, [r4, #60]	@ 0x3c
+
+       2d2ae:	6ce3      	ldr	r3, [r4, #76]	@ 0x4c
+
+       2d2b0:	1c5a      	adds	r2, r3, #1
+
+       2d2b2:	bf1c      	itt	ne
+
+       2d2b4:	3301      	addne	r3, #1
+
+       2d2b6:	64e3      	strne	r3, [r4, #76]	@ 0x4c
+
+       2d2b8:	6d23      	ldr	r3, [r4, #80]	@ 0x50
+
+    _ZN7routing14ClampedCounterImEpLERKm():
+
+       2d2ba:	18eb      	adds	r3, r5, r3
+
+    _ZN3etl4spanIhLj4294967295EEC4Ev():
+
+       2d2bc:	f04f 0200 	mov.w	r2, #0
+
+    _ZN7routing14ClampedCounterImEpLERKm():
+
+       2d2c0:	bf28      	it	cs
+
+       2d2c2:	f04f 33ff 	movcs.w	r3, #4294967295	@ 0xffffffff
+
+    routing::LegacyTxAdapter::allocate(unsigned int):
+
+       2d2c6:	4630      	mov	r0, r6
+
+       2d2c8:	6523      	str	r3, [r4, #80]	@ 0x50
+
+    _ZN3etl4spanIhLj4294967295EEC4Ev():
+
+       2d2ca:	6032      	str	r2, [r6, #0]
+
+       2d2cc:	6072      	str	r2, [r6, #4]
+
+    routing::LegacyTxAdapter::allocate(unsigned int):
+
+       2d2ce:	b005      	add	sp, #20
+
+       2d2d0:	e8bd 83f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+
+    routing::LegacyTxAdapter::maxSize() const():
+
+       2d2d4:	4798      	blx	r3
+
+    routing::LegacyTxAdapter::allocate(unsigned int):
+
+       2d2d6:	42a8      	cmp	r0, r5
+
+       2d2d8:	d3e4      	bcc.n	2d2a4 <<a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int)</a>+0x48>
+
+       2d2da:	f8d4 8004 	ldr.w	r8, [r4, #4]
+
+       2d2de:	f8d8 3000 	ldr.w	r3, [r8]
+
+       2d2e2:	689a      	ldr	r2, [r3, #8]
+
+       2d2e4:	f8d3 900c 	ldr.w	r9, [r3, #12]
+
+       2d2e8:	42ba      	cmp	r2, r7
+
+       2d2ea:	d13d      	bne.n	2d368 <<a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int)</a>+0x10c>
+
+    routing::LegacyTxAdapter::maxSize() const():
+
+       2d2ec:	f8d8 0004 	ldr.w	r0, [r8, #4]
+
+       2d2f0:	6803      	ldr	r3, [r0, #0]
+
+       2d2f2:	689b      	ldr	r3, [r3, #8]
+
+       2d2f4:	4798      	blx	r3
+
+       2d2f6:	4602      	mov	r2, r0
+
+    routing::LegacyTxAdapter::allocate(unsigned int):
+
+       2d2f8:	4641      	mov	r1, r8
+
+       2d2fa:	a802      	add	r0, sp, #8
+
+       2d2fc:	47c8      	blx	r9
+
+       2d2fe:	6860      	ldr	r0, [r4, #4]
+
+    _ZNK3etl4spanIhLj4294967295EE4sizeEv():
+
+       2d300:	9b02      	ldr	r3, [sp, #8]
+
+       2d302:	9a03      	ldr	r2, [sp, #12]
+
+       2d304:	eba2 0803 	sub.w	r8, r2, r3
+
+    routing::LegacyTxAdapter::allocate(unsigned int):
+
+       2d308:	6803      	ldr	r3, [r0, #0]
+
+       2d30a:	689b      	ldr	r3, [r3, #8]
+
+       2d30c:	42bb      	cmp	r3, r7
+
+    routing::LegacyTxAdapter::maxSize() const():
+
+       2d30e:	bf02      	ittt	eq
+
+       2d310:	6840      	ldreq	r0, [r0, #4]
+
+       2d312:	6803      	ldreq	r3, [r0, #0]
+
+       2d314:	689b      	ldreq	r3, [r3, #8]
+
+    routing::LegacyTxAdapter::allocate(unsigned int):
+
+       2d316:	4798      	blx	r3
+
+       2d318:	4540      	cmp	r0, r8
+
+       2d31a:	d00b      	beq.n	2d334 <<a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int)</a>+0xd8>
+
+       2d31c:	f894 3054 	ldrb.w	r3, [r4, #84]	@ 0x54
+
+       2d320:	b1ab      	cbz	r3, 2d34e <<a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int)</a>+0xf2>
+
+    _ZN7routing14ClampedCounterImEppEv():
+
+       2d322:	6c23      	ldr	r3, [r4, #64]	@ 0x40
+
+       2d324:	1c59      	adds	r1, r3, #1
+
+       2d326:	bf1c      	itt	ne
+
+       2d328:	3301      	addne	r3, #1
+
+       2d32a:	6423      	strne	r3, [r4, #64]	@ 0x40
+
+       2d32c:	e7bf      	b.n	2d2ae <<a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int)</a>+0x52>
+
+    routing::LegacyTxAdapter::allocate(unsigned int):
+
+       2d32e:	4618      	mov	r0, r3
+
+       2d330:	4790      	blx	r2
+
+       2d332:	e7b5      	b.n	2d2a0 <<a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int)</a>+0x44>
+
+    _ZNK3etl4spanIhLj4294967295EE5firstEj():
+
+       2d334:	9b02      	ldr	r3, [sp, #8]
+
+    _ZN3etl4spanIhLj4294967295EEaSERKS1_():
+
+       2d336:	62e3      	str	r3, [r4, #44]	@ 0x2c
+
+    _ZNK3etl4spanIhLj4294967295EE5firstEj():
+
+       2d338:	441d      	add	r5, r3
+
+    routing::LegacyTxAdapter::allocate(unsigned int):
+
+       2d33a:	2200      	movs	r2, #0
+
+       2d33c:	4630      	mov	r0, r6
+
+    _ZN3etl4spanIhLj4294967295EEaSERKS1_():
+
+       2d33e:	6325      	str	r5, [r4, #48]	@ 0x30
+
+    routing::LegacyTxAdapter::allocate(unsigned int):
+
+       2d340:	f884 2054 	strb.w	r2, [r4, #84]	@ 0x54
+
+    _ZN3etl4spanIhLj4294967295EEC4ERKS1_():
+
+       2d344:	e9c6 3500 	strd	r3, r5, [r6]
+
+    routing::LegacyTxAdapter::allocate(unsigned int):
+
+       2d348:	b005      	add	sp, #20
+
+       2d34a:	e8bd 83f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+
+    _ZNK3etl8delegateIFvN7routing12ErrorHandler10StatusCodeEhmEE8is_validEv():
+
+       2d34e:	6a67      	ldr	r7, [r4, #36]	@ 0x24
+
+    _ZNK3etl8delegateIFvN7routing12ErrorHandler10StatusCodeEhmEEclIJRKS3_RKhRKmEEEvDpOT_():
+
+       2d350:	b177      	cbz	r7, 2d370 <<a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int)</a>+0x114>
+
+       2d352:	2300      	movs	r3, #0
+
+       2d354:	f894 2028 	ldrb.w	r2, [r4, #40]	@ 0x28
+
+       2d358:	2106      	movs	r1, #6
+
+       2d35a:	f104 0020 	add.w	r0, r4, #32
+
+       2d35e:	47b8      	blx	r7
+
+    routing::LegacyTxAdapter::allocate(unsigned int):
+
+       2d360:	2301      	movs	r3, #1
+
+       2d362:	f884 3054 	strb.w	r3, [r4, #84]	@ 0x54
+
+       2d366:	e7dc      	b.n	2d322 <<a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int)</a>+0xc6>
+
+       2d368:	4640      	mov	r0, r8
+
+       2d36a:	4790      	blx	r2
+
+       2d36c:	4602      	mov	r2, r0
+
+       2d36e:	e7c3      	b.n	2d2f8 <<a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int)</a>+0x9c>
+
+    _ZNK3etl8delegateIFvN7routing12ErrorHandler10StatusCodeEhmEEclIJRKS3_RKhRKmEEEvDpOT_():
+
+       2d370:	4b03      	ldr	r3, [pc, #12]	@ (2d380 <<a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int)</a>+0x124>)
+
+       2d372:	a801      	add	r0, sp, #4
+
+       2d374:	681b      	ldr	r3, [r3, #0]
+
+       2d376:	4798      	blx	r3
+
+       2d378:	6a67      	ldr	r7, [r4, #36]	@ 0x24
+
+       2d37a:	e7ea      	b.n	2d352 <<a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int)</a>+0xf6>
+
+       2d37c:	0002d385 	.word	0x0002d385
+
+       2d380:	20000000 	.word	0x20000000
+
+    </pre>
+
+    
+    <pre><a href="./2e64bee31b87ff0b6fac9e0e0683c06e.html">routing::LegacyTxAdapter::maxSize() const (100)</a></pre>
+    
+
+    
+
+
+        </div>
+    <div id="page-footer">
+        <hr>
+        
+            brought to you with 💖
+            by <a href="https://twitter.com/hbehrens">Heiko Behrens</a>
+            <span class="secondary">– MIT license, copyright © 2014-2026</span>
+        
+    </div>
+    </div>
+</body>
+</html>

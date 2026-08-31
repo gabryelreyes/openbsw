@@ -1,0 +1,1088 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../../../../../../../../../static/css/style.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Symbol - puncover</title>
+    
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="page-header">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="../../../../../../../../../../../index.html">
+                    Puncover
+                  </a>
+                </div>
+              </div>
+            </nav>
+          
+        </div>
+        <div id="inner_content">
+        
+    
+    <ol class="breadcrumb folders">
+        
+        <li><a href="../../../../../../../../../../../home.html">home</a></li>
+        
+        <li><a href="../../../../../../../../../../runner.html">runner</a></li>
+        
+        <li><a href="../../../../../../../../../work.html">work</a></li>
+        
+        <li><a href="../../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../libs.html">libs</a></li>
+        
+        <li><a href="../../../../../bsw.html">bsw</a></li>
+        
+        <li><a href="../../../../routing.html">routing</a></li>
+        
+        <li><a href="../../../include.html">include</a></li>
+        
+        <li ><a href="../../routing.html">routing</a>
+            </li>
+
+        
+        <li class="active"><a href="../PduTransportIntegration.h.html">PduTransportIntegration.h</a>:175
+            </li>
+        
+    </ol>
+
+
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>Function</th>
+                <td colspan="5">
+                    <span class="icon-function">routing::PduTransportIntegration&lt;(unsigned char)1, 1416u&gt;::activate(ip::IPAddress const&amp;, unsigned short, etl::delegate&lt;void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)&gt;)</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th rowspan="2"></th>
+                <th>Address</th>
+                <th>Remarks</th>
+                <th>Stack</th>
+                <th>Code</th>
+                <th>Static</th>
+            </tr>
+            <tr>
+                <td>0x0000d158</td>
+                <td>
+    <span class="label label-success">x-module</span>
+    
+</td>
+                <td>120 (static)</td>
+                <td>768</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>Callers (1)</th>
+                <td colspan="5">
+                
+                    <a href="../../../../../../executables/referenceApp/application/src/systems/RoutingSystem.cpp/2cf1442881f5cb011c271dcc671dc40d.html">systems::RoutingSystem::run() (96)</a>
+                    
+                
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Callees (5,
+                            <span title="sum of used bytes by all callees">
+                            Σ=736
+                            </span>
+                        )
+                    
+                </th>
+                <td colspan="5">
+                
+                    <a href="../../../../../../../../../../../unknown/unknown/72d4bd12d6ca07360602e0d6cbc8dc4b.html">memcpy (28)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../src/routing/PduTransportConfig.cpp/adb5bc0771c8553d4cf81e856fa65bc2.html">routing::load(etl::span&lt;unsigned char const, 4294967295u&gt;, routing::PduTransportConfig&amp;) (548)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../util/include/util/logger/Logger.h/fee4073070054ecc160dbd4d6b194f36.html">util::logger::Logger::warn(unsigned char, char const*, ...) (56)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../src/routing/PduTransportBufferedWriter.cpp/b8c485ed155a88f01f1f5203ff8328e0.html">routing::PduTransportBufferedWriter::reset() (16)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../util/include/util/logger/Logger.h/e675253f5bfedd299c26bd0145e28698.html">util::logger::Logger::error(unsigned char, char const*, ...) (88)</a>
+                    
+                
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <pre><a href="../../../../../3rdparty/etl/include/etl/private/delegate_cpp11.h/36e647ccd3232e954de5312d9463a96a.html">void etl::delegate&lt;void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)&gt;::method_stub&lt;systems::RoutingSystem, &amp;systems::RoutingSystem::handleError&gt;(etl::delegate&lt;void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)&gt;::invocation_element const&amp;, routing::ErrorHandler::StatusCode, unsigned char, unsigned long) (8)</a></pre>
+    
+
+    <pre>
+
+    routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>):
+
+        d158:	b082      	sub	sp, #8
+
+        d15a:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+
+        d15e:	7804      	ldrb	r4, [r0, #0]
+
+        d160:	b095      	sub	sp, #84	@ 0x54
+
+        d162:	9103      	str	r1, [sp, #12]
+
+        d164:	9201      	str	r2, [sp, #4]
+
+        d166:	931f      	str	r3, [sp, #124]	@ 0x7c
+
+        d168:	2c00      	cmp	r4, #0
+
+        d16a:	f000 80c4 	beq.w	d2f6 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x19e>
+
+    _ZNK3etl7ivectorINS_4spanIKhLj4294967295EEEvE4sizeEv():
+
+        d16e:	6982      	ldr	r2, [r0, #24]
+
+    routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>):
+
+        d170:	69c3      	ldr	r3, [r0, #28]
+
+        d172:	429a      	cmp	r2, r3
+
+        d174:	4606      	mov	r6, r0
+
+        d176:	f000 80c3 	beq.w	d300 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x1a8>
+
+        d17a:	f04f 0800 	mov.w	r8, #0
+
+        d17e:	46c1      	mov	r9, r8
+
+        d180:	f10d 0b2c 	add.w	fp, sp, #44	@ 0x2c
+
+    _ZN7routing18PduTransportConfigC4Ev():
+
+        d184:	f04f 0aff 	mov.w	sl, #255	@ 0xff
+
+        d188:	e019      	b.n	d1be <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x66>
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj2ELi4321ELb1EE19copy_store_to_valueItEEvPKhRT_():
+
+        d18a:	2202      	movs	r2, #2
+
+        d18c:	f10d 013d 	add.w	r1, sp, #61	@ 0x3d
+
+        d190:	4658      	mov	r0, fp
+
+    _ZNK3etl14unaligned_typeItLi4321EEcvtEv():
+
+        d192:	f8ad 502c 	strh.w	r5, [sp, #44]	@ 0x2c
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj2ELi4321ELb1EE19copy_store_to_valueItEEvPKhRT_():
+
+        d196:	f7f3 fa30 	bl	5fa <<a href="../../../../../../../../../../../unknown/unknown/72d4bd12d6ca07360602e0d6cbc8dc4b.html">memcpy</a>>
+
+    _ZN3etl13reverse_bytesItEENS_9enable_ifIXaaaasrNS_11is_integralIT_EE5valuesrNS_11is_unsignedIS3_EE5valueeqsrNS_15integral_limitsIS3_EE4bitsLj16EES3_E4typeES3_():
+
+        d19a:	f8bd 302c 	ldrh.w	r3, [sp, #44]	@ 0x2c
+
+    routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>):
+
+        d19e:	9a01      	ldr	r2, [sp, #4]
+
+    _ZN3etl13reverse_bytesItEENS_9enable_ifIXaaaasrNS_11is_integralIT_EE5valuesrNS_11is_unsignedIS3_EE5valueeqsrNS_15integral_limitsIS3_EE4bitsLj16EES3_E4typeES3_():
+
+        d1a0:	ba5b      	rev16	r3, r3
+
+        d1a2:	b29b      	uxth	r3, r3
+
+    routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>):
+
+        d1a4:	429a      	cmp	r2, r3
+
+        d1a6:	d029      	beq.n	d1fc <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0xa4>
+
+    _ZNK3etl7ivectorINS_4spanIKhLj4294967295EEEvE4sizeEv():
+
+        d1a8:	69b2      	ldr	r2, [r6, #24]
+
+        d1aa:	69f3      	ldr	r3, [r6, #28]
+
+    routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>):
+
+        d1ac:	f109 0901 	add.w	r9, r9, #1
+
+    _ZNK3etl7ivectorINS_4spanIKhLj4294967295EEEvE4sizeEv():
+
+        d1b0:	1a9b      	subs	r3, r3, r2
+
+    routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>):
+
+        d1b2:	ebb9 0fe3 	cmp.w	r9, r3, asr #3
+
+        d1b6:	f108 0804 	add.w	r8, r8, #4
+
+        d1ba:	f080 80a1 	bcs.w	d300 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x1a8>
+
+    _ZN7routing18PduTransportConfigC4Ev():
+
+        d1be:	2500      	movs	r5, #0
+
+    _ZN3etl4spanIKhLj4294967295EEC4Ev():
+
+        d1c0:	e9cd 5512 	strd	r5, r5, [sp, #72]	@ 0x48
+
+    _ZN3etl22private_unaligned_type22unaligned_type_storageILj2EEC4Ev():
+
+        d1c4:	f44f 5388 	mov.w	r3, #4352	@ 0x1100
+
+        d1c8:	9311      	str	r3, [sp, #68]	@ 0x44
+
+    _ZN3etl7ivectorINS_4spanIKhLj4294967295EEEvEixEj():
+
+        d1ca:	eb02 03c9 	add.w	r3, r2, r9, lsl #3
+
+    _ZN7routing18PduTransportConfigC4Ev():
+
+        d1ce:	950f      	str	r5, [sp, #60]	@ 0x3c
+
+    _ZN3etl22private_unaligned_type22unaligned_type_storageILj2EEC4Ev():
+
+        d1d0:	9510      	str	r5, [sp, #64]	@ 0x40
+
+    _ZN7routing18PduTransportConfigC4Ev():
+
+        d1d2:	f8cd a038 	str.w	sl, [sp, #56]	@ 0x38
+
+    _ZN3etl4spanIKhLj4294967295EEC4ERKS2_():
+
+        d1d6:	f852 2039 	ldr.w	r2, [r2, r9, lsl #3]
+
+        d1da:	685b      	ldr	r3, [r3, #4]
+
+        d1dc:	920b      	str	r2, [sp, #44]	@ 0x2c
+
+    routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>):
+
+        d1de:	a90e      	add	r1, sp, #56	@ 0x38
+
+        d1e0:	4658      	mov	r0, fp
+
+    _ZN3etl4spanIKhLj4294967295EEC4ERKS2_():
+
+        d1e2:	930c      	str	r3, [sp, #48]	@ 0x30
+
+    routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>):
+
+        d1e4:	f021 f8d2 	bl	2e38c <<a href="../../../src/routing/PduTransportConfig.cpp/adb5bc0771c8553d4cf81e856fa65bc2.html">routing::load(etl::span<unsigned char const, 4294967295u>, routing::PduTransportConfig&)</a>>
+
+        d1e8:	4604      	mov	r4, r0
+
+        d1ea:	2800      	cmp	r0, #0
+
+        d1ec:	d1cd      	bne.n	d18a <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x32>
+
+        d1ee:	4b8f      	ldr	r3, [pc, #572]	@ (d42c <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2d4>)
+
+        d1f0:	498f      	ldr	r1, [pc, #572]	@ (d430 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2d8>)
+
+        d1f2:	7818      	ldrb	r0, [r3, #0]
+
+        d1f4:	464a      	mov	r2, r9
+
+        d1f6:	f7fe fdc1 	bl	bd7c <<a href="../../../../util/include/util/logger/Logger.h/fee4073070054ecc160dbd4d6b194f36.html">util::logger::Logger::warn(unsigned char, char const*, ...)</a>>
+
+        d1fa:	e7d5      	b.n	d1a8 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x50>
+
+    _ZN3etl7ivectorIN2io17MemoryQueueReaderINS1_11MemoryQueueILj5672ELj1416EtEEEEvEixEj():
+
+        d1fc:	f506 5500 	add.w	r5, r6, #8192	@ 0x2000
+
+        d200:	eb08 0348 	add.w	r3, r8, r8, lsl #1
+
+        d204:	f8d5 7d18 	ldr.w	r7, [r5, #3352]	@ 0xd18
+
+        d208:	9302      	str	r3, [sp, #8]
+
+        d20a:	441f      	add	r7, r3
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE5clearERN2io7IReaderE():
+
+        d20c:	e002      	b.n	d214 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0xbc>
+
+        d20e:	683b      	ldr	r3, [r7, #0]
+
+        d210:	691b      	ldr	r3, [r3, #16]
+
+        d212:	4798      	blx	r3
+
+        d214:	683b      	ldr	r3, [r7, #0]
+
+        d216:	4658      	mov	r0, fp
+
+        d218:	68db      	ldr	r3, [r3, #12]
+
+        d21a:	4639      	mov	r1, r7
+
+        d21c:	4798      	blx	r3
+
+    _ZNK3etl4spanIhLj4294967295EE5emptyEv():
+
+        d21e:	9a0b      	ldr	r2, [sp, #44]	@ 0x2c
+
+        d220:	9b0c      	ldr	r3, [sp, #48]	@ 0x30
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE5clearERN2io7IReaderE():
+
+        d222:	429a      	cmp	r2, r3
+
+        d224:	4638      	mov	r0, r7
+
+        d226:	d1f2      	bne.n	d20e <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0xb6>
+
+    _ZN3etl7ivectorIN2io17MemoryQueueReaderINS1_11MemoryQueueILj5672ELj1416EtEEEEvEixEj():
+
+        d228:	f8d5 7d30 	ldr.w	r7, [r5, #3376]	@ 0xd30
+
+        d22c:	9b02      	ldr	r3, [sp, #8]
+
+        d22e:	441f      	add	r7, r3
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE5clearERN2io7IReaderE():
+
+        d230:	e002      	b.n	d238 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0xe0>
+
+        d232:	683b      	ldr	r3, [r7, #0]
+
+        d234:	691b      	ldr	r3, [r3, #16]
+
+        d236:	4798      	blx	r3
+
+        d238:	683b      	ldr	r3, [r7, #0]
+
+        d23a:	4658      	mov	r0, fp
+
+        d23c:	68db      	ldr	r3, [r3, #12]
+
+        d23e:	4639      	mov	r1, r7
+
+        d240:	4798      	blx	r3
+
+    _ZNK3etl4spanIhLj4294967295EE5emptyEv():
+
+        d242:	9a0b      	ldr	r2, [sp, #44]	@ 0x2c
+
+        d244:	9b0c      	ldr	r3, [sp, #48]	@ 0x30
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE5clearERN2io7IReaderE():
+
+        d246:	429a      	cmp	r2, r3
+
+        d248:	4638      	mov	r0, r7
+
+        d24a:	d1f2      	bne.n	d232 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0xda>
+
+    _ZN3etl7ivectorIN7routing26PduTransportBufferedWriterEvEixEj():
+
+        d24c:	f8d5 3d78 	ldr.w	r3, [r5, #3448]	@ 0xd78
+
+        d250:	eb09 0089 	add.w	r0, r9, r9, lsl #2
+
+    routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>):
+
+        d254:	eb03 00c0 	add.w	r0, r3, r0, lsl #3
+
+        d258:	f020 fdfe 	bl	2de58 <<a href="../../../src/routing/PduTransportBufferedWriter.cpp/b8c485ed155a88f01f1f5203ff8328e0.html">routing::PduTransportBufferedWriter::reset()</a>>
+
+        d25c:	f89d 3045 	ldrb.w	r3, [sp, #69]	@ 0x45
+
+        d260:	2b11      	cmp	r3, #17
+
+        d262:	d053      	beq.n	d30c <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x1b4>
+
+        d264:	2b01      	cmp	r3, #1
+
+        d266:	d050      	beq.n	d30a <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x1b2>
+
+        d268:	2b10      	cmp	r3, #16
+
+        d26a:	d19d      	bne.n	d1a8 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x50>
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableTxEjRKNS_18PduTransportConfigERKN2ip9IPAddressE():
+
+        d26c:	68f3      	ldr	r3, [r6, #12]
+
+        d26e:	f853 4008 	ldr.w	r4, [r3, r8]
+
+        d272:	2c00      	cmp	r4, #0
+
+        d274:	f000 80b7 	beq.w	d3e6 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x28e>
+
+        d278:	6822      	ldr	r2, [r4, #0]
+
+    _ZN3etl7ivectorIN7routing23PduTransportIntegrationILh1ELj1416EE18DiscardingListenerEvE12emplace_backIJRN3udp22AbstractDatagramSocketEEEERS4_DpOT_():
+
+        d27a:	f8d6 3080 	ldr.w	r3, [r6, #128]	@ 0x80
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableTxEjRKNS_18PduTransportConfigERKN2ip9IPAddressE():
+
+        d27e:	6817      	ldr	r7, [r2, #0]
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE18DiscardingListenerC4ERN3udp22AbstractDatagramSocketE():
+
+        d280:	4a6c      	ldr	r2, [pc, #432]	@ (d434 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2dc>)
+
+        d282:	601a      	str	r2, [r3, #0]
+
+        d284:	605c      	str	r4, [r3, #4]
+
+    _ZN3udp22AbstractDatagramSocket15setDataListenerEPNS_13IDataListenerE():
+
+        d286:	6063      	str	r3, [r4, #4]
+
+    _ZN3etl7ivectorIN7routing23PduTransportIntegrationILh1ELj1416EE18DiscardingListenerEvE12emplace_backIJRN3udp22AbstractDatagramSocketEEEERS4_DpOT_():
+
+        d288:	3308      	adds	r3, #8
+
+        d28a:	f8c6 3080 	str.w	r3, [r6, #128]	@ 0x80
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj2ELi4321ELb1EE19copy_store_to_valueItEEvPKhRT_():
+
+        d28e:	2202      	movs	r2, #2
+
+    _ZNK3etl14unaligned_typeItLi4321EEcvtEv():
+
+        d290:	2300      	movs	r3, #0
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj2ELi4321ELb1EE19copy_store_to_valueItEEvPKhRT_():
+
+        d292:	f10d 013f 	add.w	r1, sp, #63	@ 0x3f
+
+        d296:	4658      	mov	r0, fp
+
+    _ZNK3etl14unaligned_typeItLi4321EEcvtEv():
+
+        d298:	f8ad 302c 	strh.w	r3, [sp, #44]	@ 0x2c
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj2ELi4321ELb1EE19copy_store_to_valueItEEvPKhRT_():
+
+        d29c:	f7f3 f9ad 	bl	5fa <<a href="../../../../../../../../../../../unknown/unknown/72d4bd12d6ca07360602e0d6cbc8dc4b.html">memcpy</a>>
+
+    _ZN3etl13reverse_bytesItEENS_9enable_ifIXaaaasrNS_11is_integralIT_EE5valuesrNS_11is_unsignedIS3_EE5valueeqsrNS_15integral_limitsIS3_EE4bitsLj16EES3_E4typeES3_():
+
+        d2a0:	f8bd 202c 	ldrh.w	r2, [sp, #44]	@ 0x2c
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableTxEjRKNS_18PduTransportConfigERKN2ip9IPAddressE():
+
+        d2a4:	9903      	ldr	r1, [sp, #12]
+
+    _ZN3etl13reverse_bytesItEENS_9enable_ifIXaaaasrNS_11is_integralIT_EE5valuesrNS_11is_unsignedIS3_EE5valueeqsrNS_15integral_limitsIS3_EE4bitsLj16EES3_E4typeES3_():
+
+        d2a6:	ba52      	rev16	r2, r2
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableTxEjRKNS_18PduTransportConfigERKN2ip9IPAddressE():
+
+        d2a8:	b292      	uxth	r2, r2
+
+        d2aa:	4620      	mov	r0, r4
+
+        d2ac:	47b8      	blx	r7
+
+        d2ae:	2800      	cmp	r0, #0
+
+        d2b0:	f040 8092 	bne.w	d3d8 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x280>
+
+        d2b4:	6823      	ldr	r3, [r4, #0]
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj2ELi4321ELb1EE19copy_store_to_valueItEEvPKhRT_():
+
+        d2b6:	2202      	movs	r2, #2
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableTxEjRKNS_18PduTransportConfigERKN2ip9IPAddressE():
+
+        d2b8:	695f      	ldr	r7, [r3, #20]
+
+    _ZNK3etl14unaligned_typeItLi4321EEcvtEv():
+
+        d2ba:	f8ad 002c 	strh.w	r0, [sp, #44]	@ 0x2c
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj2ELi4321ELb1EE19copy_store_to_valueItEEvPKhRT_():
+
+        d2be:	f10d 0141 	add.w	r1, sp, #65	@ 0x41
+
+        d2c2:	4658      	mov	r0, fp
+
+        d2c4:	f7f3 f999 	bl	5fa <<a href="../../../../../../../../../../../unknown/unknown/72d4bd12d6ca07360602e0d6cbc8dc4b.html">memcpy</a>>
+
+    _ZN3etl13reverse_bytesItEENS_9enable_ifIXaaaasrNS_11is_integralIT_EE5valuesrNS_11is_unsignedIS3_EE5valueeqsrNS_15integral_limitsIS3_EE4bitsLj16EES3_E4typeES3_():
+
+        d2c8:	f8bd 202c 	ldrh.w	r2, [sp, #44]	@ 0x2c
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableTxEjRKNS_18PduTransportConfigERKN2ip9IPAddressE():
+
+        d2cc:	9b03      	ldr	r3, [sp, #12]
+
+    _ZN3etl13reverse_bytesItEENS_9enable_ifIXaaaasrNS_11is_integralIT_EE5valuesrNS_11is_unsignedIS3_EE5valueeqsrNS_15integral_limitsIS3_EE4bitsLj16EES3_E4typeES3_():
+
+        d2ce:	ba52      	rev16	r2, r2
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableTxEjRKNS_18PduTransportConfigERKN2ip9IPAddressE():
+
+        d2d0:	b292      	uxth	r2, r2
+
+        d2d2:	f10d 0139 	add.w	r1, sp, #57	@ 0x39
+
+        d2d6:	4620      	mov	r0, r4
+
+        d2d8:	47b8      	blx	r7
+
+        d2da:	2800      	cmp	r0, #0
+
+        d2dc:	f040 809e 	bne.w	d41c <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2c4>
+
+    _ZN3etl7ivectorIN2io17MemoryQueueReaderINS1_11MemoryQueueILj5672ELj1416EtEEEEvEixEj():
+
+        d2e0:	f8d5 2d30 	ldr.w	r2, [r5, #3376]	@ 0xd30
+
+        d2e4:	9b02      	ldr	r3, [sp, #8]
+
+        d2e6:	441a      	add	r2, r3
+
+    _ZN3etl7ivectorIN2io3udp6SenderEvE12emplace_backIJRNS1_17MemoryQueueReaderINS1_11MemoryQueueILj5672ELj1416EtEEEERN3udp22AbstractDatagramSocketEEEERS3_DpOT_():
+
+        d2e8:	6eb3      	ldr	r3, [r6, #104]	@ 0x68
+
+    _ZN2io3udp6SenderC4ERNS_7IReaderERN3udp22AbstractDatagramSocketE():
+
+        d2ea:	e9c3 2400 	strd	r2, r4, [r3]
+
+        d2ee:	6098      	str	r0, [r3, #8]
+
+    _ZN3etl7ivectorIN2io3udp6SenderEvE12emplace_backIJRNS1_17MemoryQueueReaderINS1_11MemoryQueueILj5672ELj1416EtEEEERN3udp22AbstractDatagramSocketEEEERS3_DpOT_():
+
+        d2f0:	330c      	adds	r3, #12
+
+        d2f2:	66b3      	str	r3, [r6, #104]	@ 0x68
+
+        d2f4:	e758      	b.n	d1a8 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x50>
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE25checkTransmissionTimeoutsEv():
+
+        d2f6:	4b4d      	ldr	r3, [pc, #308]	@ (d42c <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2d4>)
+
+        d2f8:	494f      	ldr	r1, [pc, #316]	@ (d438 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2e0>)
+
+        d2fa:	7818      	ldrb	r0, [r3, #0]
+
+        d2fc:	f7fc f980 	bl	9600 <<a href="../../../../util/include/util/logger/Logger.h/e675253f5bfedd299c26bd0145e28698.html">util::logger::Logger::error(unsigned char, char const*, ...)</a>>
+
+    routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>):
+
+        d300:	b015      	add	sp, #84	@ 0x54
+
+        d302:	e8bd 4ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+
+        d306:	b002      	add	sp, #8
+
+        d308:	4770      	bx	lr
+
+        d30a:	2400      	movs	r4, #0
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableRxEjRKNS_18PduTransportConfigERKN2ip9IPAddressEN3etl8delegateIFvNS_12ErrorHandler10StatusCodeEhmEEE():
+
+        d30c:	6873      	ldr	r3, [r6, #4]
+
+        d30e:	f853 7008 	ldr.w	r7, [r3, r8]
+
+        d312:	2f00      	cmp	r7, #0
+
+        d314:	d06e      	beq.n	d3f4 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x29c>
+
+    _ZN3etl7ivectorIN2io17MemoryQueueWriterINS1_11MemoryQueueILj5672ELj1416EtEEEEvEixEj():
+
+        d316:	ab1f      	add	r3, sp, #124	@ 0x7c
+
+        d318:	e893 0003 	ldmia.w	r3, {r0, r1}
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableRxEjRKNS_18PduTransportConfigERKN2ip9IPAddressEN3etl8delegateIFvNS_12ErrorHandler10StatusCodeEhmEEE():
+
+        d31c:	f89d 3038 	ldrb.w	r3, [sp, #56]	@ 0x38
+
+    _ZN7routing12ErrorHandlerC4EN3etl8delegateIFvNS0_10StatusCodeEhmEEEh():
+
+        d320:	f88d 3028 	strb.w	r3, [sp, #40]	@ 0x28
+
+        d324:	e88b 0003 	stmia.w	fp, {r0, r1}
+
+    _ZN3etl7ivectorIN2io17MemoryQueueWriterINS1_11MemoryQueueILj5672ELj1416EtEEEEvEixEj():
+
+        d328:	f8d5 1d48 	ldr.w	r1, [r5, #3400]	@ 0xd48
+
+        d32c:	9802      	ldr	r0, [sp, #8]
+
+    _ZN3etl7ivectorIN2io3udp8ReceiverEvE12emplace_backIJRN3udp22AbstractDatagramSocketERNS1_17MemoryQueueWriterINS1_11MemoryQueueILj5672ELj1416EtEEEEN7routing12ErrorHandlerERKNS_4spanIKhLj4294967295EEEEEERS3_DpOT_():
+
+        d32e:	6b33      	ldr	r3, [r6, #48]	@ 0x30
+
+    _ZN3etl7ivectorIN2io17MemoryQueueWriterINS1_11MemoryQueueILj5672ELj1416EtEEEEvEixEj():
+
+        d330:	4401      	add	r1, r0
+
+        d332:	9812      	ldr	r0, [sp, #72]	@ 0x48
+
+        d334:	9104      	str	r1, [sp, #16]
+
+        d336:	9006      	str	r0, [sp, #24]
+
+        d338:	9913      	ldr	r1, [sp, #76]	@ 0x4c
+
+        d33a:	9105      	str	r1, [sp, #20]
+
+    _ZN3etl7ivectorIN2io3udp8ReceiverEvE12emplace_backIJRN3udp22AbstractDatagramSocketERNS1_17MemoryQueueWriterINS1_11MemoryQueueILj5672ELj1416EtEEEEN7routing12ErrorHandlerERKNS_4spanIKhLj4294967295EEEEEERS3_DpOT_():
+
+        d33c:	f103 002c 	add.w	r0, r3, #44	@ 0x2c
+
+        d340:	9007      	str	r0, [sp, #28]
+
+    _ZN7routing12ErrorHandlerC4EN3etl8delegateIFvNS0_10StatusCodeEhmEEEh():
+
+        d342:	e89b 0003 	ldmia.w	fp, {r0, r1}
+
+        d346:	aa08      	add	r2, sp, #32
+
+        d348:	e882 0003 	stmia.w	r2, {r0, r1}
+
+    _ZN3etl4spanIKhLj4294967295EEC4ERKS2_():
+
+        d34c:	ca07      	ldmia	r2, {r0, r1, r2}
+
+        d34e:	e88b 0007 	stmia.w	fp, {r0, r1, r2}
+
+    _ZN2io3udp8ReceiverC4ERN3udp22AbstractDatagramSocketERNS_7IWriterEN7routing12ErrorHandlerEN3etl4spanIKhLj4294967295EEE():
+
+        d352:	9904      	ldr	r1, [sp, #16]
+
+        d354:	4a39      	ldr	r2, [pc, #228]	@ (d43c <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2e4>)
+
+        d356:	601a      	str	r2, [r3, #0]
+
+        d358:	6099      	str	r1, [r3, #8]
+
+        d35a:	e89b 0007 	ldmia.w	fp, {r0, r1, r2}
+
+        d35e:	f103 0e0c 	add.w	lr, r3, #12
+
+        d362:	605f      	str	r7, [r3, #4]
+
+        d364:	e88e 0007 	stmia.w	lr, {r0, r1, r2}
+
+        d368:	f04f 0c00 	mov.w	ip, #0
+
+    _ZN3etl4spanIKhLj4294967295EEC4ERKS2_():
+
+        d36c:	9806      	ldr	r0, [sp, #24]
+
+        d36e:	9905      	ldr	r1, [sp, #20]
+
+        d370:	6198      	str	r0, [r3, #24]
+
+        d372:	61d9      	str	r1, [r3, #28]
+
+    _ZN2io3udp8ReceiverC4ERN3udp22AbstractDatagramSocketERNS_7IWriterEN7routing12ErrorHandlerEN3etl4spanIKhLj4294967295EEE():
+
+        d374:	f883 c020 	strb.w	ip, [r3, #32]
+
+        d378:	f8c3 c024 	str.w	ip, [r3, #36]	@ 0x24
+
+        d37c:	f8c3 c028 	str.w	ip, [r3, #40]	@ 0x28
+
+    _ZN3udp22AbstractDatagramSocket15setDataListenerEPNS_13IDataListenerE():
+
+        d380:	607b      	str	r3, [r7, #4]
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableRxEjRKNS_18PduTransportConfigERKN2ip9IPAddressEN3etl8delegateIFvNS_12ErrorHandler10StatusCodeEhmEEE():
+
+        d382:	683b      	ldr	r3, [r7, #0]
+
+    _ZN3etl7ivectorIN2io3udp8ReceiverEvE12emplace_backIJRN3udp22AbstractDatagramSocketERNS1_17MemoryQueueWriterINS1_11MemoryQueueILj5672ELj1416EtEEEEN7routing12ErrorHandlerERKNS_4spanIKhLj4294967295EEEEEERS3_DpOT_():
+
+        d384:	9807      	ldr	r0, [sp, #28]
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableRxEjRKNS_18PduTransportConfigERKN2ip9IPAddressEN3etl8delegateIFvNS_12ErrorHandler10StatusCodeEhmEEE():
+
+        d386:	681b      	ldr	r3, [r3, #0]
+
+    _ZN3etl7ivectorIN2io3udp8ReceiverEvE12emplace_backIJRN3udp22AbstractDatagramSocketERNS1_17MemoryQueueWriterINS1_11MemoryQueueILj5672ELj1416EtEEEEN7routing12ErrorHandlerERKNS_4spanIKhLj4294967295EEEEEERS3_DpOT_():
+
+        d388:	6330      	str	r0, [r6, #48]	@ 0x30
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj2ELi4321ELb1EE19copy_store_to_valueItEEvPKhRT_():
+
+        d38a:	2202      	movs	r2, #2
+
+        d38c:	f10d 0141 	add.w	r1, sp, #65	@ 0x41
+
+        d390:	4658      	mov	r0, fp
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableRxEjRKNS_18PduTransportConfigERKN2ip9IPAddressEN3etl8delegateIFvNS_12ErrorHandler10StatusCodeEhmEEE():
+
+        d392:	9304      	str	r3, [sp, #16]
+
+    _ZNK3etl14unaligned_typeItLi4321EEcvtEv():
+
+        d394:	f8ad c02c 	strh.w	ip, [sp, #44]	@ 0x2c
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj2ELi4321ELb1EE19copy_store_to_valueItEEvPKhRT_():
+
+        d398:	f7f3 f92f 	bl	5fa <<a href="../../../../../../../../../../../unknown/unknown/72d4bd12d6ca07360602e0d6cbc8dc4b.html">memcpy</a>>
+
+    _ZN3etl13reverse_bytesItEENS_9enable_ifIXaaaasrNS_11is_integralIT_EE5valuesrNS_11is_unsignedIS3_EE5valueeqsrNS_15integral_limitsIS3_EE4bitsLj16EES3_E4typeES3_():
+
+        d39c:	f8bd 202c 	ldrh.w	r2, [sp, #44]	@ 0x2c
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableRxEjRKNS_18PduTransportConfigERKN2ip9IPAddressEN3etl8delegateIFvNS_12ErrorHandler10StatusCodeEhmEEE():
+
+        d3a0:	9903      	ldr	r1, [sp, #12]
+
+        d3a2:	9b04      	ldr	r3, [sp, #16]
+
+    _ZN3etl13reverse_bytesItEENS_9enable_ifIXaaaasrNS_11is_integralIT_EE5valuesrNS_11is_unsignedIS3_EE5valueeqsrNS_15integral_limitsIS3_EE4bitsLj16EES3_E4typeES3_():
+
+        d3a4:	ba52      	rev16	r2, r2
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableRxEjRKNS_18PduTransportConfigERKN2ip9IPAddressEN3etl8delegateIFvNS_12ErrorHandler10StatusCodeEhmEEE():
+
+        d3a6:	b292      	uxth	r2, r2
+
+        d3a8:	4638      	mov	r0, r7
+
+        d3aa:	4798      	blx	r3
+
+        d3ac:	bb60      	cbnz	r0, d408 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2b0>
+
+        d3ae:	683b      	ldr	r3, [r7, #0]
+
+        d3b0:	4638      	mov	r0, r7
+
+        d3b2:	685b      	ldr	r3, [r3, #4]
+
+        d3b4:	f10d 0139 	add.w	r1, sp, #57	@ 0x39
+
+        d3b8:	4798      	blx	r3
+
+        d3ba:	b918      	cbnz	r0, d3c4 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x26c>
+
+    routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>):
+
+        d3bc:	2c00      	cmp	r4, #0
+
+        d3be:	f43f aef3 	beq.w	d1a8 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x50>
+
+        d3c2:	e753      	b.n	d26c <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x114>
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableRxEjRKNS_18PduTransportConfigERKN2ip9IPAddressEN3etl8delegateIFvNS_12ErrorHandler10StatusCodeEhmEEE():
+
+        d3c4:	4b19      	ldr	r3, [pc, #100]	@ (d42c <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2d4>)
+
+        d3c6:	491e      	ldr	r1, [pc, #120]	@ (d440 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2e8>)
+
+        d3c8:	7818      	ldrb	r0, [r3, #0]
+
+        d3ca:	464a      	mov	r2, r9
+
+        d3cc:	f7fc f918 	bl	9600 <<a href="../../../../util/include/util/logger/Logger.h/e675253f5bfedd299c26bd0145e28698.html">util::logger::Logger::error(unsigned char, char const*, ...)</a>>
+
+    routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>):
+
+        d3d0:	2c00      	cmp	r4, #0
+
+        d3d2:	f43f aee9 	beq.w	d1a8 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x50>
+
+        d3d6:	e749      	b.n	d26c <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x114>
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableTxEjRKNS_18PduTransportConfigERKN2ip9IPAddressE():
+
+        d3d8:	4b14      	ldr	r3, [pc, #80]	@ (d42c <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2d4>)
+
+        d3da:	491a      	ldr	r1, [pc, #104]	@ (d444 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2ec>)
+
+        d3dc:	7818      	ldrb	r0, [r3, #0]
+
+        d3de:	464a      	mov	r2, r9
+
+        d3e0:	f7fc f90e 	bl	9600 <<a href="../../../../util/include/util/logger/Logger.h/e675253f5bfedd299c26bd0145e28698.html">util::logger::Logger::error(unsigned char, char const*, ...)</a>>
+
+        d3e4:	e6e0      	b.n	d1a8 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x50>
+
+        d3e6:	4b11      	ldr	r3, [pc, #68]	@ (d42c <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2d4>)
+
+        d3e8:	4917      	ldr	r1, [pc, #92]	@ (d448 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2f0>)
+
+        d3ea:	7818      	ldrb	r0, [r3, #0]
+
+        d3ec:	464a      	mov	r2, r9
+
+        d3ee:	f7fe fcc5 	bl	bd7c <<a href="../../../../util/include/util/logger/Logger.h/fee4073070054ecc160dbd4d6b194f36.html">util::logger::Logger::warn(unsigned char, char const*, ...)</a>>
+
+        d3f2:	e6d9      	b.n	d1a8 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x50>
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableRxEjRKNS_18PduTransportConfigERKN2ip9IPAddressEN3etl8delegateIFvNS_12ErrorHandler10StatusCodeEhmEEE():
+
+        d3f4:	4b0d      	ldr	r3, [pc, #52]	@ (d42c <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2d4>)
+
+        d3f6:	4915      	ldr	r1, [pc, #84]	@ (d44c <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2f4>)
+
+        d3f8:	7818      	ldrb	r0, [r3, #0]
+
+        d3fa:	464a      	mov	r2, r9
+
+        d3fc:	f7fe fcbe 	bl	bd7c <<a href="../../../../util/include/util/logger/Logger.h/fee4073070054ecc160dbd4d6b194f36.html">util::logger::Logger::warn(unsigned char, char const*, ...)</a>>
+
+    routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>):
+
+        d400:	2c00      	cmp	r4, #0
+
+        d402:	f43f aed1 	beq.w	d1a8 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x50>
+
+        d406:	e731      	b.n	d26c <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x114>
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableRxEjRKNS_18PduTransportConfigERKN2ip9IPAddressEN3etl8delegateIFvNS_12ErrorHandler10StatusCodeEhmEEE():
+
+        d408:	4b08      	ldr	r3, [pc, #32]	@ (d42c <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2d4>)
+
+        d40a:	4911      	ldr	r1, [pc, #68]	@ (d450 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2f8>)
+
+        d40c:	7818      	ldrb	r0, [r3, #0]
+
+        d40e:	464a      	mov	r2, r9
+
+        d410:	f7fc f8f6 	bl	9600 <<a href="../../../../util/include/util/logger/Logger.h/e675253f5bfedd299c26bd0145e28698.html">util::logger::Logger::error(unsigned char, char const*, ...)</a>>
+
+    routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>):
+
+        d414:	2c00      	cmp	r4, #0
+
+        d416:	f43f aec7 	beq.w	d1a8 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x50>
+
+        d41a:	e727      	b.n	d26c <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x114>
+
+    _ZN7routing23PduTransportIntegrationILh1ELj1416EE8enableTxEjRKNS_18PduTransportConfigERKN2ip9IPAddressE():
+
+        d41c:	4b03      	ldr	r3, [pc, #12]	@ (d42c <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2d4>)
+
+        d41e:	490d      	ldr	r1, [pc, #52]	@ (d454 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x2fc>)
+
+        d420:	7818      	ldrb	r0, [r3, #0]
+
+        d422:	464a      	mov	r2, r9
+
+        d424:	f7fc f8ec 	bl	9600 <<a href="../../../../util/include/util/logger/Logger.h/e675253f5bfedd299c26bd0145e28698.html">util::logger::Logger::error(unsigned char, char const*, ...)</a>>
+
+        d428:	e6be      	b.n	d1a8 <<a href="./ecd9dac702ff8a90934e17528bad0d6f.html">routing::PduTransportIntegration<(unsigned char)1, 1416u>::activate(ip::IPAddress const&, unsigned short, etl::delegate<void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)>)</a>+0x50>
+
+        d42a:	bf00      	nop
+
+        d42c:	20000004 	.word	0x20000004
+
+        d430:	00037e40 	.word	0x00037e40
+
+        d434:	0003d3e4 	.word	0x0003d3e4
+
+        d438:	00037d28 	.word	0x00037d28
+
+        d43c:	0003d3a0 	.word	0x0003d3a0
+
+        d440:	00037eb4 	.word	0x00037eb4
+
+        d444:	00037f00 	.word	0x00037f00
+
+        d448:	00037ee4 	.word	0x00037ee4
+
+        d44c:	00037e7c 	.word	0x00037e7c
+
+        d450:	00037e94 	.word	0x00037e94
+
+        d454:	00037f20 	.word	0x00037f20
+
+    </pre>
+
+    
+    <pre><a href="../../../../../../executables/referenceApp/application/src/systems/RoutingSystem.cpp/2cf1442881f5cb011c271dcc671dc40d.html">systems::RoutingSystem::run() (96)</a></pre>
+    
+
+    
+        <h1>Stack Worst-Case Scenarios</h1>
+        
+        <table class="table table-bordered table-hover table-condensed">
+        <thead>
+            <tr>
+                <th rowspan="2">#</th>
+                <th colspan="2" style="text-align: center">Stack</th>
+                <th colspan="2" style="text-align: center">Code</th>
+                <th rowspan="2" width="100%">Name</th>
+            </tr>
+            <tr>
+                <th class="col_size">&sum; = 212</th>
+                <th class="col_size"></th>
+                <th class="col_size">&sum;= 124</th>
+                <th class="col_size"></th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <th>1</th>
+                <td class="col_size">
+                    
+                    212
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                48 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    124
+                    
+                    
+                </td>
+                <td class="col_size">68</td>
+                <td><a href="../../../../util/src/util/logger/Logger.cpp/d658d7c78dcca1ca01e61ef198b3eeaa.html" class="icon-function">util::logger::Logger::doLog(unsigned char, util::logger::Level, char const*, std::__va_list)</a></td>
+            </tr>
+        
+            <tr>
+                <th>2</th>
+                <td class="col_size">
+                    
+                    164
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                20 
+            
+                </td>
+                <td class="col_size">
+                    
+                </td>
+                <td class="col_size">56</td>
+                <td><a href="../../../../util/include/util/logger/Logger.h/fee4073070054ecc160dbd4d6b194f36.html" class="icon-function">util::logger::Logger::warn(unsigned char, char const*, ...)</a></td>
+            </tr>
+        
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <th></th>
+                <th class="col_size">144
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </tfoot>
+        
+    </table>
+        
+        
+        <table class="table table-bordered table-hover table-condensed">
+        <thead>
+            <tr>
+                <th rowspan="2">#</th>
+                <th colspan="2" style="text-align: center">Stack</th>
+                <th colspan="2" style="text-align: center">Code</th>
+                <th rowspan="2" width="100%">Name</th>
+            </tr>
+            <tr>
+                <th class="col_size">&sum; = 144</th>
+                <th class="col_size"></th>
+                <th class="col_size">&sum;= 864</th>
+                <th class="col_size"></th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <th>1</th>
+                <td class="col_size">
+                    
+                    144
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                120 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    864
+                    
+                    
+                </td>
+                <td class="col_size">768</td>
+                <td><a href="./ecd9dac702ff8a90934e17528bad0d6f.html" class="icon-function">routing::PduTransportIntegration&lt;(unsigned char)1, 1416u&gt;::activate(ip::IPAddress const&amp;, unsigned short, etl::delegate&lt;void (routing::ErrorHandler::StatusCode, unsigned char, unsigned long)&gt;)</a></td>
+            </tr>
+        
+            <tr>
+                <th>2</th>
+                <td class="col_size">
+                </td>
+                <td class="col_size">
+            
+                24 
+            
+                </td>
+                <td class="col_size">
+                    
+                </td>
+                <td class="col_size">96</td>
+                <td><a href="../../../../../../executables/referenceApp/application/src/systems/RoutingSystem.cpp/2cf1442881f5cb011c271dcc671dc40d.html" class="icon-function">systems::RoutingSystem::run()</a></td>
+            </tr>
+        
+        </tbody>
+        
+    </table>
+        
+    
+
+
+        </div>
+    <div id="page-footer">
+        <hr>
+        
+            brought to you with 💖
+            by <a href="https://twitter.com/hbehrens">Heiko Behrens</a>
+            <span class="secondary">– MIT license, copyright © 2014-2026</span>
+        
+    </div>
+    </div>
+</body>
+</html>

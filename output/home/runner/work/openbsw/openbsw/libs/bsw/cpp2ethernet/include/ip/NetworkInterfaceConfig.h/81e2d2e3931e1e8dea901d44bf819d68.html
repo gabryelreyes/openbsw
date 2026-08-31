@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../../../../../../../../../static/css/style.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Symbol - puncover</title>
+    
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="page-header">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="../../../../../../../../../../../index.html">
+                    Puncover
+                  </a>
+                </div>
+              </div>
+            </nav>
+          
+        </div>
+        <div id="inner_content">
+        
+    
+    <ol class="breadcrumb folders">
+        
+        <li><a href="../../../../../../../../../../../home.html">home</a></li>
+        
+        <li><a href="../../../../../../../../../../runner.html">runner</a></li>
+        
+        <li><a href="../../../../../../../../../work.html">work</a></li>
+        
+        <li><a href="../../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../libs.html">libs</a></li>
+        
+        <li><a href="../../../../../bsw.html">bsw</a></li>
+        
+        <li><a href="../../../../cpp2ethernet.html">cpp2ethernet</a></li>
+        
+        <li><a href="../../../include.html">include</a></li>
+        
+        <li ><a href="../../ip.html">ip</a>
+            </li>
+
+        
+        <li class="active"><a href="../NetworkInterfaceConfig.h.html">NetworkInterfaceConfig.h</a>:198
+            </li>
+        
+    </ol>
+
+
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>Function</th>
+                <td colspan="5">
+                    <span class="icon-function">ip::declare::NetworkInterfaceConfigRegistry&lt;2u, shed::table&lt;systems::NetifsSchema&gt;, ethernet::NetifBusId&gt;::getConfig(unsigned char) const</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th rowspan="2"></th>
+                <th>Address</th>
+                <th>Remarks</th>
+                <th>Stack</th>
+                <th>Code</th>
+                <th>Static</th>
+            </tr>
+            <tr>
+                <td>0x0000a690</td>
+                <td>
+    
+    
+</td>
+                <td>32 (static)</td>
+                <td>124</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>No Callers</th>
+                <td colspan="5">
+                
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Callees (1,
+                            <span title="sum of used bytes by all callees">
+                            Σ=16
+                            </span>
+                        )
+                    
+                </th>
+                <td colspan="5">
+                
+                    <a href="../../../src/ip/NetworkInterfaceConfig.cpp/67f4c5dd2cb852f6876e6d16ebe89780.html">ip::NetworkInterfaceConfig::NetworkInterfaceConfig() (16)</a>
+                    
+                
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <pre><a href="../../../../lwipSocket/include/lwipSocket/netif/LwipNetworkInterface.h/73016854a2f71b5dbf987f4ea868692e.html">shed::move_op lwipnetif::checkNetif&lt;(ethernet::LinkStatus)0, ip::declare::NetworkInterfaceConfigRegistry&lt;2u, shed::table&lt;systems::NetifsSchema&gt;, ethernet::NetifBusId&gt;, ethernet::NetifBusId&gt;(ip::declare::NetworkInterfaceConfigRegistry&lt;2u, shed::table&lt;systems::NetifsSchema&gt;, ethernet::NetifBusId&gt;&amp;, ethernet::LinkStatus const&amp;, netif&amp;, ethernet::NetifBusId const&amp;, ip::NetworkInterfaceConfig&amp;) (76)</a></pre>
+    
+
+    <pre>
+
+    ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::getConfig(unsigned char) const():
+
+        a690:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+
+        a694:	684f      	ldr	r7, [r1, #4]
+
+        a696:	b082      	sub	sp, #8
+
+        a698:	4606      	mov	r6, r0
+
+        a69a:	4615      	mov	r5, r2
+
+        a69c:	b367      	cbz	r7, a6f8 <<a href="./81e2d2e3931e1e8dea901d44bf819d68.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::getConfig(unsigned char) const</a>+0x68>
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN2ip22NetworkInterfaceConfigEEENS0_IT_Lj4294967295EEEv():
+
+        a69e:	6b38      	ldr	r0, [r7, #48]	@ 0x30
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10NetifBusIdEEENS0_IT_Lj4294967295EEEv():
+
+        a6a0:	693c      	ldr	r4, [r7, #16]
+
+        a6a2:	f8d7 8014 	ldr.w	r8, [r7, #20]
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN2ip22NetworkInterfaceConfigEEENS0_IT_Lj4294967295EEEv():
+
+        a6a6:	0783      	lsls	r3, r0, #30
+
+        a6a8:	d004      	beq.n	a6b4 <<a href="./81e2d2e3931e1e8dea901d44bf819d68.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::getConfig(unsigned char) const</a>+0x24>
+
+        a6aa:	4b17      	ldr	r3, [pc, #92]	@ (a708 <<a href="./81e2d2e3931e1e8dea901d44bf819d68.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::getConfig(unsigned char) const</a>+0x78>)
+
+        a6ac:	a801      	add	r0, sp, #4
+
+        a6ae:	681b      	ldr	r3, [r3, #0]
+
+        a6b0:	4798      	blx	r3
+
+        a6b2:	6b38      	ldr	r0, [r7, #48]	@ 0x30
+
+    ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::getConfig(unsigned char) const():
+
+        a6b4:	45a0      	cmp	r8, r4
+
+    _ZNK3etl4spanIN8ethernet10NetifBusIdELj4294967295EE4sizeEv():
+
+        a6b6:	eba8 0204 	sub.w	r2, r8, r4
+
+    ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::getConfig(unsigned char) const():
+
+        a6ba:	d016      	beq.n	a6ea <<a href="./81e2d2e3931e1e8dea901d44bf819d68.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::getConfig(unsigned char) const</a>+0x5a>
+
+        a6bc:	1e61      	subs	r1, r4, #1
+
+        a6be:	2300      	movs	r3, #0
+
+        a6c0:	e002      	b.n	a6c8 <<a href="./81e2d2e3931e1e8dea901d44bf819d68.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::getConfig(unsigned char) const</a>+0x38>
+
+        a6c2:	3301      	adds	r3, #1
+
+        a6c4:	4293      	cmp	r3, r2
+
+        a6c6:	d210      	bcs.n	a6ea <<a href="./81e2d2e3931e1e8dea901d44bf819d68.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::getConfig(unsigned char) const</a>+0x5a>
+
+        a6c8:	f811 4f01 	ldrb.w	r4, [r1, #1]!
+
+        a6cc:	42ac      	cmp	r4, r5
+
+        a6ce:	d1f8      	bne.n	a6c2 <<a href="./81e2d2e3931e1e8dea901d44bf819d68.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::getConfig(unsigned char) const</a>+0x32>
+
+        a6d0:	eb03 0383 	add.w	r3, r3, r3, lsl #2
+
+        a6d4:	eb00 0483 	add.w	r4, r0, r3, lsl #2
+
+        a6d8:	cc0f      	ldmia	r4!, {r0, r1, r2, r3}
+
+        a6da:	4635      	mov	r5, r6
+
+        a6dc:	c50f      	stmia	r5!, {r0, r1, r2, r3}
+
+        a6de:	6823      	ldr	r3, [r4, #0]
+
+        a6e0:	602b      	str	r3, [r5, #0]
+
+        a6e2:	4630      	mov	r0, r6
+
+        a6e4:	b002      	add	sp, #8
+
+        a6e6:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+
+        a6ea:	4630      	mov	r0, r6
+
+        a6ec:	f013 fb4c 	bl	1dd88 <<a href="../../../src/ip/NetworkInterfaceConfig.cpp/67f4c5dd2cb852f6876e6d16ebe89780.html">ip::NetworkInterfaceConfig::NetworkInterfaceConfig()</a>>
+
+        a6f0:	4630      	mov	r0, r6
+
+        a6f2:	b002      	add	sp, #8
+
+        a6f4:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+
+        a6f8:	4b03      	ldr	r3, [pc, #12]	@ (a708 <<a href="./81e2d2e3931e1e8dea901d44bf819d68.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::getConfig(unsigned char) const</a>+0x78>)
+
+        a6fa:	460c      	mov	r4, r1
+
+        a6fc:	681b      	ldr	r3, [r3, #0]
+
+        a6fe:	a801      	add	r0, sp, #4
+
+        a700:	4798      	blx	r3
+
+        a702:	6867      	ldr	r7, [r4, #4]
+
+        a704:	e7cb      	b.n	a69e <<a href="./81e2d2e3931e1e8dea901d44bf819d68.html">ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>::getConfig(unsigned char) const</a>+0xe>
+
+        a706:	bf00      	nop
+
+        a708:	20000000 	.word	0x20000000
+
+    </pre>
+
+    
+    <pre><a href="../../../../../../executables/referenceApp/application/src/systems/EthernetSystem.cpp/8a27e18a59baa1fcde7a991bbe39c5aa.html">systems::EthernetSystem::init() (304)</a></pre>
+    
+
+    
+
+
+        </div>
+    <div id="page-footer">
+        <hr>
+        
+            brought to you with 💖
+            by <a href="https://twitter.com/hbehrens">Heiko Behrens</a>
+            <span class="secondary">– MIT license, copyright © 2014-2026</span>
+        
+    </div>
+    </div>
+</body>
+</html>

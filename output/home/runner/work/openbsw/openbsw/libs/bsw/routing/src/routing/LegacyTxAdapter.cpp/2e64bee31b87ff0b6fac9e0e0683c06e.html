@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../../../../../../../../../static/css/style.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Symbol - puncover</title>
+    
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="page-header">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="../../../../../../../../../../../index.html">
+                    Puncover
+                  </a>
+                </div>
+              </div>
+            </nav>
+          
+        </div>
+        <div id="inner_content">
+        
+    
+    <ol class="breadcrumb folders">
+        
+        <li><a href="../../../../../../../../../../../home.html">home</a></li>
+        
+        <li><a href="../../../../../../../../../../runner.html">runner</a></li>
+        
+        <li><a href="../../../../../../../../../work.html">work</a></li>
+        
+        <li><a href="../../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../libs.html">libs</a></li>
+        
+        <li><a href="../../../../../bsw.html">bsw</a></li>
+        
+        <li><a href="../../../../routing.html">routing</a></li>
+        
+        <li><a href="../../../src.html">src</a></li>
+        
+        <li ><a href="../../routing.html">routing</a>
+            </li>
+
+        
+        <li class="active"><a href="../LegacyTxAdapter.cpp.html">LegacyTxAdapter.cpp</a>:45
+            </li>
+        
+    </ol>
+
+
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>Function</th>
+                <td colspan="5">
+                    <span class="icon-function">routing::LegacyTxAdapter::maxSize() const</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th rowspan="2"></th>
+                <th>Address</th>
+                <th>Remarks</th>
+                <th>Stack</th>
+                <th>Code</th>
+                <th>Static</th>
+            </tr>
+            <tr>
+                <td>0x0002d384</td>
+                <td>
+    
+    
+</td>
+                <td>0 (static)</td>
+                <td>100</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>No Callers</th>
+                <td colspan="5">
+                
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    No Callees
+                    
+                </th>
+                <td colspan="5">
+                
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <pre><a href="./b2fbbf64f1ce4f5f5cb7db60131c2f24.html">routing::LegacyTxAdapter::allocate(unsigned int) (296)</a></pre>
+    
+
+    <pre>
+
+    routing::LegacyTxAdapter::maxSize() const():
+
+       2d384:	6840      	ldr	r0, [r0, #4]
+
+       2d386:	4a17      	ldr	r2, [pc, #92]	@ (2d3e4 <<a href="./2e64bee31b87ff0b6fac9e0e0683c06e.html">routing::LegacyTxAdapter::maxSize() const</a>+0x60>)
+
+       2d388:	6803      	ldr	r3, [r0, #0]
+
+       2d38a:	689b      	ldr	r3, [r3, #8]
+
+       2d38c:	4293      	cmp	r3, r2
+
+       2d38e:	d127      	bne.n	2d3e0 <<a href="./2e64bee31b87ff0b6fac9e0e0683c06e.html">routing::LegacyTxAdapter::maxSize() const</a>+0x5c>
+
+       2d390:	6840      	ldr	r0, [r0, #4]
+
+       2d392:	6802      	ldr	r2, [r0, #0]
+
+       2d394:	6892      	ldr	r2, [r2, #8]
+
+       2d396:	429a      	cmp	r2, r3
+
+       2d398:	d121      	bne.n	2d3de <<a href="./2e64bee31b87ff0b6fac9e0e0683c06e.html">routing::LegacyTxAdapter::maxSize() const</a>+0x5a>
+
+       2d39a:	6840      	ldr	r0, [r0, #4]
+
+       2d39c:	6803      	ldr	r3, [r0, #0]
+
+       2d39e:	689b      	ldr	r3, [r3, #8]
+
+       2d3a0:	4293      	cmp	r3, r2
+
+       2d3a2:	d11d      	bne.n	2d3e0 <<a href="./2e64bee31b87ff0b6fac9e0e0683c06e.html">routing::LegacyTxAdapter::maxSize() const</a>+0x5c>
+
+       2d3a4:	6840      	ldr	r0, [r0, #4]
+
+       2d3a6:	6802      	ldr	r2, [r0, #0]
+
+       2d3a8:	6892      	ldr	r2, [r2, #8]
+
+       2d3aa:	429a      	cmp	r2, r3
+
+       2d3ac:	d117      	bne.n	2d3de <<a href="./2e64bee31b87ff0b6fac9e0e0683c06e.html">routing::LegacyTxAdapter::maxSize() const</a>+0x5a>
+
+       2d3ae:	6840      	ldr	r0, [r0, #4]
+
+       2d3b0:	6803      	ldr	r3, [r0, #0]
+
+       2d3b2:	689b      	ldr	r3, [r3, #8]
+
+       2d3b4:	4293      	cmp	r3, r2
+
+       2d3b6:	d113      	bne.n	2d3e0 <<a href="./2e64bee31b87ff0b6fac9e0e0683c06e.html">routing::LegacyTxAdapter::maxSize() const</a>+0x5c>
+
+       2d3b8:	6840      	ldr	r0, [r0, #4]
+
+       2d3ba:	6802      	ldr	r2, [r0, #0]
+
+       2d3bc:	6892      	ldr	r2, [r2, #8]
+
+       2d3be:	429a      	cmp	r2, r3
+
+       2d3c0:	d10d      	bne.n	2d3de <<a href="./2e64bee31b87ff0b6fac9e0e0683c06e.html">routing::LegacyTxAdapter::maxSize() const</a>+0x5a>
+
+       2d3c2:	6840      	ldr	r0, [r0, #4]
+
+       2d3c4:	6803      	ldr	r3, [r0, #0]
+
+       2d3c6:	689b      	ldr	r3, [r3, #8]
+
+       2d3c8:	4293      	cmp	r3, r2
+
+       2d3ca:	d109      	bne.n	2d3e0 <<a href="./2e64bee31b87ff0b6fac9e0e0683c06e.html">routing::LegacyTxAdapter::maxSize() const</a>+0x5c>
+
+       2d3cc:	6840      	ldr	r0, [r0, #4]
+
+       2d3ce:	6802      	ldr	r2, [r0, #0]
+
+       2d3d0:	6892      	ldr	r2, [r2, #8]
+
+       2d3d2:	429a      	cmp	r2, r3
+
+       2d3d4:	d103      	bne.n	2d3de <<a href="./2e64bee31b87ff0b6fac9e0e0683c06e.html">routing::LegacyTxAdapter::maxSize() const</a>+0x5a>
+
+       2d3d6:	6840      	ldr	r0, [r0, #4]
+
+       2d3d8:	6803      	ldr	r3, [r0, #0]
+
+       2d3da:	689b      	ldr	r3, [r3, #8]
+
+       2d3dc:	4718      	bx	r3
+
+       2d3de:	4710      	bx	r2
+
+       2d3e0:	4718      	bx	r3
+
+       2d3e2:	bf00      	nop
+
+       2d3e4:	0002d385 	.word	0x0002d385
+
+    </pre>
+
+    
+    <pre><a href="./ecb581de9237090aecb8029e906c4b85.html">routing::LegacyTxAdapter::commit() (792)</a></pre>
+    
+
+    
+
+
+        </div>
+    <div id="page-footer">
+        <hr>
+        
+            brought to you with 💖
+            by <a href="https://twitter.com/hbehrens">Heiko Behrens</a>
+            <span class="secondary">– MIT license, copyright © 2014-2026</span>
+        
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../../../../../../../../../static/css/style.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Symbol - puncover</title>
+    
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="page-header">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="../../../../../../../../../../../index.html">
+                    Puncover
+                  </a>
+                </div>
+              </div>
+            </nav>
+          
+        </div>
+        <div id="inner_content">
+        
+    
+    <ol class="breadcrumb folders">
+        
+        <li><a href="../../../../../../../../../../../home.html">home</a></li>
+        
+        <li><a href="../../../../../../../../../../runner.html">runner</a></li>
+        
+        <li><a href="../../../../../../../../../work.html">work</a></li>
+        
+        <li><a href="../../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../executables.html">executables</a></li>
+        
+        <li><a href="../../../../../referenceApp.html">referenceApp</a></li>
+        
+        <li><a href="../../../../application.html">application</a></li>
+        
+        <li><a href="../../../src.html">src</a></li>
+        
+        <li ><a href="../../logger.html">logger</a>
+            </li>
+
+        
+        <li class="active"><a href="../logger.cpp.html">logger.cpp</a>:150
+            </li>
+        
+    </ol>
+
+
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>Function</th>
+                <td colspan="5">
+                    <span class="icon-function">_GLOBAL__sub_I__ZN4util6logger3BSPE</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th rowspan="2"></th>
+                <th>Address</th>
+                <th>Remarks</th>
+                <th>Stack</th>
+                <th>Code</th>
+                <th>Static</th>
+            </tr>
+            <tr>
+                <td>0x00009718</td>
+                <td>
+    
+    
+</td>
+                <td>0 (static)</td>
+                <td>184</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>No Callers</th>
+                <td colspan="5">
+                
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Callees (4,
+                            <span title="sum of used bytes by all callees">
+                            Σ=308
+                            </span>
+                        )
+                    
+                </th>
+                <td colspan="5">
+                
+                    <a href="../../../../../../libs/bsw/util/src/util/logger/LevelInfo.cpp/747adcefcdfa747442306942e404209b.html">util::logger::LevelInfo::getDefaultTable() (8)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../../../libs/bsw/loggerIntegration/src/logger/LoggerComposition.cpp/1b3f59dc01e52f8ca200203ff4835c75.html">logger::LoggerComposition::LoggerComposition(util::logger::IComponentMapping&amp;, char const*) (180)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../../../libs/bsw/logger/src/logger/DefaultLoggerCommand.cpp/f9f376e26cf1062f6de736cf140d7e8f.html">logger::DefaultLoggerCommand::DefaultLoggerCommand(logger::IComponentConfig&amp;) (76)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../../../libs/bsw/asyncConsole/src/console/AsyncCommandWrapper.cpp/0d79e28394e5e6b1c4f868fcd5aee107.html">console::AsyncCommandWrapper::AsyncCommandWrapper(util::command::ICommand&amp;, unsigned char) (44)</a>
+                    
+                
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <pre><a href="./98866fb3d81ee8db78cbfd1e2dfd931d.html">log_lwipInfo (100)</a></pre>
+    
+
+    <pre>
+
+    _GLOBAL__sub_I__ZN4util6logger3BSPE():
+
+        9718:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+
+    _ZN6logger16ComponentMappingILh18EEC4EPKNS_22PlainLoggerMappingInfoERA6_KN4util6logger9LevelInfo9PlainInfoEPKh():
+
+        971c:	4e21      	ldr	r6, [pc, #132]	@ (97a4 <<a href="./2fd19398f3144cb4d16216ced3c2811b.html">_GLOBAL__sub_I__ZN4util6logger3BSPE</a>+0x8c>)
+
+        971e:	4c22      	ldr	r4, [pc, #136]	@ (97a8 <<a href="./2fd19398f3144cb4d16216ced3c2811b.html">_GLOBAL__sub_I__ZN4util6logger3BSPE</a>+0x90>)
+
+    _GLOBAL__sub_I__ZN4util6logger3BSPE():
+
+        9720:	f00d ffd4 	bl	176cc <<a href="../../../../../../libs/bsw/util/src/util/logger/LevelInfo.cpp/747adcefcdfa747442306942e404209b.html">util::logger::LevelInfo::getDefaultTable()</a>>
+
+    _ZN6logger16ComponentMappingILh18EEC4EPKNS_22PlainLoggerMappingInfoERA6_KN4util6logger9LevelInfo9PlainInfoEPKh():
+
+        9724:	4b21      	ldr	r3, [pc, #132]	@ (97ac <<a href="./2fd19398f3144cb4d16216ced3c2811b.html">_GLOBAL__sub_I__ZN4util6logger3BSPE</a>+0x94>)
+
+        9726:	6033      	str	r3, [r6, #0]
+
+        9728:	23ff      	movs	r3, #255	@ 0xff
+
+        972a:	82f3      	strh	r3, [r6, #22]
+
+        972c:	4b20      	ldr	r3, [pc, #128]	@ (97b0 <<a href="./2fd19398f3144cb4d16216ced3c2811b.html">_GLOBAL__sub_I__ZN4util6logger3BSPE</a>+0x98>)
+
+        972e:	61b0      	str	r0, [r6, #24]
+
+    _GLOBAL__sub_I__ZN4util6logger3BSPE():
+
+        9730:	2500      	movs	r5, #0
+
+    _ZN6logger16ComponentMappingILh18EEC4EPKNS_22PlainLoggerMappingInfoERA6_KN4util6logger9LevelInfo9PlainInfoEPKh():
+
+        9732:	61f3      	str	r3, [r6, #28]
+
+    _GLOBAL__sub_I__ZN4util6logger3BSPE():
+
+        9734:	46a8      	mov	r8, r5
+
+        9736:	3310      	adds	r3, #16
+
+        9738:	1cf0      	adds	r0, r6, #3
+
+    _ZN6logger16ComponentMappingILh18EEC4EPKNS_22PlainLoggerMappingInfoERA6_KN4util6logger9LevelInfo9PlainInfoEPKh():
+
+        973a:	46ae      	mov	lr, r5
+
+        973c:	462a      	mov	r2, r5
+
+        973e:	e003      	b.n	9748 <<a href="./2fd19398f3144cb4d16216ced3c2811b.html">_GLOBAL__sub_I__ZN4util6logger3BSPE</a>+0x30>
+
+        9740:	fa5f f28c 	uxtb.w	r2, ip
+
+        9744:	2a12      	cmp	r2, #18
+
+        9746:	d013      	beq.n	9770 <<a href="./2fd19398f3144cb4d16216ced3c2811b.html">_GLOBAL__sub_I__ZN4util6logger3BSPE</a>+0x58>
+
+        9748:	f853 7c10 	ldr.w	r7, [r3, #-16]
+
+        974c:	f813 1c04 	ldrb.w	r1, [r3, #-4]
+
+        9750:	f800 1f01 	strb.w	r1, [r0, #1]!
+
+        9754:	42a7      	cmp	r7, r4
+
+        9756:	f102 0c01 	add.w	ip, r2, #1
+
+        975a:	f103 0310 	add.w	r3, r3, #16
+
+        975e:	d1ef      	bne.n	9740 <<a href="./2fd19398f3144cb4d16216ced3c2811b.html">_GLOBAL__sub_I__ZN4util6logger3BSPE</a>+0x28>
+
+        9760:	4615      	mov	r5, r2
+
+        9762:	fa5f f28c 	uxtb.w	r2, ip
+
+        9766:	2a12      	cmp	r2, #18
+
+        9768:	4688      	mov	r8, r1
+
+        976a:	f04f 0e01 	mov.w	lr, #1
+
+        976e:	d1eb      	bne.n	9748 <<a href="./2fd19398f3144cb4d16216ced3c2811b.html">_GLOBAL__sub_I__ZN4util6logger3BSPE</a>+0x30>
+
+        9770:	f1be 0f00 	cmp.w	lr, #0
+
+        9774:	d002      	beq.n	977c <<a href="./2fd19398f3144cb4d16216ced3c2811b.html">_GLOBAL__sub_I__ZN4util6logger3BSPE</a>+0x64>
+
+        9776:	f886 8017 	strb.w	r8, [r6, #23]
+
+        977a:	75b5      	strb	r5, [r6, #22]
+
+    _ZN6logger15ComponentConfigILh18EEC4ERNS_16ComponentMappingILh18EEE():
+
+        977c:	4b0d      	ldr	r3, [pc, #52]	@ (97b4 <<a href="./2fd19398f3144cb4d16216ced3c2811b.html">_GLOBAL__sub_I__ZN4util6logger3BSPE</a>+0x9c>)
+
+        977e:	480e      	ldr	r0, [pc, #56]	@ (97b8 <<a href="./2fd19398f3144cb4d16216ced3c2811b.html">_GLOBAL__sub_I__ZN4util6logger3BSPE</a>+0xa0>)
+
+    __static_initialization_and_destruction_0():
+
+        9780:	4a0e      	ldr	r2, [pc, #56]	@ (97bc <<a href="./2fd19398f3144cb4d16216ced3c2811b.html">_GLOBAL__sub_I__ZN4util6logger3BSPE</a>+0xa4>)
+
+        9782:	4908      	ldr	r1, [pc, #32]	@ (97a4 <<a href="./2fd19398f3144cb4d16216ced3c2811b.html">_GLOBAL__sub_I__ZN4util6logger3BSPE</a>+0x8c>)
+
+    _ZN6logger15ComponentConfigILh18EEC4ERNS_16ComponentMappingILh18EEE():
+
+        9784:	e9c0 3600 	strd	r3, r6, [r0]
+
+    __static_initialization_and_destruction_0():
+
+        9788:	480d      	ldr	r0, [pc, #52]	@ (97c0 <<a href="./2fd19398f3144cb4d16216ced3c2811b.html">_GLOBAL__sub_I__ZN4util6logger3BSPE</a>+0xa8>)
+
+        978a:	f00a fbbd 	bl	13f08 <<a href="../../../../../../libs/bsw/loggerIntegration/src/logger/LoggerComposition.cpp/1b3f59dc01e52f8ca200203ff4835c75.html">logger::LoggerComposition::LoggerComposition(util::logger::IComponentMapping&, char const*)</a>>
+
+        978e:	490a      	ldr	r1, [pc, #40]	@ (97b8 <<a href="./2fd19398f3144cb4d16216ced3c2811b.html">_GLOBAL__sub_I__ZN4util6logger3BSPE</a>+0xa0>)
+
+        9790:	480c      	ldr	r0, [pc, #48]	@ (97c4 <<a href="./2fd19398f3144cb4d16216ced3c2811b.html">_GLOBAL__sub_I__ZN4util6logger3BSPE</a>+0xac>)
+
+        9792:	f00a f9db 	bl	13b4c <<a href="../../../../../../libs/bsw/logger/src/logger/DefaultLoggerCommand.cpp/f9f376e26cf1062f6de736cf140d7e8f.html">logger::DefaultLoggerCommand::DefaultLoggerCommand(logger::IComponentConfig&)</a>>
+
+    _GLOBAL__sub_I__ZN4util6logger3BSPE():
+
+        9796:	e8bd 41f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, lr}
+
+    __static_initialization_and_destruction_0():
+
+        979a:	490b      	ldr	r1, [pc, #44]	@ (97c8 <<a href="./2fd19398f3144cb4d16216ced3c2811b.html">_GLOBAL__sub_I__ZN4util6logger3BSPE</a>+0xb0>)
+
+        979c:	480b      	ldr	r0, [pc, #44]	@ (97cc <<a href="./2fd19398f3144cb4d16216ced3c2811b.html">_GLOBAL__sub_I__ZN4util6logger3BSPE</a>+0xb4>)
+
+        979e:	2200      	movs	r2, #0
+
+        97a0:	f008 be68 	b.w	12474 <<a href="../../../../../../libs/bsw/asyncConsole/src/console/AsyncCommandWrapper.cpp/0d79e28394e5e6b1c4f868fcd5aee107.html">console::AsyncCommandWrapper::AsyncCommandWrapper(util::command::ICommand&, unsigned char)</a>>
+
+        97a4:	20015028 	.word	0x20015028
+
+        97a8:	2000000b 	.word	0x2000000b
+
+        97ac:	0003ce48 	.word	0x0003ce48
+
+        97b0:	0003ce84 	.word	0x0003ce84
+
+        97b4:	0003ce60 	.word	0x0003ce60
+
+        97b8:	20015020 	.word	0x20015020
+
+        97bc:	00037b6c 	.word	0x00037b6c
+
+        97c0:	20012fa8 	.word	0x20012fa8
+
+        97c4:	20012f70 	.word	0x20012f70
+
+        97c8:	20012f8c 	.word	0x20012f8c
+
+        97cc:	20012f4c 	.word	0x20012f4c
+
+    </pre>
+
+    
+    <pre><a href="../../../../../../libs/3rdparty/etl/include/etl/intrusive_forward_list.h/55817206b2907dac20a0ef232fedb906.html">_GLOBAL__sub_D__ZN4util6logger3BSPE (60)</a></pre>
+    
+
+    
+        <h1>Stack Worst-Case Scenarios</h1>
+        
+        <table class="table table-bordered table-hover table-condensed">
+        <thead>
+            <tr>
+                <th rowspan="2">#</th>
+                <th colspan="2" style="text-align: center">Stack</th>
+                <th colspan="2" style="text-align: center">Code</th>
+                <th rowspan="2" width="100%">Name</th>
+            </tr>
+            <tr>
+                <th class="col_size">&sum; = 100</th>
+                <th class="col_size"></th>
+                <th class="col_size">&sum;= 376</th>
+                <th class="col_size"></th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <th>1</th>
+                <td class="col_size">
+                    
+                    100
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                20 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    376
+                    
+                    
+                </td>
+                <td class="col_size">76</td>
+                <td><a href="../../../../../../libs/bsw/util/src/util/string/ConstString.cpp/da3f19b0834dcc2a495f1571acfa454d.html" class="icon-function">util::string::ConstString::compareIgnoreCase(util::string::ConstString const&amp;) const</a></td>
+            </tr>
+        
+            <tr>
+                <th>2</th>
+                <td class="col_size">
+                    
+                    80
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                48 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    300
+                    
+                    
+                </td>
+                <td class="col_size">220</td>
+                <td><a href="../../../../../../libs/bsw/util/src/util/command/ParentCommand.cpp/29f754d764c89bdd27dee4f5eb8a063d.html" class="icon-function">util::command::ParentCommand::addCommand_local(util::command::ICommand&amp;)</a></td>
+            </tr>
+        
+            <tr>
+                <th>3</th>
+                <td class="col_size">
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    80
+                    
+                    
+                </td>
+                <td class="col_size">4</td>
+                <td><a href="../../../../../../libs/bsw/util/src/util/command/ParentCommand.cpp/4a5f12c423b787f541d1c10602f30107.html" class="icon-function">util::command::ParentCommand::addCommand(util::command::ICommand&amp;)</a></td>
+            </tr>
+        
+            <tr>
+                <th>4</th>
+                <td class="col_size">
+                </td>
+                <td class="col_size">
+            
+                32 
+            
+                </td>
+                <td class="col_size">
+                    
+                </td>
+                <td class="col_size">76</td>
+                <td><a href="../../../../../../libs/bsw/logger/src/logger/DefaultLoggerCommand.cpp/f9f376e26cf1062f6de736cf140d7e8f.html" class="icon-function">logger::DefaultLoggerCommand::DefaultLoggerCommand(logger::IComponentConfig&amp;)</a></td>
+            </tr>
+        
+        </tbody>
+        
+    </table>
+        
+        
+            <p>No callers for this function.</p>
+        
+    
+
+
+        </div>
+    <div id="page-footer">
+        <hr>
+        
+            brought to you with 💖
+            by <a href="https://twitter.com/hbehrens">Heiko Behrens</a>
+            <span class="secondary">– MIT license, copyright © 2014-2026</span>
+        
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../../../../../../../../../static/css/style.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Symbol - puncover</title>
+    
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="page-header">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="../../../../../../../../../../../index.html">
+                    Puncover
+                  </a>
+                </div>
+              </div>
+            </nav>
+          
+        </div>
+        <div id="inner_content">
+        
+    
+    <ol class="breadcrumb folders">
+        
+        <li><a href="../../../../../../../../../../../home.html">home</a></li>
+        
+        <li><a href="../../../../../../../../../../runner.html">runner</a></li>
+        
+        <li><a href="../../../../../../../../../work.html">work</a></li>
+        
+        <li><a href="../../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../libs.html">libs</a></li>
+        
+        <li><a href="../../../../../bsw.html">bsw</a></li>
+        
+        <li><a href="../../../../lifecycle.html">lifecycle</a></li>
+        
+        <li><a href="../../../src.html">src</a></li>
+        
+        <li ><a href="../../lifecycle.html">lifecycle</a>
+            </li>
+
+        
+        <li class="active"><a href="../LifecycleManager.cpp.html">LifecycleManager.cpp</a>:80
+            </li>
+        
+    </ol>
+
+
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>Function</th>
+                <td colspan="5">
+                    <span class="icon-function">lifecycle::LifecycleManager::removeLifecycleListener(lifecycle::ILifecycleListener&amp;)</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th rowspan="2"></th>
+                <th>Address</th>
+                <th>Remarks</th>
+                <th>Stack</th>
+                <th>Code</th>
+                <th>Static</th>
+            </tr>
+            <tr>
+                <td>0x00012a14</td>
+                <td>
+    
+    
+</td>
+                <td>4 (static)</td>
+                <td>72</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>No Callers</th>
+                <td colspan="5">
+                
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    No Callees
+                    
+                </th>
+                <td colspan="5">
+                
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <pre><a href="./c90a3e46f5194e34705aae8091e4dc9b.html">lifecycle::LifecycleManager::addLifecycleListener(lifecycle::ILifecycleListener&amp;) (56)</a></pre>
+    
+
+    <pre>
+
+    lifecycle::LifecycleManager::removeLifecycleListener(lifecycle::ILifecycleListener&):
+
+       12a14:	b500      	push	{lr}
+
+       12a16:	f3ef 8e10 	mrs	lr, PRIMASK
+
+    getMachineStateRegisterValueAndSuspendAllInterrupts():
+
+       12a1a:	b672      	cpsid	i
+
+    _ZNK3etl27intrusive_forward_list_baseINS_12forward_linkILj0EEEE15is_link_in_listEPKS2_():
+
+       12a1c:	4684      	mov	ip, r0
+
+       12a1e:	3104      	adds	r1, #4
+
+       12a20:	f85c 3f24 	ldr.w	r3, [ip, #36]!
+
+       12a24:	b923      	cbnz	r3, 12a30 <<a href="./7148341abf907640c53fd28289db7dc2.html">lifecycle::LifecycleManager::removeLifecycleListener(lifecycle::ILifecycleListener&)</a>+0x1c>
+
+       12a26:	e013      	b.n	12a50 <<a href="./7148341abf907640c53fd28289db7dc2.html">lifecycle::LifecycleManager::removeLifecycleListener(lifecycle::ILifecycleListener&)</a>+0x3c>
+
+       12a28:	681a      	ldr	r2, [r3, #0]
+
+       12a2a:	469c      	mov	ip, r3
+
+       12a2c:	b182      	cbz	r2, 12a50 <<a href="./7148341abf907640c53fd28289db7dc2.html">lifecycle::LifecycleManager::removeLifecycleListener(lifecycle::ILifecycleListener&)</a>+0x3c>
+
+       12a2e:	4613      	mov	r3, r2
+
+       12a30:	428b      	cmp	r3, r1
+
+       12a32:	d1f9      	bne.n	12a28 <<a href="./7148341abf907640c53fd28289db7dc2.html">lifecycle::LifecycleManager::removeLifecycleListener(lifecycle::ILifecycleListener&)</a>+0x14>
+
+    _ZN3etl27intrusive_forward_list_baseINS_12forward_linkILj0EEEE21disconnect_link_afterERS2_():
+
+       12a34:	f8dc 3000 	ldr.w	r3, [ip]
+
+       12a38:	4a07      	ldr	r2, [pc, #28]	@ (12a58 <<a href="./7148341abf907640c53fd28289db7dc2.html">lifecycle::LifecycleManager::removeLifecycleListener(lifecycle::ILifecycleListener&)</a>+0x44>)
+
+       12a3a:	4293      	cmp	r3, r2
+
+       12a3c:	d008      	beq.n	12a50 <<a href="./7148341abf907640c53fd28289db7dc2.html">lifecycle::LifecycleManager::removeLifecycleListener(lifecycle::ILifecycleListener&)</a>+0x3c>
+
+    _ZN3etl12unlink_afterINS_12forward_linkILj0EEEEENS_9enable_ifIXsrNS_15is_forward_linkIT_EE5valueEPS5_E4typeERS5_():
+
+       12a3e:	b123      	cbz	r3, 12a4a <<a href="./7148341abf907640c53fd28289db7dc2.html">lifecycle::LifecycleManager::removeLifecycleListener(lifecycle::ILifecycleListener&)</a>+0x36>
+
+       12a40:	681a      	ldr	r2, [r3, #0]
+
+       12a42:	f8cc 2000 	str.w	r2, [ip]
+
+    _ZN3etl12forward_linkILj0EE5clearEv():
+
+       12a46:	2200      	movs	r2, #0
+
+       12a48:	601a      	str	r2, [r3, #0]
+
+    _ZN3etl27intrusive_forward_list_baseINS_12forward_linkILj0EEEE21disconnect_link_afterERS2_():
+
+       12a4a:	6a83      	ldr	r3, [r0, #40]	@ 0x28
+
+       12a4c:	3b01      	subs	r3, #1
+
+       12a4e:	6283      	str	r3, [r0, #40]	@ 0x28
+
+    lifecycle::LifecycleManager::removeLifecycleListener(lifecycle::ILifecycleListener&):
+
+       12a50:	f38e 8810 	msr	PRIMASK, lr
+
+       12a54:	f85d fb04 	ldr.w	pc, [sp], #4
+
+       12a58:	20000120 	.word	0x20000120
+
+    </pre>
+
+    
+    <pre><a href="./d2a165bce22dbb3be041402abf319643.html">lifecycle::LifecycleManager::transitionDone(lifecycle::ILifecycleComponent&amp;) (168)</a></pre>
+    
+
+    
+
+
+        </div>
+    <div id="page-footer">
+        <hr>
+        
+            brought to you with 💖
+            by <a href="https://twitter.com/hbehrens">Heiko Behrens</a>
+            <span class="secondary">– MIT license, copyright © 2014-2026</span>
+        
+    </div>
+    </div>
+</body>
+</html>

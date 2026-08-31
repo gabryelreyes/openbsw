@@ -1,0 +1,1415 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../../../../../../../../../static/css/style.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Symbol - puncover</title>
+    
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="page-header">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="../../../../../../../../../../../index.html">
+                    Puncover
+                  </a>
+                </div>
+              </div>
+            </nav>
+          
+        </div>
+        <div id="inner_content">
+        
+    
+    <ol class="breadcrumb folders">
+        
+        <li><a href="../../../../../../../../../../../home.html">home</a></li>
+        
+        <li><a href="../../../../../../../../../../runner.html">runner</a></li>
+        
+        <li><a href="../../../../../../../../../work.html">work</a></li>
+        
+        <li><a href="../../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../libs.html">libs</a></li>
+        
+        <li><a href="../../../../../bsw.html">bsw</a></li>
+        
+        <li><a href="../../../../uds.html">uds</a></li>
+        
+        <li><a href="../../../src.html">src</a></li>
+        
+        <li ><a href="../../uds.html">uds</a>
+            </li>
+
+        
+        <li class="active"><a href="../DiagDispatcher.cpp.html">DiagDispatcher.cpp</a>:393
+            </li>
+        
+    </ol>
+
+
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>Function</th>
+                <td colspan="5">
+                    <span class="icon-function">uds::DiagDispatcher::processQueue()</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th rowspan="2"></th>
+                <th>Address</th>
+                <th>Remarks</th>
+                <th>Stack</th>
+                <th>Code</th>
+                <th>Static</th>
+            </tr>
+            <tr>
+                <td>0x0001cb80</td>
+                <td>
+    <span class="label label-success">x-module</span>
+    
+</td>
+                <td>88 (static)</td>
+                <td>1,176</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>Callers (1)</th>
+                <td colspan="5">
+                
+                    <a href="../../../../../3rdparty/etl/include/etl/private/delegate_cpp11.h/ebaf37f94809c965ed81585bc0b9df75.html">void etl::delegate&lt;void ()&gt;::method_stub&lt;uds::DiagDispatcher, &amp;uds::DiagDispatcher::processQueue&gt;(etl::delegate&lt;void ()&gt;::invocation_element const&amp;) (8)</a>
+                    
+                
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Callees (13,
+                            <span title="sum of used bytes by all callees">
+                            Σ=920
+                            </span>
+                        )
+                    
+                </th>
+                <td colspan="5">
+                
+                    <a href="../../../../transport/src/LogicalAddress.cpp/8ece0ae49a291037ae51b0a33290c965.html">transport::addressfinder::findBy1ByteAddress(etl::span&lt;transport::LogicalAddress const, 4294967295u&gt; const&amp;, unsigned short) (56)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../util/include/util/logger/Logger.h/fee4073070054ecc160dbd4d6b194f36.html">util::logger::Logger::warn(unsigned char, char const*, ...) (56)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../transport/include/transport/AbstractTransportLayer.h/a972809af9df876e8f2297146e45e0db.html">non-virtual thunk to transport::AbstractTransportLayer::TransportMessageProvidingListenerHelper::getTransportMessage(unsigned char, unsigned short, unsigned short, unsigned short, etl::span&lt;unsigned char const, 4294967295u&gt; const&amp;, transport::TransportMessage*&amp;) (96)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../transport/src/TransportMessage.cpp/015d887b65e4e2abda950a7ebf753854.html">transport::TransportMessage::setPayloadLength(unsigned short) (68)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../transport/src/TransportMessage.cpp/ca9549627f3ae92917ace68bde1930ed.html">transport::TransportMessage::append(unsigned char const*, unsigned short) (92)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../asyncFreeRtos/src/async/Types.cpp/fcb4700f830501fb36a46bee82cc2f7d.html">async::TimeoutType::TimeoutType() (24)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../transport/src/TransportMessage.cpp/419bf932e75973441f5df7f566fe159b.html">transport::TransportMessage::TransportMessage() (16)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../connection/IncomingDiagConnection.cpp/c6937137d8eeb9402b05c34d86ffb339.html">uds::IncomingDiagConnection::open(bool) (132)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../util/include/util/logger/Logger.h/36d1ae1365862a45a74fa55e9d725fcd.html">util::logger::Logger::debug(unsigned char, char const*, ...) (56)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../connection/IncomingDiagConnection.cpp/98aa1036e1899478fd44d0933f659743.html">uds::IncomingDiagConnection::sendNegativeResponse(unsigned char, uds::AbstractDiagJob&amp;) (124)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../util/include/util/logger/Logger.h/6be3c2c875c07680bc44f008f830057e.html">util::logger::Logger::critical(unsigned char, char const*, ...) (56)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../util/include/util/logger/Logger.h/e675253f5bfedd299c26bd0145e28698.html">util::logger::Logger::error(unsigned char, char const*, ...) (88)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../transport/src/AbstractTransportLayer.cpp/95b7df615e72f80e0520bff6278a138e.html">transport::AbstractTransportLayer::TransportMessageProvidingListenerHelper::messageReceived(unsigned char, transport::TransportMessage&amp;, transport::ITransportMessageProcessedListener*) (56)</a>
+                    
+                
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <pre><a href="./194d128b6dc30d4b9c3d2b4107e63b6b.html">uds::DiagDispatcher::DiagDispatcher(etl::ipool&amp;, etl::iqueue&lt;uds::TransportJob, 2u&gt;&amp;, uds::DiagnosisConfiguration&amp;, uds::IDiagSessionManager&amp;, uds::DiagJobRoot&amp;) (188)</a></pre>
+    
+
+    <pre>
+
+    uds::DiagDispatcher::processQueue():
+
+       1cb80:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+
+       1cb84:	b08d      	sub	sp, #52	@ 0x34
+
+       1cb86:	f3ef 8610 	mrs	r6, PRIMASK
+
+    getMachineStateRegisterValueAndSuspendAllInterrupts():
+
+       1cb8a:	b672      	cpsid	i
+
+    uds::DiagDispatcher::processQueue():
+
+       1cb8c:	6bc3      	ldr	r3, [r0, #60]	@ 0x3c
+
+    _ZNK3etl10queue_baseILj2EE5emptyEv():
+
+       1cb8e:	689a      	ldr	r2, [r3, #8]
+
+    uds::DiagDispatcher::processQueue():
+
+       1cb90:	2a00      	cmp	r2, #0
+
+       1cb92:	f000 820a 	beq.w	1cfaa <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x42a>
+
+    _ZN3etl4spanIKN9transport14LogicalAddressELj4294967295EEC4IRKSt5arrayIS2_Lj12EEEEOT_PNS_9enable_ifIXaaaaaaaaaaaaaaaaaantsrNS_7is_spanISA_EE5valuentsrNS_12is_std_arrayINS_16remove_referenceISA_E4typeEEE5valuentsrNS_12is_etl_arrayISI_EE5valuentsrNS_10is_pointerISI_EE5valuentsrNS_8is_arrayISA_EE5valuesrNS_19is_lvalue_referenceISB_EE5valuesrNS_8has_sizeISA_vEE5valuesrNS_8has_dataISA_vEE5valuesrNS_14is_convertibleIDTcldtcl7declvalIRSI_EE4dataEEPS3_EE5valuesrNS_7is_sameIS2_NS_9remove_cvINSI_10value_typeEE4typeEEE5valueEvE4typeE():
+
+       1cb96:	f8df a3a4 	ldr.w	sl, [pc, #932]	@ 1cf3c <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x3bc>
+
+       1cb9a:	4607      	mov	r7, r0
+
+       1cb9c:	e012      	b.n	1cbc4 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x44>
+
+    uds::DiagDispatcher::processQueue():
+
+       1cb9e:	f899 3009 	ldrb.w	r3, [r9, #9]
+
+    precheckRequest():
+
+       1cba2:	b113      	cbz	r3, 1cbaa <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x2a>
+
+       1cba4:	8973      	ldrh	r3, [r6, #10]
+
+       1cba6:	2bdf      	cmp	r3, #223	@ 0xdf
+
+       1cba8:	d04a      	beq.n	1cc40 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0xc0>
+
+    uds::DiagDispatcher::processQueue():
+
+       1cbaa:	f897 3038 	ldrb.w	r3, [r7, #56]	@ 0x38
+
+       1cbae:	2b00      	cmp	r3, #0
+
+       1cbb0:	f000 8087 	beq.w	1ccc2 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x142>
+
+       1cbb4:	f3ef 8610 	mrs	r6, PRIMASK
+
+    getMachineStateRegisterValueAndSuspendAllInterrupts():
+
+       1cbb8:	b672      	cpsid	i
+
+    uds::DiagDispatcher::processQueue():
+
+       1cbba:	6bfb      	ldr	r3, [r7, #60]	@ 0x3c
+
+    _ZNK3etl10queue_baseILj2EE5emptyEv():
+
+       1cbbc:	689a      	ldr	r2, [r3, #8]
+
+    uds::DiagDispatcher::processQueue():
+
+       1cbbe:	2a00      	cmp	r2, #0
+
+       1cbc0:	f000 81f3 	beq.w	1cfaa <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x42a>
+
+    _ZN3etl6iqueueIN3uds12TransportJobELj2EE5frontEv():
+
+       1cbc4:	685c      	ldr	r4, [r3, #4]
+
+    _ZN3etl10queue_baseILj2EE7del_outEv():
+
+       1cbc6:	68d8      	ldr	r0, [r3, #12]
+
+    _ZN3etl6iqueueIN3uds12TransportJobELj2EE5frontEv():
+
+       1cbc8:	691d      	ldr	r5, [r3, #16]
+
+    _ZN3etl10queue_baseILj2EE7del_outEv():
+
+       1cbca:	1c61      	adds	r1, r4, #1
+
+       1cbcc:	4281      	cmp	r1, r0
+
+       1cbce:	bf08      	it	eq
+
+       1cbd0:	2100      	moveq	r1, #0
+
+       1cbd2:	3a01      	subs	r2, #1
+
+    _ZN3etl6iqueueIN3uds12TransportJobELj2EE5frontEv():
+
+       1cbd4:	eb05 08c4 	add.w	r8, r5, r4, lsl #3
+
+    _ZN3etl10queue_baseILj2EE7del_outEv():
+
+       1cbd8:	6059      	str	r1, [r3, #4]
+
+       1cbda:	609a      	str	r2, [r3, #8]
+
+    uds::DiagDispatcher::processQueue():
+
+       1cbdc:	f386 8810 	msr	PRIMASK, r6
+
+    precheckRequest():
+
+       1cbe0:	f855 6034 	ldr.w	r6, [r5, r4, lsl #3]
+
+    uds::DiagDispatcher::processQueue():
+
+       1cbe4:	f8d7 9040 	ldr.w	r9, [r7, #64]	@ 0x40
+
+    precheckRequest():
+
+       1cbe8:	8972      	ldrh	r2, [r6, #10]
+
+       1cbea:	f64f 73ff 	movw	r3, #65535	@ 0xffff
+
+       1cbee:	429a      	cmp	r2, r3
+
+    _ZN9transport16TransportMessage16setTargetAddressEt():
+
+       1cbf0:	bf04      	itt	eq
+
+       1cbf2:	f8b9 3000 	ldrheq.w	r3, [r9]
+
+       1cbf6:	8173      	strheq	r3, [r6, #10]
+
+    precheckRequest():
+
+       1cbf8:	f899 3008 	ldrb.w	r3, [r9, #8]
+
+       1cbfc:	2b00      	cmp	r3, #0
+
+       1cbfe:	d1ce      	bne.n	1cb9e <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x1e>
+
+    _ZNK9transport16TransportMessage13sourceAddressEv():
+
+       1cc00:	8932      	ldrh	r2, [r6, #8]
+
+    _ZN3etl4spanIKN9transport14LogicalAddressELj4294967295EEC4IRKSt5arrayIS2_Lj12EEEEOT_PNS_9enable_ifIXaaaaaaaaaaaaaaaaaantsrNS_7is_spanISA_EE5valuentsrNS_12is_std_arrayINS_16remove_referenceISA_E4typeEEE5valuentsrNS_12is_etl_arrayISI_EE5valuentsrNS_10is_pointerISI_EE5valuentsrNS_8is_arrayISA_EE5valuesrNS_19is_lvalue_referenceISB_EE5valuesrNS_8has_sizeISA_vEE5valuesrNS_8has_dataISA_vEE5valuesrNS_14is_convertibleIDTcldtcl7declvalIRSI_EE4dataEEPS3_EE5valuesrNS_7is_sameIS2_NS_9remove_cvINSI_10value_typeEE4typeEEE5valueEvE4typeE():
+
+       1cc02:	4bc0      	ldr	r3, [pc, #768]	@ (1cf04 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x384>)
+
+       1cc04:	930b      	str	r3, [sp, #44]	@ 0x2c
+
+    _ZN9transport13addressfinder16is1ByteAddressInEtRKN3etl4spanIKNS_14LogicalAddressELj4294967295EEE():
+
+       1cc06:	a90a      	add	r1, sp, #40	@ 0x28
+
+       1cc08:	a808      	add	r0, sp, #32
+
+    _ZN3etl4spanIKN9transport14LogicalAddressELj4294967295EEC4IRKSt5arrayIS2_Lj12EEEEOT_PNS_9enable_ifIXaaaaaaaaaaaaaaaaaantsrNS_7is_spanISA_EE5valuentsrNS_12is_std_arrayINS_16remove_referenceISA_E4typeEEE5valuentsrNS_12is_etl_arrayISI_EE5valuentsrNS_10is_pointerISI_EE5valuentsrNS_8is_arrayISA_EE5valuesrNS_19is_lvalue_referenceISB_EE5valuesrNS_8has_sizeISA_vEE5valuesrNS_8has_dataISA_vEE5valuesrNS_14is_convertibleIDTcldtcl7declvalIRSI_EE4dataEEPS3_EE5valuesrNS_7is_sameIS2_NS_9remove_cvINSI_10value_typeEE4typeEEE5valueEvE4typeE():
+
+       1cc0a:	f8cd a028 	str.w	sl, [sp, #40]	@ 0x28
+
+    _ZN9transport13addressfinder16is1ByteAddressInEtRKN3etl4spanIKNS_14LogicalAddressELj4294967295EEE():
+
+       1cc0e:	f7fd f879 	bl	19d04 <<a href="../../../../transport/src/LogicalAddress.cpp/8ece0ae49a291037ae51b0a33290c965.html">transport::addressfinder::findBy1ByteAddress(etl::span<transport::LogicalAddress const, 4294967295u> const&, unsigned short)</a>>
+
+    _ZNK3etl16private_optional13optional_implIN9transport14LogicalAddressELb0EE9has_valueEv():
+
+       1cc12:	f89d 3024 	ldrb.w	r3, [sp, #36]	@ 0x24
+
+    precheckRequest():
+
+       1cc16:	f855 6034 	ldr.w	r6, [r5, r4, lsl #3]
+
+       1cc1a:	2b00      	cmp	r3, #0
+
+       1cc1c:	d1bf      	bne.n	1cb9e <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x1e>
+
+       1cc1e:	f8df 9320 	ldr.w	r9, [pc, #800]	@ 1cf40 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x3c0>
+
+       1cc22:	8932      	ldrh	r2, [r6, #8]
+
+       1cc24:	f899 0000 	ldrb.w	r0, [r9]
+
+       1cc28:	49b7      	ldr	r1, [pc, #732]	@ (1cf08 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x388>)
+
+       1cc2a:	f7ef f8a7 	bl	bd7c <<a href="../../../../util/include/util/logger/Logger.h/fee4073070054ecc160dbd4d6b194f36.html">util::logger::Logger::warn(unsigned char, char const*, ...)</a>>
+
+       1cc2e:	f8d8 0004 	ldr.w	r0, [r8, #4]
+
+       1cc32:	f855 1034 	ldr.w	r1, [r5, r4, lsl #3]
+
+       1cc36:	6803      	ldr	r3, [r0, #0]
+
+       1cc38:	2204      	movs	r2, #4
+
+       1cc3a:	681b      	ldr	r3, [r3, #0]
+
+       1cc3c:	4798      	blx	r3
+
+    uds::DiagDispatcher::processQueue():
+
+       1cc3e:	e7b9      	b.n	1cbb4 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x34>
+
+       1cc40:	a808      	add	r0, sp, #32
+
+    copyFunctionalRequest():
+
+       1cc42:	f8b9 3000 	ldrh.w	r3, [r9]
+
+       1cc46:	f899 1006 	ldrb.w	r1, [r9, #6]
+
+    _ZNK9transport16TransportMessage13sourceAddressEv():
+
+       1cc4a:	8932      	ldrh	r2, [r6, #8]
+
+    copyFunctionalRequest():
+
+       1cc4c:	9002      	str	r0, [sp, #8]
+
+       1cc4e:	a80a      	add	r0, sp, #40	@ 0x28
+
+       1cc50:	9001      	str	r0, [sp, #4]
+
+       1cc52:	f640 70ff 	movw	r0, #4095	@ 0xfff
+
+       1cc56:	9000      	str	r0, [sp, #0]
+
+       1cc58:	2000      	movs	r0, #0
+
+    _ZN3etl4spanIKhLj4294967295EEC4Ev():
+
+       1cc5a:	e9cd 000a 	strd	r0, r0, [sp, #40]	@ 0x28
+
+    copyFunctionalRequest():
+
+       1cc5e:	9008      	str	r0, [sp, #32]
+
+       1cc60:	f107 0020 	add.w	r0, r7, #32
+
+       1cc64:	f7fc ffec 	bl	19c40 <<a href="../../../../transport/include/transport/AbstractTransportLayer.h/a972809af9df876e8f2297146e45e0db.html">non-virtual thunk to transport::AbstractTransportLayer::TransportMessageProvidingListenerHelper::getTransportMessage(unsigned char, unsigned short, unsigned short, unsigned short, etl::span<unsigned char const, 4294967295u> const&, transport::TransportMessage*&)</a>>
+
+       1cc68:	4681      	mov	r9, r0
+
+       1cc6a:	2800      	cmp	r0, #0
+
+       1cc6c:	f040 816a 	bne.w	1cf44 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x3c4>
+
+       1cc70:	9808      	ldr	r0, [sp, #32]
+
+       1cc72:	2800      	cmp	r0, #0
+
+       1cc74:	f000 8166 	beq.w	1cf44 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x3c4>
+
+    _ZN9transport16TransportMessage15resetValidBytesEv():
+
+       1cc78:	f8a0 900e 	strh.w	r9, [r0, #14]
+
+    _ZNK9transport16TransportMessage13sourceAddressEv():
+
+       1cc7c:	68b3      	ldr	r3, [r6, #8]
+
+    _ZN9transport16TransportMessage16setSourceAddressEt():
+
+       1cc7e:	6083      	str	r3, [r0, #8]
+
+    copyFunctionalRequest():
+
+       1cc80:	89b1      	ldrh	r1, [r6, #12]
+
+       1cc82:	f7fd f8cf 	bl	19e24 <<a href="../../../../transport/src/TransportMessage.cpp/015d887b65e4e2abda950a7ebf753854.html">transport::TransportMessage::setPayloadLength(unsigned short)</a>>
+
+       1cc86:	89b2      	ldrh	r2, [r6, #12]
+
+       1cc88:	6831      	ldr	r1, [r6, #0]
+
+       1cc8a:	9808      	ldr	r0, [sp, #32]
+
+       1cc8c:	f7fd f8ec 	bl	19e68 <<a href="../../../../transport/src/TransportMessage.cpp/ca9549627f3ae92917ace68bde1930ed.html">transport::TransportMessage::append(unsigned char const*, unsigned short)</a>>
+
+       1cc90:	f8dd b020 	ldr.w	fp, [sp, #32]
+
+    precheckRequest():
+
+       1cc94:	f1bb 0f00 	cmp.w	fp, #0
+
+       1cc98:	f000 8154 	beq.w	1cf44 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x3c4>
+
+       1cc9c:	f8d8 0004 	ldr.w	r0, [r8, #4]
+
+       1cca0:	b120      	cbz	r0, 1ccac <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x12c>
+
+       1cca2:	6803      	ldr	r3, [r0, #0]
+
+       1cca4:	464a      	mov	r2, r9
+
+       1cca6:	681b      	ldr	r3, [r3, #0]
+
+       1cca8:	4631      	mov	r1, r6
+
+       1ccaa:	4798      	blx	r3
+
+    uds::DiagDispatcher::processQueue():
+
+       1ccac:	f107 0330 	add.w	r3, r7, #48	@ 0x30
+
+    precheckRequest():
+
+       1ccb0:	f8c8 3004 	str.w	r3, [r8, #4]
+
+    uds::DiagDispatcher::processQueue():
+
+       1ccb4:	f897 3038 	ldrb.w	r3, [r7, #56]	@ 0x38
+
+    precheckRequest():
+
+       1ccb8:	f845 b034 	str.w	fp, [r5, r4, lsl #3]
+
+    uds::DiagDispatcher::processQueue():
+
+       1ccbc:	2b00      	cmp	r3, #0
+
+       1ccbe:	f47f af79 	bne.w	1cbb4 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x34>
+
+       1ccc2:	f8d7 9034 	ldr.w	r9, [r7, #52]	@ 0x34
+
+       1ccc6:	f3ef 8310 	mrs	r3, PRIMASK
+
+    getMachineStateRegisterValueAndSuspendAllInterrupts():
+
+       1ccca:	b672      	cpsid	i
+
+    _ZNK3etl5ipool4fullEv():
+
+       1cccc:	f8d9 0014 	ldr.w	r0, [r9, #20]
+
+    getMachineStateRegisterValueAndSuspendAllInterrupts():
+
+       1ccd0:	9304      	str	r3, [sp, #16]
+
+    _ZNK3etl5ipool4fullEv():
+
+       1ccd2:	f8d9 3008 	ldr.w	r3, [r9, #8]
+
+    _ZN3uds29acquireIncomingDiagConnectionERN3etl5ipoolEh():
+
+       1ccd6:	4283      	cmp	r3, r0
+
+       1ccd8:	f000 8189 	beq.w	1cfee <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x46e>
+
+    uds::DiagDispatcher::processQueue():
+
+       1ccdc:	6c3a      	ldr	r2, [r7, #64]	@ 0x40
+
+    _ZN3etl5ipool8allocateIN3uds22IncomingDiagConnectionEEEPT_v():
+
+       1ccde:	f8d9 1010 	ldr.w	r1, [r9, #16]
+
+    uds::DiagDispatcher::processQueue():
+
+       1cce2:	687e      	ldr	r6, [r7, #4]
+
+    dispatchIncomingRequest():
+
+       1cce4:	9605      	str	r6, [sp, #20]
+
+    _ZN3etl5ipool8allocateIN3uds22IncomingDiagConnectionEEEPT_v():
+
+       1cce6:	f5b1 7f96 	cmp.w	r1, #300	@ 0x12c
+
+    uds::DiagDispatcher::processQueue():
+
+       1ccea:	7a96      	ldrb	r6, [r2, #10]
+
+       1ccec:	f8d7 b084 	ldr.w	fp, [r7, #132]	@ 0x84
+
+    requestIncomingConnection():
+
+       1ccf0:	9606      	str	r6, [sp, #24]
+
+    _ZN3etl5ipool8allocateIN3uds22IncomingDiagConnectionEEEPT_v():
+
+       1ccf2:	d209      	bcs.n	1cd08 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x188>
+
+       1ccf4:	4b85      	ldr	r3, [pc, #532]	@ (1cf0c <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x38c>)
+
+       1ccf6:	9207      	str	r2, [sp, #28]
+
+       1ccf8:	681b      	ldr	r3, [r3, #0]
+
+       1ccfa:	a80a      	add	r0, sp, #40	@ 0x28
+
+       1ccfc:	4798      	blx	r3
+
+    _ZN3etl5ipool13allocate_itemEv():
+
+       1ccfe:	f8d9 3008 	ldr.w	r3, [r9, #8]
+
+       1cd02:	f8d9 0014 	ldr.w	r0, [r9, #20]
+
+       1cd06:	9a07      	ldr	r2, [sp, #28]
+
+       1cd08:	4283      	cmp	r3, r0
+
+       1cd0a:	f080 8155 	bcs.w	1cfb8 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x438>
+
+       1cd0e:	f8d9 100c 	ldr.w	r1, [r9, #12]
+
+       1cd12:	4281      	cmp	r1, r0
+
+       1cd14:	d210      	bcs.n	1cd38 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x1b8>
+
+       1cd16:	f8d9 e010 	ldr.w	lr, [r9, #16]
+
+       1cd1a:	f8d9 6000 	ldr.w	r6, [r9]
+
+       1cd1e:	fb0e fc01 	mul.w	ip, lr, r1
+
+       1cd22:	3101      	adds	r1, #1
+
+       1cd24:	9107      	str	r1, [sp, #28]
+
+       1cd26:	4466      	add	r6, ip
+
+       1cd28:	f8d9 1000 	ldr.w	r1, [r9]
+
+       1cd2c:	4476      	add	r6, lr
+
+       1cd2e:	f841 600c 	str.w	r6, [r1, ip]
+
+       1cd32:	9907      	ldr	r1, [sp, #28]
+
+       1cd34:	f8c9 100c 	str.w	r1, [r9, #12]
+
+       1cd38:	f8d9 6004 	ldr.w	r6, [r9, #4]
+
+    _ZN3uds22IncomingDiagConnection7TimeoutC4ERS0_():
+
+       1cd3c:	4974      	ldr	r1, [pc, #464]	@ (1cf10 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x390>)
+
+       1cd3e:	9207      	str	r2, [sp, #28]
+
+    _ZN3etl5ipool13allocate_itemEv():
+
+       1cd40:	3301      	adds	r3, #1
+
+       1cd42:	4283      	cmp	r3, r0
+
+       1cd44:	f8c9 3008 	str.w	r3, [r9, #8]
+
+       1cd48:	bf34      	ite	cc
+
+       1cd4a:	6833      	ldrcc	r3, [r6, #0]
+
+       1cd4c:	2300      	movcs	r3, #0
+
+       1cd4e:	f8c9 3004 	str.w	r3, [r9, #4]
+
+    _ZN3uds22IncomingDiagConnectionC4Eh():
+
+       1cd52:	23ff      	movs	r3, #255	@ 0xff
+
+       1cd54:	8133      	strh	r3, [r6, #8]
+
+       1cd56:	72b3      	strb	r3, [r6, #10]
+
+       1cd58:	4b6e      	ldr	r3, [pc, #440]	@ (1cf14 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x394>)
+
+       1cd5a:	6033      	str	r3, [r6, #0]
+
+       1cd5c:	f04f 13ff 	mov.w	r3, #16711935	@ 0xff00ff
+
+       1cd60:	f04f 0900 	mov.w	r9, #0
+
+       1cd64:	6073      	str	r3, [r6, #4]
+
+    _ZN5async9QueueNodeINS_9IRunnableEEC4Ev():
+
+       1cd66:	2301      	movs	r3, #1
+
+    _ZN3uds22IncomingDiagConnection7TimeoutC4ERS0_():
+
+       1cd68:	62b1      	str	r1, [r6, #40]	@ 0x28
+
+    _ZN5async9QueueNodeINS_9IRunnableEEC4Ev():
+
+       1cd6a:	62f3      	str	r3, [r6, #44]	@ 0x2c
+
+    _ZN3uds22IncomingDiagConnectionC4Eh():
+
+       1cd6c:	f8c6 900c 	str.w	r9, [r6, #12]
+
+       1cd70:	f8c6 9010 	str.w	r9, [r6, #16]
+
+       1cd74:	f8c6 9014 	str.w	r9, [r6, #20]
+
+       1cd78:	f8c6 9018 	str.w	r9, [r6, #24]
+
+       1cd7c:	f8c6 901c 	str.w	r9, [r6, #28]
+
+       1cd80:	f8c6 9020 	str.w	r9, [r6, #32]
+
+       1cd84:	f886 9024 	strb.w	r9, [r6, #36]	@ 0x24
+
+    _ZN3uds22IncomingDiagConnection7TimeoutC4ERS0_():
+
+       1cd88:	f106 0030 	add.w	r0, r6, #48	@ 0x30
+
+       1cd8c:	f7fa fbb4 	bl	174f8 <<a href="../../../../asyncFreeRtos/src/async/Types.cpp/fcb4700f830501fb36a46bee82cc2f7d.html">async::TimeoutType::TimeoutType()</a>>
+
+       1cd90:	495f      	ldr	r1, [pc, #380]	@ (1cf10 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x390>)
+
+       1cd92:	64f1      	str	r1, [r6, #76]	@ 0x4c
+
+    _ZN5async9QueueNodeINS_9IRunnableEEC4Ev():
+
+       1cd94:	2301      	movs	r3, #1
+
+       1cd96:	6533      	str	r3, [r6, #80]	@ 0x50
+
+    _ZN3uds22IncomingDiagConnection7TimeoutC4ERS0_():
+
+       1cd98:	64b6      	str	r6, [r6, #72]	@ 0x48
+
+       1cd9a:	f106 0054 	add.w	r0, r6, #84	@ 0x54
+
+       1cd9e:	f7fa fbab 	bl	174f8 <<a href="../../../../asyncFreeRtos/src/async/Types.cpp/fcb4700f830501fb36a46bee82cc2f7d.html">async::TimeoutType::TimeoutType()</a>>
+
+    _ZN5async9QueueNodeINS_9IRunnableEEC4Ev():
+
+       1cda2:	2301      	movs	r3, #1
+
+       1cda4:	f8c6 3080 	str.w	r3, [r6, #128]	@ 0x80
+
+       1cda8:	f8c6 3098 	str.w	r3, [r6, #152]	@ 0x98
+
+       1cdac:	f8c6 30b0 	str.w	r3, [r6, #176]	@ 0xb0
+
+       1cdb0:	f8c6 30c8 	str.w	r3, [r6, #200]	@ 0xc8
+
+    _ZN5async4CallIN3etl7closureIFvPN9transport16TransportMessageENS3_34ITransportMessageProcessedListener16ProcessingResultEENS1_8delegateIS8_EEEEEC4ERKSB_():
+
+       1cdb4:	4b58      	ldr	r3, [pc, #352]	@ (1cf18 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x398>)
+
+       1cdb6:	67f3      	str	r3, [r6, #124]	@ 0x7c
+
+       1cdb8:	4b58      	ldr	r3, [pc, #352]	@ (1cf1c <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x39c>)
+
+       1cdba:	f8c6 3088 	str.w	r3, [r6, #136]	@ 0x88
+
+    _ZN5async4CallIN3etl7closureIFvtPN3uds15AbstractDiagJobEENS1_8delegateIS6_EEEEEC4ERKS9_():
+
+       1cdbe:	4b58      	ldr	r3, [pc, #352]	@ (1cf20 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x3a0>)
+
+       1cdc0:	f8c6 3094 	str.w	r3, [r6, #148]	@ 0x94
+
+       1cdc4:	4b57      	ldr	r3, [pc, #348]	@ (1cf24 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x3a4>)
+
+       1cdc6:	f8c6 30a0 	str.w	r3, [r6, #160]	@ 0xa0
+
+    _ZN5async4CallIN3etl7closureIFvhPN3uds15AbstractDiagJobEENS1_8delegateIS6_EEEEEC4ERKS9_():
+
+       1cdca:	4b57      	ldr	r3, [pc, #348]	@ (1cf28 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x3a8>)
+
+       1cdcc:	f8c6 30ac 	str.w	r3, [r6, #172]	@ 0xac
+
+       1cdd0:	4b56      	ldr	r3, [pc, #344]	@ (1cf2c <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x3ac>)
+
+       1cdd2:	f8c6 30b8 	str.w	r3, [r6, #184]	@ 0xb8
+
+    _ZN5async4CallIN3etl8delegateIFvvEEEEC4ERKS4_():
+
+       1cdd6:	4b56      	ldr	r3, [pc, #344]	@ (1cf30 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x3b0>)
+
+       1cdd8:	f8c6 30c4 	str.w	r3, [r6, #196]	@ 0xc4
+
+       1cddc:	4b55      	ldr	r3, [pc, #340]	@ (1cf34 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x3b4>)
+
+       1cdde:	f8c6 30d0 	str.w	r3, [r6, #208]	@ 0xd0
+
+    _ZN3uds22IncomingDiagConnectionC4Eh():
+
+       1cde2:	f04f 7380 	mov.w	r3, #16777216	@ 0x1000000
+
+       1cde6:	6773      	str	r3, [r6, #116]	@ 0x74
+
+    _ZN5async4CallIN3etl7closureIFvPN9transport16TransportMessageENS3_34ITransportMessageProcessedListener16ProcessingResultEENS1_8delegateIS8_EEEEEC4ERKSB_():
+
+       1cde8:	2304      	movs	r3, #4
+
+       1cdea:	f886 308c 	strb.w	r3, [r6, #140]	@ 0x8c
+
+    _ZN3uds22IncomingDiagConnection7TimeoutC4ERS0_():
+
+       1cdee:	66f6      	str	r6, [r6, #108]	@ 0x6c
+
+    _ZN3uds22IncomingDiagConnectionC4Eh():
+
+       1cdf0:	f8c6 9070 	str.w	r9, [r6, #112]	@ 0x70
+
+       1cdf4:	f8c6 9078 	str.w	r9, [r6, #120]	@ 0x78
+
+    _ZN5async4CallIN3etl7closureIFvPN9transport16TransportMessageENS3_34ITransportMessageProcessedListener16ProcessingResultEENS1_8delegateIS8_EEEEEC4ERKSB_():
+
+       1cdf8:	f8c6 6084 	str.w	r6, [r6, #132]	@ 0x84
+
+       1cdfc:	f8c6 9090 	str.w	r9, [r6, #144]	@ 0x90
+
+    _ZN5async4CallIN3etl7closureIFvtPN3uds15AbstractDiagJobEENS1_8delegateIS6_EEEEEC4ERKS9_():
+
+       1ce00:	f8c6 609c 	str.w	r6, [r6, #156]	@ 0x9c
+
+       1ce04:	f8c6 90a4 	str.w	r9, [r6, #164]	@ 0xa4
+
+       1ce08:	f8a6 90a8 	strh.w	r9, [r6, #168]	@ 0xa8
+
+    _ZN5async4CallIN3etl7closureIFvhPN3uds15AbstractDiagJobEENS1_8delegateIS6_EEEEEC4ERKS9_():
+
+       1ce0c:	f8c6 60b4 	str.w	r6, [r6, #180]	@ 0xb4
+
+       1ce10:	f8c6 90bc 	str.w	r9, [r6, #188]	@ 0xbc
+
+       1ce14:	f886 90c0 	strb.w	r9, [r6, #192]	@ 0xc0
+
+    _ZN5async4CallIN3etl8delegateIFvvEEEEC4ERKS4_():
+
+       1ce18:	f8c6 60cc 	str.w	r6, [r6, #204]	@ 0xcc
+
+    _ZN3uds22IncomingDiagConnectionC4Eh():
+
+       1ce1c:	f106 00d4 	add.w	r0, r6, #212	@ 0xd4
+
+       1ce20:	f7fc ffa8 	bl	19d74 <<a href="../../../../transport/src/TransportMessage.cpp/419bf932e75973441f5df7f566fe159b.html">transport::TransportMessage::TransportMessage()</a>>
+
+       1ce24:	f106 00e4 	add.w	r0, r6, #228	@ 0xe4
+
+       1ce28:	f7fc ffa4 	bl	19d74 <<a href="../../../../transport/src/TransportMessage.cpp/419bf932e75973441f5df7f566fe159b.html">transport::TransportMessage::TransportMessage()</a>>
+
+       1ce2c:	9b06      	ldr	r3, [sp, #24]
+
+       1ce2e:	f886 3025 	strb.w	r3, [r6, #37]	@ 0x25
+
+    _ZN3etl6vectorIhLj6EEC4Ev():
+
+       1ce32:	f506 738e 	add.w	r3, r6, #284	@ 0x11c
+
+    _ZN3etl7ivectorIhvEC4EPhj():
+
+       1ce36:	f8c6 3114 	str.w	r3, [r6, #276]	@ 0x114
+
+       1ce3a:	f8c6 3118 	str.w	r3, [r6, #280]	@ 0x118
+
+    _ZN3etl11vector_baseC4Ej():
+
+       1ce3e:	2306      	movs	r3, #6
+
+       1ce40:	f8c6 3110 	str.w	r3, [r6, #272]	@ 0x110
+
+    _ZN3uds22IncomingDiagConnectionC4Eh():
+
+       1ce44:	f241 1394 	movw	r3, #4500	@ 0x1194
+
+       1ce48:	f8c6 3124 	str.w	r3, [r6, #292]	@ 0x124
+
+    _ZN3etl4spanIhLj4294967295EEC4Ev():
+
+       1ce4c:	f8c6 90f4 	str.w	r9, [r6, #244]	@ 0xf4
+
+    uds::DiagDispatcher::processQueue():
+
+       1ce50:	9b04      	ldr	r3, [sp, #16]
+
+    _ZN3etl4spanIhLj4294967295EEC4Ev():
+
+       1ce52:	f8c6 90f8 	str.w	r9, [r6, #248]	@ 0xf8
+
+       1ce56:	f8c6 90fc 	str.w	r9, [r6, #252]	@ 0xfc
+
+       1ce5a:	f8c6 9100 	str.w	r9, [r6, #256]	@ 0x100
+
+    _ZN3uds22IncomingDiagConnectionC4Eh():
+
+       1ce5e:	f8a6 9108 	strh.w	r9, [r6, #264]	@ 0x108
+
+       1ce62:	f886 910a 	strb.w	r9, [r6, #266]	@ 0x10a
+
+       1ce66:	f886 910b 	strb.w	r9, [r6, #267]	@ 0x10b
+
+       1ce6a:	f886 910c 	strb.w	r9, [r6, #268]	@ 0x10c
+
+       1ce6e:	f886 910d 	strb.w	r9, [r6, #269]	@ 0x10d
+
+       1ce72:	f8c6 9128 	str.w	r9, [r6, #296]	@ 0x128
+
+    resumeAllInterrupts():
+
+       1ce76:	f383 8810 	msr	PRIMASK, r3
+
+    requestIncomingConnection():
+
+       1ce7a:	f855 0034 	ldr.w	r0, [r5, r4, lsl #3]
+
+       1ce7e:	9a05      	ldr	r2, [sp, #20]
+
+    _ZNK9transport16TransportMessage13sourceAddressEv():
+
+       1ce80:	6883      	ldr	r3, [r0, #8]
+
+    requestIncomingConnection():
+
+       1ce82:	6073      	str	r3, [r6, #4]
+
+       1ce84:	0c1b      	lsrs	r3, r3, #16
+
+    dispatchIncomingRequest():
+
+       1ce86:	f107 010c 	add.w	r1, r7, #12
+
+    requestIncomingConnection():
+
+       1ce8a:	2bdf      	cmp	r3, #223	@ 0xdf
+
+       1ce8c:	6132      	str	r2, [r6, #16]
+
+       1ce8e:	61b1      	str	r1, [r6, #24]
+
+       1ce90:	9a07      	ldr	r2, [sp, #28]
+
+       1ce92:	f000 808f 	beq.w	1cfb4 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x434>
+
+       1ce96:	8133      	strh	r3, [r6, #8]
+
+    _ZNK9transport16TransportMessage9serviceIdEv():
+
+       1ce98:	6803      	ldr	r3, [r0, #0]
+
+    requestIncomingConnection():
+
+       1ce9a:	f8df 90a4 	ldr.w	r9, [pc, #164]	@ 1cf40 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x3c0>
+
+    _ZNK9transport16TransportMessage9serviceIdEv():
+
+       1ce9e:	781b      	ldrb	r3, [r3, #0]
+
+    requestIncomingConnection():
+
+       1cea0:	72b3      	strb	r3, [r6, #10]
+
+       1cea2:	79d1      	ldrb	r1, [r2, #7]
+
+       1cea4:	4630      	mov	r0, r6
+
+       1cea6:	f7fe fc31 	bl	1b70c <<a href="../connection/IncomingDiagConnection.cpp/c6937137d8eeb9402b05c34d86ffb339.html">uds::IncomingDiagConnection::open(bool)</a>>
+
+       1ceaa:	f855 1034 	ldr.w	r1, [r5, r4, lsl #3]
+
+       1ceae:	f8d8 c004 	ldr.w	ip, [r8, #4]
+
+       1ceb2:	f8c6 c00c 	str.w	ip, [r6, #12]
+
+       1ceb6:	6171      	str	r1, [r6, #20]
+
+       1ceb8:	f04f 0c00 	mov.w	ip, #0
+
+       1cebc:	7ab1      	ldrb	r1, [r6, #10]
+
+       1cebe:	88f3      	ldrh	r3, [r6, #6]
+
+       1cec0:	88b2      	ldrh	r2, [r6, #4]
+
+       1cec2:	f899 0000 	ldrb.w	r0, [r9]
+
+       1cec6:	f8c6 c01c 	str.w	ip, [r6, #28]
+
+       1ceca:	9100      	str	r1, [sp, #0]
+
+       1cecc:	491a      	ldr	r1, [pc, #104]	@ (1cf38 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x3b8>)
+
+       1cece:	f7ec fc9f 	bl	9810 <<a href="../../../../util/include/util/logger/Logger.h/36d1ae1365862a45a74fa55e9d725fcd.html">util::logger::Logger::debug(unsigned char, char const*, ...)</a>>
+
+    dispatchIncomingRequest():
+
+       1ced2:	f855 2034 	ldr.w	r2, [r5, r4, lsl #3]
+
+       1ced6:	f8db 3000 	ldr.w	r3, [fp]
+
+       1ceda:	6237      	str	r7, [r6, #32]
+
+       1cedc:	699c      	ldr	r4, [r3, #24]
+
+       1cede:	8993      	ldrh	r3, [r2, #12]
+
+       1cee0:	6812      	ldr	r2, [r2, #0]
+
+       1cee2:	4631      	mov	r1, r6
+
+       1cee4:	4658      	mov	r0, fp
+
+       1cee6:	47a0      	blx	r4
+
+       1cee8:	28ff      	cmp	r0, #255	@ 0xff
+
+       1ceea:	f43f ae63 	beq.w	1cbb4 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x34>
+
+       1ceee:	4601      	mov	r1, r0
+
+       1cef0:	465a      	mov	r2, fp
+
+       1cef2:	4630      	mov	r0, r6
+
+       1cef4:	f7fe fac6 	bl	1b484 <<a href="../connection/IncomingDiagConnection.cpp/98aa1036e1899478fd44d0933f659743.html">uds::IncomingDiagConnection::sendNegativeResponse(unsigned char, uds::AbstractDiagJob&)</a>>
+
+       1cef8:	6833      	ldr	r3, [r6, #0]
+
+       1cefa:	4630      	mov	r0, r6
+
+       1cefc:	68db      	ldr	r3, [r3, #12]
+
+       1cefe:	4798      	blx	r3
+
+    uds::DiagDispatcher::processQueue():
+
+       1cf00:	e658      	b.n	1cbb4 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x34>
+
+       1cf02:	bf00      	nop
+
+       1cf04:	0003d398 	.word	0x0003d398
+
+       1cf08:	00039b50 	.word	0x00039b50
+
+       1cf0c:	20000000 	.word	0x20000000
+
+       1cf10:	0003e4fc 	.word	0x0003e4fc
+
+       1cf14:	0003e270 	.word	0x0003e270
+
+       1cf18:	0003e508 	.word	0x0003e508
+
+       1cf1c:	0001b34d 	.word	0x0001b34d
+
+       1cf20:	0003e514 	.word	0x0003e514
+
+       1cf24:	0001b035 	.word	0x0001b035
+
+       1cf28:	0003e520 	.word	0x0003e520
+
+       1cf2c:	0001b21d 	.word	0x0001b21d
+
+       1cf30:	0003dee8 	.word	0x0003dee8
+
+       1cf34:	0001c911 	.word	0x0001c911
+
+       1cf38:	00039ba4 	.word	0x00039ba4
+
+       1cf3c:	0003d368 	.word	0x0003d368
+
+       1cf40:	20000007 	.word	0x20000007
+
+    precheckRequest():
+
+       1cf44:	4b2c      	ldr	r3, [pc, #176]	@ (1cff8 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x478>)
+
+       1cf46:	492d      	ldr	r1, [pc, #180]	@ (1cffc <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x47c>)
+
+       1cf48:	7818      	ldrb	r0, [r3, #0]
+
+       1cf4a:	f8df 90c8 	ldr.w	r9, [pc, #200]	@ 1d014 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x494>
+
+       1cf4e:	f7fc fef5 	bl	19d3c <<a href="../../../../util/include/util/logger/Logger.h/6be3c2c875c07680bc44f008f830057e.html">util::logger::Logger::critical(unsigned char, char const*, ...)</a>>
+
+    uds::DiagDispatcher::processQueue():
+
+       1cf52:	6c3e      	ldr	r6, [r7, #64]	@ 0x40
+
+       1cf54:	f899 0000 	ldrb.w	r0, [r9]
+
+    sendBusyResponse():
+
+       1cf58:	4929      	ldr	r1, [pc, #164]	@ (1d000 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x480>)
+
+    uds::DiagDispatcher::processQueue():
+
+       1cf5a:	f855 b034 	ldr.w	fp, [r5, r4, lsl #3]
+
+    sendBusyResponse():
+
+       1cf5e:	f7ec fb4f 	bl	9600 <<a href="../../../../util/include/util/logger/Logger.h/e675253f5bfedd299c26bd0145e28698.html">util::logger::Logger::error(unsigned char, char const*, ...)</a>>
+
+    _ZN9transport16TransportMessage16setSourceAddressEt():
+
+       1cf62:	8833      	ldrh	r3, [r6, #0]
+
+       1cf64:	f8a7 3060 	strh.w	r3, [r7, #96]	@ 0x60
+
+    _ZNK3etl4spanIhLj4294967295EE4dataEv():
+
+       1cf68:	463a      	mov	r2, r7
+
+    _ZN9transport16TransportMessage16setTargetAddressEt():
+
+       1cf6a:	f8bb 3008 	ldrh.w	r3, [fp, #8]
+
+    _ZNK9transport16TransportMessage9serviceIdEv():
+
+       1cf6e:	f8db 1000 	ldr.w	r1, [fp]
+
+    _ZN9transport16TransportMessage16setTargetAddressEt():
+
+       1cf72:	f8a7 3062 	strh.w	r3, [r7, #98]	@ 0x62
+
+    _ZNK3etl4spanIhLj4294967295EE4dataEv():
+
+       1cf76:	f852 3f58 	ldr.w	r3, [r2, #88]!
+
+    _ZNK9transport16TransportMessage9serviceIdEv():
+
+       1cf7a:	7809      	ldrb	r1, [r1, #0]
+
+    sendBusyResponse():
+
+       1cf7c:	7059      	strb	r1, [r3, #1]
+
+       1cf7e:	79b1      	ldrb	r1, [r6, #6]
+
+       1cf80:	2300      	movs	r3, #0
+
+       1cf82:	f107 001c 	add.w	r0, r7, #28
+
+       1cf86:	f7fc fe0b 	bl	19ba0 <<a href="../../../../transport/src/AbstractTransportLayer.cpp/95b7df615e72f80e0520bff6278a138e.html">transport::AbstractTransportLayer::TransportMessageProvidingListenerHelper::messageReceived(unsigned char, transport::TransportMessage&, transport::ITransportMessageProcessedListener*)</a>>
+
+       1cf8a:	b940      	cbnz	r0, 1cf9e <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x41e>
+
+    uds::DiagDispatcher::processQueue():
+
+       1cf8c:	f8d8 0004 	ldr.w	r0, [r8, #4]
+
+       1cf90:	f855 1034 	ldr.w	r1, [r5, r4, lsl #3]
+
+       1cf94:	6803      	ldr	r3, [r0, #0]
+
+       1cf96:	2200      	movs	r2, #0
+
+       1cf98:	681b      	ldr	r3, [r3, #0]
+
+       1cf9a:	4798      	blx	r3
+
+       1cf9c:	e60a      	b.n	1cbb4 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x34>
+
+    sendBusyResponse():
+
+       1cf9e:	4919      	ldr	r1, [pc, #100]	@ (1d004 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x484>)
+
+       1cfa0:	f899 0000 	ldrb.w	r0, [r9]
+
+       1cfa4:	f7ec fb2c 	bl	9600 <<a href="../../../../util/include/util/logger/Logger.h/e675253f5bfedd299c26bd0145e28698.html">util::logger::Logger::error(unsigned char, char const*, ...)</a>>
+
+       1cfa8:	e7f0      	b.n	1cf8c <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x40c>
+
+    uds::DiagDispatcher::processQueue():
+
+       1cfaa:	f386 8810 	msr	PRIMASK, r6
+
+       1cfae:	b00d      	add	sp, #52	@ 0x34
+
+       1cfb0:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+
+    requestIncomingConnection():
+
+       1cfb4:	8813      	ldrh	r3, [r2, #0]
+
+       1cfb6:	e76e      	b.n	1ce96 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x316>
+
+    _ZN3etl5ipool13allocate_itemEv():
+
+       1cfb8:	4b13      	ldr	r3, [pc, #76]	@ (1d008 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x488>)
+
+       1cfba:	a80a      	add	r0, sp, #40	@ 0x28
+
+       1cfbc:	681b      	ldr	r3, [r3, #0]
+
+       1cfbe:	4798      	blx	r3
+
+    resumeAllInterrupts():
+
+       1cfc0:	9b04      	ldr	r3, [sp, #16]
+
+       1cfc2:	f383 8810 	msr	PRIMASK, r3
+
+    requestIncomingConnection():
+
+       1cfc6:	f855 2034 	ldr.w	r2, [r5, r4, lsl #3]
+
+       1cfca:	f8df 9048 	ldr.w	r9, [pc, #72]	@ 1d014 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x494>
+
+    _ZNK9transport16TransportMessage9serviceIdEv():
+
+       1cfce:	6813      	ldr	r3, [r2, #0]
+
+    requestIncomingConnection():
+
+       1cfd0:	7819      	ldrb	r1, [r3, #0]
+
+       1cfd2:	8953      	ldrh	r3, [r2, #10]
+
+       1cfd4:	8912      	ldrh	r2, [r2, #8]
+
+       1cfd6:	9100      	str	r1, [sp, #0]
+
+       1cfd8:	f899 0000 	ldrb.w	r0, [r9]
+
+       1cfdc:	490b      	ldr	r1, [pc, #44]	@ (1d00c <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x48c>)
+
+       1cfde:	f7ee fecd 	bl	bd7c <<a href="../../../../util/include/util/logger/Logger.h/fee4073070054ecc160dbd4d6b194f36.html">util::logger::Logger::warn(unsigned char, char const*, ...)</a>>
+
+       1cfe2:	4b05      	ldr	r3, [pc, #20]	@ (1cff8 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x478>)
+
+       1cfe4:	490a      	ldr	r1, [pc, #40]	@ (1d010 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x490>)
+
+       1cfe6:	7818      	ldrb	r0, [r3, #0]
+
+       1cfe8:	f7fc fea8 	bl	19d3c <<a href="../../../../util/include/util/logger/Logger.h/6be3c2c875c07680bc44f008f830057e.html">util::logger::Logger::critical(unsigned char, char const*, ...)</a>>
+
+    uds::DiagDispatcher::processQueue():
+
+       1cfec:	e7b1      	b.n	1cf52 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x3d2>
+
+    resumeAllInterrupts():
+
+       1cfee:	9b04      	ldr	r3, [sp, #16]
+
+       1cff0:	f383 8810 	msr	PRIMASK, r3
+
+    requestIncomingConnection():
+
+       1cff4:	e7e7      	b.n	1cfc6 <<a href="./e00d400272b7aeeb8e6c582d70d53119.html">uds::DiagDispatcher::processQueue()</a>+0x446>
+
+       1cff6:	bf00      	nop
+
+       1cff8:	2000000b 	.word	0x2000000b
+
+       1cffc:	00039b7c 	.word	0x00039b7c
+
+       1d000:	00039c50 	.word	0x00039c50
+
+       1d004:	00039c90 	.word	0x00039c90
+
+       1d008:	20000000 	.word	0x20000000
+
+       1d00c:	00039bdc 	.word	0x00039bdc
+
+       1d010:	00039c24 	.word	0x00039c24
+
+       1d014:	20000007 	.word	0x20000007
+
+    </pre>
+
+    
+    <pre><a href="../../../../../3rdparty/etl/include/etl/private/delegate_cpp11.h/ebaf37f94809c965ed81585bc0b9df75.html">void etl::delegate&lt;void ()&gt;::method_stub&lt;uds::DiagDispatcher, &amp;uds::DiagDispatcher::processQueue&gt;(etl::delegate&lt;void ()&gt;::invocation_element const&amp;) (8)</a></pre>
+    
+
+    
+        <h1>Stack Worst-Case Scenarios</h1>
+        
+        <table class="table table-bordered table-hover table-condensed">
+        <thead>
+            <tr>
+                <th rowspan="2">#</th>
+                <th colspan="2" style="text-align: center">Stack</th>
+                <th colspan="2" style="text-align: center">Code</th>
+                <th rowspan="2" width="100%">Name</th>
+            </tr>
+            <tr>
+                <th class="col_size">&sum; = 220</th>
+                <th class="col_size"></th>
+                <th class="col_size">&sum;= 448</th>
+                <th class="col_size"></th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <th>1</th>
+                <td class="col_size">
+                    
+                    220
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                48 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    448
+                    
+                    
+                </td>
+                <td class="col_size">68</td>
+                <td><a href="../../../../util/src/util/logger/Logger.cpp/d658d7c78dcca1ca01e61ef198b3eeaa.html" class="icon-function">util::logger::Logger::doLog(unsigned char, util::logger::Level, char const*, std::__va_list)</a></td>
+            </tr>
+        
+            <tr>
+                <th>2</th>
+                <td class="col_size">
+                    
+                    172
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                20 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    380
+                    
+                    
+                </td>
+                <td class="col_size">56</td>
+                <td><a href="../../../../util/include/util/logger/Logger.h/6be3c2c875c07680bc44f008f830057e.html" class="icon-function">util::logger::Logger::critical(unsigned char, char const*, ...)</a></td>
+            </tr>
+        
+            <tr>
+                <th>3</th>
+                <td class="col_size">
+                    
+                    152
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                24 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    324
+                    
+                    
+                </td>
+                <td class="col_size">84</td>
+                <td><a href="../../../../transport/src/TransportMessage.cpp/eeb8096d53c3c24b29736af1a95f0865.html" class="icon-function">transport::TransportMessage::init(unsigned char*, unsigned long)</a></td>
+            </tr>
+        
+            <tr>
+                <th>4</th>
+                <td class="col_size">
+                    
+                    128
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                24 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    240
+                    
+                    
+                </td>
+                <td class="col_size">116</td>
+                <td><a href="../connection/IncomingDiagConnection.cpp/0fe53b60d36c4df2208186bc82166758.html" class="icon-function">uds::IncomingDiagConnection::releaseRequestGetResponse()</a></td>
+            </tr>
+        
+            <tr>
+                <th>5</th>
+                <td class="col_size">
+                    
+                    104
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                16 
+            
+                </td>
+                <td class="col_size">
+                    
+                </td>
+                <td class="col_size">124</td>
+                <td><a href="../connection/IncomingDiagConnection.cpp/98aa1036e1899478fd44d0933f659743.html" class="icon-function">uds::IncomingDiagConnection::sendNegativeResponse(unsigned char, uds::AbstractDiagJob&amp;)</a></td>
+            </tr>
+        
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <th></th>
+                <th class="col_size">88
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </tfoot>
+        
+    </table>
+        
+        
+            <p>No callers for this function.</p>
+        
+    
+
+
+        </div>
+    <div id="page-footer">
+        <hr>
+        
+            brought to you with 💖
+            by <a href="https://twitter.com/hbehrens">Heiko Behrens</a>
+            <span class="secondary">– MIT license, copyright © 2014-2026</span>
+        
+    </div>
+    </div>
+</body>
+</html>

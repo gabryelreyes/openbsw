@@ -1,0 +1,9 @@
+<map id="middleware::core::ITimeoutClusterConnection" name="middleware::core::ITimeoutClusterConnection">
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,207,112"/>
+<area shape="rect" id="node2" href="$de/df6/classmiddleware_1_1core_1_1IClusterConnection.html" title=" " alt="" coords="255,71,448,112"/>
+<area shape="rect" id="node3" href="$de/d79/classmiddleware_1_1core_1_1ClusterConnectionBase.html" title=" " alt="" coords="496,71,685,112"/>
+<area shape="rect" id="node4" href="$d5/df9/classmiddleware_1_1core_1_1ClusterConnectionTimeoutBase.html" title=" " alt="" coords="733,71,923,112"/>
+<area shape="rect" id="node5" href="$db/df3/classmiddleware_1_1core_1_1ClusterConnectionBidirectional.html" title=" " alt="" coords="971,5,1160,47"/>
+<area shape="rect" id="node6" href="$d3/daa/classmiddleware_1_1core_1_1ClusterConnectionProxyOnly.html" title=" " alt="" coords="971,71,1160,112"/>
+<area shape="rect" id="node7" href="$de/d70/classmiddleware_1_1core_1_1ClusterConnectionSkeletonOnly.html" title=" " alt="" coords="971,136,1160,177"/>
+</map>

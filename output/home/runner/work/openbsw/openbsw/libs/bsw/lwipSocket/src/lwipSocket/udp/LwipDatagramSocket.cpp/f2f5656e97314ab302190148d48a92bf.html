@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../../../../../../../../../../static/css/style.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Symbol - puncover</title>
+    
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="page-header">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="../../../../../../../../../../../../index.html">
+                    Puncover
+                  </a>
+                </div>
+              </div>
+            </nav>
+          
+        </div>
+        <div id="inner_content">
+        
+    
+    <ol class="breadcrumb folders">
+        
+        <li><a href="../../../../../../../../../../../../home.html">home</a></li>
+        
+        <li><a href="../../../../../../../../../../../runner.html">runner</a></li>
+        
+        <li><a href="../../../../../../../../../../work.html">work</a></li>
+        
+        <li><a href="../../../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../../libs.html">libs</a></li>
+        
+        <li><a href="../../../../../../bsw.html">bsw</a></li>
+        
+        <li><a href="../../../../../lwipSocket.html">lwipSocket</a></li>
+        
+        <li><a href="../../../../src.html">src</a></li>
+        
+        <li><a href="../../../lwipSocket.html">lwipSocket</a></li>
+        
+        <li ><a href="../../udp.html">udp</a>
+            </li>
+
+        
+        <li class="active"><a href="../LwipDatagramSocket.cpp.html">LwipDatagramSocket.cpp</a>:78
+            </li>
+        
+    </ol>
+
+
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>Function</th>
+                <td colspan="5">
+                    <span class="icon-function">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th rowspan="2"></th>
+                <th>Address</th>
+                <th>Remarks</th>
+                <th>Stack</th>
+                <th>Code</th>
+                <th>Static</th>
+            </tr>
+            <tr>
+                <td>0x0001efb8</td>
+                <td>
+    
+    
+</td>
+                <td>24 (static)</td>
+                <td>228</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>No Callers</th>
+                <td colspan="5">
+                
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Callees (7,
+                            <span title="sum of used bytes by all callees">
+                            Σ=472
+                            </span>
+                        )
+                    
+                </th>
+                <td colspan="5">
+                
+                    <a href="../../utils/TaskAssert.cpp/39c8284cc5e0e36feda703ba48572d03.html">lwiputils::TASK_ASSERT_HOOK() (4)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../../../3rdparty/lwip/src/core/udp.c/6885d48e74680759c4eea6c60dd1b94c.html">udp_new_ip_type (32)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../utils/FilterFrame.cpp/54d7e9a3f27474890c3c37bb54d9dda9.html">lwiputils::to_lwipIp(ip::IPAddress const&amp;, ip4_addr*) (24)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../../../3rdparty/lwip/src/core/udp.c/1ea122cbfc3de9dda16195031e5eb78f.html">udp_bind (248)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../../../3rdparty/lwip/src/core/udp.c/3d133c4afb49db284438a408622ea2a3.html">udp_recv (20)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../../util/include/util/logger/Logger.h/0ab01804358606b880086539418bdb3a.html">util::logger::Logger::info(unsigned char, char const*, ...) (56)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../../util/include/util/logger/Logger.h/e675253f5bfedd299c26bd0145e28698.html">util::logger::Logger::error(unsigned char, char const*, ...) (88)</a>
+                    
+                
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <pre><a href="./1ccebd37354949caacc96fd3e4300999.html">udp::LwipDatagramSocket::close() (96)</a></pre>
+    
+
+    <pre>
+
+    udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short):
+
+       1efb8:	b570      	push	{r4, r5, r6, lr}
+
+       1efba:	4604      	mov	r4, r0
+
+       1efbc:	b082      	sub	sp, #8
+
+       1efbe:	460d      	mov	r5, r1
+
+       1efc0:	4616      	mov	r6, r2
+
+       1efc2:	f000 fbd9 	bl	1f778 <<a href="../../utils/TaskAssert.cpp/39c8284cc5e0e36feda703ba48572d03.html">lwiputils::TASK_ASSERT_HOOK()</a>>
+
+       1efc6:	6863      	ldr	r3, [r4, #4]
+
+       1efc8:	2b00      	cmp	r3, #0
+
+       1efca:	d051      	beq.n	1f070 <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0xb8>
+
+       1efcc:	6823      	ldr	r3, [r4, #0]
+
+       1efce:	4620      	mov	r0, r4
+
+       1efd0:	68db      	ldr	r3, [r3, #12]
+
+       1efd2:	4798      	blx	r3
+
+       1efd4:	2d00      	cmp	r5, #0
+
+       1efd6:	d034      	beq.n	1f042 <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0x8a>
+
+       1efd8:	2000      	movs	r0, #0
+
+       1efda:	f005 fb81 	bl	246e0 <<a href="../../../../../../3rdparty/lwip/src/core/udp.c/6885d48e74680759c4eea6c60dd1b94c.html">udp_new_ip_type</a>>
+
+       1efde:	4603      	mov	r3, r0
+
+       1efe0:	60e0      	str	r0, [r4, #12]
+
+       1efe2:	2800      	cmp	r0, #0
+
+       1efe4:	d047      	beq.n	1f076 <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0xbe>
+
+       1efe6:	7a59      	ldrb	r1, [r3, #9]
+
+       1efe8:	f041 0104 	orr.w	r1, r1, #4
+
+       1efec:	7259      	strb	r1, [r3, #9]
+
+    _ZN9lwiputils9to_lwipIpERKN2ip9IPAddressE():
+
+       1efee:	4628      	mov	r0, r5
+
+       1eff0:	2300      	movs	r3, #0
+
+       1eff2:	a901      	add	r1, sp, #4
+
+       1eff4:	9301      	str	r3, [sp, #4]
+
+       1eff6:	f000 fb7b 	bl	1f6f0 <<a href="../../utils/FilterFrame.cpp/54d7e9a3f27474890c3c37bb54d9dda9.html">lwiputils::to_lwipIp(ip::IPAddress const&, ip4_addr*)</a>>
+
+    udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short):
+
+       1effa:	4632      	mov	r2, r6
+
+       1effc:	68e0      	ldr	r0, [r4, #12]
+
+       1effe:	a901      	add	r1, sp, #4
+
+       1f000:	f005 f92a 	bl	24258 <<a href="../../../../../../3rdparty/lwip/src/core/udp.c/1ea122cbfc3de9dda16195031e5eb78f.html">udp_bind</a>>
+
+       1f004:	4602      	mov	r2, r0
+
+       1f006:	b9aa      	cbnz	r2, 1f034 <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0x7c>
+
+       1f008:	491e      	ldr	r1, [pc, #120]	@ (1f084 <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0xcc>)
+
+       1f00a:	68e0      	ldr	r0, [r4, #12]
+
+       1f00c:	4622      	mov	r2, r4
+
+       1f00e:	f005 fb2f 	bl	24670 <<a href="../../../../../../3rdparty/lwip/src/core/udp.c/3d133c4afb49db284438a408622ea2a3.html">udp_recv</a>>
+
+       1f012:	6823      	ldr	r3, [r4, #0]
+
+       1f014:	4a1c      	ldr	r2, [pc, #112]	@ (1f088 <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0xd0>)
+
+       1f016:	6b9b      	ldr	r3, [r3, #56]	@ 0x38
+
+       1f018:	491c      	ldr	r1, [pc, #112]	@ (1f08c <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0xd4>)
+
+       1f01a:	4293      	cmp	r3, r2
+
+       1f01c:	780d      	ldrb	r5, [r1, #0]
+
+       1f01e:	d120      	bne.n	1f062 <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0xaa>
+
+    udp::LwipDatagramSocket::getLocalPort() const():
+
+       1f020:	68e3      	ldr	r3, [r4, #12]
+
+       1f022:	b313      	cbz	r3, 1f06a <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0xb2>
+
+    udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short):
+
+       1f024:	8a5a      	ldrh	r2, [r3, #18]
+
+       1f026:	491a      	ldr	r1, [pc, #104]	@ (1f090 <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0xd8>)
+
+       1f028:	4628      	mov	r0, r5
+
+       1f02a:	f7e4 f975 	bl	3318 <<a href="../../../../../util/include/util/logger/Logger.h/0ab01804358606b880086539418bdb3a.html">util::logger::Logger::info(unsigned char, char const*, ...)</a>>
+
+       1f02e:	2000      	movs	r0, #0
+
+       1f030:	b002      	add	sp, #8
+
+       1f032:	bd70      	pop	{r4, r5, r6, pc}
+
+       1f034:	4b15      	ldr	r3, [pc, #84]	@ (1f08c <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0xd4>)
+
+       1f036:	4917      	ldr	r1, [pc, #92]	@ (1f094 <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0xdc>)
+
+       1f038:	7818      	ldrb	r0, [r3, #0]
+
+       1f03a:	f7ea fae1 	bl	9600 <<a href="../../../../../util/include/util/logger/Logger.h/e675253f5bfedd299c26bd0145e28698.html">util::logger::Logger::error(unsigned char, char const*, ...)</a>>
+
+       1f03e:	2001      	movs	r0, #1
+
+       1f040:	e7f6      	b.n	1f030 <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0x78>
+
+       1f042:	202e      	movs	r0, #46	@ 0x2e
+
+       1f044:	f005 fb4c 	bl	246e0 <<a href="../../../../../../3rdparty/lwip/src/core/udp.c/6885d48e74680759c4eea6c60dd1b94c.html">udp_new_ip_type</a>>
+
+       1f048:	60e0      	str	r0, [r4, #12]
+
+       1f04a:	b1a0      	cbz	r0, 1f076 <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0xbe>
+
+       1f04c:	7a43      	ldrb	r3, [r0, #9]
+
+       1f04e:	f043 0304 	orr.w	r3, r3, #4
+
+       1f052:	7243      	strb	r3, [r0, #9]
+
+       1f054:	4632      	mov	r2, r6
+
+       1f056:	68e0      	ldr	r0, [r4, #12]
+
+       1f058:	4629      	mov	r1, r5
+
+       1f05a:	f005 f8fd 	bl	24258 <<a href="../../../../../../3rdparty/lwip/src/core/udp.c/1ea122cbfc3de9dda16195031e5eb78f.html">udp_bind</a>>
+
+       1f05e:	4602      	mov	r2, r0
+
+       1f060:	e7d1      	b.n	1f006 <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0x4e>
+
+       1f062:	4620      	mov	r0, r4
+
+       1f064:	4798      	blx	r3
+
+       1f066:	4602      	mov	r2, r0
+
+       1f068:	e7dd      	b.n	1f026 <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0x6e>
+
+    udp::LwipDatagramSocket::getLocalPort() const():
+
+       1f06a:	f64f 72ff 	movw	r2, #65535	@ 0xffff
+
+       1f06e:	e7da      	b.n	1f026 <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0x6e>
+
+    udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short):
+
+       1f070:	2002      	movs	r0, #2
+
+       1f072:	b002      	add	sp, #8
+
+       1f074:	bd70      	pop	{r4, r5, r6, pc}
+
+       1f076:	4b05      	ldr	r3, [pc, #20]	@ (1f08c <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0xd4>)
+
+       1f078:	4907      	ldr	r1, [pc, #28]	@ (1f098 <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0xe0>)
+
+       1f07a:	7818      	ldrb	r0, [r3, #0]
+
+       1f07c:	f7ea fac0 	bl	9600 <<a href="../../../../../util/include/util/logger/Logger.h/e675253f5bfedd299c26bd0145e28698.html">util::logger::Logger::error(unsigned char, char const*, ...)</a>>
+
+       1f080:	e7dd      	b.n	1f03e <<a href="./f2f5656e97314ab302190148d48a92bf.html">udp::LwipDatagramSocket::bind(ip::IPAddress const*, unsigned short)</a>+0x86>
+
+       1f082:	bf00      	nop
+
+       1f084:	0001f09d 	.word	0x0001f09d
+
+       1f088:	0001ed95 	.word	0x0001ed95
+
+       1f08c:	20000013 	.word	0x20000013
+
+       1f090:	0003a5a4 	.word	0x0003a5a4
+
+       1f094:	0003a564 	.word	0x0003a564
+
+       1f098:	0003a534 	.word	0x0003a534
+
+    </pre>
+
+    
+    <pre><a href="./85bbf4a0a5d7e27176bc7ea1799e1f6d.html">udp::LwipDatagramSocket::udpReceiveListener(void*, udp_pcb*, pbuf*, ip4_addr const*, unsigned short) (136)</a></pre>
+    
+
+    
+        <h1>Stack Worst-Case Scenarios</h1>
+        
+        <table class="table table-bordered table-hover table-condensed">
+        <thead>
+            <tr>
+                <th rowspan="2">#</th>
+                <th colspan="2" style="text-align: center">Stack</th>
+                <th colspan="2" style="text-align: center">Code</th>
+                <th rowspan="2" width="100%">Name</th>
+            </tr>
+            <tr>
+                <th class="col_size">&sum; = 120</th>
+                <th class="col_size"></th>
+                <th class="col_size">&sum;= 416</th>
+                <th class="col_size"></th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <th>1</th>
+                <td class="col_size">
+                    
+                    120
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                48 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    416
+                    
+                    
+                </td>
+                <td class="col_size">68</td>
+                <td><a href="../../../../../util/src/util/logger/Logger.cpp/d658d7c78dcca1ca01e61ef198b3eeaa.html" class="icon-function">util::logger::Logger::doLog(unsigned char, util::logger::Level, char const*, std::__va_list)</a></td>
+            </tr>
+        
+            <tr>
+                <th>2</th>
+                <td class="col_size">
+                    
+                    72
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                24 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    348
+                    
+                    
+                </td>
+                <td class="col_size">100</td>
+                <td><a href="../../../../../../../executables/referenceApp/application/src/logger/logger.cpp/98866fb3d81ee8db78cbfd1e2dfd931d.html" class="icon-function">log_lwipInfo</a></td>
+            </tr>
+        
+            <tr>
+                <th>3</th>
+                <td class="col_size">
+                    
+                    48
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                24 
+            
+                </td>
+                <td class="col_size">
+                    
+                </td>
+                <td class="col_size">248</td>
+                <td><a href="../../../../../../3rdparty/lwip/src/core/udp.c/1ea122cbfc3de9dda16195031e5eb78f.html" class="icon-function">udp_bind</a></td>
+            </tr>
+        
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <th></th>
+                <th class="col_size">24
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </tfoot>
+        
+    </table>
+        
+        
+            <p>No callers for this function.</p>
+        
+    
+
+
+        </div>
+    <div id="page-footer">
+        <hr>
+        
+            brought to you with 💖
+            by <a href="https://twitter.com/hbehrens">Heiko Behrens</a>
+            <span class="secondary">– MIT license, copyright © 2014-2026</span>
+        
+    </div>
+    </div>
+</body>
+</html>

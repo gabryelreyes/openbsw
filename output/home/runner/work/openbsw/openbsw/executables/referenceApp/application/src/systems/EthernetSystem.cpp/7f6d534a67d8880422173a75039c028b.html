@@ -1,0 +1,1071 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../../../../../../../../../static/css/style.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Symbol - puncover</title>
+    
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="page-header">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="../../../../../../../../../../../index.html">
+                    Puncover
+                  </a>
+                </div>
+              </div>
+            </nav>
+          
+        </div>
+        <div id="inner_content">
+        
+    
+    <ol class="breadcrumb folders">
+        
+        <li><a href="../../../../../../../../../../../home.html">home</a></li>
+        
+        <li><a href="../../../../../../../../../../runner.html">runner</a></li>
+        
+        <li><a href="../../../../../../../../../work.html">work</a></li>
+        
+        <li><a href="../../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../executables.html">executables</a></li>
+        
+        <li><a href="../../../../../referenceApp.html">referenceApp</a></li>
+        
+        <li><a href="../../../../application.html">application</a></li>
+        
+        <li><a href="../../../src.html">src</a></li>
+        
+        <li ><a href="../../systems.html">systems</a>
+            </li>
+
+        
+        <li class="active"><a href="../EthernetSystem.cpp.html">EthernetSystem.cpp</a>:223
+            </li>
+        
+    </ol>
+
+
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>Function</th>
+                <td colspan="5">
+                    <span class="icon-function">systems::EthernetSystem::execute()</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th rowspan="2"></th>
+                <th>Address</th>
+                <th>Remarks</th>
+                <th>Stack</th>
+                <th>Code</th>
+                <th>Static</th>
+            </tr>
+            <tr>
+                <td>0x0000b2c8</td>
+                <td>
+    <span class="label label-success">x-module</span>
+    
+</td>
+                <td>64 (static)</td>
+                <td>704</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>Callers (1)</th>
+                <td colspan="5">
+                
+                    <a href="../../../include/systems/EthernetSystem.h/57b564a75c9d7897ed057bcf1557ec62.html">non-virtual thunk to systems::EthernetSystem::execute() (8)</a>
+                    
+                
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Callees (5,
+                            <span title="sum of used bytes by all callees">
+                            Σ=632
+                            </span>
+                        )
+                    
+                </th>
+                <td colspan="5">
+                
+                    <a href="../../../../../../libs/bsw/lwipSocket/src/lwipSocket/utils/FilterFrame.cpp/006a9e486ef3783af4da2cf8a6d96b26.html">lwiputils::processPbufQueue(etl::queue_spsc_atomic&lt;pbuf*, 10u, 2u&gt;&amp;, etl::span&lt;netif, 4294967295u&gt;, etl::span&lt;ethernet::NetifVlanId const, 4294967295u&gt;) (192)</a>
+                    
+                        ,
+                    
+                
+                    <a href="./f4abf069c64682e1a47a42bcb99ff630.html">refreshNetifLinkStatus(ethernet::NetifPort&amp;, ethernet::LinkStatus&amp;, netif&amp;) (48)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../../../libs/3rdparty/lwip/src/core/timeouts.c/97cd3fd569fa81009bcb8df9b454c4e7.html">sys_check_timeouts (80)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../../../libs/bsw/shed/include/shed/ops_internal.h/ab666d54e915d4353f3c643692806dcd.html">shed::move_op shed::internal::call_system_func_ret&lt;shed::move_op, shed::move_op (*)(ip::declare::NetworkInterfaceConfigRegistry&lt;2u, shed::table&lt;systems::NetifsSchema&gt;, ethernet::NetifBusId&gt;&amp;, ethernet::LinkStatus const&amp;, netif&amp;, ethernet::NetifBusId const&amp;, ip::NetworkInterfaceConfig&amp;), shed::table&lt;systems::NetifsSchema&gt;, unsigned int, ip::declare::NetworkInterfaceConfigRegistry&lt;2u, shed::table&lt;systems::NetifsSchema&gt;, ethernet::NetifBusId&gt;&amp;, ethernet::LinkStatus const&amp;, netif&amp;, ethernet::NetifBusId const&amp;, ip::NetworkInterfaceConfig&amp;&gt;(shed::move_op (*&amp;)(ip::declare::NetworkInterfaceConfigRegistry&lt;2u, shed::table&lt;systems::NetifsSchema&gt;, ethernet::NetifBusId&gt;&amp;, ethernet::LinkStatus const&amp;, netif&amp;, ethernet::NetifBusId const&amp;, ip::NetworkInterfaceConfig&amp;), shed::table&lt;systems::NetifsSchema&gt;&amp;, unsigned int) (160)</a>
+                    
+                        ,
+                    
+                
+                    <a href="../../../../../../libs/bsw/shed/src/multi_list.cpp/8e013c438811f9fbc5087ea0b49f7b5a.html">shed::internal::multi_list::move_node(unsigned int, unsigned int) (152)</a>
+                    
+                
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <pre><a href="../../../../../../libs/bsw/shed/include/shed/ops_internal.h/ab666d54e915d4353f3c643692806dcd.html">shed::move_op shed::internal::call_system_func_ret&lt;shed::move_op, shed::move_op (*)(ip::declare::NetworkInterfaceConfigRegistry&lt;2u, shed::table&lt;systems::NetifsSchema&gt;, ethernet::NetifBusId&gt;&amp;, ethernet::LinkStatus const&amp;, netif&amp;, ethernet::NetifBusId const&amp;, ip::NetworkInterfaceConfig&amp;), shed::table&lt;systems::NetifsSchema&gt;, unsigned int, ip::declare::NetworkInterfaceConfigRegistry&lt;2u, shed::table&lt;systems::NetifsSchema&gt;, ethernet::NetifBusId&gt;&amp;, ethernet::LinkStatus const&amp;, netif&amp;, ethernet::NetifBusId const&amp;, ip::NetworkInterfaceConfig&amp;&gt;(shed::move_op (*&amp;)(ip::declare::NetworkInterfaceConfigRegistry&lt;2u, shed::table&lt;systems::NetifsSchema&gt;, ethernet::NetifBusId&gt;&amp;, ethernet::LinkStatus const&amp;, netif&amp;, ethernet::NetifBusId const&amp;, ip::NetworkInterfaceConfig&amp;), shed::table&lt;systems::NetifsSchema&gt;&amp;, unsigned int) (160)</a></pre>
+    
+
+    <pre>
+
+    systems::EthernetSystem::execute():
+
+        b2c8:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+
+        b2cc:	4680      	mov	r8, r0
+
+        b2ce:	6940      	ldr	r0, [r0, #20]
+
+        b2d0:	6802      	ldr	r2, [r0, #0]
+
+        b2d2:	b087      	sub	sp, #28
+
+        b2d4:	68d2      	ldr	r2, [r2, #12]
+
+        b2d6:	4790      	blx	r2
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        b2d8:	f8d8 1060 	ldr.w	r1, [r8, #96]	@ 0x60
+
+        b2dc:	078b      	lsls	r3, r1, #30
+
+    systems::EthernetSystem::execute():
+
+        b2de:	4604      	mov	r4, r0
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        b2e0:	d13b      	bne.n	b35a <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x92>
+
+        b2e2:	ad04      	add	r5, sp, #16
+
+        b2e4:	f8d8 2064 	ldr.w	r2, [r8, #100]	@ 0x64
+
+        b2e8:	489f      	ldr	r0, [pc, #636]	@ (b568 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x2a0>)
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet11NetifVlanIdEEENS0_IT_Lj4294967295EEEv():
+
+        b2ea:	f8d8 6040 	ldr.w	r6, [r8, #64]	@ 0x40
+
+    _ZN3etl4spanI5netifLj4294967295EEC4IPS1_EET_j():
+
+        b2ee:	9102      	str	r1, [sp, #8]
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        b2f0:	1a52      	subs	r2, r2, r1
+
+        b2f2:	0892      	lsrs	r2, r2, #2
+
+        b2f4:	fba0 0202 	umull	r0, r2, r0, r2
+
+        b2f8:	0892      	lsrs	r2, r2, #2
+
+    _ZN3etl4spanI5netifLj4294967295EEC4IPS1_EET_j():
+
+        b2fa:	2054      	movs	r0, #84	@ 0x54
+
+        b2fc:	fb00 1102 	mla	r1, r0, r2, r1
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet11NetifVlanIdEEENS0_IT_Lj4294967295EEEv():
+
+        b300:	07f7      	lsls	r7, r6, #31
+
+    _ZN3etl4spanI5netifLj4294967295EEC4IPS1_EET_j():
+
+        b302:	9103      	str	r1, [sp, #12]
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet11NetifVlanIdEEENS0_IT_Lj4294967295EEEv():
+
+        b304:	d505      	bpl.n	b312 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x4a>
+
+        b306:	4a99      	ldr	r2, [pc, #612]	@ (b56c <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x2a4>)
+
+        b308:	4628      	mov	r0, r5
+
+        b30a:	6812      	ldr	r2, [r2, #0]
+
+        b30c:	4790      	blx	r2
+
+        b30e:	f8d8 6040 	ldr.w	r6, [r8, #64]	@ 0x40
+
+        b312:	f8d8 2044 	ldr.w	r2, [r8, #68]	@ 0x44
+
+    _ZN3etl4spanIKN8ethernet11NetifVlanIdELj4294967295EEC4IS2_Lj4294967295EEERKNS0_IT_XT0_EEE():
+
+        b316:	9604      	str	r6, [sp, #16]
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet11NetifVlanIdEEENS0_IT_Lj4294967295EEEv():
+
+        b318:	1b91      	subs	r1, r2, r6
+
+    _ZN3etl4spanIN8ethernet11NetifVlanIdELj4294967295EEC4IPS2_EET_j():
+
+        b31a:	f021 0101 	bic.w	r1, r1, #1
+
+        b31e:	4431      	add	r1, r6
+
+    systems::EthernetSystem::execute():
+
+        b320:	462a      	mov	r2, r5
+
+    _ZN3etl4spanIKN8ethernet11NetifVlanIdELj4294967295EEC4IS2_Lj4294967295EEERKNS0_IT_XT0_EEE():
+
+        b322:	9105      	str	r1, [sp, #20]
+
+    systems::EthernetSystem::execute():
+
+        b324:	4620      	mov	r0, r4
+
+        b326:	a902      	add	r1, sp, #8
+
+        b328:	f014 f982 	bl	1f630 <<a href="../../../../../../libs/bsw/lwipSocket/src/lwipSocket/utils/FilterFrame.cpp/006a9e486ef3783af4da2cf8a6d96b26.html">lwiputils::processPbufQueue(etl::queue_spsc_atomic<pbuf*, 10u, 2u>&, etl::span<netif, 4294967295u>, etl::span<ethernet::NetifVlanId const, 4294967295u>)</a>>
+
+        b32c:	4990      	ldr	r1, [pc, #576]	@ (b570 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x2a8>)
+
+        b32e:	f8d8 20a4 	ldr.w	r2, [r8, #164]	@ 0xa4
+
+        b332:	4890      	ldr	r0, [pc, #576]	@ (b574 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x2ac>)
+
+        b334:	fb02 f101 	mul.w	r1, r2, r1
+
+        b338:	ebb0 0f71 	cmp.w	r0, r1, ror #1
+
+        b33c:	d215      	bcs.n	b36a <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0xa2>
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSC_10LinkStatusER5netifRKSD_RNS5_22NetworkInterfaceConfigEEE4moveISB_PFS4_SF_SI_SK_SM_SO_EEEvRT_RT0_jjEUljE_EEjjjOST_():
+
+        b33e:	498e      	ldr	r1, [pc, #568]	@ (b578 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x2b0>)
+
+    systems::EthernetSystem::execute():
+
+        b340:	488e      	ldr	r0, [pc, #568]	@ (b57c <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x2b4>)
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSC_10LinkStatusER5netifRKSD_RNS5_22NetworkInterfaceConfigEEE4moveISB_PFS4_SF_SI_SK_SM_SO_EEEvRT_RT0_jjEUljE_EEjjjOST_():
+
+        b342:	fb02 f101 	mul.w	r1, r2, r1
+
+    systems::EthernetSystem::execute():
+
+        b346:	ebb0 0f71 	cmp.w	r0, r1, ror #1
+
+        b34a:	f080 80a4 	bcs.w	b496 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x1ce>
+
+        b34e:	3201      	adds	r2, #1
+
+        b350:	f8c8 20a4 	str.w	r2, [r8, #164]	@ 0xa4
+
+        b354:	b007      	add	sp, #28
+
+        b356:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        b35a:	4a84      	ldr	r2, [pc, #528]	@ (b56c <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x2a4>)
+
+        b35c:	ad04      	add	r5, sp, #16
+
+        b35e:	6812      	ldr	r2, [r2, #0]
+
+        b360:	4628      	mov	r0, r5
+
+        b362:	4790      	blx	r2
+
+        b364:	f8d8 1060 	ldr.w	r1, [r8, #96]	@ 0x60
+
+        b368:	e7bc      	b.n	b2e4 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x1c>
+
+    _ZN4shed8internal13SelectColumnsIvJRN8ethernet9NetifPortERNS2_10LinkStatusER5netifEE8for_eachINS_5tableIN7systems12NetifsSchemaEEEPFvS4_S6_S8_EEEvRT_RT0_j():
+
+        b36a:	f8d8 6018 	ldr.w	r6, [r8, #24]
+
+    _ZNK4shed8internal10multi_list5itemsEv():
+
+        b36e:	4637      	mov	r7, r6
+
+    systems::EthernetSystem::execute():
+
+        b370:	f108 0318 	add.w	r3, r8, #24
+
+    _ZN4shed8internal10multi_list8InBucketC4EPKS1_j():
+
+        b374:	f837 cb04 	ldrh.w	ip, [r7], #4
+
+    systems::EthernetSystem::execute():
+
+        b378:	9301      	str	r3, [sp, #4]
+
+    _ZN4shed8internal10multi_list8InBucketC4EPKS1_j():
+
+        b37a:	f10c 0904 	add.w	r9, ip, #4
+
+    _ZNK4shed8internal10multi_list8InBucket4iterIZNS0_13SelectColumnsIvJRN8ethernet9NetifPortERNS5_10LinkStatusER5netifEE8for_eachINS_5tableIN7systems12NetifsSchemaEEEPFvS7_S9_SB_EEEvRT_RT0_jEUljE_EEvSK_():
+
+        b37e:	f837 b019 	ldrh.w	fp, [r7, r9, lsl #1]
+
+        b382:	45d9      	cmp	r9, fp
+
+        b384:	d040      	beq.n	b408 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x140>
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10LinkStatusEEENS0_IT_Lj4294967295EEEv():
+
+        b386:	4e79      	ldr	r6, [pc, #484]	@ (b56c <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x2a4>)
+
+        b388:	e023      	b.n	b3d2 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x10a>
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        b38a:	6832      	ldr	r2, [r6, #0]
+
+        b38c:	4628      	mov	r0, r5
+
+        b38e:	4790      	blx	r2
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10LinkStatusEEENS0_IT_Lj4294967295EEEv():
+
+        b390:	f8d8 1058 	ldr.w	r1, [r8, #88]	@ 0x58
+
+    _ZNK3etl4spanIN8ethernet9NetifPortELj4294967295EEixEj():
+
+        b394:	f8d8 4030 	ldr.w	r4, [r8, #48]	@ 0x30
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10LinkStatusEEENS0_IT_Lj4294967295EEEv():
+
+        b398:	078a      	lsls	r2, r1, #30
+
+    _ZNK3etl4spanIN8ethernet9NetifPortELj4294967295EEixEj():
+
+        b39a:	445c      	add	r4, fp
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10LinkStatusEEENS0_IT_Lj4294967295EEEv():
+
+        b39c:	d004      	beq.n	b3a8 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0xe0>
+
+        b39e:	6832      	ldr	r2, [r6, #0]
+
+        b3a0:	4628      	mov	r0, r5
+
+        b3a2:	4790      	blx	r2
+
+        b3a4:	f8d8 1058 	ldr.w	r1, [r8, #88]	@ 0x58
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        b3a8:	f8d8 2060 	ldr.w	r2, [r8, #96]	@ 0x60
+
+        b3ac:	0793      	lsls	r3, r2, #30
+
+    _ZNK3etl4spanIN8ethernet10LinkStatusELj4294967295EEixEj():
+
+        b3ae:	448a      	add	sl, r1
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        b3b0:	d004      	beq.n	b3bc <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0xf4>
+
+        b3b2:	6832      	ldr	r2, [r6, #0]
+
+        b3b4:	4628      	mov	r0, r5
+
+        b3b6:	4790      	blx	r2
+
+        b3b8:	f8d8 2060 	ldr.w	r2, [r8, #96]	@ 0x60
+
+    _ZN4shed8internal11system_funcIvPFvRN8ethernet9NetifPortERNS2_10LinkStatusER5netifENS_5tableIN7systems12NetifsSchemaEEEJS4_S6_S8_EE4callERSA_RSE_j():
+
+        b3bc:	2354      	movs	r3, #84	@ 0x54
+
+        b3be:	fb03 220b 	mla	r2, r3, fp, r2
+
+        b3c2:	4651      	mov	r1, sl
+
+        b3c4:	4620      	mov	r0, r4
+
+        b3c6:	f7ff f879 	bl	a4bc <<a href="./f4abf069c64682e1a47a42bcb99ff630.html">refreshNetifLinkStatus(ethernet::NetifPort&, ethernet::LinkStatus&, netif&)</a>>
+
+    _ZNK4shed8internal10multi_list8InBucket4iterIZNS0_13SelectColumnsIvJRN8ethernet9NetifPortERNS5_10LinkStatusER5netifEE8for_eachINS_5tableIN7systems12NetifsSchemaEEEPFvS7_S9_SB_EEEvRT_RT0_jEUljE_EEvSK_():
+
+        b3ca:	f837 b01b 	ldrh.w	fp, [r7, fp, lsl #1]
+
+        b3ce:	45d9      	cmp	r9, fp
+
+        b3d0:	d015      	beq.n	b3fe <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x136>
+
+    _ZN3etl10is_alignedILj4EEEbPKv():
+
+        b3d2:	f8d8 2058 	ldr.w	r2, [r8, #88]	@ 0x58
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10LinkStatusEEENS0_IT_Lj4294967295EEEv():
+
+        b3d6:	0790      	lsls	r0, r2, #30
+
+        b3d8:	d002      	beq.n	b3e0 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x118>
+
+        b3da:	6832      	ldr	r2, [r6, #0]
+
+        b3dc:	4628      	mov	r0, r5
+
+        b3de:	4790      	blx	r2
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        b3e0:	f8d8 2060 	ldr.w	r2, [r8, #96]	@ 0x60
+
+        b3e4:	0791      	lsls	r1, r2, #30
+
+    _ZNK3etl4spanIN8ethernet10LinkStatusELj4294967295EEixEj():
+
+        b3e6:	ea4f 0a8b 	mov.w	sl, fp, lsl #2
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        b3ea:	d1ce      	bne.n	b38a <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0xc2>
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10LinkStatusEEENS0_IT_Lj4294967295EEEv():
+
+        b3ec:	f8d8 1058 	ldr.w	r1, [r8, #88]	@ 0x58
+
+    _ZNK3etl4spanIN8ethernet9NetifPortELj4294967295EEixEj():
+
+        b3f0:	f8d8 4030 	ldr.w	r4, [r8, #48]	@ 0x30
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10LinkStatusEEENS0_IT_Lj4294967295EEEv():
+
+        b3f4:	078b      	lsls	r3, r1, #30
+
+    _ZNK3etl4spanIN8ethernet9NetifPortELj4294967295EEixEj():
+
+        b3f6:	445c      	add	r4, fp
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10LinkStatusEEENS0_IT_Lj4294967295EEEv():
+
+        b3f8:	d1d1      	bne.n	b39e <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0xd6>
+
+    _ZNK3etl4spanIN8ethernet10LinkStatusELj4294967295EEixEj():
+
+        b3fa:	448a      	add	sl, r1
+
+    _ZN3etl10is_alignedILj4EEEbPKv():
+
+        b3fc:	e7de      	b.n	b3bc <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0xf4>
+
+    _ZN4shed8internal13SelectColumnsIvJRN8ethernet9NetifPortERNS2_10LinkStatusER5netifEE8for_eachINS_5tableIN7systems12NetifsSchemaEEEPFvS4_S6_S8_EEEvRT_RT0_j():
+
+        b3fe:	f8d8 6018 	ldr.w	r6, [r8, #24]
+
+    _ZNK4shed8internal10multi_list5itemsEv():
+
+        b402:	4637      	mov	r7, r6
+
+    _ZN4shed8internal10multi_list8InBucketC4EPKS1_j():
+
+        b404:	f837 cb04 	ldrh.w	ip, [r7], #4
+
+        b408:	f10c 0a03 	add.w	sl, ip, #3
+
+    _ZNK4shed8internal10multi_list8InBucket4iterIZNS0_13SelectColumnsIvJRN8ethernet9NetifPortERNS5_10LinkStatusER5netifEE8for_eachINS_5tableIN7systems12NetifsSchemaEEEPFvS7_S9_SB_EEEvRT_RT0_jEUljE_EEvSK_():
+
+        b40c:	f837 401a 	ldrh.w	r4, [r7, sl, lsl #1]
+
+        b410:	45a2      	cmp	sl, r4
+
+        b412:	d050      	beq.n	b4b6 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x1ee>
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10LinkStatusEEENS0_IT_Lj4294967295EEEv():
+
+        b414:	f8df 9154 	ldr.w	r9, [pc, #340]	@ b56c <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x2a4>
+
+        b418:	e026      	b.n	b468 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x1a0>
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        b41a:	f8d9 2000 	ldr.w	r2, [r9]
+
+        b41e:	4628      	mov	r0, r5
+
+        b420:	4790      	blx	r2
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10LinkStatusEEENS0_IT_Lj4294967295EEEv():
+
+        b422:	f8d8 1058 	ldr.w	r1, [r8, #88]	@ 0x58
+
+    _ZNK3etl4spanIN8ethernet9NetifPortELj4294967295EEixEj():
+
+        b426:	f8d8 6030 	ldr.w	r6, [r8, #48]	@ 0x30
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10LinkStatusEEENS0_IT_Lj4294967295EEEv():
+
+        b42a:	078a      	lsls	r2, r1, #30
+
+    _ZNK3etl4spanIN8ethernet9NetifPortELj4294967295EEixEj():
+
+        b42c:	4426      	add	r6, r4
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10LinkStatusEEENS0_IT_Lj4294967295EEEv():
+
+        b42e:	d005      	beq.n	b43c <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x174>
+
+        b430:	f8d9 2000 	ldr.w	r2, [r9]
+
+        b434:	4628      	mov	r0, r5
+
+        b436:	4790      	blx	r2
+
+        b438:	f8d8 1058 	ldr.w	r1, [r8, #88]	@ 0x58
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        b43c:	f8d8 2060 	ldr.w	r2, [r8, #96]	@ 0x60
+
+        b440:	0793      	lsls	r3, r2, #30
+
+    _ZNK3etl4spanIN8ethernet10LinkStatusELj4294967295EEixEj():
+
+        b442:	448b      	add	fp, r1
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        b444:	d005      	beq.n	b452 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x18a>
+
+        b446:	f8d9 2000 	ldr.w	r2, [r9]
+
+        b44a:	4628      	mov	r0, r5
+
+        b44c:	4790      	blx	r2
+
+        b44e:	f8d8 2060 	ldr.w	r2, [r8, #96]	@ 0x60
+
+    _ZN4shed8internal11system_funcIvPFvRN8ethernet9NetifPortERNS2_10LinkStatusER5netifENS_5tableIN7systems12NetifsSchemaEEEJS4_S6_S8_EE4callERSA_RSE_j():
+
+        b452:	2354      	movs	r3, #84	@ 0x54
+
+        b454:	fb03 2204 	mla	r2, r3, r4, r2
+
+        b458:	4659      	mov	r1, fp
+
+        b45a:	4630      	mov	r0, r6
+
+        b45c:	f7ff f82e 	bl	a4bc <<a href="./f4abf069c64682e1a47a42bcb99ff630.html">refreshNetifLinkStatus(ethernet::NetifPort&, ethernet::LinkStatus&, netif&)</a>>
+
+    _ZNK4shed8internal10multi_list8InBucket4iterIZNS0_13SelectColumnsIvJRN8ethernet9NetifPortERNS5_10LinkStatusER5netifEE8for_eachINS_5tableIN7systems12NetifsSchemaEEEPFvS7_S9_SB_EEEvRT_RT0_jEUljE_EEvSK_():
+
+        b460:	f837 4014 	ldrh.w	r4, [r7, r4, lsl #1]
+
+        b464:	45a2      	cmp	sl, r4
+
+        b466:	d020      	beq.n	b4aa <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x1e2>
+
+    _ZN3etl10is_alignedILj4EEEbPKv():
+
+        b468:	f8d8 2058 	ldr.w	r2, [r8, #88]	@ 0x58
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10LinkStatusEEENS0_IT_Lj4294967295EEEv():
+
+        b46c:	0790      	lsls	r0, r2, #30
+
+        b46e:	d003      	beq.n	b478 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x1b0>
+
+        b470:	f8d9 2000 	ldr.w	r2, [r9]
+
+        b474:	4628      	mov	r0, r5
+
+        b476:	4790      	blx	r2
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        b478:	f8d8 2060 	ldr.w	r2, [r8, #96]	@ 0x60
+
+        b47c:	0791      	lsls	r1, r2, #30
+
+    _ZNK3etl4spanIN8ethernet10LinkStatusELj4294967295EEixEj():
+
+        b47e:	ea4f 0b84 	mov.w	fp, r4, lsl #2
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asI5netifEENS0_IT_Lj4294967295EEEv():
+
+        b482:	d1ca      	bne.n	b41a <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x152>
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10LinkStatusEEENS0_IT_Lj4294967295EEEv():
+
+        b484:	f8d8 1058 	ldr.w	r1, [r8, #88]	@ 0x58
+
+    _ZNK3etl4spanIN8ethernet9NetifPortELj4294967295EEixEj():
+
+        b488:	f8d8 6030 	ldr.w	r6, [r8, #48]	@ 0x30
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10LinkStatusEEENS0_IT_Lj4294967295EEEv():
+
+        b48c:	0788      	lsls	r0, r1, #30
+
+    _ZNK3etl4spanIN8ethernet9NetifPortELj4294967295EEixEj():
+
+        b48e:	4426      	add	r6, r4
+
+    _ZNK3etl4spanIhLj4294967295EE14reinterpret_asIN8ethernet10LinkStatusEEENS0_IT_Lj4294967295EEEv():
+
+        b490:	d1ce      	bne.n	b430 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x168>
+
+    _ZNK3etl4spanIN8ethernet10LinkStatusELj4294967295EEixEj():
+
+        b492:	448b      	add	fp, r1
+
+    _ZN3etl10is_alignedILj4EEEbPKv():
+
+        b494:	e7dd      	b.n	b452 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x18a>
+
+    systems::EthernetSystem::execute():
+
+        b496:	f018 fd77 	bl	23f88 <<a href="../../../../../../libs/3rdparty/lwip/src/core/timeouts.c/97cd3fd569fa81009bcb8df9b454c4e7.html">sys_check_timeouts</a>>
+
+        b49a:	f8d8 20a4 	ldr.w	r2, [r8, #164]	@ 0xa4
+
+        b49e:	3201      	adds	r2, #1
+
+        b4a0:	f8c8 20a4 	str.w	r2, [r8, #164]	@ 0xa4
+
+        b4a4:	b007      	add	sp, #28
+
+        b4a6:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+
+    _ZN4shed8internal13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSA_10LinkStatusER5netifRKSB_RNS3_22NetworkInterfaceConfigEEE4moveIS9_PFS2_SD_SG_SI_SK_SM_EEEvRT_RT0_jj():
+
+        b4aa:	f8d8 6018 	ldr.w	r6, [r8, #24]
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSC_10LinkStatusER5netifRKSD_RNS5_22NetworkInterfaceConfigEEE4moveISB_PFS4_SF_SI_SK_SM_SO_EEEvRT_RT0_jjEUljE_EEjjjOST_():
+
+        b4ae:	f8b6 c000 	ldrh.w	ip, [r6]
+
+        b4b2:	f10c 0403 	add.w	r4, ip, #3
+
+    systems::EthernetSystem::execute():
+
+        b4b6:	4a32      	ldr	r2, [pc, #200]	@ (b580 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x2b8>)
+
+        b4b8:	9204      	str	r2, [sp, #16]
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSC_10LinkStatusER5netifRKSD_RNS5_22NetworkInterfaceConfigEEE4moveISB_PFS4_SF_SI_SK_SM_SO_EEEvRT_RT0_jjEUljE_EEjjjOST_():
+
+        b4ba:	f10c 0904 	add.w	r9, ip, #4
+
+        b4be:	e007      	b.n	b4d0 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x208>
+
+        b4c0:	3f02      	subs	r7, #2
+
+        b4c2:	b2ff      	uxtb	r7, r7
+
+        b4c4:	2f01      	cmp	r7, #1
+
+        b4c6:	f836 900a 	ldrh.w	r9, [r6, sl]
+
+        b4ca:	d91d      	bls.n	b508 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x240>
+
+        b4cc:	f8b6 c000 	ldrh.w	ip, [r6]
+
+    _ZZN4shed8internal13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSA_10LinkStatusER5netifRKSB_RNS3_22NetworkInterfaceConfigEEE4moveIS9_PFS2_SD_SG_SI_SK_SM_EEEvRT_RT0_jjENKUljE_clEj():
+
+        b4d0:	9901      	ldr	r1, [sp, #4]
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSC_10LinkStatusER5netifRKSD_RNS5_22NetworkInterfaceConfigEEE4moveISB_PFS4_SF_SI_SK_SM_SO_EEEvRT_RT0_jjEUljE_EEjjjOST_():
+
+        b4d2:	ea4f 0a49 	mov.w	sl, r9, lsl #1
+
+        b4d6:	f10a 0a04 	add.w	sl, sl, #4
+
+    _ZZN4shed8internal13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSA_10LinkStatusER5netifRKSB_RNS3_22NetworkInterfaceConfigEEE4moveIS9_PFS2_SD_SG_SI_SK_SM_EEEvRT_RT0_jjENKUljE_clEj():
+
+        b4da:	4628      	mov	r0, r5
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSC_10LinkStatusER5netifRKSD_RNS5_22NetworkInterfaceConfigEEE4moveISB_PFS4_SF_SI_SK_SM_SO_EEEvRT_RT0_jjEUljE_EEjjjOST_():
+
+        b4dc:	f836 b00a 	ldrh.w	fp, [r6, sl]
+
+        b4e0:	45e3      	cmp	fp, ip
+
+    _ZZN4shed8internal13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSA_10LinkStatusER5netifRKSB_RNS3_22NetworkInterfaceConfigEEE4moveIS9_PFS2_SD_SG_SI_SK_SM_EEEvRT_RT0_jjENKUljE_clEj():
+
+        b4e2:	465a      	mov	r2, fp
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSC_10LinkStatusER5netifRKSD_RNS5_22NetworkInterfaceConfigEEE4moveISB_PFS4_SF_SI_SK_SM_SO_EEEvRT_RT0_jjEUljE_EEjjjOST_():
+
+        b4e4:	d210      	bcs.n	b508 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x240>
+
+    _ZZN4shed8internal13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSA_10LinkStatusER5netifRKSB_RNS3_22NetworkInterfaceConfigEEE4moveIS9_PFS2_SD_SG_SI_SK_SM_EEEvRT_RT0_jjENKUljE_clEj():
+
+        b4e6:	f7ff fe9f 	bl	b228 <<a href="../../../../../../libs/bsw/shed/include/shed/ops_internal.h/ab666d54e915d4353f3c643692806dcd.html">shed::move_op shed::internal::call_system_func_ret<shed::move_op, shed::move_op (*)(ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>&, ethernet::LinkStatus const&, netif&, ethernet::NetifBusId const&, ip::NetworkInterfaceConfig&), shed::table<systems::NetifsSchema>, unsigned int, ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>&, ethernet::LinkStatus const&, netif&, ethernet::NetifBusId const&, ip::NetworkInterfaceConfig&>(shed::move_op (*&)(ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>&, ethernet::LinkStatus const&, netif&, ethernet::NetifBusId const&, ip::NetworkInterfaceConfig&), shed::table<systems::NetifsSchema>&, unsigned int)</a>>
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSC_10LinkStatusER5netifRKSD_RNS5_22NetworkInterfaceConfigEEE4moveISB_PFS4_SF_SI_SK_SM_SO_EEEvRT_RT0_jjEUljE_EEjjjOST_():
+
+        b4ea:	1e42      	subs	r2, r0, #1
+
+        b4ec:	b2d2      	uxtb	r2, r2
+
+        b4ee:	2a01      	cmp	r2, #1
+
+    _ZZN4shed8internal13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSA_10LinkStatusER5netifRKSB_RNS3_22NetworkInterfaceConfigEEE4moveIS9_PFS2_SD_SG_SI_SK_SM_EEEvRT_RT0_jjENKUljE_clEj():
+
+        b4f0:	4607      	mov	r7, r0
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSC_10LinkStatusER5netifRKSD_RNS5_22NetworkInterfaceConfigEEE4moveISB_PFS4_SF_SI_SK_SM_SO_EEEvRT_RT0_jjEUljE_EEjjjOST_():
+
+        b4f2:	d8e5      	bhi.n	b4c0 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x1f8>
+
+        b4f4:	4622      	mov	r2, r4
+
+        b4f6:	4659      	mov	r1, fp
+
+        b4f8:	4630      	mov	r0, r6
+
+        b4fa:	f029 f823 	bl	34544 <<a href="../../../../../../libs/bsw/shed/src/multi_list.cpp/8e013c438811f9fbc5087ea0b49f7b5a.html">shed::internal::multi_list::move_node(unsigned int, unsigned int)</a>>
+
+        b4fe:	3f02      	subs	r7, #2
+
+        b500:	b2ff      	uxtb	r7, r7
+
+        b502:	2f01      	cmp	r7, #1
+
+        b504:	4604      	mov	r4, r0
+
+        b506:	d8e1      	bhi.n	b4cc <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x204>
+
+    _ZN4shed8internal13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSA_10LinkStatusER5netifRKSB_RNS3_22NetworkInterfaceConfigEEE4moveIS9_PFS2_SD_SG_SI_SK_SM_EEEvRT_RT0_jj():
+
+        b508:	f8d8 9018 	ldr.w	r9, [r8, #24]
+
+        b50c:	4a1d      	ldr	r2, [pc, #116]	@ (b584 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x2bc>)
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSC_10LinkStatusER5netifRKSD_RNS5_22NetworkInterfaceConfigEEE4moveISB_PFS4_SF_SI_SK_SM_SO_EEEvRT_RT0_jjEUljE_EEjjjOST_():
+
+        b50e:	f8b9 4000 	ldrh.w	r4, [r9]
+
+        b512:	9204      	str	r2, [sp, #16]
+
+        b514:	1ce6      	adds	r6, r4, #3
+
+        b516:	1d27      	adds	r7, r4, #4
+
+        b518:	e007      	b.n	b52a <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x262>
+
+        b51a:	3c02      	subs	r4, #2
+
+        b51c:	b2e4      	uxtb	r4, r4
+
+        b51e:	2c01      	cmp	r4, #1
+
+        b520:	f839 600a 	ldrh.w	r6, [r9, sl]
+
+        b524:	d91d      	bls.n	b562 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x29a>
+
+        b526:	f8b9 4000 	ldrh.w	r4, [r9]
+
+    _ZZN4shed8internal13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSA_10LinkStatusER5netifRKSB_RNS3_22NetworkInterfaceConfigEEE4moveIS9_PFS2_SD_SG_SI_SK_SM_EEEvRT_RT0_jjENKUljE_clEj():
+
+        b52a:	9901      	ldr	r1, [sp, #4]
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSC_10LinkStatusER5netifRKSD_RNS5_22NetworkInterfaceConfigEEE4moveISB_PFS4_SF_SI_SK_SM_SO_EEEvRT_RT0_jjEUljE_EEjjjOST_():
+
+        b52c:	ea4f 0a46 	mov.w	sl, r6, lsl #1
+
+        b530:	f10a 0a04 	add.w	sl, sl, #4
+
+    _ZZN4shed8internal13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSA_10LinkStatusER5netifRKSB_RNS3_22NetworkInterfaceConfigEEE4moveIS9_PFS2_SD_SG_SI_SK_SM_EEEvRT_RT0_jjENKUljE_clEj():
+
+        b534:	4628      	mov	r0, r5
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSC_10LinkStatusER5netifRKSD_RNS5_22NetworkInterfaceConfigEEE4moveISB_PFS4_SF_SI_SK_SM_SO_EEEvRT_RT0_jjEUljE_EEjjjOST_():
+
+        b536:	f839 b00a 	ldrh.w	fp, [r9, sl]
+
+        b53a:	45a3      	cmp	fp, r4
+
+    _ZZN4shed8internal13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSA_10LinkStatusER5netifRKSB_RNS3_22NetworkInterfaceConfigEEE4moveIS9_PFS2_SD_SG_SI_SK_SM_EEEvRT_RT0_jjENKUljE_clEj():
+
+        b53c:	465a      	mov	r2, fp
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSC_10LinkStatusER5netifRKSD_RNS5_22NetworkInterfaceConfigEEE4moveISB_PFS4_SF_SI_SK_SM_SO_EEEvRT_RT0_jjEUljE_EEjjjOST_():
+
+        b53e:	d210      	bcs.n	b562 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x29a>
+
+    _ZZN4shed8internal13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSA_10LinkStatusER5netifRKSB_RNS3_22NetworkInterfaceConfigEEE4moveIS9_PFS2_SD_SG_SI_SK_SM_EEEvRT_RT0_jjENKUljE_clEj():
+
+        b540:	f7ff fe72 	bl	b228 <<a href="../../../../../../libs/bsw/shed/include/shed/ops_internal.h/ab666d54e915d4353f3c643692806dcd.html">shed::move_op shed::internal::call_system_func_ret<shed::move_op, shed::move_op (*)(ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>&, ethernet::LinkStatus const&, netif&, ethernet::NetifBusId const&, ip::NetworkInterfaceConfig&), shed::table<systems::NetifsSchema>, unsigned int, ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>&, ethernet::LinkStatus const&, netif&, ethernet::NetifBusId const&, ip::NetworkInterfaceConfig&>(shed::move_op (*&)(ip::declare::NetworkInterfaceConfigRegistry<2u, shed::table<systems::NetifsSchema>, ethernet::NetifBusId>&, ethernet::LinkStatus const&, netif&, ethernet::NetifBusId const&, ip::NetworkInterfaceConfig&), shed::table<systems::NetifsSchema>&, unsigned int)</a>>
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSC_10LinkStatusER5netifRKSD_RNS5_22NetworkInterfaceConfigEEE4moveISB_PFS4_SF_SI_SK_SM_SO_EEEvRT_RT0_jjEUljE_EEjjjOST_():
+
+        b544:	1e42      	subs	r2, r0, #1
+
+        b546:	b2d2      	uxtb	r2, r2
+
+        b548:	2a01      	cmp	r2, #1
+
+    _ZZN4shed8internal13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSA_10LinkStatusER5netifRKSB_RNS3_22NetworkInterfaceConfigEEE4moveIS9_PFS2_SD_SG_SI_SK_SM_EEEvRT_RT0_jjENKUljE_clEj():
+
+        b54a:	4604      	mov	r4, r0
+
+    _ZN4shed8internal10multi_list7move_ifIZNS0_13SelectColumnsINS_7move_opEJRN2ip7declare30NetworkInterfaceConfigRegistryILj2ENS_5tableIN7systems12NetifsSchemaEEEN8ethernet10NetifBusIdEEERKNSC_10LinkStatusER5netifRKSD_RNS5_22NetworkInterfaceConfigEEE4moveISB_PFS4_SF_SI_SK_SM_SO_EEEvRT_RT0_jjEUljE_EEjjjOST_():
+
+        b54c:	d8e5      	bhi.n	b51a <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x252>
+
+        b54e:	463a      	mov	r2, r7
+
+        b550:	4659      	mov	r1, fp
+
+        b552:	4648      	mov	r0, r9
+
+        b554:	f028 fff6 	bl	34544 <<a href="../../../../../../libs/bsw/shed/src/multi_list.cpp/8e013c438811f9fbc5087ea0b49f7b5a.html">shed::internal::multi_list::move_node(unsigned int, unsigned int)</a>>
+
+        b558:	3c02      	subs	r4, #2
+
+        b55a:	b2e4      	uxtb	r4, r4
+
+        b55c:	2c01      	cmp	r4, #1
+
+        b55e:	4607      	mov	r7, r0
+
+        b560:	d8e1      	bhi.n	b526 <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x25e>
+
+    systems::EthernetSystem::execute():
+
+        b562:	f8d8 20a4 	ldr.w	r2, [r8, #164]	@ 0xa4
+
+        b566:	e6ea      	b.n	b33e <<a href="./7f6d534a67d8880422173a75039c028b.html">systems::EthernetSystem::execute()</a>+0x76>
+
+        b568:	30c30c31 	.word	0x30c30c31
+
+        b56c:	20000000 	.word	0x20000000
+
+        b570:	cccccccd 	.word	0xcccccccd
+
+        b574:	19999999 	.word	0x19999999
+
+        b578:	c28f5c29 	.word	0xc28f5c29
+
+        b57c:	051eb851 	.word	0x051eb851
+
+        b580:	0000a645 	.word	0x0000a645
+
+        b584:	0000a535 	.word	0x0000a535
+
+    </pre>
+
+    
+    <pre><a href="../../../include/systems/EthernetSystem.h/57b564a75c9d7897ed057bcf1557ec62.html">non-virtual thunk to systems::EthernetSystem::execute() (8)</a></pre>
+    
+
+    
+        <h1>Stack Worst-Case Scenarios</h1>
+        
+        <table class="table table-bordered table-hover table-condensed">
+        <thead>
+            <tr>
+                <th rowspan="2">#</th>
+                <th colspan="2" style="text-align: center">Stack</th>
+                <th colspan="2" style="text-align: center">Code</th>
+                <th rowspan="2" width="100%">Name</th>
+            </tr>
+            <tr>
+                <th class="col_size">&sum; = 208</th>
+                <th class="col_size"></th>
+                <th class="col_size">&sum;= 540</th>
+                <th class="col_size"></th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <th>1</th>
+                <td class="col_size">
+                    
+                    208
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                48 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    540
+                    
+                    
+                </td>
+                <td class="col_size">68</td>
+                <td><a href="../../../../../../libs/bsw/util/src/util/logger/Logger.cpp/d658d7c78dcca1ca01e61ef198b3eeaa.html" class="icon-function">util::logger::Logger::doLog(unsigned char, util::logger::Level, char const*, std::__va_list)</a></td>
+            </tr>
+        
+            <tr>
+                <th>2</th>
+                <td class="col_size">
+                    
+                    160
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                24 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    472
+                    
+                    
+                </td>
+                <td class="col_size">100</td>
+                <td><a href="../../logger/logger.cpp/98866fb3d81ee8db78cbfd1e2dfd931d.html" class="icon-function">log_lwipInfo</a></td>
+            </tr>
+        
+            <tr>
+                <th>3</th>
+                <td class="col_size">
+                    
+                    136
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                16 
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    372
+                    
+                    
+                </td>
+                <td class="col_size">60</td>
+                <td><a href="../../../../../../libs/3rdparty/lwip/src/core/memp.c/39d50c52143357af896630c36b8c515f.html" class="icon-function">memp_free</a></td>
+            </tr>
+        
+            <tr>
+                <th>4</th>
+                <td class="col_size">
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    312
+                    
+                    
+                </td>
+                <td class="col_size">112</td>
+                <td><a href="../../../../../../libs/3rdparty/lwip/src/core/pbuf.c/9b6fd2596874539050b4147be9634d35.html" class="icon-function">pbuf_free</a></td>
+            </tr>
+        
+            <tr>
+                <th>5</th>
+                <td class="col_size">
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                </td>
+                <td class="col_size">
+                    
+                    
+                    200
+                    
+                    
+                </td>
+                <td class="col_size">8</td>
+                <td><a href="../../../../../../libs/3rdparty/lwip/src/core/pbuf.c/9b6fd2596874539050b4147be9634d35.html" class="icon-function">pbuf_free</a></td>
+            </tr>
+        
+            <tr>
+                <th>6</th>
+                <td class="col_size">
+                    
+                    120
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                56 
+            
+                </td>
+                <td class="col_size">
+                    
+                </td>
+                <td class="col_size">192</td>
+                <td><a href="../../../../../../libs/bsw/lwipSocket/src/lwipSocket/utils/FilterFrame.cpp/006a9e486ef3783af4da2cf8a6d96b26.html" class="icon-function">lwiputils::processPbufQueue(etl::queue_spsc_atomic&lt;pbuf*, 10u, 2u&gt;&amp;, etl::span&lt;netif, 4294967295u&gt;, etl::span&lt;ethernet::NetifVlanId const, 4294967295u&gt;)</a></td>
+            </tr>
+        
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <th></th>
+                <th class="col_size">64
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </tfoot>
+        
+    </table>
+        
+        
+            <p>No callers for this function.</p>
+        
+    
+
+
+        </div>
+    <div id="page-footer">
+        <hr>
+        
+            brought to you with 💖
+            by <a href="https://twitter.com/hbehrens">Heiko Behrens</a>
+            <span class="secondary">– MIT license, copyright © 2014-2026</span>
+        
+    </div>
+    </div>
+</body>
+</html>

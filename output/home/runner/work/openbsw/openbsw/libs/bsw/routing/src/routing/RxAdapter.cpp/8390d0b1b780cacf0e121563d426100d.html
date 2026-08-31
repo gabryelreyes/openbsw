@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../../../../../../../../../static/css/style.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Symbol - puncover</title>
+    
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="page-header">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="../../../../../../../../../../../index.html">
+                    Puncover
+                  </a>
+                </div>
+              </div>
+            </nav>
+          
+        </div>
+        <div id="inner_content">
+        
+    
+    <ol class="breadcrumb folders">
+        
+        <li><a href="../../../../../../../../../../../home.html">home</a></li>
+        
+        <li><a href="../../../../../../../../../../runner.html">runner</a></li>
+        
+        <li><a href="../../../../../../../../../work.html">work</a></li>
+        
+        <li><a href="../../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../../openbsw.html">openbsw</a></li>
+        
+        <li><a href="../../../../../../libs.html">libs</a></li>
+        
+        <li><a href="../../../../../bsw.html">bsw</a></li>
+        
+        <li><a href="../../../../routing.html">routing</a></li>
+        
+        <li><a href="../../../src.html">src</a></li>
+        
+        <li ><a href="../../routing.html">routing</a>
+            </li>
+
+        
+        <li class="active"><a href="../RxAdapter.cpp.html">RxAdapter.cpp</a>:112
+            </li>
+        
+    </ol>
+
+
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>Function</th>
+                <td colspan="5">
+                    <span class="icon-function">routing::RxAdapter::peek() const</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th rowspan="2"></th>
+                <th>Address</th>
+                <th>Remarks</th>
+                <th>Stack</th>
+                <th>Code</th>
+                <th>Static</th>
+            </tr>
+            <tr>
+                <td>0x0002e150</td>
+                <td>
+    
+    
+</td>
+                <td>64 (static)</td>
+                <td>572</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>No Callers</th>
+                <td colspan="5">
+                
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Callees (2,
+                            <span title="sum of used bytes by all callees">
+                            Σ=364
+                            </span>
+                        )
+                    
+                </th>
+                <td colspan="5">
+                
+                    <a href="../../../../../../../../../../../unknown/unknown/72d4bd12d6ca07360602e0d6cbc8dc4b.html">memcpy (28)</a>
+                    
+                        ,
+                    
+                
+                    <a href="./3367b3f4fafbb7b32c9766b3564999fc.html">routing::RxAdapter::extract(etl::span&lt;unsigned char const, 4294967295u&gt;, unsigned int, etl::span&lt;unsigned char, 4294967295u&gt;&amp;) const (336)</a>
+                    
+                
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <pre><a href="./3367b3f4fafbb7b32c9766b3564999fc.html">routing::RxAdapter::extract(etl::span&lt;unsigned char const, 4294967295u&gt;, unsigned int, etl::span&lt;unsigned char, 4294967295u&gt;&amp;) const (336)</a></pre>
+    
+
+    <pre>
+
+    routing::RxAdapter::peek() const():
+
+       2e150:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+
+    _ZNK3etl4spanIhLj4294967295EE5emptyEv():
+
+       2e154:	6d0a      	ldr	r2, [r1, #80]	@ 0x50
+
+       2e156:	6d4b      	ldr	r3, [r1, #84]	@ 0x54
+
+    routing::RxAdapter::peek() const():
+
+       2e158:	429a      	cmp	r2, r3
+
+       2e15a:	b087      	sub	sp, #28
+
+       2e15c:	4606      	mov	r6, r0
+
+       2e15e:	d005      	beq.n	2e16c <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x1c>
+
+    _ZN3etl4spanIhLj4294967295EEC4ERKS1_():
+
+       2e160:	e9c0 2300 	strd	r2, r3, [r0]
+
+    routing::RxAdapter::peek() const():
+
+       2e164:	4630      	mov	r0, r6
+
+       2e166:	b007      	add	sp, #28
+
+       2e168:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+
+       2e16c:	460c      	mov	r4, r1
+
+       2e16e:	6849      	ldr	r1, [r1, #4]
+
+       2e170:	680b      	ldr	r3, [r1, #0]
+
+       2e172:	a804      	add	r0, sp, #16
+
+       2e174:	68db      	ldr	r3, [r3, #12]
+
+       2e176:	4798      	blx	r3
+
+    _ZNK3etl4spanIhLj4294967295EE4sizeEv():
+
+       2e178:	e9dd 8704 	ldrd	r8, r7, [sp, #16]
+
+    routing::RxAdapter::peek() const():
+
+       2e17c:	4547      	cmp	r7, r8
+
+       2e17e:	f000 808b 	beq.w	2e298 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x148>
+
+    _ZNK3etl14unaligned_typeImLi4321EEcvmEv():
+
+       2e182:	f04f 0900 	mov.w	r9, #0
+
+    routing::RxAdapter::peek() const():
+
+       2e186:	f8d4 a04c 	ldr.w	sl, [r4, #76]	@ 0x4c
+
+       2e18a:	f1ba 0f00 	cmp.w	sl, #0
+
+       2e18e:	d116      	bne.n	2e1be <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x6e>
+
+    _ZN7routing14ClampedCounterImEppEv():
+
+       2e190:	6da3      	ldr	r3, [r4, #88]	@ 0x58
+
+       2e192:	1c5d      	adds	r5, r3, #1
+
+       2e194:	bf1c      	itt	ne
+
+       2e196:	3301      	addne	r3, #1
+
+       2e198:	65a3      	strne	r3, [r4, #88]	@ 0x58
+
+       2e19a:	6de3      	ldr	r3, [r4, #92]	@ 0x5c
+
+    _ZNK3etl4spanIKhLj4294967295EE4sizeEv():
+
+       2e19c:	eba7 0508 	sub.w	r5, r7, r8
+
+    _ZN7routing14ClampedCounterImEpLERKm():
+
+       2e1a0:	195b      	adds	r3, r3, r5
+
+       2e1a2:	bf28      	it	cs
+
+       2e1a4:	f04f 33ff 	movcs.w	r3, #4294967295	@ 0xffffffff
+
+       2e1a8:	65e3      	str	r3, [r4, #92]	@ 0x5c
+
+    routing::RxAdapter::peek() const():
+
+       2e1aa:	6823      	ldr	r3, [r4, #0]
+
+       2e1ac:	a904      	add	r1, sp, #16
+
+       2e1ae:	695b      	ldr	r3, [r3, #20]
+
+       2e1b0:	4620      	mov	r0, r4
+
+    _ZN3etl4spanIKhLj4294967295EEC4ERKS2_():
+
+       2e1b2:	e9cd 8704 	strd	r8, r7, [sp, #16]
+
+    routing::RxAdapter::peek() const():
+
+       2e1b6:	4798      	blx	r3
+
+       2e1b8:	4683      	mov	fp, r0
+
+       2e1ba:	2800      	cmp	r0, #0
+
+       2e1bc:	d170      	bne.n	2e2a0 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x150>
+
+       2e1be:	6ca1      	ldr	r1, [r4, #72]	@ 0x48
+
+    _ZNK3etl4spanIKNS_14unaligned_typeImLi4321EEELj4294967295EEixEj():
+
+       2e1c0:	6a63      	ldr	r3, [r4, #36]	@ 0x24
+
+    _ZNK3etl14unaligned_typeImLi4321EEcvmEv():
+
+       2e1c2:	f8cd 9010 	str.w	r9, [sp, #16]
+
+    routing::RxAdapter::peek() const():
+
+       2e1c6:	3101      	adds	r1, #1
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj4ELi4321ELb1EE19copy_store_to_valueImEEvPKhRT_():
+
+       2e1c8:	eb03 0181 	add.w	r1, r3, r1, lsl #2
+
+       2e1cc:	2204      	movs	r2, #4
+
+       2e1ce:	a804      	add	r0, sp, #16
+
+       2e1d0:	f7d2 fa13 	bl	5fa <<a href="../../../../../../../../../../../unknown/unknown/72d4bd12d6ca07360602e0d6cbc8dc4b.html">memcpy</a>>
+
+    _ZNK3etl4spanIKNS_14unaligned_typeImLi4321EEELj4294967295EEixEj():
+
+       2e1d4:	6a63      	ldr	r3, [r4, #36]	@ 0x24
+
+       2e1d6:	6ca1      	ldr	r1, [r4, #72]	@ 0x48
+
+       2e1d8:	9d04      	ldr	r5, [sp, #16]
+
+    _ZNK3etl14unaligned_typeImLi4321EEcvmEv():
+
+       2e1da:	f8cd 9010 	str.w	r9, [sp, #16]
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj4ELi4321ELb1EE19copy_store_to_valueImEEvPKhRT_():
+
+       2e1de:	2204      	movs	r2, #4
+
+       2e1e0:	eb03 0181 	add.w	r1, r3, r1, lsl #2
+
+       2e1e4:	a804      	add	r0, sp, #16
+
+       2e1e6:	f7d2 fa08 	bl	5fa <<a href="../../../../../../../../../../../unknown/unknown/72d4bd12d6ca07360602e0d6cbc8dc4b.html">memcpy</a>>
+
+       2e1ea:	9b04      	ldr	r3, [sp, #16]
+
+       2e1ec:	ba2d      	rev	r5, r5
+
+       2e1ee:	ba1b      	rev	r3, r3
+
+    routing::RxAdapter::peek() const():
+
+       2e1f0:	1aed      	subs	r5, r5, r3
+
+       2e1f2:	6ce3      	ldr	r3, [r4, #76]	@ 0x4c
+
+       2e1f4:	429d      	cmp	r5, r3
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj4ELi4321ELb1EE19copy_store_to_valueImEEvPKhRT_():
+
+       2e1f6:	f04f 0204 	mov.w	r2, #4
+
+       2e1fa:	a804      	add	r0, sp, #16
+
+    routing::RxAdapter::peek() const():
+
+       2e1fc:	d92e      	bls.n	2e25c <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x10c>
+
+    _ZNK3etl4spanIKNS_14unaligned_typeImLi4321EEELj4294967295EEixEj():
+
+       2e1fe:	6a63      	ldr	r3, [r4, #36]	@ 0x24
+
+       2e200:	6ca1      	ldr	r1, [r4, #72]	@ 0x48
+
+    _ZNK3etl14unaligned_typeImLi4321EEcvmEv():
+
+       2e202:	f8cd 9010 	str.w	r9, [sp, #16]
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj4ELi4321ELb1EE19copy_store_to_valueImEEvPKhRT_():
+
+       2e206:	eb03 0181 	add.w	r1, r3, r1, lsl #2
+
+       2e20a:	f7d2 f9f6 	bl	5fa <<a href="../../../../../../../../../../../unknown/unknown/72d4bd12d6ca07360602e0d6cbc8dc4b.html">memcpy</a>>
+
+       2e20e:	9a04      	ldr	r2, [sp, #16]
+
+    _ZN3etl4spanIhLj4294967295EEC4ERKS1_():
+
+       2e210:	68e0      	ldr	r0, [r4, #12]
+
+    routing::RxAdapter::peek() const():
+
+       2e212:	6ce1      	ldr	r1, [r4, #76]	@ 0x4c
+
+    _ZN3etl4spanIhLj4294967295EEC4ERKS1_():
+
+       2e214:	9001      	str	r0, [sp, #4]
+
+    routing::RxAdapter::peek() const():
+
+       2e216:	68a0      	ldr	r0, [r4, #8]
+
+       2e218:	9002      	str	r0, [sp, #8]
+
+       2e21a:	ba12      	rev	r2, r2
+
+       2e21c:	9801      	ldr	r0, [sp, #4]
+
+       2e21e:	9003      	str	r0, [sp, #12]
+
+       2e220:	440a      	add	r2, r1
+
+       2e222:	ab02      	add	r3, sp, #8
+
+       2e224:	a904      	add	r1, sp, #16
+
+       2e226:	4620      	mov	r0, r4
+
+    _ZN3etl4spanIKhLj4294967295EEC4ERKS2_():
+
+       2e228:	e9cd 8704 	strd	r8, r7, [sp, #16]
+
+    routing::RxAdapter::peek() const():
+
+       2e22c:	f7ff fee8 	bl	2e000 <<a href="./3367b3f4fafbb7b32c9766b3564999fc.html">routing::RxAdapter::extract(etl::span<unsigned char const, 4294967295u>, unsigned int, etl::span<unsigned char, 4294967295u>&) const</a>>
+
+       2e230:	6ce3      	ldr	r3, [r4, #76]	@ 0x4c
+
+       2e232:	9902      	ldr	r1, [sp, #8]
+
+       2e234:	9a03      	ldr	r2, [sp, #12]
+
+       2e236:	3301      	adds	r3, #1
+
+       2e238:	b150      	cbz	r0, 2e250 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x100>
+
+       2e23a:	429d      	cmp	r5, r3
+
+    _ZN3etl4spanIhLj4294967295EEaSERKS1_():
+
+       2e23c:	6521      	str	r1, [r4, #80]	@ 0x50
+
+       2e23e:	6562      	str	r2, [r4, #84]	@ 0x54
+
+    routing::RxAdapter::peek() const():
+
+       2e240:	64e3      	str	r3, [r4, #76]	@ 0x4c
+
+       2e242:	d00e      	beq.n	2e262 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x112>
+
+       2e244:	4630      	mov	r0, r6
+
+    _ZN3etl4spanIhLj4294967295EEC4ERKS1_():
+
+       2e246:	e9c6 1200 	strd	r1, r2, [r6]
+
+    routing::RxAdapter::peek() const():
+
+       2e24a:	b007      	add	sp, #28
+
+       2e24c:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+
+       2e250:	429d      	cmp	r5, r3
+
+       2e252:	64e3      	str	r3, [r4, #76]	@ 0x4c
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj4ELi4321ELb1EE19copy_store_to_valueImEEvPKhRT_():
+
+       2e254:	f04f 0204 	mov.w	r2, #4
+
+       2e258:	a804      	add	r0, sp, #16
+
+    routing::RxAdapter::peek() const():
+
+       2e25a:	d8d0      	bhi.n	2e1fe <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0xae>
+
+       2e25c:	d10f      	bne.n	2e27e <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x12e>
+
+       2e25e:	2501      	movs	r5, #1
+
+       2e260:	e000      	b.n	2e264 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x114>
+
+       2e262:	2500      	movs	r5, #0
+
+       2e264:	6860      	ldr	r0, [r4, #4]
+
+       2e266:	4a47      	ldr	r2, [pc, #284]	@ (2e384 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x234>)
+
+       2e268:	6803      	ldr	r3, [r0, #0]
+
+       2e26a:	691b      	ldr	r3, [r3, #16]
+
+       2e26c:	4293      	cmp	r3, r2
+
+       2e26e:	d144      	bne.n	2e2fa <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x1aa>
+
+    _ZN3etl4spanIhLj4294967295EEaSERKS1_():
+
+       2e270:	2300      	movs	r3, #0
+
+       2e272:	6503      	str	r3, [r0, #80]	@ 0x50
+
+       2e274:	6543      	str	r3, [r0, #84]	@ 0x54
+
+    routing::RxAdapter::peek() const():
+
+       2e276:	2300      	movs	r3, #0
+
+       2e278:	64e3      	str	r3, [r4, #76]	@ 0x4c
+
+       2e27a:	2d00      	cmp	r5, #0
+
+       2e27c:	d03f      	beq.n	2e2fe <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x1ae>
+
+       2e27e:	f1ba 0f00 	cmp.w	sl, #0
+
+       2e282:	d04a      	beq.n	2e31a <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x1ca>
+
+       2e284:	6861      	ldr	r1, [r4, #4]
+
+       2e286:	680b      	ldr	r3, [r1, #0]
+
+       2e288:	a804      	add	r0, sp, #16
+
+       2e28a:	68db      	ldr	r3, [r3, #12]
+
+       2e28c:	4798      	blx	r3
+
+    _ZNK3etl4spanIhLj4294967295EE4sizeEv():
+
+       2e28e:	e9dd 8704 	ldrd	r8, r7, [sp, #16]
+
+    routing::RxAdapter::peek() const():
+
+       2e292:	45b8      	cmp	r8, r7
+
+       2e294:	f47f af77 	bne.w	2e186 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x36>
+
+    _ZN3etl4spanIhLj4294967295EEC4Ev():
+
+       2e298:	2300      	movs	r3, #0
+
+       2e29a:	6033      	str	r3, [r6, #0]
+
+       2e29c:	6073      	str	r3, [r6, #4]
+
+       2e29e:	e761      	b.n	2e164 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x14>
+
+    _ZNK7routing12ErrorHandlerclENS0_10StatusCodeEN3etl4spanIKhLj4294967295EEE():
+
+       2e2a0:	2801      	cmp	r0, #1
+
+       2e2a2:	d001      	beq.n	2e2a8 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x158>
+
+       2e2a4:	2d03      	cmp	r5, #3
+
+       2e2a6:	d82d      	bhi.n	2e304 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x1b4>
+
+    _ZNK3etl8delegateIFvN7routing12ErrorHandler10StatusCodeEhmEE8is_validEv():
+
+       2e2a8:	6c27      	ldr	r7, [r4, #64]	@ 0x40
+
+    _ZNK3etl8delegateIFvN7routing12ErrorHandler10StatusCodeEhmEEclIJRKS3_RKhRKmEEEvDpOT_():
+
+       2e2aa:	b307      	cbz	r7, 2e2ee <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x19e>
+
+       2e2ac:	f894 2044 	ldrb.w	r2, [r4, #68]	@ 0x44
+
+       2e2b0:	4653      	mov	r3, sl
+
+       2e2b2:	4659      	mov	r1, fp
+
+       2e2b4:	f104 003c 	add.w	r0, r4, #60	@ 0x3c
+
+       2e2b8:	47b8      	blx	r7
+
+    _ZN7routing14ClampedCounterImEppEv():
+
+       2e2ba:	6f23      	ldr	r3, [r4, #112]	@ 0x70
+
+    routing::RxAdapter::peek() const():
+
+       2e2bc:	6861      	ldr	r1, [r4, #4]
+
+    _ZN7routing14ClampedCounterImEppEv():
+
+       2e2be:	1c58      	adds	r0, r3, #1
+
+       2e2c0:	bf1c      	itt	ne
+
+       2e2c2:	3301      	addne	r3, #1
+
+       2e2c4:	6723      	strne	r3, [r4, #112]	@ 0x70
+
+       2e2c6:	6f63      	ldr	r3, [r4, #116]	@ 0x74
+
+       2e2c8:	482e      	ldr	r0, [pc, #184]	@ (2e384 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x234>)
+
+    _ZN7routing14ClampedCounterImEpLERKm():
+
+       2e2ca:	18ed      	adds	r5, r5, r3
+
+    routing::RxAdapter::peek() const():
+
+       2e2cc:	680b      	ldr	r3, [r1, #0]
+
+       2e2ce:	691a      	ldr	r2, [r3, #16]
+
+    _ZN7routing14ClampedCounterImEpLERKm():
+
+       2e2d0:	bf28      	it	cs
+
+       2e2d2:	f04f 35ff 	movcs.w	r5, #4294967295	@ 0xffffffff
+
+       2e2d6:	4282      	cmp	r2, r0
+
+       2e2d8:	6765      	str	r5, [r4, #116]	@ 0x74
+
+    routing::RxAdapter::peek() const():
+
+       2e2da:	d13c      	bne.n	2e356 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x206>
+
+    _ZN3etl4spanIhLj4294967295EEaSERKS1_():
+
+       2e2dc:	2200      	movs	r2, #0
+
+       2e2de:	650a      	str	r2, [r1, #80]	@ 0x50
+
+       2e2e0:	654a      	str	r2, [r1, #84]	@ 0x54
+
+    routing::RxAdapter::peek() const():
+
+       2e2e2:	68db      	ldr	r3, [r3, #12]
+
+       2e2e4:	a804      	add	r0, sp, #16
+
+       2e2e6:	4798      	blx	r3
+
+    _ZNK3etl4spanIhLj4294967295EE4sizeEv():
+
+       2e2e8:	e9dd 8704 	ldrd	r8, r7, [sp, #16]
+
+    routing::RxAdapter::peek() const():
+
+       2e2ec:	e7d1      	b.n	2e292 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x142>
+
+    _ZNK3etl8delegateIFvN7routing12ErrorHandler10StatusCodeEhmEEclIJRKS3_RKhRKmEEEvDpOT_():
+
+       2e2ee:	4b26      	ldr	r3, [pc, #152]	@ (2e388 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x238>)
+
+       2e2f0:	a804      	add	r0, sp, #16
+
+       2e2f2:	681b      	ldr	r3, [r3, #0]
+
+       2e2f4:	4798      	blx	r3
+
+       2e2f6:	6c27      	ldr	r7, [r4, #64]	@ 0x40
+
+       2e2f8:	e7d8      	b.n	2e2ac <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x15c>
+
+    routing::RxAdapter::peek() const():
+
+       2e2fa:	4798      	blx	r3
+
+       2e2fc:	e7bb      	b.n	2e276 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x126>
+
+    _ZN3etl4spanIhLj4294967295EEC4ERKS1_():
+
+       2e2fe:	6d21      	ldr	r1, [r4, #80]	@ 0x50
+
+       2e300:	6d62      	ldr	r2, [r4, #84]	@ 0x54
+
+       2e302:	e79f      	b.n	2e244 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0xf4>
+
+    _ZNK3etl14unaligned_typeImLi4321EEcvmEv():
+
+       2e304:	2300      	movs	r3, #0
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj4ELi4321ELb1EE19copy_store_to_valueImEEvPKhRT_():
+
+       2e306:	4641      	mov	r1, r8
+
+       2e308:	2204      	movs	r2, #4
+
+       2e30a:	a804      	add	r0, sp, #16
+
+    _ZNK3etl14unaligned_typeImLi4321EEcvmEv():
+
+       2e30c:	9304      	str	r3, [sp, #16]
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj4ELi4321ELb1EE19copy_store_to_valueImEEvPKhRT_():
+
+       2e30e:	f7d2 f974 	bl	5fa <<a href="../../../../../../../../../../../unknown/unknown/72d4bd12d6ca07360602e0d6cbc8dc4b.html">memcpy</a>>
+
+       2e312:	9b04      	ldr	r3, [sp, #16]
+
+       2e314:	fa93 fa83 	rev.w	sl, r3
+
+    _ZNK7routing12ErrorHandlerclENS0_10StatusCodeEN3etl4spanIKhLj4294967295EEE():
+
+       2e318:	e7c6      	b.n	2e2a8 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x158>
+
+    _ZNK3etl4spanIKhLj4294967295EE4sizeEv():
+
+       2e31a:	eba7 0708 	sub.w	r7, r7, r8
+
+    _ZNK7routing12ErrorHandlerclENS0_10StatusCodeEN3etl4spanIKhLj4294967295EEE():
+
+       2e31e:	2f03      	cmp	r7, #3
+
+       2e320:	d81e      	bhi.n	2e360 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x210>
+
+    _ZNK3etl8delegateIFvN7routing12ErrorHandler10StatusCodeEhmEE8is_validEv():
+
+       2e322:	6c25      	ldr	r5, [r4, #64]	@ 0x40
+
+    _ZNK3etl8delegateIFvN7routing12ErrorHandler10StatusCodeEhmEEclIJRKS3_RKhRKmEEEvDpOT_():
+
+       2e324:	b33d      	cbz	r5, 2e376 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x226>
+
+       2e326:	f894 2044 	ldrb.w	r2, [r4, #68]	@ 0x44
+
+       2e32a:	4653      	mov	r3, sl
+
+       2e32c:	2105      	movs	r1, #5
+
+       2e32e:	f104 003c 	add.w	r0, r4, #60	@ 0x3c
+
+       2e332:	47a8      	blx	r5
+
+    _ZN7routing14ClampedCounterImEppEv():
+
+       2e334:	6ee3      	ldr	r3, [r4, #108]	@ 0x6c
+
+       2e336:	1c59      	adds	r1, r3, #1
+
+       2e338:	bf1c      	itt	ne
+
+       2e33a:	3301      	addne	r3, #1
+
+       2e33c:	66e3      	strne	r3, [r4, #108]	@ 0x6c
+
+       2e33e:	6f23      	ldr	r3, [r4, #112]	@ 0x70
+
+       2e340:	1c5a      	adds	r2, r3, #1
+
+       2e342:	bf1c      	itt	ne
+
+       2e344:	3301      	addne	r3, #1
+
+       2e346:	6723      	strne	r3, [r4, #112]	@ 0x70
+
+    _ZN7routing14ClampedCounterImEpLERKm():
+
+       2e348:	6f63      	ldr	r3, [r4, #116]	@ 0x74
+
+       2e34a:	19db      	adds	r3, r3, r7
+
+       2e34c:	bf28      	it	cs
+
+       2e34e:	f04f 33ff 	movcs.w	r3, #4294967295	@ 0xffffffff
+
+       2e352:	6763      	str	r3, [r4, #116]	@ 0x74
+
+       2e354:	e796      	b.n	2e284 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x134>
+
+    routing::RxAdapter::peek() const():
+
+       2e356:	4608      	mov	r0, r1
+
+       2e358:	4790      	blx	r2
+
+       2e35a:	6861      	ldr	r1, [r4, #4]
+
+       2e35c:	680b      	ldr	r3, [r1, #0]
+
+       2e35e:	e7c0      	b.n	2e2e2 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x192>
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj4ELi4321ELb1EE19copy_store_to_valueImEEvPKhRT_():
+
+       2e360:	4641      	mov	r1, r8
+
+       2e362:	2204      	movs	r2, #4
+
+       2e364:	a804      	add	r0, sp, #16
+
+    _ZNK3etl14unaligned_typeImLi4321EEcvmEv():
+
+       2e366:	f8cd a010 	str.w	sl, [sp, #16]
+
+    _ZN3etl22private_unaligned_type14unaligned_copyILj4ELi4321ELb1EE19copy_store_to_valueImEEvPKhRT_():
+
+       2e36a:	f7d2 f946 	bl	5fa <<a href="../../../../../../../../../../../unknown/unknown/72d4bd12d6ca07360602e0d6cbc8dc4b.html">memcpy</a>>
+
+       2e36e:	9b04      	ldr	r3, [sp, #16]
+
+       2e370:	fa93 fa83 	rev.w	sl, r3
+
+    _ZNK7routing12ErrorHandlerclENS0_10StatusCodeEN3etl4spanIKhLj4294967295EEE():
+
+       2e374:	e7d5      	b.n	2e322 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x1d2>
+
+    _ZNK3etl8delegateIFvN7routing12ErrorHandler10StatusCodeEhmEEclIJRKS3_RKhRKmEEEvDpOT_():
+
+       2e376:	4b04      	ldr	r3, [pc, #16]	@ (2e388 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x238>)
+
+       2e378:	a804      	add	r0, sp, #16
+
+       2e37a:	681b      	ldr	r3, [r3, #0]
+
+       2e37c:	4798      	blx	r3
+
+       2e37e:	6c25      	ldr	r5, [r4, #64]	@ 0x40
+
+       2e380:	e7d1      	b.n	2e326 <<a href="./8390d0b1b780cacf0e121563d426100d.html">routing::RxAdapter::peek() const</a>+0x1d6>
+
+       2e382:	bf00      	nop
+
+       2e384:	0002de71 	.word	0x0002de71
+
+       2e388:	20000000 	.word	0x20000000
+
+    </pre>
+
+    
+    <pre><a href="../PduTransportConfig.cpp/adb5bc0771c8553d4cf81e856fa65bc2.html">routing::load(etl::span&lt;unsigned char const, 4294967295u&gt;, routing::PduTransportConfig&amp;) (548)</a></pre>
+    
+
+    
+        <h1>Stack Worst-Case Scenarios</h1>
+        
+        <table class="table table-bordered table-hover table-condensed">
+        <thead>
+            <tr>
+                <th rowspan="2">#</th>
+                <th colspan="2" style="text-align: center">Stack</th>
+                <th colspan="2" style="text-align: center">Code</th>
+                <th rowspan="2" width="100%">Name</th>
+            </tr>
+            <tr>
+                <th class="col_size">&sum; = 120</th>
+                <th class="col_size"></th>
+                <th class="col_size">&sum;= 336</th>
+                <th class="col_size"></th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <th>1</th>
+                <td class="col_size">
+                    
+                    120
+                    
+                    
+                </td>
+                <td class="col_size">
+            
+                56 
+            
+                </td>
+                <td class="col_size">
+                    
+                </td>
+                <td class="col_size">336</td>
+                <td><a href="./3367b3f4fafbb7b32c9766b3564999fc.html" class="icon-function">routing::RxAdapter::extract(etl::span&lt;unsigned char const, 4294967295u&gt;, unsigned int, etl::span&lt;unsigned char, 4294967295u&gt;&amp;) const</a></td>
+            </tr>
+        
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <th></th>
+                <th class="col_size">64
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </tfoot>
+        
+    </table>
+        
+        
+            <p>No callers for this function.</p>
+        
+    
+
+
+        </div>
+    <div id="page-footer">
+        <hr>
+        
+            brought to you with 💖
+            by <a href="https://twitter.com/hbehrens">Heiko Behrens</a>
+            <span class="secondary">– MIT license, copyright © 2014-2026</span>
+        
+    </div>
+    </div>
+</body>
+</html>
