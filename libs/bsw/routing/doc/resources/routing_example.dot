@@ -1,0 +1,7 @@
+digraph Routing {
+  graph[fontname="Arial" fontsize="10" ranksep=1.0 nodesep=1.0 label="routing graph for input of Id: 18 on Channel: PDU_TRANSPORT0"]
+    "Input" -> "PDU_TRANSPORT0" [label = "Id: 18"]
+    "PDU_TRANSPORT0" -> "CAN0" [label = "Id: 1"]
+    "CAN0" -> "PDU_TRANSPORT1" [label = "Id: 4096"]
+    "PDU_TRANSPORT1" -> "PDU_TRANSPORT0" [label = "Id: 256"]
+}

@@ -56,7 +56,7 @@ public:
     using Base               = ResponseBufferBase;
     using ResponseTraitsType = Traits;
     using ResponseType       = typename Traits::ResponseType;
-    using ResponseContainer  = etl::vector<Base::SkeletonResponseInfo, RESPONSE_LIMIT>;
+    using ResponseContainer  = ::etl::vector<Base::SkeletonResponseInfo, RESPONSE_LIMIT>;
 
     ResponseBuffer(SkeletonBase const& skeleton) : Base(skeleton, _responses) {}
 
@@ -68,10 +68,9 @@ public:
      * \param handleResponseFailure True to cancel the response on send failure
      * \return HRESULT Result code
      */
-    HRESULT respond(
-        SkeletonResponseInfo& response,
-        ResponseType const& result,
-        bool const handleResponseFailure = true)
+    template<typename T = ResponseType>
+    ::etl::enable_if_t<!::etl::is_void<T>::value, HRESULT> respond(
+        SkeletonResponseInfo& response, T const& result, bool const handleResponseFailure = true)
     {
         auto ret = HRESULT::ResponseBufferFutureNotFound;
 
@@ -83,6 +82,28 @@ public:
             {
                 ret = Base::sendResponse(msg, response, handleResponseFailure);
             }
+        }
+
+        return ret;
+    }
+
+    /**
+     * Sends a void response (header only) for a previously allocated response slot.
+     *
+     * \param response Response slot info
+     * \param handleResponseFailure True to cancel the response on send failure
+     * \return HRESULT Result code
+     */
+    template<typename T = ResponseType>
+    ::etl::enable_if_t<::etl::is_void<T>::value, HRESULT>
+    respond(SkeletonResponseInfo& response, bool const handleResponseFailure = true)
+    {
+        auto ret = HRESULT::ResponseBufferFutureNotFound;
+
+        if (Base::isResponseIteratorValid(&response))
+        {
+            Message msg = Base::generateResponseMessageHeader(response, Traits::METHOD_MEMBER_ID);
+            ret         = Base::sendResponse(msg, response, handleResponseFailure);
         }
 
         return ret;

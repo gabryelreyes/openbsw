@@ -18,7 +18,7 @@
 #include "app/CanDemoListener.h"
 #include "app/DemoLogger.h"
 
-#include <bsp/SystemTime.h>
+#include <time/TimestampProvider.h>
 #ifdef TRACING
 #include "runtime/Tracer.h"
 #endif
@@ -99,7 +99,16 @@ DemoSystem::DemoSystem(
     setTransitionContext(context);
 }
 
-void DemoSystem::init() { transitionDone(); }
+void DemoSystem::init()
+{
+#ifdef PLATFORM_SUPPORT_MIDDLEWARE
+    ::middleware::initializeCluster0ClusterConnection();
+    ::middleware::initializeCluster1ClusterConnection();
+    _fooSkeletonWrapper.init();
+    _fooProxyWrapper.init();
+#endif
+    transitionDone();
+}
 
 void DemoSystem::run()
 {
@@ -120,6 +129,7 @@ void DemoSystem::run()
 
 void DemoSystem::shutdown()
 {
+    _timeout.cancel();
 #ifdef PLATFORM_SUPPORT_CAN
     _canDemoListener.shutdown();
 #endif
@@ -129,7 +139,10 @@ void DemoSystem::shutdown()
     _loopbackServer.close();
     _iperfServer.close();
 #endif
-    _timeout.cancel();
+#ifdef PLATFORM_SUPPORT_MIDDLEWARE
+    _fooProxyWrapper.deInit();
+    _fooSkeletonWrapper.deInit();
+#endif
     transitionDone();
 }
 
@@ -163,9 +176,9 @@ void DemoSystem::cyclic()
 #endif
 
 #ifdef PLATFORM_SUPPORT_CAN
-    static uint32_t previousSentTime = getSystemTimeMs32Bit();
+    static uint32_t previousSentTime = ::bsw::time::TimestampProvider::getTimestampMs32Bit();
     static uint32_t canSentCount     = 0;
-    uint32_t const now               = getSystemTimeMs32Bit();
+    uint32_t const now               = ::bsw::time::TimestampProvider::getTimestampMs32Bit();
     uint32_t const deltaTimeMs       = now - previousSentTime;
     // Send a CAN frame every second.
     if (deltaTimeMs >= 1000)
@@ -186,6 +199,22 @@ void DemoSystem::cyclic()
 
 #if TRACING
     runtime::Tracer::traceUser(42);
+#endif
+
+#ifdef PLATFORM_SUPPORT_MIDDLEWARE
+    ++_middlewareCycleCount;
+    // Send a broadcast every 1 s (cyclic at 10 ms -> 100 cycles)
+    if (_middlewareCycleCount % 100U == 0U)
+    {
+        _fooSkeletonWrapper.sendBroadcast();
+    }
+    // Issue a getter request every 2 s (200 cycles)
+    if (_middlewareCycleCount % 200U == 0U)
+    {
+        _fooProxyWrapper.requestGet();
+    }
+    ::middleware::processCluster0Cluster();
+    ::middleware::processCluster1Cluster();
 #endif
 
 #ifdef PLATFORM_SUPPORT_STORAGE

@@ -11,6 +11,7 @@
 #include "middleware/memory/PoolBase.h"
 
 #include <etl/algorithm.h>
+#include <etl/bit.h>
 #include <etl/iterator.h>
 #include <etl/memory.h>
 #include <etl/tuple.h>
@@ -39,24 +40,27 @@ PoolBase::PoolBase(
 void PoolBase::initialize()
 {
     resetStats();
-    etl::mem_set(_buffer, _elementAlignedSize * _elementCount, static_cast<uint8_t>(0));
+    ::etl::mem_set(_buffer, _elementAlignedSize * _elementCount, static_cast<uint8_t>(0));
     size_t const flagsSize = ((_elementCount % static_cast<size_t>(CHAR_BIT)) == 0U)
                                  ? (_elementCount / static_cast<size_t>(CHAR_BIT))
                                  : (_elementCount / static_cast<size_t>(CHAR_BIT)) + 1U;
-    etl::mem_set(_flags, flagsSize, static_cast<uint8_t>(0));
+    ::etl::mem_set(_flags, flagsSize, static_cast<uint8_t>(0));
 
     uint8_t* tempBuff = _buffer;
     for (size_t i = 0U; i < (_elementCount - 1U); ++i)
     {
-        uint8_t* const tempNext                = offsetAddress(tempBuff, _elementAlignedSize);
-        // Write the address of tempNext in the memory pointed to by tempBuff
-        *reinterpret_cast<uint8_t**>(tempBuff) = tempNext; // NOLINT
-        tempBuff                               = tempNext;
+        uint8_t* const tempNext = offsetAddress(tempBuff, _elementAlignedSize);
+        // Write the address of tempNext into the bytes pointed to by tempBuff
+        ::etl::mem_copy(
+            reinterpret_cast<uint8_t const*>(&tempNext), sizeof(uint8_t*), tempBuff); // NOLINT
+        tempBuff = tempNext;
     }
     // Last chunk: next pointer is nullptr
-    *reinterpret_cast<uint8_t**>(tempBuff) = nullptr; // NOLINT
-    _nextChunk                             = _buffer;
-    _available                             = _elementCount;
+    uint8_t* const null_ptr = nullptr;
+    ::etl::mem_copy(
+        reinterpret_cast<uint8_t const*>(&null_ptr), sizeof(uint8_t*), tempBuff); // NOLINT
+    _nextChunk = _buffer;
+    _available = _elementCount;
 }
 
 uint8_t* PoolBase::allocate(size_t const size)
@@ -65,15 +69,15 @@ uint8_t* PoolBase::allocate(size_t const size)
 
     if ((size <= _elementSize) && (!isFull()))
     {
-        ret        = _nextChunk;
-        _nextChunk = *reinterpret_cast<uint8_t**>(_nextChunk); // NOLINT
+        ret = _nextChunk;
+        ::etl::mem_copy(ret, sizeof(uint8_t*), reinterpret_cast<uint8_t*>(&_nextChunk)); // NOLINT
         --_available;
         _stats.internalFragmentation += static_cast<uint32_t>(_elementSize - size);
         ++_stats.successfulAllocations;
-        _stats.maxLoad = etl::max(
+        _stats.maxLoad = ::etl::max(
             _stats.maxLoad, static_cast<decltype(PoolStats::maxLoad)>(_elementCount - _available));
 
-        ptrdiff_t const distance = etl::distance(_buffer, ret);
+        ptrdiff_t const distance = ::etl::distance(_buffer, ret);
         size_t const ptrPosition = static_cast<size_t>(distance) / _elementAlignedSize;
         updatePtrFlag(ptrPosition, true);
     }
@@ -87,10 +91,14 @@ bool PoolBase::deallocate(void* const ptr)
     auto* const ptrObject = static_cast<uint8_t*>(ptr);
     if (isValidPointer(ptrObject))
     {
-        *reinterpret_cast<uintptr_t*>(ptrObject)                                    // NOLINT
-            = _nextChunk != nullptr ? reinterpret_cast<uintptr_t>(_nextChunk) : 0U; // NOLINT
+        // Copies the raw bytes of _nextChunk (which may be nullptr) into the freed slot.
+        // This relies on the null pointer being represented as all-zero bytes, which holds
+        // on every supported target (ARM Cortex-M, x86/x86-64 POSIX) but is
+        // implementation-defined by the C++ standard.
+        ::etl::mem_copy(
+            reinterpret_cast<uint8_t const*>(&_nextChunk), sizeof(uint8_t*), ptrObject); // NOLINT
 
-        ptrdiff_t const distance = etl::distance(_buffer, ptrObject);
+        ptrdiff_t const distance = ::etl::distance(_buffer, ptrObject);
         size_t const ptrPosition = static_cast<size_t>(distance) / _elementAlignedSize;
         updatePtrFlag(ptrPosition, false);
         ++_available;
@@ -113,7 +121,7 @@ size_t PoolBase::maxSize() const { return _elementCount; }
 
 uint8_t* PoolBase::offsetAddress(uint8_t* ptr, size_t const offset)
 {
-    etl::advance(ptr, offset);
+    ::etl::advance(ptr, offset);
     return ptr;
 }
 
@@ -130,7 +138,7 @@ bool PoolBase::isValidPointer(uint8_t const* const ptr) const
     bool const isMultiple = ((ptrValue - start) % _elementAlignedSize) == 0U;
     if (isInRange && isMultiple)
     {
-        ptrdiff_t const distance = etl::distance(static_cast<uint8_t const*>(_buffer), ptr);
+        ptrdiff_t const distance = ::etl::distance(static_cast<uint8_t const*>(_buffer), ptr);
         size_t const ptrPosition = static_cast<size_t>(distance) / _elementAlignedSize;
         res                      = checkPtrFlag(ptrPosition);
     }
@@ -148,8 +156,10 @@ void PoolBase::updatePtrFlag(size_t const position, bool const ptrBusy)
     }
     else
     {
-        uint32_t const mask = ~(static_cast<size_t>(1U) << indexRemainder);
-        *(offsetAddress(_flags, index)) &= static_cast<uint8_t>(mask);
+        // Keep the mask at uint8_t width: 1U << indexRemainder is at most 128 (indexRemainder
+        // is in [0, CHAR_BIT-1]), so the cast is lossless on any platform.
+        uint8_t const mask = static_cast<uint8_t>(~(1U << indexRemainder));
+        *(offsetAddress(_flags, index)) &= mask;
     }
 }
 
@@ -170,9 +180,9 @@ void PoolBase::resetStats()
     _stats.capacity  = static_cast<uint32_t>(_elementCount);
 }
 
-etl::tuple<size_t, size_t, double> PoolBase::getProfile() const
+::etl::tuple<size_t, size_t, double> PoolBase::getProfile() const
 {
-    return etl::make_tuple(
+    return ::etl::make_tuple(
         _available,
         _stats.maxLoad,
         ((_stats.successfulAllocations > 0U)

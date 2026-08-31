@@ -41,7 +41,7 @@ namespace lwiputils
 netif* filterETHFrames(
     pbuf* const pCompleteFrame,
     ::etl::span<netif> const lwnetifs,
-    ::etl::span<uint16_t const> const vlanIds)
+    ::etl::span<::ethernet::NetifVlanId const> const vlanIds)
 {
     if (pCompleteFrame == nullptr)
     {
@@ -67,7 +67,7 @@ netif* filterETHFrames(
     size_t netifIdx = 0;
     for (; (netifIdx < vlanIds.size()); ++netifIdx)
     {
-        if (vlanIds[netifIdx] == vlanId)
+        if (vlanIds[netifIdx].value == vlanId)
         {
             break;
         }
@@ -91,9 +91,9 @@ netif* filterETHFrames(
  * Input all pbufs to their respective interfaces
  */
 bool processPbufQueue(
-    ::lwiputils::PbufQueue::Receiver receiver,
+    ::lwiputils::PbufQueue& receiver,
     ::etl::span<netif> const lwnetifs,
-    ::etl::span<uint16_t const> const vlanIds)
+    ::etl::span<::ethernet::NetifVlanId const> const vlanIds)
 {
     // Only process as many items as are in the queue when we
     // start the loop. This prevents the loop from never terminating
@@ -101,7 +101,8 @@ bool processPbufQueue(
     auto const queued = receiver.size();
     for (size_t i = 0; i < queued; ++i)
     {
-        auto* const p      = receiver.read();
+        pbuf* p = nullptr;
+        receiver.pop(p);
         auto* const pNetIf = filterETHFrames(p, lwnetifs, vlanIds);
         if ((pNetIf != nullptr) && (pNetIf->input != nullptr))
         {

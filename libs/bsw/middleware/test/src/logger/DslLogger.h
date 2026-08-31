@@ -20,7 +20,6 @@
 #include <etl/vector.h>
 #include <gmock/gmock.h>
 
-#include "middleware/core/LoggerApi.h"
 #include "middleware/logger/Logger.h"
 #include "mock/LoggerMock.h"
 
@@ -47,7 +46,7 @@ public:
     template<typename... Args>
     void EXPECT_LOG(LogLevel const level, std::string const& format, Args... args)
     {
-        etl::vector<uint32_t, sizeof...(Args)> vec;
+        ::etl::vector<uint32_t, sizeof...(Args)> vec;
         push_all(vec, args...);
 
         EXPECT_CALL(_mock, log(level, StrEq(format.c_str()), ElementsAreArray(vec)))
@@ -58,7 +57,7 @@ public:
     template<typename... Args>
     void EXPECT_EVENT_LOG(LogLevel const level, Error const error, Args... args)
     {
-        static etl::array<uint8_t, sizeof(uint32_t) + sizeof(Error) + CountBytes<Args...>::VALUE>
+        static ::etl::array<uint8_t, sizeof(uint32_t) + sizeof(Error) + CountBytes<Args...>::VALUE>
             buffer{};
 
         uint32_t const messageId = logger::getMessageId(error);
@@ -84,14 +83,29 @@ public:
     }
 
 private:
+    template<typename... Args>
+    struct CountBytes;
+
     template<typename T>
-    void push_all(etl::ivector<uint32_t>& vec, T arg)
+    struct CountBytes<T>
+    {
+        static constexpr size_t VALUE = sizeof(T);
+    };
+
+    template<typename T, typename... Args>
+    struct CountBytes<T, Args...>
+    {
+        static constexpr size_t VALUE = CountBytes<T>::VALUE + CountBytes<Args...>::VALUE;
+    };
+
+    template<typename T>
+    void push_all(::etl::ivector<uint32_t>& vec, T arg)
     {
         vec.push_back(static_cast<uint32_t>(arg));
     }
 
     template<typename T, typename... Args>
-    void push_all(etl::ivector<uint32_t>& vec, T arg, Args... args)
+    void push_all(::etl::ivector<uint32_t>& vec, T arg, Args... args)
     {
         vec.push_back(static_cast<uint32_t>(arg));
         push_all(vec, args...);

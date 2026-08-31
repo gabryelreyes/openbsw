@@ -46,6 +46,26 @@ enum class Error : uint8_t
     ProxyCrossThreadViolation    = 6U,
     /** Skeleton cross-thread access violation. */
     SkeletonCrossThreadViolation = 7U,
+    /** Unknown CAN frame ID encountered. */
+    FrameIdUnknown               = 8U,
+    /** CAN frame to PDU conversion failure. */
+    FrameToPduConversion         = 9U,
+    /** PDU slot exceeds frame payload length. */
+    FrameSlotOutOfBounds         = 10U,
+    /** PDU to CAN frame conversion failure. */
+    PduToFrameConversion         = 11U,
+    /** No route found for a PDU ID. */
+    PduRouteUnknown              = 12U,
+    /** Memory allocation failure for a PDU payload. */
+    PduPayloadAllocation         = 13U,
+    /** PDU broadcast failure. */
+    PduBroadcast                 = 14U,
+    /** Service/member mapping not found for a PDU. */
+    ServiceMemberMappingNotFound = 15U,
+    /** PDU offset exceeds frame capacity. */
+    PduOffsetOutOfBounds         = 16U,
+    /** PDU payload exceeds frame capacity. */
+    PduPayloadOutOfBounds        = 17U,
 };
 
 /**
@@ -69,7 +89,7 @@ extern void log(LogLevel level, char const* f, ...);
  * \param level the log level for this data
  * \param data span containing the binary data to log
  */
-extern void logBinary(LogLevel level, etl::span<uint8_t const> data);
+extern void logBinary(LogLevel level, ::etl::span<uint8_t const> data);
 
 /**
  * Get the message ID associated with an error type.

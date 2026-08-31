@@ -14,6 +14,17 @@ if (PLATFORM_SUPPORT_TRANSPORT)
     if (PLATFORM_SUPPORT_UDS)
         target_sources(app.referenceApp PRIVATE src/systems/UdsSystem.cpp
                                                 src/uds/ReadIdentifierPot.cpp)
+        if (PLATFORM_SUPPORT_UDS_DEMO_SERVICES)
+            target_sources(
+                app.referenceApp
+                PRIVATE src/uds/DemoClearDtc.cpp
+                        src/uds/DemoControlDtcSetting.cpp
+                        src/uds/DemoRoutine.cpp
+                        src/uds/DemoDtcManager.cpp
+                        src/uds/DemoReadDtcInfo.cpp
+                        src/uds/DemoSecurityAccess.cpp
+                        src/uds/DemoWriteVin.cpp)
+        endif ()
     endif ()
 endif ()
 
@@ -23,12 +34,19 @@ if (PLATFORM_SUPPORT_ETHERNET)
         target_sources(app.referenceApp
                        PRIVATE src/systems/DoIpServerSystem.cpp)
     endif ()
+
+    if (PLATFORM_SUPPORT_CAN)
+        target_sources(app.referenceApp PRIVATE src/systems/RoutingSystem.cpp)
+    endif ()
 endif ()
 
 if (PLATFORM_SUPPORT_CAN)
     target_sources(app.referenceApp PRIVATE src/app/CanDemoListener.cpp)
     if (PLATFORM_SUPPORT_TRANSPORT)
-        target_sources(app.referenceApp PRIVATE src/systems/DoCanSystem.cpp)
+        target_sources(
+            app.referenceApp
+            PRIVATE src/systems/DoCanSystem.cpp
+                    src/can/DoCanMultiAddressingTransportLayer.cpp)
     endif ()
 endif ()
 
@@ -75,6 +93,7 @@ target_link_libraries(
             osRtos
             asyncRtosImpl
             util
+            time
             runtime
             safeLifecycle
             safeUtils
@@ -103,6 +122,10 @@ if (PLATFORM_SUPPORT_ETHERNET)
     if (PLATFORM_SUPPORT_TRANSPORT)
         target_link_libraries(app.referenceApp PRIVATE doip)
     endif ()
+
+    if (PLATFORM_SUPPORT_CAN)
+        target_link_libraries(app.referenceApp PRIVATE blob routing)
+    endif ()
 endif ()
 
 if (PLATFORM_SUPPORT_STORAGE)
@@ -111,6 +134,15 @@ endif ()
 
 if (PLATFORM_SUPPORT_ROM_CHECK)
     target_link_libraries(app.referenceApp PRIVATE safeMemory)
+endif ()
+
+if (PLATFORM_SUPPORT_MIDDLEWARE)
+    # --whole-archive is required because AllocatorSelectorDefinitions.cpp
+    # registers allocator callbacks into middleware::memory that are not
+    # directly referenced by app.referenceApp symbols.
+    target_link_libraries(
+        app.referenceApp PRIVATE -Wl,--whole-archive middlewareConfiguration
+                                 -Wl,--no-whole-archive)
 endif ()
 
 if (BUILD_RUST)

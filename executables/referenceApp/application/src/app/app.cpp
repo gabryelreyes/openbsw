@@ -42,7 +42,11 @@
 #include "systems/DoIpServerSystem.h"
 #endif // PLATFORM_SUPPORT_TRANSPORT
 #endif // PLATFORM_SUPPORT_ETHERNET
-       //
+
+#if defined(PLATFORM_SUPPORT_ETHERNET) && defined(PLATFORM_SUPPORT_CAN)
+#include "systems/RoutingSystem.h"
+#endif // defined(PLATFORM_SUPPORT_ETHERNET) && defined(PLATFORM_SUPPORT_CAN)
+
 #if defined(PLATFORM_SUPPORT_CAN) && defined(PLATFORM_SUPPORT_TRANSPORT)
 #include "systems/DoCanSystem.h"
 #endif // defined(PLATFORM_SUPPORT_CAN) && defined(PLATFORM_SUPPORT_TRANSPORT)
@@ -58,6 +62,7 @@
 #include <async/AsyncBinding.h>
 #include <lifecycle/LifecycleLogger.h>
 #include <lifecycle/LifecycleManager.h>
+#include <time/TimestampProvider.h>
 
 #include <cstdio>
 
@@ -66,6 +71,10 @@
 
 #include <BswLogger.h>
 #include <rust_hello_world.h>
+#endif
+
+#ifdef PLATFORM_SUPPORT_MIDDLEWARE
+#include "MemoryLayout.h"
 #endif
 
 alignas(32)::async::internal::Stack<safety_task_stackSize> safetyStack;
@@ -126,7 +135,8 @@ AsyncRuntimeMonitor runtimeMonitor{
 
 LifecycleManager lifecycleManager{
     TASK_SYSADMIN,
-    ::lifecycle::LifecycleManager::GetTimestampType::create<&getSystemTimeUs32Bit>()};
+    ::lifecycle::LifecycleManager::GetTimestampType::create<
+        &::bsw::time::TimestampProvider::getTimestampUs32Bit>()};
 
 ::etl::typed_storage<::systems::RuntimeSystem> runtimeSystem;
 ::etl::typed_storage<::systems::SysAdminSystem> sysAdminSystem;
@@ -135,6 +145,10 @@ LifecycleManager lifecycleManager{
 #ifdef PLATFORM_SUPPORT_ETHERNET
 ::etl::typed_storage<::systems::EthernetSystem> ethernetSystem;
 #endif // PLATFORM_SUPPORT_ETHERNET
+
+#if defined(PLATFORM_SUPPORT_ETHERNET) && defined(PLATFORM_SUPPORT_CAN)
+::etl::typed_storage<::systems::RoutingSystem> routingSystem;
+#endif // defined(PLATFORM_SUPPORT_ETHERNET) && defined(PLATFORM_SUPPORT_CAN)
 
 #ifdef PLATFORM_SUPPORT_TRANSPORT
 ::etl::typed_storage<::transport::TransportSystem> transportSystem;
@@ -253,6 +267,10 @@ void run()
 
 void startApp()
 {
+#ifdef PLATFORM_SUPPORT_MIDDLEWARE
+    ::middleware::shm::createMemoryLayout();
+#endif
+
 #if TRACING
     runtime::Tracer::init();
     runtime::Tracer::start();
@@ -300,16 +318,22 @@ void startApp()
         "doipServer",
         doipServerSystem.create(
             *transportSystem,
-            ethernetSystem->netifConfigRegistry,
+            ::shed::get<::systems::NetifConfigRegistry>(ethernetSystem->netifs).value,
             TASK_ETHERNET,
             ::busid::ETH_0,
             LOGICAL_ADDRESS,
             ::ethX::MAC_ADDRESS,
-            ethernetSystem->netifs.networkInterfaceConfigsIp4[0].broadcastAddress()), // ETH0
+            ::shed::get<::ip::NetworkInterfaceConfig>(ethernetSystem->netifs)[0]
+                .broadcastAddress()), // ETH0
         6U);
 #endif
 
-    /* runlevel 7 */
+#if defined(PLATFORM_SUPPORT_ETHERNET) && defined(PLATFORM_SUPPORT_CAN)
+    lifecycleManager.addComponent(
+        "routing", routingSystem.create(TASK_ETHERNET, ::systems::getCanSystem()), 6U);
+#endif
+
+/* runlevel 7 */
 #if defined(PLATFORM_SUPPORT_TRANSPORT) && defined(PLATFORM_SUPPORT_UDS)
     lifecycleManager.addComponent(
         "uds", udsSystem.create(lifecycleManager, *transportSystem, TASK_UDS, LOGICAL_ADDRESS), 7U);
