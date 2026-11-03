@@ -20,6 +20,8 @@
 #include "interrupts/SuspendResumeAllInterruptsScopedLock.h"
 #include "mcu/mcu.h"
 
+#include <etl/platform.h>
+
 namespace
 {
 uint32_t const DWT_FREQ_MHZ_RUN = 48U; // FIRC core clock after reset
@@ -43,7 +45,7 @@ uint32_t volatile& DEMCR      = *reinterpret_cast<uint32_t volatile*>(0xE000EDFC
 // through all getSomething() functions
 uint64_t updateTicks()
 {
-    const ESR_UNUSED interrupts::SuspendResumeAllInterruptsScopedLock lock;
+    ETL_MAYBE_UNUSED const interrupts::SuspendResumeAllInterruptsScopedLock lock;
     uint32_t const curDwt = DWT_CYCCNT;
     state.ticks += static_cast<uint32_t>((curDwt - state.lastDwt) / state.dwtTicksRatio);
     state.lastDwt = curDwt;
@@ -56,7 +58,7 @@ extern "C"
 {
 void initSystemTimer()
 {
-    const ESR_UNUSED interrupts::SuspendResumeAllInterruptsScopedLock lock;
+    ETL_MAYBE_UNUSED const interrupts::SuspendResumeAllInterruptsScopedLock lock;
 
     DEMCR = DEMCR | 0x01000000U;
     // The Cortex-M7 DWT is protected by a lock access register.
@@ -95,7 +97,7 @@ uint32_t getFastTicks(void) { return DWT_CYCCNT; }
 
 uint32_t getFastTicksPerSecond(void)
 {
-    const ESR_UNUSED interrupts::SuspendResumeAllInterruptsScopedLock lock;
+    ETL_MAYBE_UNUSED const interrupts::SuspendResumeAllInterruptsScopedLock lock;
     return state.dwtFreqMhz * 1000000;
 }
 

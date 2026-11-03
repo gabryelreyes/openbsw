@@ -8,7 +8,7 @@
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
 
-#include "platform/estdint.h"
+#include <cstdint>
 
 // TODO (Phase 2, doc/dev/s32k344_integration_plan.md): route the console
 // through the LPUART driver, as done on the S32K148EVB.
