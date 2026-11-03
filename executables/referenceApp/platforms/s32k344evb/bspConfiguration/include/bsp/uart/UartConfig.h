@@ -12,9 +12,10 @@
 
 /* Terminal UART of the S32K3X4EVB-T172: LPUART6 on the OpenSDA VCOM port
  * (PTA15 = LPUART6_RX, PTA16 = LPUART6_TX), 115200 baud.
- * LPUART0..7 are clocked from AIPS_PLAT_CLK (80 MHz, see bspClock). */
+ * Only LPUART0 and LPUART8 run from AIPS_PLAT_CLK (80 MHz); LPUART6 is
+ * clocked from AIPS_SLOW_CLK (40 MHz, see bspClock). */
 #define UART_TERMINAL_INSTANCE IP_LPUART_6
-#define UART_TERMINAL_CLOCK_HZ 80000000U
+#define UART_TERMINAL_CLOCK_HZ 40000000U
 #define UART_TERMINAL_BAUD     115200U
 
 namespace bsp
