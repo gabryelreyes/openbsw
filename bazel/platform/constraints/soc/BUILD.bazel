@@ -29,6 +29,18 @@ config_setting(
 )
 
 constraint_value(
+    name = "s32k344",
+    constraint_setting = ":soc",
+    visibility = ["//visibility:public"],
+)
+
+config_setting(
+    name = "is_s32k344",
+    constraint_values = [":s32k344"],
+    visibility = ["//visibility:public"],
+)
+
+constraint_value(
     name = "stm32g4",
     constraint_setting = ":soc",
     visibility = ["//visibility:public"],

@@ -1,0 +1,67 @@
+# *******************************************************************************
+# Copyright (c) 2026 Accenture
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0
+#
+# SPDX-License-Identifier: Apache-2.0
+# *******************************************************************************
+
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+genrule(
+    name = "generate_linkerscript",
+    srcs = ["linkerscript/application.dld.in"],
+    outs = ["application.dld"],
+    cmd = "$(CC) $(CC_FLAGS) -E -P -x c -I $$(dirname $(location linkerscript/application.dld.in)) $(location linkerscript/application.dld.in) -o $@",
+    target_compatible_with = ["//bazel/platform/constraints/soc:s32k344"],
+    toolchains = [
+        "@bazel_tools//tools/cpp:current_cc_toolchain",
+        "@bazel_tools//tools/cpp:cc_flags",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "start_up_asm",
+    srcs = ["src/bsp/startUp.S"],
+    target_compatible_with = [
+        "//bazel/platform/constraints/soc:s32k344",
+        "@platforms//os:none",
+    ],
+    visibility = ["//visibility:public"],
+    # Force-link needed because the vector table is referenced by address, not symbol.
+    alwayslink = True,
+)
+
+cc_library(
+    name = "freertos_os_hooks",
+    srcs = ["src/osHooks/freertos/osHooks.cpp"],
+    implementation_deps = [
+        "//libs/3rdparty/etl",
+        "//libs/3rdparty/freeRtos:freertos_headers",
+    ],
+    target_compatible_with = ["//bazel/platform/constraints/soc:s32k344"],
+    visibility = ["//libs/3rdparty/freeRtos:__pkg__"],
+)
+
+cc_library(
+    name = "main",
+    srcs = [
+        "src/lifecycle/StaticBsp.cpp",
+        "src/main.cpp",
+    ],
+    hdrs = ["include/lifecycle/StaticBsp.h"],
+    implementation_deps = [
+        ":start_up_asm",
+        "//executables/referenceApp/platforms/s32k344evb/bspConfiguration:bsp_configuration",
+        "//executables/referenceApp/safety/safeSupervisor:safe_supervisor",
+        "//libs/bsw/bsp",
+        "//libs/bsw/lifecycle",
+        "//platforms/s32k3xx/3rdparty/freertos_cm7_sysTick:freertos_cm7_sys_tick",
+    ],
+    strip_include_prefix = "include",
+    target_compatible_with = ["//bazel/platform/constraints/soc:s32k344"],
+    visibility = ["//visibility:public"],
+)
