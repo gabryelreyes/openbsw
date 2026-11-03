@@ -19,7 +19,7 @@ extern "C"
 {
 /**
  * Called from the startup code before the C/C++ runtime is initialized.
- * TODO (Phase 2, doc/dev/s32k344_integration_plan.md): disable the SWT0
+ * TODO (Phase 2, doc/dev/platforms/s32k344evb/index.rst): disable the SWT0
  * watchdog, configure the clock tree (MC_ME/MC_CGM/PLL, 160 MHz) and enable
  * the instruction and data caches.
  */

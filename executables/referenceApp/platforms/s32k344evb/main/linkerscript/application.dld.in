@@ -13,7 +13,7 @@ STACK_SIZE = DEFINED(__stack_size__) ? __stack_size__ : 0x00000400;
  * and are not accessible by the application core. The ITCM (64 KB at
  * 0x00000000) is not used yet.
  *
- * TODO (Phase 2, doc/dev/s32k344_integration_plan.md): place an IVT for the
+ * TODO (Phase 2, doc/dev/platforms/s32k344evb/index.rst): place an IVT for the
  * BAF at the program flash base so the application boots from a power cycle;
  * until then the image is started via debugger. */
 PFLASH_START = 0x00400000;

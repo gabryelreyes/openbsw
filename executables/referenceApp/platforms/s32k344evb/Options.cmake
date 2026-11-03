@@ -14,7 +14,7 @@ set(S32K3_CHIP
     "S32K344"
     CACHE STRING "S32K3 chip on the board")
 
-# Platform bring-up is done in phases (see doc/dev/s32k344_integration_plan.md).
+# Platform bring-up is done in phases (see doc/dev/platforms/s32k344evb/index.rst).
 # Features are switched on as the corresponding BSP drivers become available.
 set(PLATFORM_SUPPORT_IO
     OFF
@@ -25,6 +25,9 @@ set(PLATFORM_SUPPORT_CAN
 set(PLATFORM_SUPPORT_ETHERNET
     OFF
     CACHE BOOL "Turn ethernet support on or off" FORCE)
+set(PLATFORM_SUPPORT_IPV6
+    OFF
+    CACHE BOOL "Turn IPv6 support on or off" FORCE)
 set(PLATFORM_SUPPORT_TRANSPORT
     OFF
     CACHE BOOL "Turn TRANSPORT support on or off" FORCE)
@@ -43,3 +46,6 @@ set(PLATFORM_SUPPORT_STORAGE
 set(PLATFORM_SUPPORT_ROM_CHECK
     OFF
     CACHE BOOL "Turn ROM check support off" FORCE)
+set(PLATFORM_SUPPORT_MIDDLEWARE
+    OFF
+    CACHE BOOL "Turn middleware service demo support on or off" FORCE)

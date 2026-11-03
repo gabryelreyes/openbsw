@@ -22,7 +22,7 @@ if (BUILD_TARGET_RTOS STREQUAL "FREERTOS")
     target_link_libraries(main PRIVATE freeRtosCm7SysTick)
     add_library(osHooks src/osHooks/freertos/osHooks.cpp)
     target_include_directories(osHooks PRIVATE include)
-    target_link_libraries(osHooks PRIVATE freeRtosCm7SysTick)
+    target_link_libraries(osHooks PRIVATE common freeRtosCm7SysTick)
 endif ()
 
 set(LINKERSCRIPT_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/linkerscript")

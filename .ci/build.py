@@ -120,6 +120,13 @@ commands = {
         platforms=["arm"],
         build_dir="build/s32k148-threadx",
     ),
+    "s32k344-freertos": BuildOpTpl(
+        config_cmd="cmake --preset s32k344-freertos",
+        build_cmd="cmake --build --preset s32k344-freertos",
+        configs=["Debug", "Release", "RelWithDebInfo"],
+        platforms=["arm"],
+        build_dir="build/s32k344-freertos",
+    ),
     "nucleo-g474re-freertos": BuildOpTpl(
         config_cmd="cmake --preset nucleo-g474re-freertos",
         build_cmd="cmake --build --preset nucleo-g474re-freertos",

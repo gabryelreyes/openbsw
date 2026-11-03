@@ -8,7 +8,7 @@
 
 /* Vector table: 16 system exceptions + 213 external interrupts (see
  * NUMBER_OF_INT_VECTORS in S32K344_COMMON.h).
- * TODO (Phase 2, doc/dev/s32k344_integration_plan.md): name the peripheral
+ * TODO (Phase 2, doc/dev/platforms/s32k344evb/index.rst): name the peripheral
  * interrupt handlers as they get implemented (CAN, LPUART, ...), and route
  * the fault exceptions to the hardFaultHandler module. */
     .section .isr_vector, "a"
@@ -83,7 +83,7 @@ Reset_Handler:
      * The S32K344 SRAM and TCMs are ECC protected and must be initialized
      * with aligned 64-bit writes before the first read access - including
      * the stack, so this loop must run before any stack usage.
-     * TODO (Phase 2, doc/dev/s32k344_integration_plan.md): cover standby RAM
+     * TODO (Phase 2, doc/dev/platforms/s32k344evb/index.rst): cover standby RAM
      * and ITCM when they get used. */
     movs r2, #0
     movs r3, #0
