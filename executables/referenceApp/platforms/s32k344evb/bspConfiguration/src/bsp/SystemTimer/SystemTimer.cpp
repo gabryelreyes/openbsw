@@ -60,7 +60,7 @@ void initSystemTimer()
 {
     ETL_MAYBE_UNUSED const interrupts::SuspendResumeAllInterruptsScopedLock lock;
 
-    DEMCR = DEMCR | 0x01000000U;
+    DEMCR      = DEMCR | 0x01000000U;
     // The Cortex-M7 DWT is protected by a lock access register.
     DWT_LAR    = 0xC5ACCE55U;
     DWT_CYCCNT = 0;
