@@ -1,0 +1,49 @@
+# *******************************************************************************
+# Copyright (c) 2026 Accenture
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0
+#
+# SPDX-License-Identifier: Apache-2.0
+# *******************************************************************************
+
+"""
+Build configuration flag mirroring CMake's BUILD_EXECUTABLE variable.
+Selects between application build variants (reference_app / unit_test).
+
+- Set via --//bazel/config/build_variant=<value>
+- Defaults to "reference_app"
+- Set to "unit_test" via the posix_unit_test platform (bazel test) in .bazelrc
+"""
+
+load("@bazel_skylib//rules:common_settings.bzl", "string_flag")
+
+string_flag(
+    name = "build_variant",
+    build_setting_default = "reference_app",
+    values = [
+        "middleware_simulation",
+        "reference_app",
+        "unit_test",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+config_setting(
+    name = "middleware_simulation",
+    flag_values = {":build_variant": "middleware_simulation"},
+    visibility = ["//visibility:public"],
+)
+
+config_setting(
+    name = "reference_app",
+    flag_values = {":build_variant": "reference_app"},
+    visibility = ["//visibility:public"],
+)
+
+config_setting(
+    name = "unit_test",
+    flag_values = {":build_variant": "unit_test"},
+    visibility = ["//visibility:public"],
+)

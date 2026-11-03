@@ -10,11 +10,12 @@ add_executable(
     src/logger/DefaultLoggerTimeTest.cpp
     src/logger/EntryBufferTest.cpp
     src/logger/EntrySerializerTest.cpp
+    src/logger/LoggerInterfaceLifetimeTest.cpp
     src/logger/PersistentComponentConfigTest.cpp
     src/logger/SharedStreamEntryOutputTest.cpp)
 
 target_include_directories(loggerTest PRIVATE)
 
-target_link_libraries(loggerTest PRIVATE logger loggerMock util)
+target_link_libraries(loggerTest PRIVATE logger loggerMock util gmock_main)
 
 gtest_discover_tests(loggerTest PROPERTIES LABELS "loggerTest")

@@ -30,7 +30,7 @@ add_library(
 
 target_include_directories(util PUBLIC include)
 
-target_link_libraries(util PUBLIC etl platform)
+target_link_libraries(util PUBLIC etl)
 
 if (BUILD_EXECUTABLE STREQUAL "unitTest")
     add_library(utilMock mock/gmock/src/util/StdIoMock.cpp
@@ -38,7 +38,5 @@ if (BUILD_EXECUTABLE STREQUAL "unitTest")
 
     target_include_directories(utilMock PUBLIC mock/gmock/include)
 
-    target_link_libraries(utilMock PUBLIC util etl)
-
-    target_compile_definitions(util PUBLIC ESTD_HAS_EXCEPTIONS)
+    target_link_libraries(utilMock PUBLIC util etl gmock)
 endif ()

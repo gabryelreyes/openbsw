@@ -10,6 +10,7 @@
 
 #pragma once
 
+#include <etl/absolute.h>
 #include <etl/limits.h>
 #include <etl/platform.h>
 
@@ -61,16 +62,15 @@ enum class HRESULT : uint8_t
     FutureNotFound                              = 0xEEU,
     SkeletonWithThisServiceIdAlreadyRegistered  = 0xEDU,
     ResponseBufferFutureNotFound                = 0xECU,
-    NoClientsAvailable                          = 0xEBU,
-    ServiceBusy                                 = 0xEAU,
-    ServiceMemberIdNotFound                     = 0xE9U,
-    EventNotSendSuccessfully                    = 0xE8U,
-    RoutingError                                = 0xE7U,
-    InvalidPayload                              = 0xE6U,
-    InvalidRecipientCluster                     = 0xE5U,
-    UnchangedValueNotSent                       = 0xE4U,
-    DebouncedValueNotSent                       = 0xE3U,
-    TimingValueNotSent                          = 0xE2U,
+    ServiceBusy                                 = 0xEBU,
+    ServiceMemberIdNotFound                     = 0xEAU,
+    EventNotSendSuccessfully                    = 0xE9U,
+    RoutingError                                = 0xE8U,
+    InvalidPayload                              = 0xE7U,
+    InvalidRecipientCluster                     = 0xE6U,
+    UnchangedValueNotSent                       = 0xE5U,
+    DebouncedValueNotSent                       = 0xE4U,
+    TimingValueNotSent                          = 0xE3U,
     Ok                                          = 0x00U
 };
 
@@ -81,14 +81,16 @@ enum class HRESULT : uint8_t
  */
 struct AbsoluteToleranceEqual
 {
+    // ETL's absolute is used instead of std::fabs because newlib's fabs() is not constexpr,
+    // which would prevent these comparison operators from remaining constexpr.
     constexpr bool operator()(double const x, double const y) const
     {
-        return std::fabs(x - y) <= ::etl::numeric_limits<double>::min();
+        return ::etl::absolute(x - y) <= ::etl::numeric_limits<double>::min();
     }
 
     constexpr bool operator()(float const x, float const y) const
     {
-        return std::fabs(x - y) <= ::etl::numeric_limits<float>::min();
+        return ::etl::absolute(x - y) <= ::etl::numeric_limits<float>::min();
     }
 };
 

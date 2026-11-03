@@ -12,6 +12,9 @@
 
 #include "util/format/AttributedString.h"
 
+#include <etl/array.h>
+#include <etl/span.h>
+
 #include <cstdint>
 
 namespace util
@@ -168,30 +171,35 @@ private:
         {
             if (_attributes.isAttributed())
             {
-                writeAttributes(writer, &_resetFormatCode, 1U);
+                writeAttributes(writer, ::etl::span<uint8_t const>(&_resetFormatCode, 1U), 1U);
             }
             _attributes = attributes;
-            uint8_t codeBuffer[2U + NUMBER_OF_FORMATS];
-            writeAttributes(writer, codeBuffer, getFormatCodes(attributes, codeBuffer));
+            ::etl::array<uint8_t, 2U + NUMBER_OF_FORMATS> codeBuffer{};
+            writeAttributes(
+                writer,
+                ::etl::span<uint8_t const>(codeBuffer),
+                getFormatCodes(attributes, ::etl::span<uint8_t>(codeBuffer)));
         }
     }
 
     template<class Writer>
-    static void
-    writeAttributes(Writer& writer, uint8_t const* const formatCodes, uint8_t const length)
+    static void writeAttributes(
+        Writer& writer, ::etl::span<uint8_t const> const formatCodes, uint8_t const length)
     {
         if (length > 0U)
         {
             (void)writer.write("\x1b[");
             for (uint8_t i = 0U; i < length; ++i)
             {
+                // NOLINTNEXTLINE(cppcoreguidelines-pro-type-vararg): Writer exposes a printf API
                 (void)writer.write((i != 0U) ? ";" : nullptr).printf("%d", formatCodes[i]);
             }
             (void)writer.write("m");
         }
     }
 
-    static uint8_t getFormatCodes(StringAttributes const& attributes, uint8_t* formatCodeBuffer);
+    static uint8_t
+    getFormatCodes(StringAttributes const& attributes, ::etl::span<uint8_t> formatCodeBuffer);
 
     static uint8_t const _resetFormatCode;
 

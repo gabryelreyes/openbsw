@@ -1,22 +1,28 @@
-build:s32k148_gcc --platforms=//bazel/platform:s32k148
-# Default to gcc
-build:s32k148 --config=s32k148_gcc
-# Platform feature defines (CMake root add_compile_definitions(PLATFORM_SUPPORT_*=1) from
-# platforms/s32k148evb/Options.cmake). Global to the s32k148 build, like on the CMake side.
-build:s32k148 --copt=-DPLATFORM_SUPPORT_IO=1
+# Each named config selects a target platform. All platform definitions
+# live in //bazel/platform/BUILD.bazel.
+# Compilation mode may be selected via the command line: -c dbg, -c opt,
+# or the default fastbuild, which maps to RelWithDebInfo for ARM targets.
 
-# TODO: Temporary config only needed for artifact analysis
-# Make Bazel's build match CMake s32k148-freertos-gcc default config
-build:s32k148_relwithdebinfo --config=s32k148
-build:s32k148_relwithdebinfo --copt=-g3
-build:s32k148_relwithdebinfo --copt=-O2
-build:s32k148_relwithdebinfo --copt=-DNDEBUG
-build:s32k148_threadx --config=s32k148
-build:s32k148_threadx --//bazel/config/rtos=threadx
+# Default platform: plain bazel build //... targets the Linux host.
+build --platforms=//bazel/platform:posix
 
-# Select the ETL profile for builds inside the OpenBSW repo based on executable_config (mirrors
-# CMake BUILD_EXECUTABLE). This ONLY applies when OpenBSW is the root module. Downstream consumers 
-# keep the vendored ETL default (:no_profile) and must set --//libs/3rdparty/etl:etl_profile to 
-# the desired etl_profile instace.
-build --//libs/3rdparty/etl:etl_profile=//bazel/config/etl:etl_profile
-test --//bazel/config/executable_config=unit_test
+# ARM embedded S32K148 Cortex-M4. Each config pairs the hardware with an RTOS.
+# FreeRTOS is the default. ThreadX is an alternative.
+build:s32k148         --platforms=//bazel/platform:s32k148
+build:s32k148_threadx --platforms=//bazel/platform:s32k148_threadx
+
+# ARM embedded STM32 Cortex-M4.
+build:stm32g4 --platforms=//bazel/platform:stm32g4
+build:stm32f4 --platforms=//bazel/platform:stm32f4
+
+# These configs compile and run on the Linux host. The chip-constrained
+# variants carry a SoC constraint so that chip-family BSP implementations
+# resolve during test builds.
+build:posix             --platforms=//bazel/platform:posix
+build:posix_unit_test   --platforms=//bazel/platform:posix_unit_test
+build:stm32g4_unit_test --platforms=//bazel/platform:stm32g4_unit_test
+build:stm32f4_unit_test --platforms=//bazel/platform:stm32f4_unit_test
+
+# bazel test //... runs unit tests on the Linux host. Hardware drivers
+# are replaced by mocks and test targets become available for execution.
+test --platforms=//bazel/platform:posix_unit_test

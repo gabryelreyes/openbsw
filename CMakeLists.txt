@@ -55,7 +55,7 @@ message(STATUS "Target RTOS: <${BUILD_TARGET_RTOS}>")
 # platform features.
 get_cmake_property(_all_vars VARIABLES)
 foreach (var ${_all_vars})
-    if (var MATCHES "^PLATFORM_SUPPORT_")
+    if (var MATCHES "^PLATFORM_SUPPORT_" OR var MATCHES "^PLATFORM_CAN")
         if (${var})
             add_compile_definitions(${var}=1)
             message(STATUS "${var} ON")
@@ -65,7 +65,7 @@ endforeach ()
 
 project(
     "Eclipse OpenBSW"
-    VERSION 0.1.0
+    VERSION 2026.10.0
     DESCRIPTION
         "BSW workspace with reference application for multiple platforms"
     LANGUAGES C CXX ASM)
@@ -83,6 +83,16 @@ add_compile_options(
     ]]
     "$<$<COMPILE_LANG_AND_ID:CXX,GNU>:-Wno-error=stringop-overflow;-Wno-error=maybe-uninitialized>"
 )
+
+#[[
+    Host Clang builds use libc++ instead of libstdc++. libstdc++'s C++23 headers
+    (e.g. the tuple-like std::tuple constructor) are not compatible with all
+    supported Clang versions. GCC builds keep using libstdc++.
+]]
+if (NOT CMAKE_CROSSCOMPILING AND CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    add_compile_options("$<$<COMPILE_LANGUAGE:CXX>:-stdlib=libc++>")
+    add_link_options(-stdlib=libc++)
+endif ()
 
 # Rust support Note: Only one static Rust library can be linked in the final
 # binary, otherwise the linker will complain about duplicate symbol definitions
@@ -167,6 +177,7 @@ if (BUILD_EXECUTABLE STREQUAL "unitTest")
         add_subdirectory(libs/bsw/bsp/test)
         add_subdirectory(libs/bsw/cpp2can/test)
         add_subdirectory(libs/bsw/cpp2ethernet/test)
+        add_subdirectory(libs/bsw/cpp2someip/test)
         add_subdirectory(libs/bsw/docan/test)
         add_subdirectory(libs/bsw/doip/test)
         add_subdirectory(libs/bsw/io/examples)
@@ -176,7 +187,7 @@ if (BUILD_EXECUTABLE STREQUAL "unitTest")
         add_subdirectory(libs/bsw/logger/test)
         add_subdirectory(libs/bsw/lwipSocket/test)
         add_subdirectory(libs/bsw/middleware/test)
-        add_subdirectory(libs/bsw/platform/test)
+        add_subdirectory(libs/bsw/middleware/doc/examples)
         add_subdirectory(libs/bsw/routing/test)
         add_subdirectory(libs/bsw/runtime/test)
         add_subdirectory(libs/bsw/shed/test)

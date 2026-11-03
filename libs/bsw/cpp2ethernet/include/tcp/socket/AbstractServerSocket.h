@@ -12,7 +12,7 @@
 
 #include "tcp/socket/ISocketProvidingConnectionListener.h"
 
-#include <platform/estdint.h>
+#include <cstdint>
 
 /**
  * contains TCP abstraction layer related code
@@ -92,6 +92,8 @@ public:
     }
 
 protected:
+    ~AbstractServerSocket() = default;
+
     /** AbstractServerSockets port */
     uint16_t _port;
     /** reference to ISocketProvidingConnectionListener */

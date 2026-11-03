@@ -8,6 +8,10 @@ add_library(
     src/can/filter/MaskFilter.cpp
     src/can/transceiver/AbstractCANTransceiver.cpp)
 
+if (PLATFORM_SUPPORT_CAN AND PLATFORM_CAN0_USE_FD)
+    target_compile_definitions(cpp2can PUBLIC CPP2CAN_USE_64_BYTE_FRAMES)
+endif ()
+
 target_include_directories(cpp2can PUBLIC include)
 
 target_link_libraries(
@@ -21,5 +25,8 @@ if (BUILD_EXECUTABLE STREQUAL "unitTest")
 
     target_include_directories(cpp2canMock PUBLIC mock/include)
 
-    target_link_libraries(cpp2canMock PRIVATE bspMock cpp2can gmock_main)
+    target_link_libraries(
+        cpp2canMock
+        PUBLIC cpp2can gmock
+        PRIVATE bspMock)
 endif ()

@@ -10,9 +10,6 @@
 
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 
-# CMSIS headers
-# Mirrors CMake `bspMcu` PUBLIC include dirs: `libs/3rdparty/cmsis` and
-# `libs/3rdparty/cmsis/m-profile`.
 cc_library(
     name = "cmsis",
     hdrs = [
@@ -26,6 +23,6 @@ cc_library(
         "m-profile/cmsis_gcc_m.h",
     ],
     strip_include_prefix = ".",
-    target_compatible_with = ["//bazel/platform/constraints/soc:s32k148"],
+    target_compatible_with = ["@platforms//cpu:armv7e-m"],
     visibility = ["//visibility:public"],
 )

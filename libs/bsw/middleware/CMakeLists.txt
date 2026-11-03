@@ -11,6 +11,7 @@ add_library(
     src/middleware/core/IClusterConnectionConfigurationBase.cpp
     src/middleware/core/LoggerApi.cpp
     src/middleware/core/MessagePayloadBuilder.cpp
+    src/middleware/core/MiddlewarePduBase.cpp
     src/middleware/core/ProxyBase.cpp
     src/middleware/core/ResponseBufferBase.cpp
     src/middleware/core/SkeletonBase.cpp

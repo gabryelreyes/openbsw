@@ -13,17 +13,24 @@
 #include <etl/span.h>
 #include <etl/uncopyable.h>
 
-#include <platform/estdint.h>
+#include <cstdint>
 
 namespace logger
 {
 class IPersistenceManager : public ::etl::uncopyable
 {
 public:
+    IPersistenceManager(IPersistenceManager const&)            = delete;
+    IPersistenceManager& operator=(IPersistenceManager const&) = delete;
+    IPersistenceManager(IPersistenceManager&&)                 = delete;
+    IPersistenceManager& operator=(IPersistenceManager&&)      = delete;
+
     virtual bool writeMapping(::etl::span<uint8_t const> const& src) const          = 0;
     virtual ::etl::span<uint8_t const> readMapping(::etl::span<uint8_t> dest) const = 0;
 
 protected:
+    ~IPersistenceManager() = default;
+
     IPersistenceManager() {}
 };
 

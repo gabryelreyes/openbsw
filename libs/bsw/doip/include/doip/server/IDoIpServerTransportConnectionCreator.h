@@ -16,7 +16,8 @@
 #include "doip/server/DoIpServerTransportConnection.h"
 
 #include <etl/ipool.h>
-#include <platform/estdint.h>
+
+#include <cstdint>
 
 namespace tcp
 {
@@ -55,6 +56,11 @@ public:
         = 0;
 
 protected:
+    IDoIpServerTransportConnectionCreator()                                             = default;
+    IDoIpServerTransportConnectionCreator(IDoIpServerTransportConnectionCreator const&) = default;
+    IDoIpServerTransportConnectionCreator(IDoIpServerTransportConnectionCreator&&)      = default;
+    IDoIpServerTransportConnectionCreator& operator=(IDoIpServerTransportConnectionCreator&&)
+        = default;
     ~IDoIpServerTransportConnectionCreator() = default;
     IDoIpServerTransportConnectionCreator& operator=(IDoIpServerTransportConnectionCreator const&)
         = default;

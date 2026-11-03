@@ -13,7 +13,7 @@
 #include <can/transceiver/AbstractCANTransceiver.h>
 #include <io/MemoryQueue.h>
 
-#include <atomic>
+#include <etl/atomic.h>
 
 namespace can
 {
@@ -37,8 +37,10 @@ public:
      */
     struct DeviceConfig
     {
-        char const* name; /// SocketCAN interface name
-        uint8_t busId;    /// currently not used
+        char const* name;         /// SocketCAN interface name
+        uint8_t busId;            /// currently not used
+        bool enableCanFd;         /// open the socket in CAN FD mode and send frames as FD
+        bool enableBitRateSwitch; /// use Bit Rate Switch (data-phase bitrate) on TX FD frames
     };
 
     explicit SocketCanTransceiver(DeviceConfig const& config);
@@ -94,7 +96,7 @@ private:
 
     int _fileDescriptor;
 
-    ::std::atomic_bool _writable;
+    ::etl::atomic_bool _writable;
 };
 
 } // namespace can

@@ -16,7 +16,9 @@
 #include <bsp/clock/boardClock.h>
 // clang-format on
 
-#include <platform/estdint.h>
+#include <cstdint>
+
+#include <etl/infinite_loop.h>
 
 #ifdef SCG_SPLLCSR_SPLLEN_MASK
 #define PLL_AVAILABLE 1
@@ -416,7 +418,7 @@ void fircOff()
     }
     else
     {
-        while (true) {} // panic!
+        etl::infinite_loop(); // panic!
     }
 }
 
@@ -428,7 +430,7 @@ void extOscOff()
     }
     else
     {
-        while (true) {} // panic!
+        etl::infinite_loop(); // panic!
     }
 }
 
@@ -440,7 +442,7 @@ void pllOff()
     }
     else
     {
-        while (true) {} // panic!
+        etl::infinite_loop(); // panic!
     }
 }
 
@@ -503,7 +505,7 @@ void systemClock2Pll()
 
     spllSysClk();
 #else
-    while (true) {} // panic!
+    etl::infinite_loop(); // panic!
 #endif // PLL_AVAILABLE
 }
 } // extern "C"

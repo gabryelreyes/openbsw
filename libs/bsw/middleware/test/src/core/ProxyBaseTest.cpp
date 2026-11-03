@@ -1,5 +1,5 @@
 /********************************************************************************
- * Copyright (c) 2024 Accenture
+ * Copyright (c) 2026 BMW AG
  *
  * This program and the accompanying materials are made available under the
  * terms of the Apache License Version 2.0 which is available at
@@ -36,6 +36,14 @@ public:
     {
         return ProxyBase::initFromInstancesDatabase(
             instanceId, clusterId, ::etl::span<IInstanceDatabase const* const>(INSTANCESDATABASE));
+    }
+
+    HRESULT initEmptyDatabase(uint16_t instanceId, uint8_t clusterId)
+    {
+        return ProxyBase::initFromInstancesDatabase(
+            instanceId,
+            clusterId,
+            ::etl::span<IInstanceDatabase const* const>(EMPTYINSTANCESDATABASE));
     }
 
     uint8_t getProxySourceClusterId() { return ProxyBase::getSourceClusterId(); }
@@ -104,7 +112,7 @@ TEST_F(ProxyBaseTest, TestInitFromDatabaseWithInvalidInstanceId)
     _loggerMock.EXPECT_EVENT_LOG(
         logger::LogLevel::Critical,
         logger::Error::ProxyInitialization,
-        HRESULT::TransceiverInitializationFailed,
+        HRESULT::InstanceNotFound,
         kValidclustid,
         proxy.getServiceId(),
         kInvalidinstanceid);
@@ -112,7 +120,27 @@ TEST_F(ProxyBaseTest, TestInitFromDatabaseWithInvalidInstanceId)
     // ACT & ASSERT
     const HRESULT res = proxy.init(kInvalidinstanceid, kValidclustid);
 
-    EXPECT_EQ(res, HRESULT::TransceiverInitializationFailed);
+    EXPECT_EQ(res, HRESULT::InstanceNotFound);
+    EXPECT_FALSE(proxy.isInitialized());
+}
+
+TEST_F(ProxyBaseTest, TestInitWithEmptyDatabase)
+{
+    // ARRANGE
+    Proxy proxy;
+
+    _loggerMock.EXPECT_EVENT_LOG(
+        logger::LogLevel::Critical,
+        logger::Error::ProxyInitialization,
+        HRESULT::InstanceNotFound,
+        kValidclustid,
+        proxy.getServiceId(),
+        kValidinstanceid);
+
+    // ACT & ASSERT
+    const HRESULT res = proxy.initEmptyDatabase(kValidinstanceid, kValidclustid);
+
+    EXPECT_EQ(res, HRESULT::InstanceNotFound);
     EXPECT_FALSE(proxy.isInitialized());
 }
 

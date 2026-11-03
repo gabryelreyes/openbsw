@@ -8,16 +8,88 @@
 # SPDX-License-Identifier: Apache-2.0
 # *******************************************************************************
 
+load("@bazel_skylib//rules:common_settings.bzl", "bool_flag")
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load("@rules_cc//cc:cc_test.bzl", "cc_test")
+load("//bazel/config/build_variant:compatibility.bzl", "unit_test_only")
+
+_OUTGOING_HEADERS = [
+    "include/uds/application/AbstractDiagApplication.h",
+    "include/uds/connection/IOutgoingDiagConnectionProvider.h",
+    "include/uds/connection/ManagedOutgoingDiagConnection.h",
+    "include/uds/connection/OutgoingDiagConnection.h",
+    "include/uds/connection/OutgoingDiagConnectionManager.h",
+]
+
+_OUTGOING_SOURCES = [
+    "src/uds/application/AbstractDiagApplication.cpp",
+    "src/uds/connection/ManagedOutgoingDiagConnection.cpp",
+    "src/uds/connection/OutgoingDiagConnection.cpp",
+    "src/uds/connection/OutgoingDiagConnectionManager.cpp",
+]
+
+# Override via --//libs/bsw/uds:uds_configuration=<your_uds_config_target>
+label_flag(
+    name = "uds_configuration",
+    build_setting_default = "//bazel/config:no_implementation",
+    visibility = ["//visibility:public"],
+)
+
+# Override via --//libs/bsw/uds:transport_configuration=<your_transport_config_target>
+label_flag(
+    name = "transport_configuration",
+    build_setting_default = "//bazel/config:no_implementation",
+    visibility = ["//visibility:public"],
+)
+
+bool_flag(
+    name = "uds_enable_outgoing",
+    build_setting_default = False,
+    visibility = ["//visibility:public"],
+)
+
+config_setting(
+    name = "uds_enable_outgoing_enabled",
+    flag_values = {":uds_enable_outgoing": "true"},
+)
+
+config_setting(
+    name = "uds_enable_outgoing_disabled",
+    flag_values = {":uds_enable_outgoing": "false"},
+)
+
+cc_library(
+    name = "uds_outgoing_defines",
+    defines = select({
+        ":uds_enable_outgoing_enabled": ["UDS_ENABLE_OUTGOING=1"],
+        ":uds_enable_outgoing_disabled": [],
+    }),
+)
+
+cc_library(
+    name = "uds_unit_test_defines",
+    defines = select({
+        "//bazel/config/build_variant:unit_test": ["UNIT_TEST=1"],
+        "//conditions:default": [],
+    }),
+)
 
 # Circular dependency present on the CMake side: uds -> udsConfiguration -> uds
 # Split off uds_headers to break the circular dependency for Bazel
 cc_library(
     name = "uds_headers",
-    hdrs = glob(["include/**/*.h"]),
+    hdrs = glob(
+        ["include/**/*.h"],
+        exclude = _OUTGOING_HEADERS,
+    ) + select({
+        ":uds_enable_outgoing_enabled": _OUTGOING_HEADERS,
+        ":uds_enable_outgoing_disabled": [],
+    }),
     strip_include_prefix = "include",
     visibility = ["//visibility:public"],
     deps = [
+        ":uds_outgoing_defines",
+        ":uds_unit_test_defines",
         "//libs/3rdparty/etl",
         "//libs/bsw/async:async_headers",
         "//libs/bsw/transport",
@@ -27,14 +99,68 @@ cc_library(
 
 cc_library(
     name = "uds",
-    srcs = glob(["src/**/*.cpp"]),
+    srcs = glob(
+        ["src/**/*.cpp"],
+        exclude = _OUTGOING_SOURCES,
+    ) + select({
+        ":uds_enable_outgoing_enabled": _OUTGOING_SOURCES,
+        ":uds_enable_outgoing_disabled": [],
+    }),
     visibility = ["//visibility:public"],
     deps = [
+        ":transport_configuration",
+        ":uds_configuration",
         ":uds_headers",
-        "//executables/referenceApp/transportConfiguration:transport_configuration",
-        "//executables/referenceApp/udsConfiguration:uds_configuration",
+        ":uds_outgoing_defines",
         "//libs/bsw/async",
         "//libs/bsw/bsp",
         "//libs/bsw/common:configuration",
+    ],
+)
+
+cc_library(
+    name = "uds_with_mock",
+    target_compatible_with = unit_test_only(),
+    visibility = ["//visibility:public"],
+    deps = [
+        ":uds",
+        ":uds_mock",
+    ],
+)
+
+cc_library(
+    name = "uds_mock",
+    srcs = ["mock/gmock/src/uds/session/DiagSessionMock.cpp"],
+    hdrs = glob(["mock/gmock/include/**/*.h"]),
+    implementation_deps = [
+        ":uds_headers",
+    ],
+    strip_include_prefix = "mock/gmock/include",
+    target_compatible_with = unit_test_only(),
+    visibility = ["//visibility:public"],
+    deps = [
+        ":uds_configuration",
+        "//libs/3rdparty/googletest:gtest",
+    ],
+)
+
+cc_test(
+    name = "uds_test",
+    srcs = glob([
+        "test/src/**/*.cpp",
+        "test/mock/src/**/*.cpp",
+        "test/mock/include/**/*.h",
+    ]),
+    includes = ["test/mock/include"],
+    target_compatible_with = unit_test_only(),
+    deps = [
+        ":uds",
+        ":uds_mock",
+        "//executables/unitTest/common:ut_common",
+        "//libs/3rdparty/googletest:gtest_esr_extensions",
+        "//libs/3rdparty/googletest:gtest_main",
+        "//libs/bsw/async:async_mock_impl",
+        "//libs/bsw/transport:transport_mock",
+        "//libs/bsw/util:util_mock",
     ],
 )

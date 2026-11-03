@@ -15,14 +15,14 @@
 
 #include <doip/server/IDoIpServerVehicleAnnouncementParameterProvider.h>
 
-#include <platform/estdint.h>
+#include <cstdint>
 
 namespace doip
 {
 /**
  * Class that holds parameters for vehicle identification service.
  */
-class DoIpServerVehicleIdentificationParameters
+class DoIpServerVehicleIdentificationParameters final
 : public IDoIpServerVehicleAnnouncementParameterProvider
 {
 public:
@@ -35,6 +35,18 @@ public:
      */
     DoIpServerVehicleIdentificationParameters(
         uint16_t announceWaitTimeout, uint16_t announceInterval, uint8_t announceCount);
+
+    ~DoIpServerVehicleIdentificationParameters() = default;
+    DoIpServerVehicleIdentificationParameters(DoIpServerVehicleIdentificationParameters const&)
+        = default;
+    DoIpServerVehicleIdentificationParameters(DoIpServerVehicleIdentificationParameters&&)
+        = default;
+    DoIpServerVehicleIdentificationParameters&
+    operator=(DoIpServerVehicleIdentificationParameters const&)
+        = default;
+    DoIpServerVehicleIdentificationParameters&
+    operator=(DoIpServerVehicleIdentificationParameters&&)
+        = default;
 
     /**
      * Get time to wait for responding to first announcement request or sending broadcast.

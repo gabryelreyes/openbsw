@@ -21,12 +21,10 @@ cc_library(
     strip_include_prefix = "include",
     visibility = ["//visibility:public"],
     deps = [
-        "//libs/bsw/platform",
         "//libs/safety/safeMonitor:safe_monitor",
     ],
 )
 
-# IO support wiring; present only on platforms that provide IO.
 cc_library(
     name = "safe_supervisor_io_support",
     target_compatible_with = ["//bazel/platform/constraints/soc:s32k148"],
@@ -46,12 +44,12 @@ alias(
     }),
 )
 
-alias(
+# Platform-specific MCU target. Set by the platform via its flags so that
+# unit-test and bare-metal platforms each inject the right implementation.
+#   Override: --//executables/referenceApp/safety/safeSupervisor:bsp_mcu=//path/to:bsp_mcu
+label_flag(
     name = "bsp_mcu",
-    actual = select({
-        "//bazel/platform/constraints/soc:s32k148": "//platforms/s32k1xx/bsp/bspMcu:bsp_mcu",
-        "@platforms//os:linux": "//platforms/posix/bsp/bspMcu:bsp_mcu",
-    }),
+    build_setting_default = "//bazel/config:no_implementation",
 )
 
 cc_library(
@@ -67,5 +65,6 @@ cc_library(
     deps = [
         ":bsp_mcu",
         ":safe_supervisor_headers",
+        "//bazel/config/features:feature_defines",
     ],
 )

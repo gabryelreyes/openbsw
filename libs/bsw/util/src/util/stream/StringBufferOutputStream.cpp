@@ -26,8 +26,9 @@ namespace
 {
 size_t boundedStringLength(char const* const value, size_t const maxLength) noexcept
 {
+    ::etl::span<char const> const chars(value, maxLength);
     size_t length = 0U;
-    while ((length < maxLength) && (value[length] != '\0'))
+    while ((length < maxLength) && (chars[length] != '\0'))
     {
         ++length;
     }
@@ -41,8 +42,6 @@ StringBufferOutputStream::StringBufferOutputStream(
 , _buffer(buf)
 , _endOfString((endOfString != nullptr) ? endOfString : "")
 , _ellipsis((ellipsis != nullptr) ? ellipsis : "")
-, _currentIndex(0U)
-, _overflow(false)
 {}
 
 StringBufferOutputStream::~StringBufferOutputStream() noexcept { finalizeBuffer(); }

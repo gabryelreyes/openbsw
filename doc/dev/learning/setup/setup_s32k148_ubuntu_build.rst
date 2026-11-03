@@ -60,12 +60,14 @@ Then, in the base directory run:
 
 .. code-block:: bash
 
-    cmake --preset s32k148-gcc
-    cmake --build --preset s32k148-gcc
+    cmake --preset s32k148-freertos
+    cmake --build --preset s32k148-freertos
 
-The build files should be written to a new subdirectory named ``build/s32k148-gcc``
-and the built executable should be found at ``build/s32k148-gcc/executables/referenceApp/application/RelWithDebInfo/app.referenceApp.elf``
+The build files should be written to a new subdirectory named ``build/s32k148-freertos``
+and the built executable should be found at
+``build/s32k148-freertos/executables/referenceApp/application/RelWithDebInfo/app.referenceApp.elf``
 which you can flash on the S32K148 development board.
+Use the ``s32k148-threadx`` preset to build on top of ThreadX instead of FreeRTOS.
 
 Using the clang toolchain
 -------------------------
@@ -111,12 +113,19 @@ Then, in the base directory run:
 
 .. code-block:: bash
 
-    cmake --preset s32k148-clang
-    cmake --build --preset s32k148-clang
+    cmake --preset s32k148-freertos
+    cmake --build --preset s32k148-freertos
 
-The build files should be written to a new subdirectory named ``build/s32k148-gcc``
-and the built executable should be found at ``build/s32k148-clang/executables/referenceApp/application/RelWithDebInfo/app.referenceApp.elf``
+The same presets are used for both toolchains - the Clang toolchain is selected automatically
+because ``CC``/``CXX`` point to it.
+If you previously built the same preset with GCC, remove the build directory first,
+since a CMake build directory cannot be reused across compilers.
+
+The build files should be written to a new subdirectory named ``build/s32k148-freertos``
+and the built executable should be found at
+``build/s32k148-freertos/executables/referenceApp/application/RelWithDebInfo/app.referenceApp.elf``
 which you can flash on the S32K148 development board.
+Use the ``s32k148-threadx`` preset to build on top of ThreadX instead of FreeRTOS.
 
 Optional: Rust Support
 ----------------------
@@ -137,7 +146,7 @@ Then, with the GCC toolchain environment variables set, build using the Rust pre
 
 .. code-block:: bash
 
-    cmake --preset s32k148-rust-gcc
-    cmake --build --preset s32k148-rust-gcc
+    cmake --preset s32k148-rust
+    cmake --build --preset s32k148-rust
 
 Next :doc:`setup_s32k148_ubuntu_nxpide`

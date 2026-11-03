@@ -13,7 +13,7 @@
  */
 #pragma once
 
-#include <platform/estdint.h>
+#include <cstdint>
 
 namespace doip
 {
@@ -36,6 +36,10 @@ public:
         = 0;
 
 protected:
+    IDoIpVehicleAnnouncementListener()                                                   = default;
+    IDoIpVehicleAnnouncementListener(IDoIpVehicleAnnouncementListener const&)            = default;
+    IDoIpVehicleAnnouncementListener(IDoIpVehicleAnnouncementListener&&)                 = default;
+    IDoIpVehicleAnnouncementListener& operator=(IDoIpVehicleAnnouncementListener&&)      = delete;
     ~IDoIpVehicleAnnouncementListener()                                                  = default;
     IDoIpVehicleAnnouncementListener& operator=(IDoIpVehicleAnnouncementListener const&) = delete;
 };

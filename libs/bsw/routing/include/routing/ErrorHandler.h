@@ -14,12 +14,14 @@
 
 #include <etl/delegate.h>
 #include <ip/IPAddress.h>
-#include <platform/estdint.h>
+
+#include <cstdint>
 
 namespace routing
 {
 struct ErrorHandler
 {
+    // [STATUS_CODES_BEGIN]
     enum class StatusCode : uint8_t
     {
         OK,
@@ -40,6 +42,7 @@ struct ErrorHandler
         // A PDU transport channel received data from an invalid source.
         INVALID_REMOTE_IP_ADDRESS,
     };
+    // [STATUS_CODES_END]
 
     using Function = ::etl::delegate<void(StatusCode, uint8_t, uint32_t)>;
 

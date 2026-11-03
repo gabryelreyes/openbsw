@@ -38,6 +38,7 @@
 
 #ifdef PLATFORM_SUPPORT_ETHERNET
 #include "systems/EthernetSystem.h"
+#include "systems/SomeIpSystem.h"
 #ifdef PLATFORM_SUPPORT_TRANSPORT
 #include "systems/DoIpServerSystem.h"
 #endif // PLATFORM_SUPPORT_TRANSPORT
@@ -68,6 +69,7 @@
 
 #ifdef BUILD_RUST
 #include "app/DemoLogger.h"
+#include "app/rust/RustRuntimeConfig.h"
 
 #include <BswLogger.h>
 #include <rust_hello_world.h>
@@ -97,7 +99,7 @@ extern ::ethernet::IEthernetDriverSystem& getEthernetSystem();
 } // namespace systems
 #endif
 
-#include <platform/estdint.h>
+#include <cstdint>
 
 #ifdef PLATFORM_SUPPORT_ROM_CHECK
 ::safety::RomCheck RomCheck;
@@ -144,6 +146,7 @@ LifecycleManager lifecycleManager{
 ::etl::typed_storage<::systems::SafetySystem> safetySystem;
 #ifdef PLATFORM_SUPPORT_ETHERNET
 ::etl::typed_storage<::systems::EthernetSystem> ethernetSystem;
+::etl::typed_storage<::systems::SomeIpSystem> someIpSystem;
 #endif // PLATFORM_SUPPORT_ETHERNET
 
 #if defined(PLATFORM_SUPPORT_ETHERNET) && defined(PLATFORM_SUPPORT_CAN)
@@ -313,6 +316,10 @@ void startApp()
 #endif
 
     /* runlevel 6 */
+#ifdef PLATFORM_SUPPORT_ETHERNET
+    lifecycleManager.addComponent("someip", someIpSystem.create(TASK_ETHERNET), 6U);
+#endif
+
 #if defined(PLATFORM_SUPPORT_ETHERNET) && defined(PLATFORM_SUPPORT_TRANSPORT)
     lifecycleManager.addComponent(
         "doipServer",
@@ -362,6 +369,10 @@ void startApp()
     // clang-format on
 
     lifecycleManager.transitionToLevel(MaxNumLevels);
+
+#ifdef BUILD_RUST
+    ::app::initRustRuntimes();
+#endif
 
     runtimeMonitor.start();
     idleHandler.start();

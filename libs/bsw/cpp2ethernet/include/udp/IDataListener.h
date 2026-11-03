@@ -12,7 +12,7 @@
 
 #include "ip/IPAddress.h"
 
-#include <platform/estdint.h>
+#include <cstdint>
 
 namespace udp
 {
@@ -27,6 +27,7 @@ class IDataListener
 {
 protected:
     IDataListener();
+    ~IDataListener() = default;
 
 public:
     IDataListener(IDataListener const&)            = delete;

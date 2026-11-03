@@ -9,15 +9,86 @@
 # *******************************************************************************
 
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load("@rules_cc//cc:cc_test.bzl", "cc_test")
+load("//bazel/config/build_variant:compatibility.bzl", "unit_test_only")
 
 cc_library(
     name = "util",
-    srcs = glob(["src/util/**/*.cpp"]),
-    hdrs = glob(["include/**/*.h"]),
+    srcs = glob(
+        ["src/util/**/*.cpp"],
+        exclude = [
+            "src/util/stream/StdinStream.cpp",
+            "src/util/stream/StdoutStream.cpp",
+        ],
+    ),
+    hdrs = glob(
+        ["include/**/*.h"],
+        exclude = [
+            "include/util/stream/StdinStream.h",
+            "include/util/stream/StdoutStream.h",
+        ],
+    ),
     strip_include_prefix = "include",
     visibility = ["//visibility:public"],
     deps = [
         "//libs/3rdparty/etl",
-        "//libs/bsw/platform",
+    ],
+)
+
+# Kept apart from the rest of util because they call stdio functions that
+# only the platform or a mock provides.
+cc_library(
+    name = "util_stdio_streams",
+    srcs = [
+        "src/util/stream/StdinStream.cpp",
+        "src/util/stream/StdoutStream.cpp",
+    ],
+    hdrs = [
+        "include/util/stream/StdinStream.h",
+        "include/util/stream/StdoutStream.h",
+    ],
+    strip_include_prefix = "include",
+    visibility = ["//visibility:public"],
+    deps = [":util"],
+)
+
+cc_library(
+    name = "util_mock",
+    srcs = [
+        "mock/gmock/src/util/StdIoMock.cpp",
+        "mock/gmock/src/util/logger/TestConsoleLogger.cpp",
+    ],
+    hdrs = [
+        "mock/gmock/include/util/StdIoMock.h",
+        "mock/gmock/include/util/estd/function_mock.h",
+        "mock/gmock/include/util/estd/gtest_extensions.h",
+        "mock/gmock/include/util/logger/ComponentMappingMock.h",
+        "mock/gmock/include/util/logger/LoggerOutputMock.h",
+        "mock/gmock/include/util/logger/TestConsoleLogger.h",
+        "mock/gmock/include/util/stream/OutputStreamMock.h",
+        "mock/gmock/include/util/stream/SharedOutputStreamMock.h",
+    ],
+    strip_include_prefix = "mock/gmock/include",
+    target_compatible_with = unit_test_only(),
+    visibility = ["//visibility:public"],
+    deps = [
+        ":util",
+        "//libs/3rdparty/etl",
+        "//libs/3rdparty/googletest:gtest",
+    ],
+)
+
+cc_test(
+    name = "util_test",
+    srcs = glob(["test/src/**/*.cpp"]),
+    copts = ["-Wno-array-bounds"],
+    target_compatible_with = unit_test_only(),
+    visibility = ["//visibility:public"],
+    deps = [
+        ":util",
+        ":util_mock",
+        ":util_stdio_streams",
+        "//libs/3rdparty/etl",
+        "//libs/3rdparty/googletest:gtest_main",
     ],
 )

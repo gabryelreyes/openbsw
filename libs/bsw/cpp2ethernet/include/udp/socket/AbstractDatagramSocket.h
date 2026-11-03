@@ -17,7 +17,7 @@
 
 #include <etl/span.h>
 
-#include <platform/estdint.h>
+#include <cstdint>
 
 namespace udp
 {
@@ -161,6 +161,8 @@ public:
 
     // [AbstractDatagramSocket]
 protected:
+    ~AbstractDatagramSocket() = default;
+
     IDataListener* _dataListener;
     IDataSentListener* _dataSentListener;
 };

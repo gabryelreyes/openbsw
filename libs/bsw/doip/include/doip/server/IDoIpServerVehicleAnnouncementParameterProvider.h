@@ -12,7 +12,7 @@
 
 #include "doip/common/DoIpConstants.h"
 
-#include <platform/estdint.h>
+#include <cstdint>
 
 namespace doip
 {
@@ -43,6 +43,16 @@ public:
     }
 
 protected:
+    IDoIpServerVehicleAnnouncementParameterProvider() = default;
+    IDoIpServerVehicleAnnouncementParameterProvider(
+        IDoIpServerVehicleAnnouncementParameterProvider const&)
+        = default;
+    IDoIpServerVehicleAnnouncementParameterProvider(
+        IDoIpServerVehicleAnnouncementParameterProvider&&)
+        = default;
+    IDoIpServerVehicleAnnouncementParameterProvider&
+    operator=(IDoIpServerVehicleAnnouncementParameterProvider&&)
+        = default;
     ~IDoIpServerVehicleAnnouncementParameterProvider() = default;
     IDoIpServerVehicleAnnouncementParameterProvider&
     operator=(IDoIpServerVehicleAnnouncementParameterProvider const&)

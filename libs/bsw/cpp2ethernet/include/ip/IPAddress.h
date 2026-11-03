@@ -10,12 +10,12 @@
 
 #pragma once
 
+#include <etl/array.h>
 #include <etl/error_handler.h>
 #include <etl/span.h>
 #include <etl/unaligned_type.h>
 
-#include <platform/estdint.h>
-
+#include <cstdint>
 #include <cstring>
 
 namespace ip
@@ -48,7 +48,7 @@ struct IPAddress
         return ::etl::be_uint32_ext_t(&raw[index * sizeof(uint32_t)]);
     }
 
-    uint8_t raw[MAX_IP_LENGTH];
+    ::etl::array<uint8_t, MAX_IP_LENGTH> raw = {};
 };
 
 constexpr IPAddress make_ip4(uint32_t ip4addr);
@@ -58,7 +58,8 @@ IPAddress make_ip4(::etl::span<uint8_t const> const& ip4addr);
 #ifdef PLATFORM_SUPPORT_IPV6
 constexpr IPAddress make_ip6(uint32_t addr0, uint32_t addr1, uint32_t addr2, uint32_t addr3);
 
-constexpr IPAddress make_ip6(uint32_t const ip6addr[IPAddress::IP6LENGTH / sizeof(uint32_t)]);
+constexpr IPAddress
+make_ip6(::etl::span<uint32_t const, IPAddress::IP6LENGTH / sizeof(uint32_t)> ip6addr);
 
 IPAddress make_ip6(::etl::span<uint8_t const> const& ip6addr);
 #endif
@@ -181,7 +182,8 @@ make_ip6(uint32_t const addr0, uint32_t const addr1, uint32_t const addr2, uint3
          static_cast<uint8_t>(addr3)}};
 }
 
-inline constexpr IPAddress make_ip6(uint32_t const ip6addr[IPAddress::IP6LENGTH / sizeof(uint32_t)])
+inline constexpr IPAddress
+make_ip6(::etl::span<uint32_t const, IPAddress::IP6LENGTH / sizeof(uint32_t)> const ip6addr)
 {
     return {
         {static_cast<uint8_t>(ip6addr[0] >> 24),
@@ -387,6 +389,19 @@ inline IPAddress::Family addressFamilyOf([[maybe_unused]] IPAddress const& ipAdd
 inline bool operator==(IPAddress const& ip1, IPAddress const& ip2)
 {
 #ifdef PLATFORM_SUPPORT_IPV6
+    IPAddress::Family const family1 = addressFamilyOf(ip1);
+    IPAddress::Family const family2 = addressFamilyOf(ip2);
+    if (family1 != family2)
+    {
+        return false;
+    }
+
+    if (IPAddress::IPV4 == family1)
+    {
+        // Only the last 32 bits carry the IPv4 payload; the IPv4-mapped prefix was already
+        // verified equal by addressFamilyOf() returning the same family for both operands.
+        return (ip1.be_uint32_at(internal::IP4_IDX) == ip2.be_uint32_at(internal::IP4_IDX));
+    }
     return (
         (ip1.be_uint32_at(3) == ip2.be_uint32_at(3)) && (ip1.be_uint32_at(2) == ip2.be_uint32_at(2))
         && (ip1.be_uint32_at(1) == ip2.be_uint32_at(1))

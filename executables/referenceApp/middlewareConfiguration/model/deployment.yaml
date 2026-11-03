@@ -12,19 +12,19 @@ clusters:
   - &cluster0
     name: Cluster0
     id: 0
-    queue_size: 10
+    queueSize: 10
   - &cluster1
     name: Cluster1
     id: 1
-    queue_size: 10
+    queueSize: 10
 
 # Infrastructure allocators for memory management
 allocators:
   - &default_allocator
     name: default
     pools:
-      - elements: 10
-        chunk_sizes: 64
+      - NumberOfElements: 10
+        ChunkSize: 64
 
 services:
   - &foo
@@ -77,7 +77,6 @@ connections:
   - &cluster0_cluster1
     source_cluster: *cluster0
     target_cluster: *cluster1
-    connection_type: SkeletonOnly
     proxies: []
     skeletons:
       - <<: *foo
@@ -85,7 +84,6 @@ connections:
   - &cluster1_cluster0
     source_cluster: *cluster1
     target_cluster: *cluster0
-    connection_type: ProxyOnly
     proxies:
       - <<: *foo
         max_instances: 1
