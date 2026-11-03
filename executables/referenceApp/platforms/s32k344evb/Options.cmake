@@ -14,9 +14,7 @@ set(S32K3_CHIP
     "S32K344"
     CACHE STRING "S32K3 chip on the board")
 
-# Platform bring-up is done in phases (see
-# doc/dev/platforms/s32k344evb/index.rst). Features are switched on as the
-# corresponding BSP drivers become available.
+# Features are switched on as the corresponding BSP drivers become available.
 set(PLATFORM_SUPPORT_IO
     OFF
     CACHE BOOL "Turn IO support on or off" FORCE)

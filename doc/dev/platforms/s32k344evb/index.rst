@@ -27,8 +27,8 @@ Overview
 Scope
 -----
 
-The platform is being brought up in phases. Phase 1 (the current state) provides a verified
-Cortex-M7 image with no regression to the existing platforms:
+The platform currently provides a verified Cortex-M7 image with no regression to the existing
+platforms:
 
 - startup code with vector table and ECC initialization of SRAM and DTCM,
 - a linker script placing the image in program flash, the main stack in DTCM and data, BSS and
@@ -41,7 +41,7 @@ Not yet available: the console (``stdIo`` discards all output, ``bspUart`` is a 
 the clock tree configuration (the core runs on the default FIRC clock), CAN, IO and the
 persistent storage. The corresponding ``PLATFORM_SUPPORT_*`` options are therefore switched off
 in ``executables/referenceApp/platforms/s32k344evb/Options.cmake`` and get enabled as the drivers
-become available. Open items are marked with ``TODO (Phase 2, ...)`` comments in the sources.
+become available. Open items are marked with ``TODO`` comments in the sources.
 
 The image has no boot header (IVT) for the Boot Assist Firmware yet, so it is started via
 debugger instead of from a power cycle.

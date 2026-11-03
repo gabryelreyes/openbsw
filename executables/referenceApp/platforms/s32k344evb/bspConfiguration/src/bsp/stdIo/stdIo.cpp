@@ -10,8 +10,7 @@
 
 #include <cstdint>
 
-// TODO (Phase 2, doc/dev/platforms/s32k344evb/index.rst): route the console
-// through the LPUART driver, as done on the S32K148EVB.
+// TODO: route the console through the LPUART driver, as done on the S32K148EVB.
 
 extern "C" void putByteToStdout(uint8_t const byte) { (void)byte; }
 

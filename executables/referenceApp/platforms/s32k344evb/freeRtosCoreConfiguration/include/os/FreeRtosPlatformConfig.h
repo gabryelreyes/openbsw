@@ -27,7 +27,7 @@ extern "C"
 {
 #endif
 
-// Default FIRC core clock after reset. TODO (Phase 2): 160 MHz via PLL.
+// Default FIRC core clock after reset. TODO: 160 MHz via PLL.
 #define configCPU_CLOCK_HZ (48000000UL)
 #define configBUS_CLOCK_HZ 24000000UL
 

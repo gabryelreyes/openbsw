@@ -16,7 +16,7 @@ Uart::Uart(Id id) { (void)id; }
 
 size_t Uart::write(::etl::span<uint8_t const> const data)
 {
-    // TODO (Phase 2): transmit via LPUART. The placeholder discards the data.
+    // TODO: transmit via LPUART. The placeholder discards the data.
     return data.size();
 }
 

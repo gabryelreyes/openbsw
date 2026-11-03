@@ -10,8 +10,8 @@
 
 /**
  * System timer based on the Cortex-M7 DWT cycle counter, running on the
- * default FIRC core clock. TODO (Phase 2, doc/dev/platforms/s32k344evb/index.rst):
- * adapt the frequencies once the clock tree is configured to 160 MHz.
+ * default FIRC core clock. TODO: adapt the frequencies once the clock tree is
+ * configured to 160 MHz.
  * \file
  * \ingroup bspConfig
  */

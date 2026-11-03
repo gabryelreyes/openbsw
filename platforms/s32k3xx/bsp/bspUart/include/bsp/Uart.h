@@ -17,8 +17,7 @@ namespace bsp
 /**
  * Placeholder UART for the S32K3xx platform which discards all output and
  * never receives data.
- * TODO (Phase 2, doc/dev/platforms/s32k344evb/index.rst): implement the driver
- * on the LPUART peripheral.
+ * TODO: implement the driver on the LPUART peripheral.
  */
 class Uart
 {

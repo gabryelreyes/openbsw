@@ -19,16 +19,15 @@ extern "C"
 {
 /**
  * Called from the startup code before the C/C++ runtime is initialized.
- * TODO (Phase 2, doc/dev/platforms/s32k344evb/index.rst): disable the SWT0
- * watchdog, configure the clock tree (MC_ME/MC_CGM/PLL, 160 MHz) and enable
- * the instruction and data caches.
+ * TODO: disable the SWT0 watchdog, configure the clock tree (MC_ME/MC_CGM/PLL,
+ * 160 MHz) and enable the instruction and data caches.
  */
 void boardInit() {}
 
 /**
  * Callout from the FreeRTOS port when the scheduler starts to set up
  * application interrupts. Nothing to set up yet - CAN interrupts are
- * configured here from Phase 3 on.
+ * configured here once the CAN driver is available.
  */
 void setupApplicationsIsr(void) {}
 } // extern "C"

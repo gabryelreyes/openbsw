@@ -255,7 +255,7 @@ platform(
 )
 
 # S32K344 app platform. NXP Cortex-M7 with FreeRTOS, targeting the S32K3X4EVB-T172.
-# Phase 1 bring-up: no CAN, IO, Ethernet or storage drivers yet, matching
+# No CAN, IO, Ethernet or storage drivers yet, matching
 # executables/referenceApp/platforms/s32k344evb/Options.cmake.
 platform(
     name = "s32k344",
