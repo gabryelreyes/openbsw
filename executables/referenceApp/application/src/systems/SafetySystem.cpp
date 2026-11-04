@@ -28,7 +28,7 @@ namespace systems
 SafetySystem::SafetySystem(::async::ContextType const context, ::lifecycle::ILifecycleManager&)
 : _context(context)
 , _timeout()
-#ifdef PLATFORM_SUPPORT_IO
+#if defined(PLATFORM_SUPPORT_IO) && defined(PLATFORM_SUPPORT_MPU)
 , _safetyCommand()
 , _asyncCommandWrapperForSafetyCommand(_safetyCommand, context)
 #endif
