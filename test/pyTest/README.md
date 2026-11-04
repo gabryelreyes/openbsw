@@ -126,6 +126,58 @@ For this option...
     This allows the `.gdb` scripts referenced by `target_s32k148.toml` to flash
     the board at the start of `pytest` and to reset the board before each test.
 
+### Running `pytest` with `--target=s32k344`
+
+For this option...
+
+1. Need to have built an image for the `s32k344` target
+
+    To run tests using the `s32k344` you must first have built the image for that target
+    in its expected default location...
+    ```
+    build/s32k344-freertos/executables/referenceApp/application/RelWithDebInfo/app.referenceApp.elf
+    ```
+
+2. Need an [S32K3X4EVB-T172 development board](https://www.nxp.com/design/design-center/development-boards-and-designs/S32K3X4EVB-T172)
+
+    You need to have the board running, connected via USB to your build machine.
+    The console is on the board's OpenSDA virtual COM port at 115200 baud,
+    which `target_s32k344.toml` expects at `/dev/ttyACM0`.
+
+3. Need to have `can0` set up
+
+    `target_s32k344.toml` in this directory specifies `can0`
+    as the name of the `SocketCAN` interface to use
+    to communicate with the S32K344 development board,
+    so this is expected be set up at 500 kbit/s for tests involving `CAN` to pass...
+    ```
+    sudo ip link set can0 up type can bitrate 500000
+    ```
+
+4. Need `pegdbserver_console` up and running
+
+    You need P&E Micro's version of `gdbserver` running and connected to the board...
+    ```
+    sudo ./pegdbserver_console -startserver -device=NXP_S32K3xx_S32K344 -serverport=7224
+    ```
+    This allows the `.gdb` scripts referenced by `target_s32k344.toml` to flash
+    the board at the start of `pytest` and to reset the board before each test.
+
+Note that on this target...
+
+* `console/test_storage.py` fails, because persistent storage is not yet supported on the S32K344.
+* The `enet` and `middleware` suites do not apply, since Ethernet and the middleware demo
+  are not enabled for the S32K344.
+* There is no `[hw_tester_serial]` configuration for this board yet, so tests with the fixture `hw_tester` are skipped.
+
+For example...
+```
+pytest --target=s32k344 --ignore=console/test_storage.py console can docan uds
+```
+
+See the S32K344 GDB server setup page in the documentation (`doc/dev/learning/setup/setup_s32k344_gdbserver.rst`)
+for further details, including a Windows/WSL setup.
+
 ### Running `pytest` with `--target=s32k148_with_hwtester`
 
 For this option, you need everything set up as for `--target=s32k148` **and**

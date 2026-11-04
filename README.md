@@ -88,27 +88,30 @@ Build all targets for host platform
 docker> bazel build //...
 ```
 
-Build all targets for s32k148 platform
+Build all targets for the s32k148 or the s32k344 platform
 
 ```
 docker> bazel build --config=s32k148 //...
+docker> bazel build --config=s32k344 //...
 ```
 
-To run all tests for host platform and s32k148
+To run all tests for host platform, s32k148 and s32k344
 
 ```
 docker> bazel test //...
 docker> bazel test --config=s32k148 //...
+docker> bazel test --config=s32k344 //...
 ```
 
 > [!NOTE]
 >
-> The above builds every target for the host and for the S32K148 target respectively.
+> The above builds every target for the host and for the S32K148 and S32K344 targets respectively.
 > To build or test a single target, use its Bazel label, e.g.:
 >
 > ```
 > docker> bazel build //libs/bsw/util:util
 > docker> bazel build --config=s32k148 //libs/bsw/util:util
+> docker> bazel build --config=s32k344 //libs/bsw/util:util
 > ```
 
 ## Feature Overview

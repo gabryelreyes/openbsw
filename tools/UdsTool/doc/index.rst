@@ -84,6 +84,8 @@ To send UDS requests over CAN to the demo application running on POSIX, you can 
     + For POSIX target, make sure to set up a virtual CAN interface vcan0.
     + For S32K1xx target, make sure the CAN interface is set up and passed as ``--channel`` parameter to the tool.
     + Channel Id for S32K148 is ``pcan`` and for POSIX is ``vcan0``. The ``--canif`` parameter is set to ``socketcan`` by default.
+    + For the S32K344 target, connect a SocketCAN adapter (e.g. PEAK PCAN-USB) to the board, bring it up at 500 kbit/s
+      (``sudo ip link set can0 up type can bitrate 500000``) and pass it as ``--channel can0``.
     + In the referenceApp the `ECU logical address` is ``0x2A`` and a possible `Client logical address` is ``0xEF0``.
     + You can find a reference canConfig.json file in ``tools/UdsTool/app/canConfig.json``.
 

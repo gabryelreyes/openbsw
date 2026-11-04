@@ -16,8 +16,8 @@ This project provides a SDK to build professional, high quality embedded softwar
 This is a software stack specifically designed and developed for automotive purpose.
 
 This repository describes the complete environment required for building and testing the target,
-including support for both POSIX and the S32K148EVB platform. It provides the service layer,
-driver code and configuration files, along with detailed user documentation.
+including support for POSIX and the S32K148EVB and S32K344EVB platforms. It provides the service
+layer, driver code and configuration files, along with detailed user documentation.
 
 If you are new to this, take a look at :ref:`learning_overview`.
 
