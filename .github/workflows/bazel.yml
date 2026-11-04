@@ -97,9 +97,9 @@ jobs:
           docker compose run --rm development
           bazel build --config=stm32f4 //...
 
-      # Cross-compiles all targets for the S32K344 platform (FreeRTOS, Cortex-M7) using arm-none-eabi-gcc.
-      # Like the STM32 steps this compiles the platform libraries only: the reference_app
-      # binary in executables/referenceApp/application is S32K148-specific.
+      # Cross-compiles all targets for the S32K344 platform (FreeRTOS, Cortex-M7) using arm-none-eabi-gcc,
+      # including the FlexCAN driver and the reference_app_s32k344 binary (CAN, transport and UDS).
+      # Matches the CMake s32k344-freertos preset.
       - name: Build all targets (s32k344 platform)
         run: >-
           DOCKER_UID=$(id -u) DOCKER_GID=$(id -g) DOCKER_HISTORY=/dev/null

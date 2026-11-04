@@ -255,8 +255,8 @@ platform(
 )
 
 # S32K344 app platform. NXP Cortex-M7 with FreeRTOS, targeting the S32K3X4EVB-T172.
-# No CAN, IO, Ethernet or storage drivers yet, matching
-# executables/referenceApp/platforms/s32k344evb/Options.cmake.
+# CAN (FlexCAN0), transport and UDS are enabled. No IO, Ethernet or storage
+# drivers yet, matching executables/referenceApp/platforms/s32k344evb/Options.cmake.
 platform(
     name = "s32k344",
     constraint_values = [
@@ -267,7 +267,7 @@ platform(
     ],
     flags = [
         # Features
-        "--//bazel/config/features:can=false",
+        "--//bazel/config/features:can=true",
         "--//bazel/config/features:ethernet=false",
         "--//bazel/config/features:io=false",
         "--//bazel/config/features:ipv6=false",
@@ -275,8 +275,8 @@ platform(
         "--//bazel/config/features:mpu=false",
         "--//bazel/config/features:rom_check=false",
         "--//bazel/config/features:storage=false",
-        "--//bazel/config/features:transport=false",
-        "--//bazel/config/features:uds=false",
+        "--//bazel/config/features:transport=true",
+        "--//bazel/config/features:uds=true",
         "--//bazel/config/features:watchdog=false",
 
         # RTOS
