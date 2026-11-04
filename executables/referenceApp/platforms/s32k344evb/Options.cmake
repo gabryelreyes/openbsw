@@ -19,7 +19,7 @@ set(PLATFORM_SUPPORT_IO
     OFF
     CACHE BOOL "Turn IO support on or off" FORCE)
 set(PLATFORM_SUPPORT_CAN
-    OFF
+    ON
     CACHE BOOL "Turn CAN support on or off" FORCE)
 set(PLATFORM_SUPPORT_ETHERNET
     OFF
@@ -28,10 +28,10 @@ set(PLATFORM_SUPPORT_IPV6
     OFF
     CACHE BOOL "Turn IPv6 support on or off" FORCE)
 set(PLATFORM_SUPPORT_TRANSPORT
-    OFF
+    ON
     CACHE BOOL "Turn TRANSPORT support on or off" FORCE)
 set(PLATFORM_SUPPORT_UDS
-    OFF
+    ON
     CACHE BOOL "Turn UDS support on or off" FORCE)
 set(PLATFORM_SUPPORT_WATCHDOG
     OFF
