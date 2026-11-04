@@ -6,14 +6,15 @@ add_library(startUp "$<TARGET_OBJECTS:startUpAsm>" src/os/isr/isr_can.cpp)
 
 set_target_properties(startUp PROPERTIES LINKER_LANGUAGE CXX)
 
-add_library(main src/lifecycle/StaticBsp.cpp src/systems/CanSystem.cpp
-                 src/main.cpp)
+add_library(main src/lifecycle/StaticBsp.cpp src/systems/BspSystem.cpp
+                 src/systems/CanSystem.cpp src/main.cpp)
 
 target_include_directories(main PUBLIC include)
 
 target_link_libraries(
     main
-    PRIVATE bsp
+    PRIVATE asyncConsole
+            bsp
             bspClock
             bspConfiguration
             bspMcu
@@ -22,7 +23,8 @@ target_link_libraries(
             etl
             lifecycle
             safeSupervisor
-            startUp)
+            startUp
+    PUBLIC bspInputManager bspOutputManager)
 
 if (BUILD_TARGET_RTOS STREQUAL "FREERTOS")
     target_link_libraries(main PRIVATE freeRtosCm7SysTick)

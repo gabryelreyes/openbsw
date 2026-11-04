@@ -6,7 +6,9 @@ list(
     src/lifecycle/console/StatisticsCommand.cpp
     src/can/console/CanCommand.cpp)
 
-if (PLATFORM_SUPPORT_IO)
+# The safety demo command writes to the MPU protected safety RAM and changes
+# safety IO registers, so it needs both features.
+if (PLATFORM_SUPPORT_IO AND PLATFORM_SUPPORT_MPU)
     list(APPEND consoleCommands_SOURCES src/safety/console/SafetyCommand.cpp)
 endif ()
 
@@ -25,6 +27,6 @@ target_link_libraries(
            safeUtils
            etl)
 
-if (PLATFORM_SUPPORT_IO)
+if (PLATFORM_SUPPORT_IO AND PLATFORM_SUPPORT_MPU)
     target_link_libraries(consoleCommands PRIVATE safeIo bspIo)
 endif ()

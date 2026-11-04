@@ -12,9 +12,29 @@
 
 #include <bsp/Uart.h>
 #include <bsp/timer/SystemTimer.h>
+#include <outputPwm/OutputPwm.h>
+
+#include <cstdio>
 
 void StaticBsp::init()
 {
     ::bsp::Uart::getInstance(::bsp::Uart::Id::TERMINAL).init();
     initSystemTimer();
+
+    _output.init(0U);
+    _digitalInput.init(0U);
+    ::bios::OutputPwm::init();
+
+    _adc.init();
+    _adc.start();
+    if (!::bios::AnalogInput::isCalibrated())
+    {
+        (void)printf("ADC1 calibration failed\r\n");
+    }
+}
+
+void StaticBsp::cyclic()
+{
+    _digitalInput.cyclic();
+    _adc.cyclic();
 }
