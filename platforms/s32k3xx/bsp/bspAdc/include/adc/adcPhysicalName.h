@@ -17,7 +17,8 @@ namespace bios
  * Channel numbers of the S32K3xx SAR ADC (see the S32K3xx Reference Manual,
  * ADC, and the S32K344 IO signal description table for the pad mapping):
  *  - 0 .. 7:   precision inputs P0 .. P7 (CTR0, NCMR0, CEOCFR0, PCDR)
- *  - 32 .. 55: standard inputs S0 .. S23 (CTR1, NCMR1, CEOCFR1, ICDR)
+ *  - 32 .. 47: standard inputs S8 .. S23 (CTR1, NCMR1, CEOCFR1, ICDR); the
+ *               standard inputs are numbered from S8 in the pin names
  *  - 64 .. 95: external (multiplexed) inputs, not supported by the driver yet
  */
 enum
@@ -30,15 +31,7 @@ enum
     _ADC_P5,
     _ADC_P6,
     _ADC_P7,
-    _ADC_S0 = 32,
-    _ADC_S1,
-    _ADC_S2,
-    _ADC_S3,
-    _ADC_S4,
-    _ADC_S5,
-    _ADC_S6,
-    _ADC_S7,
-    _ADC_S8,
+    _ADC_S8 = 32,
     _ADC_S9,
     _ADC_S10,
     _ADC_S11,
