@@ -35,6 +35,11 @@ specific features and must be developed according to the safety manual of the co
 requirements and stakeholder needs.
 
 The implementation of e.g. MPU, ECC or watchdog in ReferenceApp is specific to S32K1XX platform.
+The platform specific safety modules (watchdog, MPU, ROM check, safe IO and safe memory) are not yet
+ported to the S32K3XX platform. The S32K344EVB reference application only provides a
+``SafetyManager`` in ``executables/referenceApp/platforms/s32k344evb/safety/safeLifecycle`` and
+runs with ``PLATFORM_SUPPORT_WATCHDOG``, ``PLATFORM_SUPPORT_MPU`` and
+``PLATFORM_SUPPORT_ROM_CHECK`` switched off.
 
 Code Partition
 --------------

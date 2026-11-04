@@ -50,8 +50,8 @@ Below are examples of such "Systems"...
     * - BspSystem
       - S32K148
       - SingleContextLifecycleComponent
-      - platforms/s32k1xx/main/include/systems/BspSystem.h
-        platforms/s32k1xx/main/src/systems/BspSystem.cpp
+      - executables/referenceApp/platforms/s32k148evb/main/include/systems/BspSystem.h
+        executables/referenceApp/platforms/s32k148evb/main/src/systems/BspSystem.cpp
     * - RuntimeSystem
       - All
       - AsyncLifecycleComponent
@@ -65,8 +65,13 @@ Below are examples of such "Systems"...
     * - CanSystem
       - S32K148
       - SingleContextLifecycleComponent
-      - executables/referenceApp/platforms/s32k1xx/main/include/systems/CanSystem.h
-        executables/referenceApp/platforms/s32k1xx/main/src/systems/CanSystem.cpp
+      - executables/referenceApp/platforms/s32k148evb/main/include/systems/CanSystem.h
+        executables/referenceApp/platforms/s32k148evb/main/src/systems/CanSystem.cpp
+    * - CanSystem
+      - S32K344
+      - SingleContextLifecycleComponent
+      - executables/referenceApp/platforms/s32k344evb/main/include/systems/CanSystem.h
+        executables/referenceApp/platforms/s32k344evb/main/src/systems/CanSystem.cpp
     * - TransportSystem
       - All
       - AsyncLifecycleComponent

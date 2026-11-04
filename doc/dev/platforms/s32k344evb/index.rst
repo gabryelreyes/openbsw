@@ -42,8 +42,8 @@ The platform provides a Cortex-M7 image with no regression to the existing platf
 - FlexCAN0 at 500 kbit/s with the docan transport and UDS stack,
 - lifecycle management with the safety supervisor.
 
-Not yet available: IO, the watchdog, the MPU and the persistent storage. The corresponding
-``PLATFORM_SUPPORT_*`` options are therefore switched off in
+Not yet available: IO, Ethernet, the middleware demo, the watchdog, the MPU and the persistent
+storage. The corresponding ``PLATFORM_SUPPORT_*`` options are therefore switched off in
 ``executables/referenceApp/platforms/s32k344evb/Options.cmake`` and get enabled as the drivers
 become available. Open items are marked with ``TODO`` comments in the sources.
 
@@ -89,6 +89,13 @@ Flashing and debugging use the PE Micro GDB server together with ``test/pyTest/f
 
 See :ref:`s32k344_gdb_via_usb` for setting up the GDB server (including the Windows/WSL setup),
 the console, CAN and running the pytests on the board.
+
+Running the tests
+-----------------
+
+The pytests in ``test/pyTest`` run against the board with ``pytest --target=s32k344``, using
+``target_s32k344.toml``. See :ref:`s32k344_gdb_via_usb` for the required setup (gdb server, console
+and CAN) and for the test suites that currently apply to this platform.
 
 Memory map
 ----------
