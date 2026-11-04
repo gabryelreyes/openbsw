@@ -45,6 +45,15 @@ void boardInit()
     }
     IP_SWT_0->CR = IP_SWT_0->CR & ~SWT_CR_WEN_MASK;
 
+    /* Clear the functional reset escalation counter (write 1 to clear).
+     * MC_RGM counts the functional resets since the last destructive reset
+     * and the device no longer comes up after the 8th one, so every software
+     * reset (softwareSystemReset() goes through MC_ME as a functional reset)
+     * would otherwise bring the board closer to a lock-up that only a
+     * destructive or external reset clears. Only a debugger reset clears the
+     * counter implicitly. */
+    IP_MC_RGM->FREC = MC_RGM_FREC_FREC_MASK;
+
     configurePll();
 
     SCB_EnableICache();
