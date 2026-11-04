@@ -40,9 +40,11 @@ The platform provides a Cortex-M7 image with no regression to the existing platf
 - the interrupt manager and the system timer based on the DWT cycle counter,
 - the console on LPUART6 (OpenSDA VCOM port),
 - FlexCAN0 at 500 kbit/s with the docan transport and UDS stack,
-- lifecycle management with the safety supervisor.
+- lifecycle management with the safety supervisor,
+- digital IO (RGB LED outputs, user buttons SW5 and SW6) and the ADC (on-board potentiometer on
+  PTA11, ADC1 channel S10) with the ``in``, ``out`` and ``adc`` console commands.
 
-Not yet available: IO, Ethernet, the middleware demo, the watchdog, the MPU and the persistent
+Not yet available: PWM, Ethernet, the middleware demo, the watchdog, the MPU and the persistent
 storage. The corresponding ``PLATFORM_SUPPORT_*`` options are therefore switched off in
 ``executables/referenceApp/platforms/s32k344evb/Options.cmake`` and get enabled as the drivers
 become available. Open items are marked with ``TODO`` comments in the sources.
