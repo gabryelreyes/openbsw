@@ -65,8 +65,8 @@ and the built executable is found at
 which you can flash on the S32K3X4EVB-T172 board.
 
 Only a FreeRTOS based preset exists for this platform so far.
-The application starts with the console and CAN/UDS enabled;
-IO, the watchdog, the MPU and the persistent storage are not yet available
+The application starts with the console, CAN/UDS, IO and ADC enabled;
+PWM, the watchdog, the MPU and the persistent storage are not yet available
 (see :ref:`s32k344evb_overview` for the current scope).
 
 The image contains a boot header for the Boot Assist Firmware,

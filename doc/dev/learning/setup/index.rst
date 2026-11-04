@@ -114,7 +114,7 @@ and flash, debug and test it as described in :doc:`setup_s32k344_gdbserver`.
 
 The on-board P&E Micro debug probe provides both the debugger connection and the
 console (OpenSDA virtual COM port, 115200 baud) over a single USB cable.
-The console and CAN/UDS work; IO, the watchdog, the MPU and the persistent storage are not yet available.
+The console, CAN/UDS, IO and ADC work; PWM, the watchdog, the MPU and the persistent storage are not yet available.
 
 .. _known_issues_with_s32k344_board:
 

@@ -24,8 +24,9 @@ S32K344 Evaluation Board (S32K3X4EVB-T172) with the following differences:
   instead of S32 Design Studio.
 * For testing CAN, connect the PEAK CAN USB dongle to the board's CAN connector and use a bitrate of
   500 kbit/s.
-* The ADC, PWM and IO tests do not apply yet, since IO support is not yet available on this
-  platform.
+* The ADC can be tested with the on-board potentiometer (``adc get 0``) instead of an external
+  supply, the IO test uses the RGB LED (``out set 1 1`` for green, ``out set 2 1`` for blue).
+  The PWM test does not apply yet, since there is no PWM driver for this platform.
 
 #. **Hardware Set Up**
 
