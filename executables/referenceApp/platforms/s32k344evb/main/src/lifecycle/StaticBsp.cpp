@@ -10,6 +10,11 @@
 
 #include "lifecycle/StaticBsp.h"
 
+#include <bsp/Uart.h>
 #include <bsp/timer/SystemTimer.h>
 
-void StaticBsp::init() { initSystemTimer(); }
+void StaticBsp::init()
+{
+    ::bsp::Uart::getInstance(::bsp::Uart::Id::TERMINAL).init();
+    initSystemTimer();
+}

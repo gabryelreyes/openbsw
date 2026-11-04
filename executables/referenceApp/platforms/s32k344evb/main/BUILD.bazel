@@ -25,13 +25,16 @@ genrule(
 
 cc_library(
     name = "start_up_asm",
-    srcs = ["src/bsp/startUp.S"],
+    srcs = [
+        "src/bsp/bootHeader.S",
+        "src/bsp/startUp.S",
+    ],
     target_compatible_with = [
         "//bazel/platform/constraints/soc:s32k344",
         "@platforms//os:none",
     ],
     visibility = ["//visibility:public"],
-    # Force-link needed because the vector table is referenced by address, not symbol.
+    # Force-link needed because boot header and vectors are referenced by address, not symbol.
     alwayslink = True,
 )
 
@@ -60,6 +63,8 @@ cc_library(
         "//libs/bsw/bsp",
         "//libs/bsw/lifecycle",
         "//platforms/s32k3xx/3rdparty/freertos_cm7_sysTick:freertos_cm7_sys_tick",
+        "//platforms/s32k3xx/bsp/bspClock:bsp_clock",
+        "//platforms/s32k3xx/bsp/bspMcu:bsp_mcu",
     ],
     strip_include_prefix = "include",
     target_compatible_with = ["//bazel/platform/constraints/soc:s32k344"],
