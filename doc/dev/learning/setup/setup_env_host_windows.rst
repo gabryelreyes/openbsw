@@ -49,6 +49,19 @@ then you can build the image for that target, flash it onto your board and test 
    setup_s32k148_win_*
    setup_s32k148_gdbserver
 
+S32K344 platform
+----------------
+
+If you have access to a
+`S32K3X4EVB-T172 evaluation board <https://www.nxp.com/design/design-center/development-boards-and-designs/S32K3X4EVB-T172>`_
+then you can build the S32K344 image with the same toolchain, flash it onto your board and test it.
+
+.. toctree::
+   :maxdepth: 1
+
+   setup_s32k344_build
+   setup_s32k344_gdbserver
+
 WSL Enhancements
 ----------------
 

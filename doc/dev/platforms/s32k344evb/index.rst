@@ -68,7 +68,7 @@ Reference Links
 Build environment
 -----------------
 
-For instructions on building see :ref:`learning_setup`. The platform uses the same ARM toolchain
+For step-by-step instructions on building see :ref:`setup_s32k344_build`. The platform uses the same ARM toolchain
 as the S32K148EVB; the preset selects the Cortex-M7 core and the ``fpv5-d16`` FPU via the
 ``OPENBSW_ARM_CPU`` and ``OPENBSW_ARM_FPU`` cache variables:
 
@@ -86,6 +86,9 @@ Flashing and debugging use the PE Micro GDB server together with ``test/pyTest/f
 .. code-block:: bash
 
     pegdbserver_console -device=NXP_S32K3xx_S32K344 -startserver -serverport=7224
+
+See :ref:`s32k344_gdb_via_usb` for setting up the GDB server (including the Windows/WSL setup),
+the console, CAN and running the pytests on the board.
 
 Memory map
 ----------

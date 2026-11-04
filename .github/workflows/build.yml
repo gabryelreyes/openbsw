@@ -18,7 +18,7 @@ jobs:
     strategy:
     #   max-parallel: 1
       matrix:
-        preset: [ "tests-posix-debug", "tests-posix-release", "tests-s32k1xx-debug", "tests-s32k1xx-release", "tests-stm32-debug", "tests-stm32-release", "posix-freertos", "posix-threadx", "posix-freertos-with-tracing", "posix-freertos-canfd", "posix-rust", "s32k148-freertos", "s32k148-threadx", "s32k148-rust", "s32k344-freertos", "nucleo-g474re-freertos", "nucleo-g474re-threadx", "nucleo-f413zh-freertos", "nucleo-f413zh-threadx" ]
+        preset: [ "tests-posix-debug", "tests-posix-release", "tests-s32k1xx-debug", "tests-s32k1xx-release", "tests-stm32-debug", "tests-stm32-release", "tests-s32k3xx-debug", "tests-s32k3xx-release", "posix-freertos", "posix-threadx", "posix-freertos-with-tracing", "posix-freertos-canfd", "posix-rust", "s32k148-freertos", "s32k148-threadx", "s32k148-rust", "s32k344-freertos", "nucleo-g474re-freertos", "nucleo-g474re-threadx", "nucleo-f413zh-freertos", "nucleo-f413zh-threadx" ]
         cxxid: ["gcc", "clang"]
         cxxstd: [ 17, 20, 23 ]
         # `platform` and `config` are fully determined by `preset`:
@@ -45,6 +45,12 @@ jobs:
             platform: "linux"
             config: "Debug"
           - preset: "tests-stm32-release"
+            platform: "linux"
+            config: "Release"
+          - preset: "tests-s32k3xx-debug"
+            platform: "linux"
+            config: "Debug"
+          - preset: "tests-s32k3xx-release"
             platform: "linux"
             config: "Release"
           - preset: "posix-freertos"
@@ -101,6 +107,22 @@ jobs:
           - preset: "tests-stm32-release"
             cxxstd: 20
           - preset: "tests-stm32-release"
+            cxxstd: 23
+
+          # S32K3xx unit-test builds: same minimal set as STM32 above (linux,
+          # gcc, C++17). The unit-test tree is still a stub; this proves the
+          # presets configure and build.
+          - preset: "tests-s32k3xx-debug"
+            cxxid: "clang"
+          - preset: "tests-s32k3xx-debug"
+            cxxstd: 20
+          - preset: "tests-s32k3xx-debug"
+            cxxstd: 23
+          - preset: "tests-s32k3xx-release"
+            cxxid: "clang"
+          - preset: "tests-s32k3xx-release"
+            cxxstd: 20
+          - preset: "tests-s32k3xx-release"
             cxxstd: 23
 
           - preset: "s32k148-rust"
