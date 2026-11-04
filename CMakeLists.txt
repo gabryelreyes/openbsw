@@ -98,8 +98,10 @@ endif ()
 # binary, otherwise the linker will complain about duplicate symbol definitions
 # from the Rust core crate.
 if (BUILD_RUST)
-    # Set Rust target for cross-compilation (ARM Cortex-M4F for S32K148)
-    if (BUILD_TARGET_PLATFORM STREQUAL "S32K148EVB")
+    # Set Rust target for cross-compilation (ARM Cortex-M4F for S32K148,
+    # Cortex-M7 for S32K344 - both use the thumbv7em-none-eabihf triple)
+    if (BUILD_TARGET_PLATFORM STREQUAL "S32K148EVB" OR BUILD_TARGET_PLATFORM
+                                                       STREQUAL "S32K344EVB")
         set(Rust_CARGO_TARGET
             "thumbv7em-none-eabihf"
             CACHE STRING "Rust target triple")
@@ -130,6 +132,9 @@ if (BUILD_EXECUTABLE STREQUAL "referenceApp")
     if (BUILD_TARGET_PLATFORM STREQUAL "S32K148EVB")
         set(OPENBSW_PLATFORM_DIR
             "${CMAKE_CURRENT_SOURCE_DIR}/platforms/s32k1xx")
+    elseif (BUILD_TARGET_PLATFORM STREQUAL "S32K344EVB")
+        set(OPENBSW_PLATFORM_DIR
+            "${CMAKE_CURRENT_SOURCE_DIR}/platforms/s32k3xx")
     else ()
         set(OPENBSW_PLATFORM_DIR "${CMAKE_CURRENT_SOURCE_DIR}/platforms/posix")
     endif ()

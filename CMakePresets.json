@@ -261,6 +261,27 @@
                 "CMAKE_CXX_FLAGS_RELWITHDEBINFO": "-g3 -O2 -DNDEBUG",
                 "CMAKE_DEFAULT_BUILD_TYPE": "RelWithDebInfo"
             }
+        },
+        {
+            "name": "s32k344-freertos",
+            "generator": "Ninja Multi-Config",
+            "displayName": "S32K344 FreeRTOS configuration",
+            "description": "Configure for S32K344 platform. The GCC or Clang ARM toolchain is picked automatically based on the CC/CXX environment variables (or -DCMAKE_C_COMPILER)",
+            "inherits": "_config-base",
+            "toolchainFile": "${sourceDir}/cmake/toolchains/ArmNoneEabi.cmake",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "BUILD_EXECUTABLE": "referenceApp",
+                "BUILD_TARGET_PLATFORM": "S32K344EVB",
+                "BUILD_TARGET_RTOS": "FREERTOS",
+                "OPENBSW_ARM_CPU": "cortex-m7",
+                "OPENBSW_ARM_FPU": "fpv5-d16",
+                "CMAKE_ASM_FLAGS_RELWITHDEBINFO": "-g3",
+                "CMAKE_CONFIGURATION_TYPES": "RelWithDebInfo;Debug;Release",
+                "CMAKE_C_FLAGS_RELWITHDEBINFO": "-g3 -O2 -DNDEBUG",
+                "CMAKE_CXX_FLAGS_RELWITHDEBINFO": "-g3 -O2 -DNDEBUG",
+                "CMAKE_DEFAULT_BUILD_TYPE": "RelWithDebInfo"
+            }
         }
     ],
     "buildPresets": [
@@ -365,6 +386,12 @@
             "displayName": "S32K148 ThreadX build",
             "description": "Build reference application for S32K148 platform (Release by default; for Debug use --config Debug)",
             "configurePreset": "s32k148-threadx"
+        },
+        {
+            "name": "s32k344-freertos",
+            "displayName": "S32K344 FreeRTOS build",
+            "description": "Build reference application for S32K344 platform (RelWithDebInfo by default; for Debug use --config Debug)",
+            "configurePreset": "s32k344-freertos"
         }
     ],
     "testPresets": [

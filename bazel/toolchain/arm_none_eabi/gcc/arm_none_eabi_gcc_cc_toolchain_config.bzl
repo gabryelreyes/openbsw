@@ -8,7 +8,11 @@
 # SPDX-License-Identifier: Apache-2.0
 # *******************************************************************************
 
-""" Bazel CC toolchain configuration for ARM Cortex-M4 bare-metal targets using arm-none-eabi-gcc."""
+""" Bazel CC toolchain configuration for ARM Cortex-M bare-metal targets using arm-none-eabi-gcc.
+
+The core and FPU are parameters of the rule so that one implementation serves
+every Cortex-M variant (Cortex-M4 with fpv4-sp-d16, Cortex-M7 with fpv5-d16, ...).
+"""
 
 load("@bazel_tools//tools/build_defs/cc:action_names.bzl", "ACTION_NAMES")
 load(
@@ -95,9 +99,9 @@ def _impl(ctx):
                     flag_groups = [
                         flag_group(
                             flags = [
-                                "-mcpu=cortex-m4",
+                                "-mcpu=" + ctx.attr.cpu,
                                 "-mfloat-abi=hard",
-                                "-mfpu=fpv4-sp-d16",
+                                "-mfpu=" + ctx.attr.fpu,
                                 "-fmessage-length=0",
                             ],
                         ),
@@ -290,9 +294,9 @@ def _impl(ctx):
                     flag_groups = [
                         flag_group(
                             flags = [
-                                "-mcpu=cortex-m4",
+                                "-mcpu=" + ctx.attr.cpu,
                                 "-mfloat-abi=hard",
-                                "-mfpu=fpv4-sp-d16",
+                                "-mfpu=" + ctx.attr.fpu,
                                 "-static",
                                 "-Wl,--gc-sections",
                                 "-specs=nano.specs",
@@ -318,10 +322,10 @@ def _impl(ctx):
             _ARM_GNU_TOOLCHAIN_ROOT + "/lib/gcc/arm-none-eabi",
             _ARM_GNU_TOOLCHAIN_ROOT + "/arm-none-eabi/include",
         ],
-        toolchain_identifier = "arm_none_eabi_gcc_toolchain",
+        toolchain_identifier = ctx.label.name,
         host_system_name = "local",
         target_system_name = "arm-none-eabi",
-        target_cpu = "cortex-m4",
+        target_cpu = ctx.attr.cpu,
         target_libc = "newlib-nano",
         compiler = "gcc",
         abi_version = "eabi",
@@ -331,6 +335,15 @@ def _impl(ctx):
 
 cc_toolchain_config = rule(
     implementation = _impl,
-    attrs = {},
+    attrs = {
+        "cpu": attr.string(
+            default = "cortex-m4",
+            doc = "ARM core passed to -mcpu, e.g. cortex-m4 or cortex-m7.",
+        ),
+        "fpu": attr.string(
+            default = "fpv4-sp-d16",
+            doc = "FPU passed to -mfpu, e.g. fpv4-sp-d16 or fpv5-d16.",
+        ),
+    },
     provides = [CcToolchainConfigInfo],
 )

@@ -15,7 +15,12 @@ package(default_visibility = ["//visibility:public"])
 
 filegroup(name = "empty")
 
-cc_toolchain_config(name = "arm_none_eabi_gcc_toolchain_config")
+# Cortex-M4 (fpv4-sp-d16): S32K148, STM32G4, STM32F4.
+cc_toolchain_config(
+    name = "arm_none_eabi_gcc_toolchain_config",
+    cpu = "cortex-m4",
+    fpu = "fpv4-sp-d16",
+)
 
 cc_toolchain(
     name = "arm_none_eabi_gcc_toolchain",
@@ -34,7 +39,38 @@ toolchain(
     target_compatible_with = [
         "@platforms//os:none",
         "@platforms//cpu:armv7e-m",
+        "//bazel/platform/constraints/core:cortex_m4",
     ],
     toolchain = ":arm_none_eabi_gcc_toolchain",
+    toolchain_type = "@bazel_tools//tools/cpp:toolchain_type",
+)
+
+# Cortex-M7 (fpv5-d16): S32K344.
+cc_toolchain_config(
+    name = "arm_none_eabi_gcc_cortex_m7_toolchain_config",
+    cpu = "cortex-m7",
+    fpu = "fpv5-d16",
+)
+
+cc_toolchain(
+    name = "arm_none_eabi_gcc_cortex_m7_toolchain",
+    all_files = ":empty",
+    compiler_files = ":empty",
+    dwp_files = ":empty",
+    linker_files = ":empty",
+    objcopy_files = ":empty",
+    strip_files = ":empty",
+    supports_param_files = 0,
+    toolchain_config = ":arm_none_eabi_gcc_cortex_m7_toolchain_config",
+)
+
+toolchain(
+    name = "cc_toolchain_arm_none_eabi_gcc_cortex_m7",
+    target_compatible_with = [
+        "@platforms//os:none",
+        "@platforms//cpu:armv7e-m",
+        "//bazel/platform/constraints/core:cortex_m7",
+    ],
+    toolchain = ":arm_none_eabi_gcc_cortex_m7_toolchain",
     toolchain_type = "@bazel_tools//tools/cpp:toolchain_type",
 )

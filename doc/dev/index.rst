@@ -61,6 +61,11 @@ Check ``CanSystem`` and ``DemoSystem`` for reference.
 
     - ``BspSystem`` class is used to handle bsp modules and its cyclic functions with ``lifecycleManager``.
 
+- S32K344EVB:
+
+    - The ``executables/referenceApp/platforms/s32k344evb/main/src/main.cpp`` is the entry point for S32K344EVB platform
+      (see :ref:`s32k344evb_overview`).
+
 Unit tests
 ----------
 
@@ -161,6 +166,7 @@ Eclipse OpenBSW is a trademark of the Eclipse Foundation.
 
     platforms/posix/index
     platforms/s32k148evb/index
+    platforms/s32k344evb/index
     platforms/stm32/index
 
 .. toctree::
@@ -180,6 +186,7 @@ Eclipse OpenBSW is a trademark of the Eclipse Foundation.
     modules/common
     modules/posix
     modules/s32k1xx
+    modules/s32k3xx
     modules/stm32
     modules/executables
     modules/mocks

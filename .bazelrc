@@ -11,6 +11,9 @@ build --platforms=//bazel/platform:posix
 build:s32k148         --platforms=//bazel/platform:s32k148
 build:s32k148_threadx --platforms=//bazel/platform:s32k148_threadx
 
+# ARM embedded S32K344 Cortex-M7 with FreeRTOS.
+build:s32k344 --platforms=//bazel/platform:s32k344
+
 # ARM embedded STM32 Cortex-M4.
 build:stm32g4 --platforms=//bazel/platform:stm32g4
 build:stm32f4 --platforms=//bazel/platform:stm32f4
