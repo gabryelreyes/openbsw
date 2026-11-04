@@ -15,8 +15,10 @@ cc_library(
     target_compatible_with = ["//bazel/platform/constraints/soc:s32k344"],
     visibility = ["//visibility:public"],
     deps = [
+        "//platforms/s32k3xx/bsp/bspAdc:bsp_adc",
         "//platforms/s32k3xx/bsp/bspClock:bsp_clock",
         "//platforms/s32k3xx/bsp/bspInterruptsImpl:bsp_interrupts_impl",
+        "//platforms/s32k3xx/bsp/bspIo:bsp_io",
         "//platforms/s32k3xx/bsp/bspMcu:bsp_mcu",
         "//platforms/s32k3xx/bsp/bspUart:bsp_uart",
     ],

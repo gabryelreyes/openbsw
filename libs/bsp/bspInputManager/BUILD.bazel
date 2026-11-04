@@ -44,7 +44,12 @@ cc_library(
         "include/inputManager/DigitalInputTester.h",
     ],
     strip_include_prefix = "include",
-    target_compatible_with = ["//bazel/platform/constraints/soc:s32k148"],
+    # Only the boards with a digital input BSP (bspIo) provide the input configuration.
+    target_compatible_with = select({
+        "//bazel/platform/constraints/soc:s32k148": [],
+        "//bazel/platform/constraints/soc:s32k344": [],
+        "//conditions:default": ["@platforms//:incompatible"],
+    }),
     visibility = ["//visibility:public"],
     deps = [
         "//bazel/config/bsp:bsp_configuration",
