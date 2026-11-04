@@ -64,10 +64,12 @@ cc_library(
     srcs = [
         "src/lifecycle/StaticBsp.cpp",
         "src/main.cpp",
+        "src/systems/BspSystem.cpp",
         "src/systems/CanSystem.cpp",
     ],
     hdrs = [
         "include/lifecycle/StaticBsp.h",
+        "include/systems/BspSystem.h",
         "include/systems/CanSystem.h",
     ],
     implementation_deps = [
@@ -84,8 +86,13 @@ cc_library(
     deps = [
         "//executables/referenceApp/configuration",
         "//libs/3rdparty/etl",
+        "//libs/bsp/bspInputManager:bsp_input_manager",
+        "//libs/bsp/bspOutputManager:bsp_output_manager",
+        "//libs/bsp/bspOutputPwm:bsp_output_pwm",
+        "//libs/bsw/asyncConsole:async_console",
         "//libs/bsw/bsp",
         "//libs/bsw/lifecycle",
+        "//platforms/s32k3xx/bsp/bspAdc:bsp_adc",
         "//platforms/s32k3xx/bsp/canflex2Transceiver:canflex2_transceiver",
     ],
 )

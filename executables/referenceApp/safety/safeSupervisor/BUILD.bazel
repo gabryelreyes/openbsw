@@ -34,12 +34,22 @@ cc_library(
     ],
 )
 
+cc_library(
+    name = "safe_supervisor_io_support_s32k344",
+    target_compatible_with = ["//bazel/platform/constraints/soc:s32k344"],
+    deps = [
+        "//executables/referenceApp/platforms/s32k344evb/safety/safeIo:safe_io",
+        "//platforms/s32k3xx/bsp/bspIo:bsp_io",
+    ],
+)
+
 cc_library(name = "safe_supervisor_io_support_none")
 
 alias(
     name = "io_support",
     actual = select({
         "//bazel/platform/constraints/soc:s32k148": ":safe_supervisor_io_support",
+        "//bazel/platform/constraints/soc:s32k344": ":safe_supervisor_io_support_s32k344",
         "//conditions:default": ":safe_supervisor_io_support_none",
     }),
 )

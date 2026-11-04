@@ -34,7 +34,7 @@ cc_library(
     ],
 )
 
-# Only compiles on platforms that provide IO. Mark incompatible elsewhere so wildcard builds skip it.
+# Only compiles on platforms that provide IO and MPU support. Mark incompatible elsewhere so wildcard builds skip it.
 cc_library(
     name = "console_commands_io_support",
     srcs = [
@@ -50,10 +50,20 @@ cc_library(
 
 cc_library(name = "console_commands_io_support_none")
 
+# The safety demo command writes to the MPU protected safety RAM and changes
+# safety IO registers, so it needs both features (as in CMakeLists.txt).
+config_setting(
+    name = "io_and_mpu_enabled",
+    flag_values = {
+        "//bazel/config/features:io": "true",
+        "//bazel/config/features:mpu": "true",
+    },
+)
+
 alias(
     name = "io_support",
     actual = select({
-        "//bazel/config/features:io_enabled": ":console_commands_io_support",
+        ":io_and_mpu_enabled": ":console_commands_io_support",
         "//conditions:default": ":console_commands_io_support_none",
     }),
 )
