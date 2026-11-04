@@ -16,7 +16,7 @@ Set up environment on Ubuntu :prop:`tool:ubuntu_version`
 
 As it would be impossible to provide setup instructions for each and every flavour of linux available,
 instead an example setup on just one popular platform - Ubuntu :prop:`tool:ubuntu_version`- is described.
-The set up will allow you to build images for two target platforms, POSIX and S32K148.
+The set up will allow you to build images for three target platforms, POSIX, S32K148 and S32K344.
 
 POSIX platform
 --------------
@@ -43,3 +43,16 @@ then you can build the image for that target, flash it onto your board and test 
 
    setup_s32k148_ubuntu_*
    setup_s32k148_gdbserver
+
+S32K344 platform
+----------------
+
+If you have access to a
+`S32K3X4EVB-T172 evaluation board <https://www.nxp.com/design/design-center/development-boards-and-designs/S32K3X4EVB-T172>`_
+then you can build the S32K344 image with the same toolchain, flash it onto your board and test it.
+
+.. toctree::
+   :maxdepth: 1
+
+   setup_s32k344_build
+   setup_s32k344_gdbserver
