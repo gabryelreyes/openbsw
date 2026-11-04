@@ -21,30 +21,31 @@ Overview
   automotive microcontroller (Arm Cortex-M7 with FPU, 4 MB program flash, 512 KB SRAM including
   the tightly coupled memories).
 - Eclipse OpenBSW provides a reference application for this platform which is built with the
-  ``s32k344-freertos`` preset. The platform code lives in ``platforms/s32k3xx`` (SoC level) and
+  ``s32k344-freertos`` preset. It offers an interactive console on the OpenSDA VCOM port and
+  CAN/UDS communication. The platform code lives in ``platforms/s32k3xx`` (SoC level) and
   ``executables/referenceApp/platforms/s32k344evb`` (board level).
 
 Scope
 -----
 
-The platform currently provides a verified Cortex-M7 image with no regression to the existing
-platforms:
+The platform provides a Cortex-M7 image with no regression to the existing platforms:
 
 - startup code with vector table and ECC initialization of SRAM and DTCM,
+- a boot header (IVT) for the Boot Assist Firmware, so the image starts from a power cycle once
+  flashed,
 - a linker script placing the image in program flash, the main stack in DTCM and data, BSS and
   heap in the system SRAM,
+- the clock tree configured to a 160 MHz PLL core clock,
 - the FreeRTOS Cortex-M7 port driven by the SysTick timer,
 - the interrupt manager and the system timer based on the DWT cycle counter,
+- the console on LPUART6 (OpenSDA VCOM port),
+- FlexCAN0 at 500 kbit/s with the docan transport and UDS stack,
 - lifecycle management with the safety supervisor.
 
-Not yet available: the console (``stdIo`` discards all output, ``bspUart`` is a placeholder),
-the clock tree configuration (the core runs on the default FIRC clock), CAN, IO and the
-persistent storage. The corresponding ``PLATFORM_SUPPORT_*`` options are therefore switched off
-in ``executables/referenceApp/platforms/s32k344evb/Options.cmake`` and get enabled as the drivers
+Not yet available: IO, the watchdog, the MPU and the persistent storage. The corresponding
+``PLATFORM_SUPPORT_*`` options are therefore switched off in
+``executables/referenceApp/platforms/s32k344evb/Options.cmake`` and get enabled as the drivers
 become available. Open items are marked with ``TODO`` comments in the sources.
-
-The image has no boot header (IVT) for the Boot Assist Firmware yet, so it is started via
-debugger instead of from a power cycle.
 
 Reference Links
 ---------------
@@ -58,6 +59,7 @@ Reference Links
 
 3. **S32K344 Software and Tools**:
     - `S32 Design Studio for S32 Platform <https://www.nxp.com/design/design-center/software/development-software/s32-design-studio-ide/s32-design-studio-for-s32-platform:S32DS-S32PLATFORM>`_
+    - `PE Micro OpenSDA <http://www.pemicro.com/opensda/>`_
 
 4. **Community and Support**:
     - `NXP Community Forum <https://community.nxp.com/>`_
@@ -78,6 +80,13 @@ as the S32K148EVB; the preset selects the Cortex-M7 core and the ``fpv5-d16`` FP
 The ELF file is written to
 ``build/s32k344-freertos/executables/referenceApp/application/RelWithDebInfo/app.referenceApp.elf``.
 
+Flashing and debugging use the PE Micro GDB server together with ``test/pyTest/flash.gdb`` and
+``test/pyTest/reset.gdb``; SEGGER J-Link and the NXP S32 Debug Probe work as alternatives:
+
+.. code-block:: bash
+
+    pegdbserver_console -device=NXP_S32K3xx_S32K344 -startserver -serverport=7224
+
 Memory map
 ----------
 
@@ -85,6 +94,25 @@ Memory map
    :header: "Region", "Start", "End", "Usage"
    :widths: 15, 15, 15, 40
 
-   "Program flash", "0x00400000", "0x007F3FFF", "Vector table and application (last 48 KB reserved by the BAF)"
+   "Program flash", "0x00400000", "0x007F3FFF", "Boot header, vector table and application (last 48 KB reserved by the BAF)"
    "DTCM", "0x20000000", "0x2001FFFF", "Main stack"
    "System SRAM", "0x20400000", "0x2044FFFF", "Data, BSS and heap"
+
+Connections
+-----------
+
+.. csv-table:: Pin Configuration
+   :header: "Name", "State and Function", "Pin ID", "Usage"
+   :widths: 10, 20, 15, 20
+
+   "PTA15", "IN, IMCR 705 = 2", "LPUART6_RX", "Console (OpenSDA VCOM)"
+   "PTA16", "OUT, ALT 5", "LPUART6_TX", "Console (OpenSDA VCOM)"
+   "PTA6", "IN, IMCR 512 = 2", "CAN0_RX", "FlexCAN 0"
+   "PTA7", "OUT, ALT 4", "CAN0_TX", "FlexCAN 0"
+
+Notes
+-----
+
+- The on-board CAN transceiver of board revision B2 is a TJA1443 CAN FD device. Its EN/STB pins
+  are driven to normal mode by the BSP; no further configuration is required.
+- The C40 flash read wait states are left at the conservative reset default.

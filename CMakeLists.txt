@@ -226,6 +226,10 @@ if (BUILD_EXECUTABLE STREQUAL "unitTest")
         add_subdirectory(platforms/s32k1xx/bsp/canflex2Transceiver/test)
         add_subdirectory(platforms/s32k1xx/bsp/bspUart/test)
 
+    elseif (OPENBSW_PLATFORM STREQUAL "s32k3xx")
+
+        add_subdirectory(platforms/s32k3xx/unitTest EXCLUDE_FROM_ALL)
+
     else ()
         message(
             FATAL_ERROR
