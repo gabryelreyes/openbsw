@@ -165,14 +165,14 @@ For this option...
 
 Note that on this target...
 
-* `console/test_storage.py` fails, because persistent storage is not yet supported on the S32K344.
-* The `enet` and `middleware` suites do not apply, since Ethernet and the middleware demo
-  are not enabled for the S32K344.
+* Persistent storage, Ethernet and the middleware demo are not enabled for the S32K344.
+  The `[features]` table in `target_s32k344.toml` switches them off, so `console/test_storage.py`
+  and the `enet` and `middleware` suites are skipped instead of failing (see "Target features" below).
 * There is no `[hw_tester_serial]` configuration for this board yet, so tests with the fixture `hw_tester` are skipped.
 
 For example...
 ```
-pytest --target=s32k344 --ignore=console/test_storage.py console can docan uds
+pytest --target=s32k344 console can docan uds
 ```
 
 See the S32K344 GDB server setup page in the documentation (`doc/dev/learning/setup/setup_s32k344_gdbserver.rst`)
@@ -185,6 +185,24 @@ the `s32k148` board must be set up with an external hardware testing board
 which has been configured for serial communication in `target_s32k148_with_hwtester.toml`
 under `[hw_tester_serial]`.
 Tests with the fixture `hw_tester` will be only be run if `[hw_tester_serial]` is present.
+
+### Target features
+
+A target's `.toml` file may contain a `[features]` table that switches off test suites
+which need something the target does not provide, for example:
+
+```toml
+[features]
+storage = false
+ethernet = false
+middleware = false
+```
+
+Test modules or tests marked with `pytest.mark.requires_feature("<name>")` are skipped for
+every target whose `[features]` table sets `<name> = false`.
+A feature that is not listed is assumed to be available, so targets without the table run all tests.
+The markers currently in use are `storage` (`console/test_storage.py`), `ethernet` (`enet`) and
+`middleware` (`middleware`).
 
 ### Fixtures in tests
 

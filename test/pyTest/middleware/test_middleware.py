@@ -23,6 +23,8 @@ appear in the captured serial output with the format:
 import re
 import pytest
 
+pytestmark = pytest.mark.requires_feature("middleware")
+
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------

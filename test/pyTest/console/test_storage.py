@@ -10,6 +10,8 @@
 
 import pytest
 
+pytestmark = pytest.mark.requires_feature("storage")
+
 @pytest.mark.parametrize("block_id,value", [
     ("2561", "aabbccdd"),
     ("2817", "01ff"),
