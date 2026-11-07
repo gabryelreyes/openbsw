@@ -43,6 +43,12 @@ command_line = "arm-none-eabi-gdb -batch -x reset.gdb ../../build/s32k148-thread
 wait_for_exit = true
 skip_first = true
 
+# Channel wired to the hardware tester's DAC output for console/test_adc.py.
+[adc]
+channel = 1
+name = "AiEval_ADC"
+tolerance_mv = 100
+
 [hw_tester_serial]
 port = "/dev/ttyACM1"
 baudrate = 115200

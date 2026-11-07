@@ -58,5 +58,34 @@ class Test_TargetInfo_Features(unittest.TestCase):
         self.assertFalse(info.has_feature("storage"))
 
 
+ADC_TOML = (
+    MINIMAL_TOML
+    + b"""
+[adc]
+channel = 0
+name = "AiEval_Poti_ADC"
+tolerance_mv = 100
+"""
+)
+
+
+class Test_TargetInfo_Adc(unittest.TestCase):
+    """ADC test parameters from the [adc] table of a target .toml"""
+
+    def test_adc_absent_is_empty(self):
+        self.assertEqual(load(MINIMAL_TOML).adc, {})
+
+    def test_adc_is_read(self):
+        self.assertEqual(
+            load(ADC_TOML).adc,
+            {"channel": 0, "name": "AiEval_Poti_ADC", "tolerance_mv": 100},
+        )
+
+    def test_adc_is_a_copy(self):
+        info = load(ADC_TOML)
+        info.adc["channel"] = 7
+        self.assertEqual(info.adc["channel"], 0)
+
+
 if __name__ == "__main__":
     unittest.main()
