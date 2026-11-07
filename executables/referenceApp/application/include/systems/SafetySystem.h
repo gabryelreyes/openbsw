@@ -11,7 +11,7 @@
 #include <lifecycle/AsyncLifecycleComponent.h>
 #include <lifecycle/ILifecycleManager.h>
 
-#if PLATFORM_SUPPORT_IO
+#if defined(PLATFORM_SUPPORT_IO) && defined(PLATFORM_SUPPORT_MPU)
 #include <console/AsyncCommandWrapper.h>
 #include <safety/console/SafetyCommand.h>
 #endif
@@ -39,7 +39,7 @@ private:
 private:
     ::async::ContextType const _context;
     ::async::TimeoutType _timeout;
-#if PLATFORM_SUPPORT_IO
+#if defined(PLATFORM_SUPPORT_IO) && defined(PLATFORM_SUPPORT_MPU)
     ::safety::SafetyCommand _safetyCommand;
     ::console::AsyncCommandWrapper _asyncCommandWrapperForSafetyCommand;
 #endif

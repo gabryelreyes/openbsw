@@ -255,8 +255,8 @@ platform(
 )
 
 # S32K344 app platform. NXP Cortex-M7 with FreeRTOS, targeting the S32K3X4EVB-T172.
-# No CAN, IO, Ethernet or storage drivers yet, matching
-# executables/referenceApp/platforms/s32k344evb/Options.cmake.
+# CAN (FlexCAN0), IO (SIUL2 and SAR ADC), transport and UDS are enabled. No Ethernet,
+# storage or MPU support yet, matching executables/referenceApp/platforms/s32k344evb/Options.cmake.
 platform(
     name = "s32k344",
     constraint_values = [
@@ -267,16 +267,16 @@ platform(
     ],
     flags = [
         # Features
-        "--//bazel/config/features:can=false",
+        "--//bazel/config/features:can=true",
         "--//bazel/config/features:ethernet=false",
-        "--//bazel/config/features:io=false",
+        "--//bazel/config/features:io=true",
         "--//bazel/config/features:ipv6=false",
         "--//bazel/config/features:middleware=false",
         "--//bazel/config/features:mpu=false",
         "--//bazel/config/features:rom_check=false",
         "--//bazel/config/features:storage=false",
-        "--//bazel/config/features:transport=false",
-        "--//bazel/config/features:uds=false",
+        "--//bazel/config/features:transport=true",
+        "--//bazel/config/features:uds=true",
         "--//bazel/config/features:watchdog=false",
 
         # RTOS
@@ -287,6 +287,7 @@ platform(
         "--//libs/bsp/bspInterrupts:bsp_interrupts_impl=//platforms/s32k3xx/bsp/bspInterruptsImpl:bsp_interrupts_impl",
         "--//bazel/config/bsp:bsp_configuration=//executables/referenceApp/platforms/s32k344evb/bspConfiguration:bsp_configuration_headers",
         "--//libs/bsp/bspCharInputOutput:bsp_uart=//platforms/s32k3xx/bsp/bspUart:bsp_uart",
+        "--//bazel/config/bsp:bsp_io=//platforms/s32k3xx/bsp/bspIo:bsp_io",
 
         # FreeRTOS port and hooks
         "--//libs/3rdparty/freeRtos:freertos_port=//platforms/s32k3xx/3rdparty/freertos_cm7_sysTick:freertos_cm7_sys_tick_port_headers",

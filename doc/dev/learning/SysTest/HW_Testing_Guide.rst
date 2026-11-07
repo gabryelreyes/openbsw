@@ -15,6 +15,19 @@ Hardware Testing Guide
 ReferenceApp Test Guide
 -----------------------
 
+The steps below are written for the S32K148 Evaluation Board. They can also be used for the
+S32K344 Evaluation Board (S32K3X4EVB-T172) with the following differences:
+
+* The board is powered and debugged through a single USB cable; it provides the on-board P&E
+  OpenSDA probe and the virtual COM port for the console (115200 baud, 8N1).
+* The software is flashed with the P&E gdb server as described in :ref:`s32k344_gdb_via_usb`
+  instead of S32 Design Studio.
+* For testing CAN, connect the PEAK CAN USB dongle to the board's CAN connector and use a bitrate of
+  500 kbit/s.
+* The ADC can be tested with the on-board potentiometer (``adc get 0``) instead of an external
+  supply, the IO test uses the RGB LED (``out set 1 1`` for green, ``out set 2 1`` for blue).
+  The PWM test does not apply yet, since there is no PWM driver for this platform.
+
 #. **Hardware Set Up**
 
    a. Hardware Required

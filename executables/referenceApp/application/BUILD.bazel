@@ -401,11 +401,17 @@ cc_library(
     deps = [
         # required by app headers including busid/BusId.h, ICanSystem.h, IEthernetDriverSystem.h
         "//executables/referenceApp/configuration",
-        # required by systems/EthernetSystem.h (transitive include); resolves per-platform
-        "//bazel/config/eth:eth_configuration",
-        # required by systems/SomeIpSystem.h (transitive include); not in CMake target_link_libraries
-        "//libs/bsw/lwipSocket:lwip_socket",
-    ],
+    ] + select({
+        # Only included by the Ethernet systems, so platforms without Ethernet
+        # (e.g. s32k344) need neither an eth_configuration nor an lwIP port.
+        "//bazel/config/features:ethernet_enabled": [
+            # required by systems/EthernetSystem.h (transitive include); resolves per-platform
+            "//bazel/config/eth:eth_configuration",
+            # required by systems/SomeIpSystem.h (transitive include); not in CMake target_link_libraries
+            "//libs/bsw/lwipSocket:lwip_socket",
+        ],
+        "//conditions:default": [],
+    }),
 )
 
 cc_binary(
@@ -468,6 +474,71 @@ cc_binary(
         "//platforms/s32k1xx/bsp/bspMcu:bsp_mcu",
         "//platforms/s32k1xx/bsp/bspUart:bsp_uart",
         "//platforms/s32k1xx/etlImpl:etl_impl",
+    ],
+)
+
+# S32K344 reference application (S32K3X4EVB-T172, FreeRTOS only). The feature
+# aliases (:can, :docan, :transport, :uds_com, ...) resolve from the s32k344
+# platform flags in //bazel/platform:s32k344, matching the CMake build.
+cc_binary(
+    name = "reference_app_s32k344",
+    srcs = [
+        "src/app/app.cpp",
+        "src/console/console.cpp",
+        "src/logger/logger.cpp",
+        "src/main.cpp",
+        "src/systems/DemoSystem.cpp",
+        "src/systems/RuntimeSystem.cpp",
+        "src/systems/SafetySystem.cpp",
+        "src/systems/SysAdminSystem.cpp",
+    ],
+    additional_linker_inputs = [
+        "//executables/referenceApp/platforms/s32k344evb/main:generate_linkerscript",
+    ],
+    linkopts = [
+        "-T$(location //executables/referenceApp/platforms/s32k344evb/main:generate_linkerscript)",
+    ],
+    target_compatible_with = ["//bazel/platform/constraints/soc:s32k344"],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":can",
+        ":demo_logger",
+        ":docan",
+        ":doip",
+        ":ethernet",
+        ":reference_app_headers",
+        ":routing",
+        ":someip",
+        ":storage",
+        ":transport",
+        ":uds_com",
+        ":uds_demo",
+        "//bazel/config/features:feature_defines",
+        "//executables/referenceApp/asyncBinding:async_binding",
+        "//executables/referenceApp/configuration",
+        "//executables/referenceApp/consoleCommands:console_commands",
+        "//executables/referenceApp/platforms/s32k344evb/bspConfiguration:bsp_configuration",
+        "//executables/referenceApp/platforms/s32k344evb/main",
+        "//executables/referenceApp/platforms/s32k344evb/safety/safeLifecycle:safe_lifecycle",
+        "//executables/referenceApp/safety/safeWatchdog:safe_watchdog",
+        "//libs/3rdparty/etl",
+        "//libs/3rdparty/freeRtos:freertos",
+        "//libs/3rdparty/printf",
+        "//libs/bsw/asyncConsole:async_console",
+        "//libs/bsw/asyncFreeRtos:async_freertos_impl",
+        "//libs/bsw/bsp",
+        "//libs/bsw/lifecycle",
+        "//libs/bsw/logger",
+        "//libs/bsw/loggerIntegration:logger_integration",
+        "//libs/bsw/runtime",
+        "//libs/bsw/stdioConsoleInput:stdio_console_input",
+        "//libs/bsw/time",
+        "//libs/bsw/util",
+        "//libs/safety/safeUtils:safe_utils",
+        "//platforms/s32k3xx/bsp:soc_bsp",
+        "//platforms/s32k3xx/bsp/bspMcu:bsp_mcu",
+        "//platforms/s32k3xx/bsp/bspUart:bsp_uart",
+        "//platforms/s32k3xx/etlImpl:etl_impl",
     ],
 )
 

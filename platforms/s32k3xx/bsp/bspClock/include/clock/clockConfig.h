@@ -22,7 +22,8 @@ extern "C"
  *   AIPS_PLAT_CLK  80 MHz
  *   AIPS_SLOW_CLK  40 MHz
  *   HSE_CLK        80 MHz
- * Also ungates the peripheral clocks used by the BSP (LPUART6).
+ * Also ungates the peripheral clocks used by the BSP (LPUART6, FLEXCAN0,
+ * ADC1).
  *
  * Must be callable before the C/C++ runtime is initialized (no globals).
  */

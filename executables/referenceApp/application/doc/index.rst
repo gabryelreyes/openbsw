@@ -21,8 +21,10 @@ This is a demo application that showcases the use of ADC, PWM, UDS, CAN, Etherne
 command utility. The application demonstrates a set of use cases which the user can try out.
 
 .. note::
-    + *The ADC & PWM demos can only be tested on the S32K148 platform.*
+    + *The PWM demo can only be tested on the S32K148 platform; the ADC demo on the S32K148 and S32K344 platforms.*
     + *The UDS, CAN and Ethernet demos can be tested on POSIX as well as S32K148 platforms.*
+    + *On the S32K344 platform the UDS, CAN and ADC demos and the console are available; the PWM
+      and Ethernet demos are not available yet.*
     + *The S32K148-EVB board requires a compatible Automotive Ethernet Adapter add-on board for Ethernet to work.*
 
 Features

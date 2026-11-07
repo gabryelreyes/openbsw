@@ -36,3 +36,9 @@ skip_first = true
 started_str = "DEBUG: Run level 1"
 complete_str = "INFO: Run level 9 done"
 max_time = 1.5
+
+# Test suites that need a feature not available on this platform are skipped.
+[features]
+storage = false
+ethernet = false
+middleware = false

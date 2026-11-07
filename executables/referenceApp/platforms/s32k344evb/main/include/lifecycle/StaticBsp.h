@@ -10,9 +10,12 @@
 
 #pragma once
 
+#include "bsp/adc/AnalogInput.h"
 #include "bsp/can/canTransceiver/CanPhy.h"
 #include "bsp/power/IEcuPowerStateController.h"
+#include "inputManager/DigitalInput.h"
 #include "mcu/mcu.h"
+#include "outputManager/Output.h"
 
 namespace bios
 {
@@ -74,7 +77,11 @@ public:
 
     void init();
 
+    void cyclic();
+
     bios::CanPhy& getCanPhy() { return _canPhy; }
+
+    bios::AnalogInput& getAdc() { return _adc; }
 
     bios::IEcuPowerStateController& getPowerStateController() { return _powerStateController; }
 
@@ -106,4 +113,7 @@ private:
 
     bios::CanPhyTja1443 _canPhy;
     DummyEcuPowerStateController _powerStateController;
+    bios::Output _output;
+    bios::DigitalInput _digitalInput;
+    bios::AnalogInput _adc;
 };

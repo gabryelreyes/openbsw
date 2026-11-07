@@ -126,13 +126,95 @@ For this option...
     This allows the `.gdb` scripts referenced by `target_s32k148.toml` to flash
     the board at the start of `pytest` and to reset the board before each test.
 
-### Running `pytest` with `--target=s32k148_with_hwtester`
+### Running `pytest` with `--target=s32k344`
 
-For this option, you need everything set up as for `--target=s32k148` **and**
-the `s32k148` board must be set up with an external hardware testing board
+For this option...
+
+1. Need to have built an image for the `s32k344` target
+
+    To run tests using the `s32k344` you must first have built the image for that target
+    in its expected default location...
+    ```
+    build/s32k344-freertos/executables/referenceApp/application/RelWithDebInfo/app.referenceApp.elf
+    ```
+
+2. Need an [S32K3X4EVB-T172 development board](https://www.nxp.com/design/design-center/development-boards-and-designs/S32K3X4EVB-T172)
+
+    You need to have the board running, connected via USB to your build machine.
+    The console is on the board's OpenSDA virtual COM port at 115200 baud,
+    which `target_s32k344.toml` expects at `/dev/ttyACM0`.
+
+3. Need to have `can0` set up
+
+    `target_s32k344.toml` in this directory specifies `can0`
+    as the name of the `SocketCAN` interface to use
+    to communicate with the S32K344 development board,
+    so this is expected be set up at 500 kbit/s for tests involving `CAN` to pass...
+    ```
+    sudo ip link set can0 up type can bitrate 500000
+    ```
+
+4. Need `pegdbserver_console` up and running
+
+    You need P&E Micro's version of `gdbserver` running and connected to the board...
+    ```
+    sudo ./pegdbserver_console -startserver -device=NXP_S32K3xx_S32K344 -serverport=7224
+    ```
+    This allows the `.gdb` scripts referenced by `target_s32k344.toml` to flash
+    the board at the start of `pytest` and to reset the board before each test.
+
+Note that on this target...
+
+* Persistent storage, Ethernet and the middleware demo are not enabled for the S32K344.
+  The `[features]` table in `target_s32k344.toml` switches them off, so `console/test_storage.py`
+  and the `enet` and `middleware` suites are skipped instead of failing (see "Target features" below).
+* `target_s32k344.toml` has no `[hw_tester_serial]` section, so tests with the fixture `hw_tester` are skipped.
+  With a hardware tester board connected, use `--target=s32k344_with_hwtester` instead (see below).
+
+For example...
+```
+pytest --target=s32k344 console can docan uds
+```
+
+See the S32K344 GDB server setup page in the documentation (`doc/dev/learning/setup/setup_s32k344_gdbserver.rst`)
+for further details, including a Windows/WSL setup.
+
+### Running `pytest` with `--target=s32k148_with_hwtester` or `--target=s32k344_with_hwtester`
+
+For these options, you need everything set up as for `--target=s32k148` (or `--target=s32k344`) **and**
+the board must be set up with an external hardware testing board
 which has been configured for serial communication in `target_s32k148_with_hwtester.toml`
-under `[hw_tester_serial]`.
+(or `target_s32k344_with_hwtester.toml`) under `[hw_tester_serial]`.
 Tests with the fixture `hw_tester` will be only be run if `[hw_tester_serial]` is present.
+
+The ADC test (`console/test_adc.py`) additionally reads the `[adc]` table of the target's `.toml` file,
+which names the ADC channel the tester's DAC output is wired to, the channel name printed by
+`adc get` and the accepted tolerance in mV; the test is skipped if the table is missing:
+
+```toml
+[adc]
+channel = 0
+name = "AiEval_Poti_ADC"
+tolerance_mv = 100
+```
+
+### Target features
+
+A target's `.toml` file may contain a `[features]` table that switches off test suites
+which need something the target does not provide, for example:
+
+```toml
+[features]
+storage = false
+ethernet = false
+middleware = false
+```
+
+Test modules or tests marked with `pytest.mark.requires_feature("<name>")` are skipped for
+every target whose `[features]` table sets `<name> = false`.
+A feature that is not listed is assumed to be available, so targets without the table run all tests.
+The markers currently in use are `storage` (`console/test_storage.py`), `ethernet` (`enet`) and
+`middleware` (`middleware`).
 
 ### Fixtures in tests
 

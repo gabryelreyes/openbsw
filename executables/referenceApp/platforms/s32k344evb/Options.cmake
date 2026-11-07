@@ -16,7 +16,7 @@ set(S32K3_CHIP
 
 # Features are switched on as the corresponding BSP drivers become available.
 set(PLATFORM_SUPPORT_IO
-    OFF
+    ON
     CACHE BOOL "Turn IO support on or off" FORCE)
 set(PLATFORM_SUPPORT_CAN
     ON

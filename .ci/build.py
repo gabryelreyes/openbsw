@@ -63,6 +63,22 @@ commands = {
         platforms=["linux"],
         build_dir="build/tests/stm32/Release",
     ),
+    "tests-s32k3xx-debug": BuildOpTpl(
+        config_cmd="cmake --preset tests-s32k3xx-debug",
+        build_cmd="cmake --build --preset tests-s32k3xx-debug",
+        test_cmd="ctest --preset tests-s32k3xx-debug --output-on-failure",
+        configs=["Debug"],
+        platforms=["linux"],
+        build_dir="build/tests/s32k3xx/Debug",
+    ),
+    "tests-s32k3xx-release": BuildOpTpl(
+        config_cmd="cmake --preset tests-s32k3xx-release",
+        build_cmd="cmake --build --preset tests-s32k3xx-release",
+        test_cmd="ctest --preset tests-s32k3xx-release --output-on-failure",
+        configs=["Release"],
+        platforms=["linux"],
+        build_dir="build/tests/s32k3xx/Release",
+    ),
     "posix-freertos": BuildOpTpl(
         config_cmd="cmake --preset posix-freertos",
         build_cmd="cmake --build --preset posix-freertos",

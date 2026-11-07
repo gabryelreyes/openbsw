@@ -1,0 +1,45 @@
+/********************************************************************************
+ * Copyright (c) 2026 Accenture
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Apache License Version 2.0 which is available at
+ * https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ ********************************************************************************/
+
+// IGNORE_INCLUDE_GUARD_CHECK
+
+#if defined(BSPOUTPUTCONFIG) && (BSPOUTPUTCONFIG == 1)
+
+Output::OutputConfig const Output::sfOutputConfigurations[1][Output::NUMBER_OF_INTERNAL_OUTPUTS]
+    = {{
+        /*  0 */ {Io::EVAL_LED_RED, Io::LOW, Io::HIGH_ACTIVE},
+        /*  1 */ {Io::EVAL_LED_GREEN, Io::LOW, Io::HIGH_ACTIVE},
+        /*  2 */ {Io::EVAL_LED_BLUE, Io::LOW, Io::HIGH_ACTIVE},
+    }};
+
+Output::OutputConfig const* Output::getConfiguration(uint8_t /* hardwareVersion */)
+{
+    return &sfOutputConfigurations[0][0];
+}
+
+#else
+
+enum OutputId
+{
+    /*  0 */ EVAL_LED_RED,
+    /*  1 */ EVAL_LED_GREEN,
+    /*  2 */ EVAL_LED_BLUE,
+
+    /* xx */ NUMBER_OF_INTERNAL_OUTPUTS,
+
+    // dynamic outputs go here
+
+    END_EXTERNAL_OUTPUTS,
+    NUMBER_OF_EXTERNAL_OUTPUTS = END_EXTERNAL_OUTPUTS - NUMBER_OF_INTERNAL_OUTPUTS,
+    TOTAL_NUMBER_OF_OUTPUTS    = NUMBER_OF_INTERNAL_OUTPUTS + NUMBER_OF_EXTERNAL_OUTPUTS,
+    PORT_UNAVAILABLE           = TOTAL_NUMBER_OF_OUTPUTS
+};
+
+#endif /* BSP_OUTPUT_PIN_CONFIGURATION == 1 */

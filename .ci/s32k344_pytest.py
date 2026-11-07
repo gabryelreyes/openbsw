@@ -1,0 +1,42 @@
+# *******************************************************************************
+# Copyright (c) 2026 Accenture
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0
+#
+# SPDX-License-Identifier: Apache-2.0
+# *******************************************************************************
+
+import subprocess
+import os
+import sys
+
+def run_cmd(cmd, cwd=None):
+    print(f"\n>>> Running: {cmd}", flush=True)
+    subprocess.run(cmd, shell=True, check=True, cwd=cwd)
+
+def main():
+    target = "s32k344"
+    toolchain = "gcc"
+    cxxstd = "17"
+    # Only FreeRTOS is supported on the S32K344 so far.
+    matrix = [
+        {"app": "freertos", "preset": "s32k344-freertos"},
+    ]
+    for item in matrix:
+        preset = item["preset"]
+        run_cmd(f'python3 .ci/build.py --preset "{preset}" --platform "arm" --cxxid "{toolchain}" --cxxstd "{cxxstd}"')
+
+    os.chdir("test/pyTest")
+
+    for item in matrix:
+        app = item["app"]
+        run_cmd(f'pytest -s --target={target} --no-restart --app={app}')
+
+if __name__ == "__main__":
+    try:
+        main()
+    except subprocess.CalledProcessError as e:
+        print(f"\nERROR: command failed with exit code {e.returncode}")
+        sys.exit(e.returncode)

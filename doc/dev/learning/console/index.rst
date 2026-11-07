@@ -108,6 +108,15 @@ S32K148EVB Platform
 
 In the above menu printed by ``help``, indented items are sub-commands of the unindent command above it.
 
+S32K344EVB Platform
++++++++++++++++++++
+
+On the S32K344EVB the console is provided on the OpenSDA virtual COM port at 115200 baud
+(see :ref:`s32k344_gdb_via_usb`). The ``in``, ``out`` and ``adc`` commands are available: the
+outputs are the three channels of the RGB LED, the inputs are the user buttons SW5 and SW6 and
+ADC channel 0 reads the on-board potentiometer. There is no PWM driver yet, so the ``pwm``
+command is not present. Enter ``help`` to list the commands available in your build.
+
 Explore these commands, look at the documentation :ref:`util_command`
 and search the code for occurrences of ``GroupCommand`` to improve your understanding.
 

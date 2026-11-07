@@ -40,10 +40,12 @@ The platform provides a Cortex-M7 image with no regression to the existing platf
 - the interrupt manager and the system timer based on the DWT cycle counter,
 - the console on LPUART6 (OpenSDA VCOM port),
 - FlexCAN0 at 500 kbit/s with the docan transport and UDS stack,
-- lifecycle management with the safety supervisor.
+- lifecycle management with the safety supervisor,
+- digital IO (RGB LED outputs, user buttons SW5 and SW6) and the ADC (on-board potentiometer on
+  PTA11, ADC1 channel S10) with the ``in``, ``out`` and ``adc`` console commands.
 
-Not yet available: IO, the watchdog, the MPU and the persistent storage. The corresponding
-``PLATFORM_SUPPORT_*`` options are therefore switched off in
+Not yet available: PWM, Ethernet, the middleware demo, the watchdog, the MPU and the persistent
+storage. The corresponding ``PLATFORM_SUPPORT_*`` options are therefore switched off in
 ``executables/referenceApp/platforms/s32k344evb/Options.cmake`` and get enabled as the drivers
 become available. Open items are marked with ``TODO`` comments in the sources.
 
@@ -68,7 +70,7 @@ Reference Links
 Build environment
 -----------------
 
-For instructions on building see :ref:`learning_setup`. The platform uses the same ARM toolchain
+For step-by-step instructions on building see :ref:`setup_s32k344_build`. The platform uses the same ARM toolchain
 as the S32K148EVB; the preset selects the Cortex-M7 core and the ``fpv5-d16`` FPU via the
 ``OPENBSW_ARM_CPU`` and ``OPENBSW_ARM_FPU`` cache variables:
 
@@ -86,6 +88,16 @@ Flashing and debugging use the PE Micro GDB server together with ``test/pyTest/f
 .. code-block:: bash
 
     pegdbserver_console -device=NXP_S32K3xx_S32K344 -startserver -serverport=7224
+
+See :ref:`s32k344_gdb_via_usb` for setting up the GDB server (including the Windows/WSL setup),
+the console, CAN and running the pytests on the board.
+
+Running the tests
+-----------------
+
+The pytests in ``test/pyTest`` run against the board with ``pytest --target=s32k344``, using
+``target_s32k344.toml``. See :ref:`s32k344_gdb_via_usb` for the required setup (gdb server, console
+and CAN) and for the test suites that currently apply to this platform.
 
 Memory map
 ----------
@@ -116,3 +128,7 @@ Notes
 - The on-board CAN transceiver of board revision B2 is a TJA1443 CAN FD device. Its EN/STB pins
   are driven to normal mode by the BSP; no further configuration is required.
 - The C40 flash read wait states are left at the conservative reset default.
+- The last 48 KB of the program flash (``0x007F4000`` to ``0x007FFFFF``) are reserved for the
+  secure boot assist firmware and are not part of the linker's flash region. If the HSE firmware
+  were installed, the reservation would grow to 176 KB of program flash and 40 KB of data flash.
+  The evaluation board used here has no HSE firmware installed and this port does not use the HSE.

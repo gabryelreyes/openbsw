@@ -17,7 +17,12 @@ namespace
 uint32_t const MC_ME_KEY          = 0x5AF0U;
 uint32_t const MC_ME_INVERTED_KEY = 0xA50FU;
 
-// MC_ME PRTN1 COFB block assignments (see S32K3xx Reference Manual, MC_ME)
+// MC_ME PRTN0 COFB block assignments (see S32K3xx Reference Manual, MC_ME):
+// request n is the peripheral in slot n of AIPS_0 (0x40000000 + n * 0x4000).
+uint32_t const PRTN0_COFB1_REQ41_ADC1 = (1U << 9);
+
+// MC_ME PRTN1 COFB block assignments (see S32K3xx Reference Manual, MC_ME):
+// request n is the peripheral in slot n of AIPS_1 (0x40200000 + n * 0x4000).
 uint32_t const PRTN1_COFB0_REQ24_MSCM     = (1U << 24);
 uint32_t const PRTN1_COFB1_REQ53_FXOSC    = (1U << 21);
 uint32_t const PRTN1_COFB1_REQ56_PLL      = (1U << 24);
@@ -50,6 +55,26 @@ void mcMeCommitPartition1(uint32_t const volatile& statusRegister, uint32_t cons
 {
     IP_MC_ME->PRTN1_PCONF = MC_ME_PRTN1_PCONF_PCE_MASK;
     IP_MC_ME->PRTN1_PUPD  = MC_ME_PRTN1_PUPD_PCUD_MASK;
+    IP_MC_ME->CTL_KEY     = MC_ME_KEY;
+    IP_MC_ME->CTL_KEY     = MC_ME_INVERTED_KEY;
+
+    for (uint32_t timeout = TIMEOUT; timeout > 0U; --timeout)
+    {
+        if ((statusRegister & mask) != 0U)
+        {
+            break;
+        }
+    }
+}
+
+/**
+ * Commits a PRTN0 COFB clock enable change and waits until the hardware
+ * process has completed.
+ */
+void mcMeCommitPartition0(uint32_t const volatile& statusRegister, uint32_t const mask)
+{
+    IP_MC_ME->PRTN0_PCONF = MC_ME_PRTN0_PCONF_PCE_MASK;
+    IP_MC_ME->PRTN0_PUPD  = MC_ME_PRTN0_PUPD_PCUD_MASK;
     IP_MC_ME->CTL_KEY     = MC_ME_KEY;
     IP_MC_ME->CTL_KEY     = MC_ME_INVERTED_KEY;
 
@@ -134,6 +159,11 @@ extern "C" void configurePll(void)
     IP_MC_ME->PRTN1_COFB2_CLKEN
         = IP_MC_ME->PRTN1_COFB2_CLKEN | PRTN1_COFB2_REQ65_FLEXCAN0 | PRTN1_COFB2_REQ80_LPUART6;
     mcMeCommitPartition1(IP_MC_ME->PRTN1_COFB1_STAT, PRTN1_COFB1_REQ53_FXOSC);
+    // Peripheral clocks in partition 0 used by the BSP: ADC1 (on-board
+    // potentiometer). The ADC driver divides the module clock down to the
+    // conversion clock (MCR[ADCLKSEL]).
+    IP_MC_ME->PRTN0_COFB1_CLKEN = IP_MC_ME->PRTN0_COFB1_CLKEN | PRTN0_COFB1_REQ41_ADC1;
+    mcMeCommitPartition0(IP_MC_ME->PRTN0_COFB1_STAT, PRTN0_COFB1_REQ41_ADC1);
 
     // Run MUX_0 from FIRC with safe dividers while the PLL is (re)configured.
     IP_MC_CGM->MUX_0_DIV_TRIG_CTRL

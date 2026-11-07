@@ -16,8 +16,8 @@ Working with CAN
 
 Previous: :ref:`learning_commands`
 
-The POSIX and S32K148 builds support CAN but in different ways.
-The S32K148 development board has CAN hardware and this is used to send and receive CAN frames
+The POSIX, S32K148 and S32K344 builds support CAN but in different ways.
+The S32K148 and S32K344 development boards have CAN hardware and this is used to send and receive CAN frames
 whereas on the POSIX platform a CAN socket is used to send CAN frames to a Virtual CAN interface
 (note this requires that the POSIX platform used includes ``SocketCan`` support).
 
@@ -201,5 +201,16 @@ Find the ``DemoSystem``, ``CanDemoListener`` and ``CanSystem`` classes and exami
 In particular note that for the POSIX build, ``CanSystem`` is implemented using ``::can::SocketCanTransceiver``
 whereas for the S32K148 build, ``CanSystem`` is implemented using ``bios::CanFlex2Transceiver``
 both of which are alternative implementations of ``::can::AbstractCANTransceiver``.
+
+S32K344 build
+-------------
+
+The S32K344 build runs FlexCAN0 at 500 kbit/s through the on-board CAN transceiver of the
+S32K3X4EVB-T172 board. Connect a Classic CAN device with the same bitrate to the board's CAN
+connector, as described in :ref:`s32k344_gdb_via_usb`.
+The same ``DemoSystem`` and ``CanDemoListener`` classes are used here as well,
+so the CAN behaviour is the same as described above for the POSIX build.
+The S32K344 ``CanSystem`` is implemented using the ``bios::CanFlex2Transceiver`` of the
+``platforms/s32k3xx`` BSP.
 
 Next: :ref:`learning_uds`

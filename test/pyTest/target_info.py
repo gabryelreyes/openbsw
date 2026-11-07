@@ -58,6 +58,8 @@ class TargetInfo:
         self._target_process = app_info.get("target_process", {})
         self._boot = target_info.get("boot", {})
         self._hw_tester_serial = target_info.get("hw_tester_serial", {})
+        self._features = target_info.get("features", {})
+        self._adc = target_info.get("adc", {})
         self._set_defaults(cmd_line_no_restart)
 
     def _set_defaults(self, cmd_line_no_restart):
@@ -135,6 +137,28 @@ class TargetInfo:
         heading in the target's TOML file.
         """
         return self._hw_tester_serial.copy()
+
+    @property
+    def adc(self):
+        """A copy of the dictionary read from under the "adc" heading
+        in the target's TOML file: the channel, its name and the tolerance
+        in mV for the ADC test with the hardware tester.
+        """
+        return self._adc.copy()
+
+    @property
+    def features(self):
+        """A copy of the dictionary read from under the "features"
+        heading in the target's TOML file.
+        """
+        return self._features.copy()
+
+    def has_feature(self, name):
+        """True unless the "features" table sets the named feature to false.
+        A feature that is not listed is assumed to be available, so targets
+        without a "features" table run every test.
+        """
+        return bool(self._features.get(name, True))
 
     def __str__(self):
         desc = f"name={self.name}\n"

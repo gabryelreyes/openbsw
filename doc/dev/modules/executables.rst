@@ -47,6 +47,12 @@ S32K148EVB
 
     ../../../executables/referenceApp/platforms/s32k148evb/**/doc/index
 
+S32K344EVB
+++++++++++
+
+The board level modules in ``executables/referenceApp/platforms/s32k344evb`` have no module
+documentation yet. See :ref:`s32k344evb_overview` for an overview of the platform.
+
 STM32 Nucleo
 ++++++++++++
 

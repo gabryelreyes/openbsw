@@ -9,16 +9,17 @@
  ********************************************************************************/
 
 #include "lifecycle/StaticBsp.h"
+#include "systems/BspSystem.h"
 
+#include <etl/alignment.h>
+
+#include "async/Config.h"
 #include "clock/clockConfig.h"
 #include "mcu/mcu.h"
 
 #ifdef PLATFORM_SUPPORT_CAN
 #include "systems/CanSystem.h"
 
-#include <etl/alignment.h>
-
-#include "async/Config.h"
 #include "interrupt_manager.h"
 #endif
 
@@ -44,6 +45,15 @@ void boardInit()
         IP_SWT_0->SR = 0xD928U;
     }
     IP_SWT_0->CR = IP_SWT_0->CR & ~SWT_CR_WEN_MASK;
+
+    /* Clear the functional reset escalation counter (write 1 to clear).
+     * MC_RGM counts the functional resets since the last destructive reset
+     * and the device no longer comes up after the 8th one, so every software
+     * reset (softwareSystemReset() goes through MC_ME as a functional reset)
+     * would otherwise bring the board closer to a lock-up that only a
+     * destructive or external reset clears. Only a debugger reset clears the
+     * counter implicitly. */
+    IP_MC_RGM->FREC = MC_RGM_FREC_FREC_MASK;
 
     configurePll();
 
@@ -76,6 +86,8 @@ StaticBsp staticBsp;
 
 StaticBsp& getStaticBsp() { return staticBsp; }
 
+::etl::typed_storage<::systems::BspSystem> bspSystem;
+
 #ifdef PLATFORM_SUPPORT_CAN
 ::etl::typed_storage<::systems::CanSystem> canSystem;
 #endif // PLATFORM_SUPPORT_CAN
@@ -86,6 +98,10 @@ StaticBsp& getStaticBsp() { return staticBsp; }
  */
 void platformLifecycleAdd(::lifecycle::LifecycleManager& lifecycleManager, uint8_t const level)
 {
+    if (level == 1U)
+    {
+        lifecycleManager.addComponent("bsp", bspSystem.create(TASK_BSP, staticBsp), level);
+    }
     if (level == 2U)
     {
 #ifdef PLATFORM_SUPPORT_CAN

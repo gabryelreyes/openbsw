@@ -104,4 +104,37 @@ If you are using a CAN adapter to communicate from your PC to the board, connect
 
 For further information, see the links on this page: :ref:`s32k148evb_overview`.
 
+Using the S32K344 Evaluation Board
+----------------------------------
+
+If you have access to a
+`S32K3X4EVB-T172 evaluation board <https://www.nxp.com/design/design-center/development-boards-and-designs/S32K3X4EVB-T172>`_
+(S32K344) then build the image as described in :doc:`setup_s32k344_build`
+and flash, debug and test it as described in :doc:`setup_s32k344_gdbserver`.
+
+The on-board P&E Micro debug probe provides both the debugger connection and the
+console (OpenSDA virtual COM port, 115200 baud) over a single USB cable.
+The console, CAN/UDS, IO and ADC work; PWM, the watchdog, the MPU and the persistent storage are not yet available.
+
+.. _known_issues_with_s32k344_board:
+
+Known Issues with the S32K344 board
++++++++++++++++++++++++++++++++++++
+
+.. list-table::
+    :header-rows: 1
+    :width: 100%
+    :widths: 10 90
+
+    * - #
+      - Description
+    * - 1
+      - Forwarding the on-board P&E probe into WSL with ``usbipd`` silently corrupts flash writes.
+        On Windows, run P&E Micro's gdb server natively and connect to it from WSL over TCP,
+        as described in :doc:`setup_s32k344_gdbserver`.
+    * - 2
+      - Persistent storage is not yet supported, so the storage console tests fail.
+
+For further information, see :ref:`s32k344evb_overview`.
+
 Next: :ref:`learning_layout`
