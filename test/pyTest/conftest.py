@@ -333,6 +333,21 @@ def pytest_generate_tests(metafunc):
 
 
 def pytest_runtest_setup(item):
+    for feature_marker in item.iter_markers("requires_feature"):
+        feature = feature_marker.args[0]
+        callspec = getattr(item, "callspec", None)
+        if callspec is not None and "target_session" in callspec.params:
+            target_names = [callspec.params["target_session"]]
+        else:
+            target_names = list(TargetInfo.by_name)
+        missing = [
+            name
+            for name in target_names
+            if not TargetInfo.by_name[name].has_feature(feature)
+        ]
+        if missing:
+            pytest.skip(f"Feature '{feature}' is not available on {', '.join(missing)}")
+
     skip_marker = item.get_closest_marker("skip_if")
     if skip_marker:
         condition = skip_marker.args[0]

@@ -177,13 +177,14 @@ and setting ``port`` in the ``[serial]`` section to that pseudo terminal.
 Current state of the tests on this board:
 
 * The ``can``, ``docan`` and ``uds`` suites are expected to pass.
-* The console tests pass, except ``test_storage.py``, which fails because persistent storage
-  is not yet supported on this platform.
-* The ``enet`` and ``middleware`` suites do not apply, since Ethernet and the middleware demo
-  are not enabled for the S32K344. The ADC test needs the hardware tester board and is skipped.
+* The console tests pass. ``test_storage.py`` is skipped, because persistent storage
+  is not yet supported on this platform (``storage = false`` in the ``[features]`` table of
+  ``target_s32k344.toml``).
+* The ``enet`` and ``middleware`` suites are skipped the same way, since Ethernet and the middleware
+  demo are not enabled for the S32K344. The ADC test needs the hardware tester board and is skipped.
 
-Run only the applicable suites and deselect the known failures, e.g.:
+Run the suites that apply, e.g.:
 
 .. code-block:: bash
 
-   pytest --target=s32k344 --ignore=console/test_storage.py console can docan uds
+   pytest --target=s32k344 console can docan uds

@@ -58,6 +58,7 @@ class TargetInfo:
         self._target_process = app_info.get("target_process", {})
         self._boot = target_info.get("boot", {})
         self._hw_tester_serial = target_info.get("hw_tester_serial", {})
+        self._features = target_info.get("features", {})
         self._set_defaults(cmd_line_no_restart)
 
     def _set_defaults(self, cmd_line_no_restart):
@@ -135,6 +136,20 @@ class TargetInfo:
         heading in the target's TOML file.
         """
         return self._hw_tester_serial.copy()
+
+    @property
+    def features(self):
+        """A copy of the dictionary read from under the "features"
+        heading in the target's TOML file.
+        """
+        return self._features.copy()
+
+    def has_feature(self, name):
+        """True unless the "features" table sets the named feature to false.
+        A feature that is not listed is assumed to be available, so targets
+        without a "features" table run every test.
+        """
+        return bool(self._features.get(name, True))
 
     def __str__(self):
         desc = f"name={self.name}\n"

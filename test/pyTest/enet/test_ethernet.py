@@ -11,6 +11,9 @@
 import socket
 import time
 import os
+import pytest
+
+pytestmark = pytest.mark.requires_feature("ethernet")
 
 
 class TestEthernetNetwork:
