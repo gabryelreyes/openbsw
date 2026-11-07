@@ -59,6 +59,7 @@ class TargetInfo:
         self._boot = target_info.get("boot", {})
         self._hw_tester_serial = target_info.get("hw_tester_serial", {})
         self._features = target_info.get("features", {})
+        self._adc = target_info.get("adc", {})
         self._set_defaults(cmd_line_no_restart)
 
     def _set_defaults(self, cmd_line_no_restart):
@@ -136,6 +137,14 @@ class TargetInfo:
         heading in the target's TOML file.
         """
         return self._hw_tester_serial.copy()
+
+    @property
+    def adc(self):
+        """A copy of the dictionary read from under the "adc" heading
+        in the target's TOML file: the channel, its name and the tolerance
+        in mV for the ADC test with the hardware tester.
+        """
+        return self._adc.copy()
 
     @property
     def features(self):

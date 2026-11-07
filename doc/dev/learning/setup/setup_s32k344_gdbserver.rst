@@ -181,7 +181,8 @@ Current state of the tests on this board:
   is not yet supported on this platform (``storage = false`` in the ``[features]`` table of
   ``target_s32k344.toml``).
 * The ``enet`` and ``middleware`` suites are skipped the same way, since Ethernet and the middleware
-  demo are not enabled for the S32K344. The ADC test needs the hardware tester board and is skipped.
+  demo are not enabled for the S32K344. The ADC test needs the hardware tester
+  board (``--target=s32k344_with_hwtester``) and is skipped otherwise.
 
 Run the suites that apply, e.g.:
 
