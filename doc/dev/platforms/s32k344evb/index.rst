@@ -128,3 +128,7 @@ Notes
 - The on-board CAN transceiver of board revision B2 is a TJA1443 CAN FD device. Its EN/STB pins
   are driven to normal mode by the BSP; no further configuration is required.
 - The C40 flash read wait states are left at the conservative reset default.
+- The last 48 KB of the program flash (``0x007F4000`` to ``0x007FFFFF``) are reserved for the
+  secure boot assist firmware and are not part of the linker's flash region. If the HSE firmware
+  were installed, the reservation would grow to 176 KB of program flash and 40 KB of data flash.
+  The evaluation board used here has no HSE firmware installed and this port does not use the HSE.
