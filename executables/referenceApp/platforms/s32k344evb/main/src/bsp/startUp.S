@@ -178,9 +178,9 @@ Reset_Handler:
 
     movs    r0, 0
 .LC2:
-    str r0, [r1, r2]
     subs    r2, 4
-    bge .LC2
+    str r0, [r1, r2]
+    bgt .LC2
 .LC3:
 
     cpsie   i               /* Unmask interrupts */
